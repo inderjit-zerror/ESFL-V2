@@ -175,15 +175,15 @@
 //   logo: "/images/home/RamBandhuLogo.png",
 //   accentColor: "#c8102e",
 //   categories: [
-//     { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/ALL.png" },
-//     { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/ALL.png" },
-//     { id: "signature-products", name: "SIGNATURE PRODUCTS", image: "/images/home/ALL.png" },
-//     { id: "pickles", name: "PICKLES", image: "/images/home/ALL.png" },
-//     { id: "papads", name: "PAPADS", image: "/images/home/ALL.png" },
-//     { id: "jams", name: "JAMS", image: "/images/home/ALL.png" },
-//     { id: "beverage-mixes", name: "BEVERAGE MIXES", image: "/images/home/ALL.png" },
-//     { id: "spice-mixes", name: "SPICE MIXES", image: "/images/home/ALL.png" },
-//     { id: "snacks", name: "SNACKS", image: "/images/home/ALL.png" },
+//     { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/NewRM.png" },
+//     { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/NewRM.png" },
+//     { id: "signature-products", name: "SIGNATURE PRODUCTS", image: "/images/home/NewRM.png" },
+//     { id: "pickles", name: "PICKLES", image: "/images/home/NewRM.png" },
+//     { id: "papads", name: "PAPADS", image: "/images/home/NewRM.png" },
+//     { id: "jams", name: "JAMS", image: "/images/home/NewRM.png" },
+//     { id: "beverage-mixes", name: "BEVERAGE MIXES", image: "/images/home/NewRM.png" },
+//     { id: "spice-mixes", name: "SPICE MIXES", image: "/images/home/NewRM.png" },
+//     { id: "snacks", name: "SNACKS", image: "/images/home/NewRM.png" },
 //   ],
 // };
 
@@ -191,11 +191,11 @@
 //   logo: "/images/home/TemptinLogo.png",
 //   accentColor: "#C3071C",
 //   categories: [
-//     { id: "ketchup", name: "KETCHUP", image: "/images/home/Tem.png" },
-//     { id: "sauces", name: "SAUCES", image: "/images/home/Tem.png" },
-//     { id: "dips", name: "DIPS", image: "/images/home/Tem.png" },
-//     { id: "chutneys", name: "CHUTNEYS", image: "/images/home/Tem.png" },
-//     { id: "chinese-spices", name: "CHINESE SPICES", image: "/images/home/Tem.png" },
+//     { id: "ketchup", name: "KETCHUP", image: "/images/home/NEWTEM.png" },
+//     { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
+//     { id: "dips", name: "DIPS", image: "/images/home/NEWTEM.png" },
+//     { id: "chutneys", name: "CHUTNEYS", image: "/images/home/NEWTEM.png" },
+//     { id: "chinese-spices", name: "CHINESE SPICES", image: "/images/home/NEWTEM.png" },
 //   ],
 // };
 
@@ -203,10 +203,10 @@
 //   logo: "/images/home/RBMLogo.png",
 //   accentColor: "#B32727",
 //   categories: [
-//     { id: "meat-masala", name: "MEAT MASALA", image: "/images/home/RBM.png" },
-//     { id: "chicken-masala", name: "CHICKEN MASALA", image: "/images/home/RBM.png" },
-//     { id: "mutton-biryani-mix", name: "MUTTON BIRYANI MIX", image: "/images/home/RBM.png" },
-//     { id: "chicken-gravy", name: "CHICKEN GRAVY", image: "/images/home/RBM.png" },
+//     { id: "meat-masala", name: "MEAT MASALA", image: "/images/home/NewRBM.png" },
+//     { id: "chicken-masala", name: "CHICKEN MASALA", image: "/images/home/NewRBM.png" },
+//     { id: "mutton-biryani-mix", name: "MUTTON BIRYANI MIX", image: "/images/home/NewRBM.png" },
+//     { id: "chicken-gravy", name: "CHICKEN GRAVY", image: "/images/home/NewRBM.png" },
 //   ],
 // };
 // // -----------------------------------------------------------------------
@@ -401,15 +401,15 @@ const RAMBANDHU_POPUP = {
   logo: "/images/home/RamBandhuLogo.png",
   accentColor: "#c8102e",
   categories: [
-    { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/ALL.png" },
-    { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/ALL.png" },
-    { id: "signature-products", name: "SIGNATURE PRODUCTS", image: "/images/home/ALL.png" },
-    { id: "pickles", name: "PICKLES", image: "/images/home/ALL.png" },
-    { id: "papads", name: "PAPADS", image: "/images/home/ALL.png" },
-    { id: "jams", name: "JAMS", image: "/images/home/ALL.png" },
-    { id: "beverage-mixes", name: "BEVERAGE MIXES", image: "/images/home/ALL.png" },
-    { id: "spice-mixes", name: "SPICE MIXES", image: "/images/home/ALL.png" },
-    { id: "snacks", name: "SNACKS", image: "/images/home/ALL.png" },
+    { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/NewRM.png" },
+    { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/NewRM.png" },
+    { id: "signature-products", name: "SIGNATURE PRODUCTS", image: "/images/home/NewRM.png" },
+    { id: "pickles", name: "PICKLES", image: "/images/home/NewRM.png" },
+    { id: "papads", name: "PAPADS", image: "/images/home/NewRM.png" },
+    { id: "jams", name: "JAMS", image: "/images/home/NewRM.png" },
+    { id: "beverage-mixes", name: "BEVERAGE MIXES", image: "/images/home/NewRM.png" },
+    { id: "spice-mixes", name: "SPICE MIXES", image: "/images/home/NewRM.png" },
+    { id: "snacks", name: "SNACKS", image: "/images/home/NewRM.png" },
   ],
 };
 
@@ -417,11 +417,11 @@ const TEMPTIN_POPUP = {
   logo: "/images/home/TemptinLogo.png",
   accentColor: "#C3071C",
   categories: [
-    { id: "ketchup", name: "KETCHUP", image: "/images/home/Tem.png" },
-    { id: "sauces", name: "SAUCES", image: "/images/home/Tem.png" },
-    { id: "dips", name: "DIPS", image: "/images/home/Tem.png" },
-    { id: "chutneys", name: "CHUTNEYS", image: "/images/home/Tem.png" },
-    { id: "chinese-spices", name: "CHINESE SPICES", image: "/images/home/Tem.png" },
+    { id: "ketchup", name: "KETCHUP", image: "/images/home/NEWTEM.png" },
+    { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
+    { id: "dips", name: "DIPS", image: "/images/home/NEWTEM.png" },
+    { id: "chutneys", name: "CHUTNEYS", image: "/images/home/NEWTEM.png" },
+    { id: "chinese-spices", name: "CHINESE SPICES", image: "/images/home/NEWTEM.png" },
   ],
 };
 
@@ -429,10 +429,10 @@ const RBM_POPUP = {
   logo: "/images/home/RBMLogo.png",
   accentColor: "#B32727",
   categories: [
-    { id: "meat-masala", name: "MEAT MASALA", image: "/images/home/RBM.png" },
-    { id: "chicken-masala", name: "CHICKEN MASALA", image: "/images/home/RBM.png" },
-    { id: "mutton-biryani-mix", name: "MUTTON BIRYANI MIX", image: "/images/home/RBM.png" },
-    { id: "chicken-gravy", name: "CHICKEN GRAVY", image: "/images/home/RBM.png" },
+    { id: "meat-masala", name: "MEAT MASALA", image: "/images/home/NewRBM.png" },
+    { id: "chicken-masala", name: "CHICKEN MASALA", image: "/images/home/NewRBM.png" },
+    { id: "mutton-biryani-mix", name: "MUTTON BIRYANI MIX", image: "/images/home/NewRBM.png" },
+    { id: "chicken-gravy", name: "CHICKEN GRAVY", image: "/images/home/NewRBM.png" },
   ],
 };
 // -----------------------------------------------------------------------
