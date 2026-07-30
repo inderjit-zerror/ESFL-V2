@@ -94,12 +94,12 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[80vh] overflow-hidden bg-[#d8300f] px-0 py-20 flex  "
+      className="relative h-[85vh] overflow-hidden bg-[#d8300f] px-0 py-20 flex  "
     >
      
 
-      <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] bottom-[2%] z-99" />
-      <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-40  right-[25%] bottom-[0%] z-99" />
+      {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] bottom-[2%] z-99" /> */}
+      <img src="/images/home/PP.png" alt="IMG" className="w-full absolute bottom-0 left-0 rotate-180" />
 
       <div className="relative px-0 mx-auto   w-full grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-10 items-center">
         {/* Left: headline + products */}

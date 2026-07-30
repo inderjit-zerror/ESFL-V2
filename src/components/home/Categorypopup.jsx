@@ -51,23 +51,23 @@ export default function CategoryPopup({
   // since Sticker only mounts this component while the popup is open)
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".cp-logo",
-        { y: -14, opacity: 0, scale: 0.92 },
-        { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
-      );
+      // gsap.fromTo(
+      //   ".cp-logo",
+      //   { y: -14, opacity: 0, scale: 0.92 },
+      //   { y: 0, opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" },
+      // );
 
       gsap.fromTo(
         imageRef.current,
         { opacity: 0,  },
-        { opacity: 1,  duration: 0.7, ease: "power2.out", delay: 0.1 },
+        { opacity: 1,  duration: 0.7, ease: "power2.out"},
       );
 
-      gsap.fromTo(
-        titleRef.current,
-        { y: 14, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", delay: 0.35 },
-      );
+      // gsap.fromTo(
+      //   titleRef.current,
+      //   { y: 14, opacity: 0 },
+      //   { y: 0, opacity: 1, duration: 0.5, ease: "power2.out", delay: 0.35 },
+      // );
     }, sectionRef);
 
     return () => ctx.revert();

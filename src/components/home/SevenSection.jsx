@@ -30,7 +30,7 @@ const SocialLable = ({ lable, text }) => {
 const imgArr = [
   `/images/home/RamBandhu.jpg`,
   `/images/home/P2.png`,
-  `/images/home/RBM.jpg`,
+  `/images/home/GN.png`,
   `/images/home/RamBandhu.jpg`,
   `/images/home/Temptin.jpg`,
 ];
