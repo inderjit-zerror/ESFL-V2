@@ -59,8 +59,8 @@ export default function CategoryPopup({
 
       gsap.fromTo(
         imageRef.current,
-        { opacity: 0, scale: 1.06 },
-        { opacity: 1, scale: 1, duration: 0.7, ease: "power2.out", delay: 0.1 },
+        { opacity: 0,  },
+        { opacity: 1,  duration: 0.7, ease: "power2.out", delay: 0.1 },
       );
 
       gsap.fromTo(
@@ -142,22 +142,15 @@ export default function CategoryPopup({
  return (
   <section
     ref={sectionRef}
-    className="inline-block rounded-2xl overflow-hidden"
+    className="inline-block rounded-2xl  "
   >
-    <div className="relative inline-block">
-      <img
-        ref={imageRef}
-        src={activeCategory.image}
-        alt={activeCategory.name}
-        className="block h-auto max-h-[60vh] w-auto object-contain"
-      />
 
-      {/* Prev */}
+     {/* Prev */}
       <button
         type="button"
         onClick={handlePrev}
         aria-label="Previous category"
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
+        className="absolute left-[-10%] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
         style={{ color: accentColor }}
       >
         <ArrowIcon direction="left" />
@@ -168,11 +161,20 @@ export default function CategoryPopup({
         type="button"
         onClick={handleNext}
         aria-label="Next category"
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
+        className="absolute right-[-10%]  top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
         style={{ color: accentColor }}
       >
         <ArrowIcon direction="right" />
       </button>
+    <div className="relative inline-block bg-white overflow-hidden">
+      <img
+        ref={imageRef}
+        src={activeCategory.image}
+        alt={activeCategory.name}
+        className="block h-auto max-h-[60vh] w-auto object-contain"
+      />
+
+     
 
       {/* Dots */}
       <div className="absolute bottom-4 inset-x-0 flex justify-center gap-2">

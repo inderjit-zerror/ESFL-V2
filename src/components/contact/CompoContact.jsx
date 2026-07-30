@@ -32,6 +32,65 @@ const OFFICES = [
   },
 ];
 
+function ScrollDownIndicator({ className = "" }) {
+  return (
+    <>
+      <style>{`
+        @keyframes scroll-arrow-bounce {
+          0%, 100% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(10px); opacity: 0.5; }
+        }
+        @keyframes scroll-fade-in {
+          0% { opacity: 0; transform: translateY(-8px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-arrow {
+          animation: scroll-arrow-bounce 1.8s ease-in-out infinite;
+        }
+        .scroll-arrow:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .scroll-indicator-wrap {
+          animation: scroll-fade-in 0.8s ease-out;
+        }
+      `}</style>
+
+      <div
+        className={`scroll-indicator-wrap flex flex-col items-center gap-2 text-white/90 ${className}`}
+      >
+        <span className="text-xs font-semibold uppercase tracking-[0.25em]">
+          Scroll Down
+        </span>
+
+        <div className="flex flex-col items-center -space-y-3">
+          <svg
+            viewBox="0 0 24 24"
+            className="scroll-arrow h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+          <svg
+            viewBox="0 0 24 24"
+            className="scroll-arrow h-5 w-5 opacity-60"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </div>
+    </>
+  );
+}
+
 function ChatPill({ className = "" }) {
   return (
     <>
@@ -136,7 +195,7 @@ export default function CompoContact() {
       <section className="relative overflow-hidden">
         <div className="relative h-svh">
           <img
-            src="https://images.unsplash.com/photo-1748256373165-e4d125c5124f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1758520145090-581ad6571c30?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="A Ram Bandhu customer care executive taking a call"
             className="h-full w-full object-cover"
           />
@@ -153,6 +212,7 @@ export default function CompoContact() {
               you.
             </p>
           </div>
+           <ScrollDownIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" />
         </div>
       </section>
 

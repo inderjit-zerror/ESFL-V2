@@ -114,16 +114,16 @@ export default function PresentAcrossCountry() {
             />
           </div> */}
 
-          <div className="psac-fade absolute right-4 sm:right-20  top-40 w-20 sm:w-24">
+          {/* <div className="psac-fade absolute right-4 sm:right-20  top-40 w-20 sm:w-24">
             <img
               ref={packRef}
               src="/images/home/YellowPack.png"
               alt="Product packet"
               className="w-full h-auto will-change-transform"
             />
-          </div>
+          </div> */}
 
-          <h2 className="psac-fade pl-16 sm:pl-20 text-[#f5c451] Heading_1 text-[5rem]! leading-[5rem]! font-extrabold uppercase leading-[1.05] text-4xl sm:text-5xl md:text-6xl tracking-tight">
+          <h2 className="psac-fade pl-16 sm:pl-20 text-[#f5c451] Heading_1 text-[4rem]! leading-[4rem]! font-extrabold uppercase leading-[1.05] text-4xl sm:text-5xl md:text-6xl tracking-tight">
             Present
             
             Across the
@@ -147,7 +147,7 @@ export default function PresentAcrossCountry() {
             <div key={stat.id} className="psac-fade">
               <p
                 ref={(el) => (numberRefs.current[i] = el)}
-                className="text-[#f5c451] font-extrabold text-6xl sm:text-[5rem]! leading-none"
+                className="text-[#f5c451] font-extrabold text-6xl sm:text-[4rem]! leading-none"
               >
                 0{stat.suffix}
               </p>

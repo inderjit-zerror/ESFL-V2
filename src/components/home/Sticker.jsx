@@ -360,7 +360,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
       >
         <div
           ref={panelRef}
-          className="relative   overflow-y-auto rounded-2xl bg-[#fdf6ec] "
+          className="relative   rounded-2xl "
         >
           <button
             type="button"
