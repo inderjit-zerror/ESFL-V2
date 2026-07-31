@@ -905,7 +905,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
               <button
                 type="button"
                 onClick={closePopup}
-                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 w-10 h-10 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+                className="absolute top-3 right-3 sm:top-4 sm:right-30 z-10 w-10 h-10 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
                 aria-label="Close"
               >
                 ✕
