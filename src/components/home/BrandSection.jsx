@@ -30,16 +30,16 @@ export default function BrandSection({
 }) {
   return (
     <section
-      className={`${bgColor} ${className} w-full h-svh overflow-hidden flex justify-center items-center `}
+      className={`${bgColor} ${className} w-full min-h-svh md:h-svh overflow-hidden flex justify-center items-center py-10 md:py-0`}
     >
       <div
-        className={`mx-auto grid h-fit pr-10 py-5  grid-cols-2 ${
+        className={`mx-auto grid h-fit w-full px-5 sm:px-8 md:px-0 md:pr-10 py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 ${
           reverse ? "md:[&>*:first-child]:order-2" : ""
-        } max-md:grid-cols-1`}
+        }`}
       >
         {/* Left Content */}
-        <div className="flex items-center py-20  pl-10">
-          <div className="max-w-[90%]">
+        <div className="flex items-center py-6 md:py-20 md:pl-10">
+          <div className="max-w-full md:max-w-[90%]">
 
             <h2
               className={`Heading_1 HNM_FONT ${titleColor} uppercase`}
@@ -54,7 +54,7 @@ export default function BrandSection({
             </p>
 
             <p
-              className={`Paragraph_Medium mt-14 HNR_FONT whitespace-pre-line ${textColor}`}
+              className={`Paragraph_Medium mt-6 md:mt-14 HNR_FONT whitespace-pre-line ${textColor}`}
             >
               {description}
             </p>
@@ -68,7 +68,7 @@ export default function BrandSection({
             <div
               
               onClick={onButtonClick}
-              className={` mt-12 `}
+              className={` mt-8 md:mt-12 `}
             >
             <BTN txt={buttonText} variant={V}/>
               
@@ -78,7 +78,7 @@ export default function BrandSection({
         </div>
 
         {/* Right Image */}
-        <div className="relative h-[75vh] group overflow-hidden mt-[10vh]  ">
+        <div className="relative h-[45vh] sm:h-[55vh] md:h-[75vh] group overflow-hidden mt-0 md:mt-[10vh]  ">
 
           <Image
             src={heroImage}
@@ -93,7 +93,7 @@ export default function BrandSection({
               alt="logo"
               width={140}
               height={80}
-              className="absolute right-8 top-8 z-10 object-contain"
+              className="absolute right-4 top-4 md:right-8 md:top-8 z-10 w-[90px] md:w-[140px] h-auto object-contain"
             />
           )}
         </div>

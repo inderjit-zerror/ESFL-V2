@@ -122,7 +122,7 @@ function ChatPill({ className = "" }) {
       >
         {/* radar ping ring behind the pill */}
         <span
-          className="absolute inset-0 rounded-full bg-[#25D366]  opacity-60 animate-ping"
+          className="absolute inset-0 rounded-full bg-[#25D366] opacity-60 animate-ping"
           aria-hidden="true"
         />
 
@@ -142,6 +142,7 @@ function ChatPill({ className = "" }) {
     </>
   );
 }
+
 export default function CompoContact() {
   const rootRef = useRef(null);
   const [form, setForm] = useState({
@@ -193,64 +194,65 @@ export default function CompoContact() {
       style={{ fontFamily: "'Work Sans', ui-sans-serif, system-ui" }}
     >
       <section className="relative overflow-hidden">
-        <div className="relative h-svh">
+        <div className="relative h-svh min-h-[600px]">
           <img
             src="https://images.unsplash.com/photo-1758520145090-581ad6571c30?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="A Ram Bandhu customer care executive taking a call"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center"
           />
 
           <div className="absolute inset-0 bg-black/40" />
 
-          <div className="absolute w-full h-full top-0 text-white left-0 inset-x-0  px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center">
-            <h1 className="Heading_1 text-center  text-[5rem]! leading-[5rem]!">
+          <div className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
+            <h1 className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
               Contact
             </h1>
-            <p className="text-center max-w-[600px] mx-auto MNM_FONT">
-              Let’s Build Something Meaningful Together.  Whether it’s a
-              partnership, enquiry, or collaboration, we’d love to hear from
-              you.
+            <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4">
+              Let’s Build Something Meaningful Together.<br className="hidden sm:block" />
+              Whether it’s a partnership, enquiry, or collaboration, we’d love to hear from you.
             </p>
           </div>
-           <ScrollDownIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" />
+          <ScrollDownIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" />
         </div>
       </section>
 
       <OfficeInfoMap />
 
-      <section className="mx-auto h-svh px-6 pb-16 sm:px-10 sm:py-24">
-        <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-6">
+      {/* Replaced 'h-svh' with natural padding to avoid mobile overflow issues */}
+      <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-8 sm:py-24 lg:px-10">
+        <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
+          
           {/* Reach us at */}
-          <div className="reveal-block rounded-3xl bg-[#FFC55C] p-8 text-[#D42E12] sm:p-10">
-            <h2 className="text-xl font-bold sm:text-2xl Heading_1">
+          <div className="reveal-block rounded-3xl bg-[#FFC55C] p-6 sm:p-10 text-[#D42E12] flex flex-col justify-center">
+            <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
               Reach Us At
             </h2>
-            <div className="mt-6 space-y-4 text-sm sm:text-base">
+            <div className="mt-8 space-y-6 text-sm sm:text-base">
               <div>
-                <p className="text-[#D42E12] font-semibold! text-xs Paragraph_Medium  uppercase tracking-[0.2em]">
+                <p className="text-[#D42E12] font-semibold text-xs Paragraph_Medium uppercase tracking-[0.2em]">
                   Customer Care Number
                 </p>
                 <a
                   href="tel:8805580055"
-                  className="mt-1 inline-block text-black font-semibold! Paragraph_Medium  hover:underline"
+                  className="mt-1.5 inline-block text-black font-semibold Paragraph_Medium hover:underline text-lg sm:text-xl"
                 >
                   88055 80055
                 </a>
               </div>
-              <div className="font-semibold! Paragraph_Medium">
-                <p className="text-[#D42E12]  uppercase tracking-[0.2em]">
+              <div className="font-semibold Paragraph_Medium">
+                <p className="text-[#D42E12] text-xs uppercase tracking-[0.2em]">
                   Customer Care Email
                 </p>
                 <a
                   href="mailto:customercare@esfl.co.in"
-                  className="mt-1 inline-block text-black     hover:underline "
+                  className="mt-1.5 inline-block text-black hover:underline text-lg sm:text-xl"
                 >
                   customercare@esfl.co.in
                 </a>
               </div>
             </div>
 
-            <p className="mt-5 text-xs  text-[#D42E12] font-semibold! Paragraph_Medium">
+            <p className="mt-10 text-xs text-[#D42E12] font-semibold Paragraph_Medium">
               Our team responds within one business day.
             </p>
           </div>
@@ -275,8 +277,8 @@ export default function CompoContact() {
           </div>
 
           {/* Submit query form */}
-          <div className="reveal-block rounded-3xl border border-[#E8D9C3] bg-white p-8 sm:p-10">
-            <h2 className="text-xl font-bold sm:text-2xl Heading_1">
+          <div className="reveal-block rounded-3xl border border-[#E8D9C3] bg-white p-6 sm:p-10">
+            <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
               Submit Your Query
             </h2>
 
@@ -286,8 +288,8 @@ export default function CompoContact() {
                 shortly.
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-6 space-y-4 ">
-                <div className="grid gap-4 sm:grid-cols-2">
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <label className="block">
                     <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
                       First Name
@@ -297,7 +299,7 @@ export default function CompoContact() {
                       required
                       value={form.firstName}
                       onChange={handleChange("firstName")}
-                      className="mt-1.5 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
                       placeholder="Asha"
                     />
                   </label>
@@ -309,7 +311,7 @@ export default function CompoContact() {
                       type="text"
                       value={form.lastName}
                       onChange={handleChange("lastName")}
-                      className="mt-1.5 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
                       placeholder="Patil"
                     />
                   </label>
@@ -324,7 +326,7 @@ export default function CompoContact() {
                     required
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    className="mt-1.5 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
                     placeholder="98xxxxxxxx"
                   />
                 </label>
@@ -338,7 +340,7 @@ export default function CompoContact() {
                     required
                     value={form.email}
                     onChange={handleChange("email")}
-                    className="mt-1.5 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
                     placeholder="you@email.com"
                   />
                 </label>
@@ -352,13 +354,14 @@ export default function CompoContact() {
                     rows={4}
                     value={form.message}
                     onChange={handleChange("message")}
-                    className="mt-1.5 w-full resize-none rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-2.5 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full resize-none rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
                     placeholder="How can we help?"
                   />
                 </label>
-               
-                  <BTN txt={`Sending`} />
-               
+                
+                <div className="pt-2">
+                  <BTN txt={status === "sending" ? "Sending..." : "Submit"} />
+                </div>
               </form>
             )}
           </div>

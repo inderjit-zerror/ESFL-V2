@@ -17,10 +17,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#D42E12] text-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
         {/* Top row: brand + socials, separated from the link grid */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 py-8 border-b border-white/15">
-          <div className="w-[100px]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 py-6 sm:py-8 border-b border-white/15">
+          <div className="w-[84px] sm:w-[100px]">
             <img
               src="/images/nav/logo.png"
               alt="Empire Spices & Foods Ltd."
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Main grid: tagline on its own, links separated by hairline rules on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-8 sm:gap-y-10 py-10 sm:py-14">
           <div className="md:col-span-4 md:pr-8">
             <p className="Paragraph_Small text-white/90 max-w-xs leading-relaxed">
               Empire Spices &amp; Foods Ltd. is committed to bringing
@@ -90,52 +90,54 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
-            <h3 className="text-xs font-bold tracking-widest text-white/90 mb-4">
-              SITEMAP
-            </h3>
-            <ul className="space-y-2">
-              {sitemapLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="Paragraph_Small hover:underline"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="grid grid-cols-2 gap-x-6 md:contents">
+            <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
+              <h3 className="text-xs font-bold tracking-widest text-white/90 mb-4">
+                SITEMAP
+              </h3>
+              <ul className="space-y-2">
+                {sitemapLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="Paragraph_Small hover:underline"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
+              <h3 className="text-xs font-bold tracking-widest text-white/90 mb-4">
+                SUPPORT
+              </h3>
+              <ul className="space-y-2">
+                {supportLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="Paragraph_Small hover:underline"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
-            <h3 className="text-xs font-bold tracking-widest text-white/90 mb-4">
-              SUPPORT
-            </h3>
-            <ul className="space-y-2">
-              {supportLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="Paragraph_Small hover:underline"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="md:col-span-4 md:pl-8 md:border-l md:border-white/15">
+          <div className="mt-2 md:mt-0 md:col-span-4 md:pl-8 md:border-l md:border-white/15">
             <h3 className="text-xs font-bold tracking-widest text-white/90 mb-4">
               CUSTOMER CARE
             </h3>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <a
                   href="mailto:care@esfl.co.in"
-                  className="Paragraph_Small hover:underline"
+                  className="Paragraph_Small hover:underline break-all"
                 >
                   care@esfl.co.in
                 </a>
@@ -169,8 +171,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/15 py-6 flex justify-center items-center">
-          <p className="Paragraph_Small text-white/80 text-center sm:text-left ">
+        <div className="border-t border-white/15 py-5 sm:py-6 flex justify-center items-center px-2">
+          <p className="Paragraph_Small text-white/80 text-center">
             © 2026 Empire Spices &amp; Foods Ltd. All rights reserved. ·
             esfl.co.in
           </p>

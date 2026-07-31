@@ -94,7 +94,7 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[85vh] overflow-hidden bg-[#d8300f] px-0 py-20 flex  "
+      className="relative min-h-[85vh] lg:h-[85vh] overflow-hidden bg-[#d8300f] px-0 py-16 sm:py-20 flex  "
     >
      
 
@@ -123,7 +123,7 @@ export default function PresentAcrossCountry() {
             />
           </div> */}
 
-          <h2 className="psac-fade pl-16 sm:pl-20 text-[#f5c451] Heading_1 text-[4rem]! leading-[4rem]! font-extrabold uppercase leading-[1.05] text-4xl sm:text-5xl md:text-6xl tracking-tight">
+          <h2 className="psac-fade pl-6 sm:pl-12 md:pl-16 lg:pl-20 text-[#f5c451] Heading_1 font-extrabold uppercase leading-[1.05] text-[2.25rem]! sm:text-[2.75rem]! md:text-[3.5rem]! lg:text-[4rem]! tracking-tight">
             Present
             
             Across the
@@ -135,19 +135,19 @@ export default function PresentAcrossCountry() {
             Incessantly
           </h2>
 
-          <p className="psac-fade pl-16 sm:pl-20 Paragraph_Medium MNR_FONT mt-6  text-xs sm:text-sm font-semibold text-white/90 leading-relaxed">
+          <p className="psac-fade pl-6 sm:pl-12 md:pl-16 lg:pl-20 Paragraph_Medium MNR_FONT mt-6  text-xs sm:text-sm font-semibold text-white/90 leading-relaxed max-w-[90%] sm:max-w-none">
             ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
             Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
           </p>
         </div>
 
         {/* Right: stats grid */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 Heading_1 mt-auto pb-[22vh] mx-auto">
+        <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-8 sm:gap-y-10 Heading_1 mt-auto px-6 lg:px-0 pb-10 sm:pb-14 lg:pb-[22vh] mx-auto">
           {stats.map((stat, i) => (
             <div key={stat.id} className="psac-fade">
               <p
                 ref={(el) => (numberRefs.current[i] = el)}
-                className="text-[#f5c451] font-extrabold text-6xl sm:text-[4rem]! leading-none"
+                className="text-[#f5c451] font-extrabold text-[2.5rem]! sm:text-[3rem]! md:text-[3.5rem]! lg:text-[4rem]! leading-none"
               >
                 0{stat.suffix}
               </p>
