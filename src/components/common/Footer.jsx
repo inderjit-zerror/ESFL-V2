@@ -20,7 +20,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 py-6 sm:py-8 border-b border-white/15">
-          <div className="w-[84px] sm:w-[100px]">
+          <div className="w-[50vw] sm:w-[180px]">
             <img
               src="/images/nav/logo.png"
               alt="Empire Spices & Foods Ltd."
@@ -28,57 +28,7 @@ export default function Footer() {
             />
           </div>
 
-          <div className="flex items-center gap-3">
-            <a
-              href="https://linkedin.com"
-              aria-label="LinkedIn"
-              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
-              </svg>
-            </a>
-            <a
-              href="https://instagram.com"
-              aria-label="Instagram"
-              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="w-4 h-4"
-              >
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
-              </svg>
-            </a>
-            <a
-              href="mailto:care@esfl.co.in"
-              aria-label="Email"
-              className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#D42E12"
-                strokeWidth="1.8"
-                className="w-4 h-4"
-              >
-                <rect x="3" y="5" width="18" height="14" rx="2" />
-                <path d="m3 7 9 6 9-6" />
-              </svg>
-            </a>
-          </div>
+         
         </div>
 
         {/* Main grid: tagline on its own, links separated by hairline rules on desktop */}
@@ -169,6 +119,58 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+         <div className="flex items-center gap-3 pb-10">
+            <a
+              href="https://linkedin.com"
+              aria-label="LinkedIn"
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              aria-label="Instagram"
+              className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                className="w-4 h-4"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" />
+              </svg>
+            </a>
+            <a
+              href="mailto:care@esfl.co.in"
+              aria-label="Email"
+              className="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-white/90 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#D42E12"
+                strokeWidth="1.8"
+                className="w-4 h-4"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </a>
+          </div>
 
         {/* Bottom bar */}
         <div className="border-t border-white/15 py-5 sm:py-6 flex justify-center items-center px-2">

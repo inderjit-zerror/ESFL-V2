@@ -148,7 +148,7 @@ export default function Building() {
         </div>
 
         {/* Heading */}
-        <h1 className="Heading_1 HNM_FONT uppercase px-2">
+        <h1 className="Heading_1 HNM_FONT uppercase px-2 max-sm:text-[2rem]! max-sm:leading-[2.1rem]!">
           Building India's <br className="hidden sm:inline" /> Trusted Food Brands.
         </h1>
 

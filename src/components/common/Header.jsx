@@ -139,16 +139,7 @@ export default function Header() {
           )}
         </nav>
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((prev) => !prev)}
-          className="relative z-10 flex h-10 w-10 items-center justify-center text-white lg:hidden"
-        >
-          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
+     
 
         {/* Logo */}
         <a
@@ -165,6 +156,17 @@ export default function Header() {
             />
           </div>
         </a>
+
+           {/* Mobile menu button */}
+        <button
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((prev) => !prev)}
+          className=" absolute right-5 z-10 flex h-10 w-10 items-center justify-center text-white lg:hidden"
+        >
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
 
         {/* Right Side (desktop) */}
         <div className="hidden items-center gap-8 lg:flex">

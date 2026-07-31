@@ -297,7 +297,7 @@ export default function LatestCampaignsAndNews() {
         </div>
 
         {/* Campaigns */}
-        <div className="mb-20">
+        <div className=" mb-5 sm:mb-20">
           <h3 className="Paragraph_Medium text-[1.5rem]! DD_Font w-fit flex translate-y-[280%] text-neutral-900 mb-6">
             CAMPAIGNS
           </h3>
@@ -337,7 +337,7 @@ export default function LatestCampaignsAndNews() {
         </div>
 
         {/* In the news */}
-        <div>
+        <div className="mb-10">
           <h3 className="Paragraph_Medium DD_Font text-[1.5rem]! flex translate-y-[280%] text-neutral-900 mb-6">
             IN THE NEWS
           </h3>

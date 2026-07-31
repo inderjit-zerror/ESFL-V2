@@ -826,13 +826,9 @@ const Sticker = () => {
           className="static md:sticky md:top-0 md:left-0 DIVC-1"
           title="RAM BANDHU"
           subtitle="Ground & blended spices"
-          description={`Ram Bandhu has been a trusted name in Indian kitchens for
-over 32 years, offering a wide range of spices, pickles,
-papads, hing, spice mixes, and snacks.
+          description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
 
-Built on quality, trust, and continuous innovation, the brand
-creates products that suit the evolving tastes and lifestyles
-of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
+Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
           highlight={`Experience gastronomic ecstasy with
 Ram Bandhu – Aapka Taste Partner!`}
           buttonText="View Range"
@@ -895,7 +891,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
       >
         <div
           ref={panelRef}
-          className="relative rounded-2xl w-full max-w-[95vw] sm:max-w-[90vw] md:max-w-6xl max-h-[90svh] overflow-y-auto"
+          className="relative rounded-2xl w-fit max-w-[95vw] sm:max-w-[90vw] md:max-w-6xl max-h-[90svh"
         >
           {/* Close button now renders together with the content, so it
               actually unmounts (instead of just fading) once the popup
@@ -905,7 +901,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
               <button
                 type="button"
                 onClick={closePopup}
-                className="absolute top-3 right-3 sm:top-4 sm:right-30 z-10 w-10 h-10 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+                className="absolute top-3 right-3 sm:top-4 sm:right-5 z-10 w-10 h-10 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
                 aria-label="Close"
               >
                 ✕

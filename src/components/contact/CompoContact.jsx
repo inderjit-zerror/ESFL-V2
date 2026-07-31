@@ -193,8 +193,8 @@ export default function CompoContact() {
       className="w-full bg-[#FDF6EC] text-[#2B1B12]"
       style={{ fontFamily: "'Work Sans', ui-sans-serif, system-ui" }}
     >
-      <section className="relative overflow-hidden">
-        <div className="relative h-svh min-h-[600px]">
+      <section className="relative  overflow-hidden">
+        <div className="relative aspect-square w-full sm:h-svh ">
           <img
             src="https://images.unsplash.com/photo-1758520145090-581ad6571c30?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="A Ram Bandhu customer care executive taking a call"
@@ -212,7 +212,7 @@ export default function CompoContact() {
               Whether it’s a partnership, enquiry, or collaboration, we’d love to hear from you.
             </p>
           </div>
-          <ScrollDownIndicator className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" />
+          <ScrollDownIndicator className="absolute bottom-8 left-1/2 max-sm:hidden -translate-x-1/2 z-10" />
         </div>
       </section>
 
