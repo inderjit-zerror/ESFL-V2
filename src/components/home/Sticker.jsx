@@ -1,5 +1,3 @@
-
-
 // "use client";
 // import React, { useEffect, useRef, useState } from "react";
 // import BrandSection from "./BrandSection";
@@ -184,7 +182,7 @@
 //           className=" absolute top-[110%] left-0 BrandSection2"
 //           title="Temptin'"
 //           subtitle="Ground & blended spices"
-//           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
+//           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it.
 
 // Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
 //           highlight={``}
@@ -205,7 +203,7 @@
 //           className=" absolute top-[110%] left-0 BrandSection3 z-99"
 //           title="RBM"
 //           subtitle="Premium blends & beverage mixes"
-//           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
+//           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.
 
 //  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
 //           highlight={``}
@@ -357,7 +355,7 @@
 // //           className=" absolute top-[110%] left-0 BrandSection2"
 // //           title="Temptin'"
 // //           subtitle="Ground & blended spices"
-// //           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
+// //           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it.
 
 // // Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
 // //           highlight={``}
@@ -378,7 +376,7 @@
 // //           className=" absolute top-[110%] left-0 BrandSection3 z-99"
 // //           title="RBM"
 // //           subtitle="Premium blends & beverage mixes"
-// //           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
+// //           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.
 
 // //  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
 // //           highlight={``}
@@ -576,7 +574,7 @@
 //           className=" absolute top-[110%] left-0 BrandSection2"
 //           title="Temptin'"
 //           subtitle="Ground & blended spices"
-//           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
+//           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it.
 
 // Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
 //           highlight={``}
@@ -597,7 +595,7 @@
 //           className=" absolute top-[110%] left-0 BrandSection3 z-99"
 //           title="RBM"
 //           subtitle="Premium blends & beverage mixes"
-//           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
+//           description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.
 
 //  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
 //           highlight={``}
@@ -661,13 +659,29 @@ const RAMBANDHU_POPUP = {
   logo: "/images/home/RamBandhuLogo.png",
   accentColor: "#c8102e",
   categories: [
-    { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/NewRM.png" },
-    { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/NewRM.png" },
-    { id: "signature-products", name: "SIGNATURE PRODUCTS", image: "/images/home/NewRM.png" },
+    {
+      id: "ground-spices",
+      name: "GROUND SPICES",
+      image: "/images/home/NewRM.png",
+    },
+    {
+      id: "blended-spices",
+      name: "BLENDED SPICES",
+      image: "/images/home/NewRM.png",
+    },
+    {
+      id: "signature-products",
+      name: "SIGNATURE PRODUCTS",
+      image: "/images/home/NewRM.png",
+    },
     { id: "pickles", name: "PICKLES", image: "/images/home/NewRM.png" },
     { id: "papads", name: "PAPADS", image: "/images/home/NewRM.png" },
     { id: "jams", name: "JAMS", image: "/images/home/NewRM.png" },
-    { id: "beverage-mixes", name: "BEVERAGE MIXES", image: "/images/home/NewRM.png" },
+    {
+      id: "beverage-mixes",
+      name: "BEVERAGE MIXES",
+      image: "/images/home/NewRM.png",
+    },
     { id: "spice-mixes", name: "SPICE MIXES", image: "/images/home/NewRM.png" },
     { id: "snacks", name: "SNACKS", image: "/images/home/NewRM.png" },
   ],
@@ -681,7 +695,11 @@ const TEMPTIN_POPUP = {
     { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
     { id: "dips", name: "DIPS", image: "/images/home/NEWTEM.png" },
     { id: "chutneys", name: "CHUTNEYS", image: "/images/home/NEWTEM.png" },
-    { id: "chinese-spices", name: "CHINESE SPICES", image: "/images/home/NEWTEM.png" },
+    {
+      id: "chinese-spices",
+      name: "CHINESE SPICES",
+      image: "/images/home/NEWTEM.png",
+    },
   ],
 };
 
@@ -689,10 +707,26 @@ const RBM_POPUP = {
   logo: "/images/home/RBMLogo.png",
   accentColor: "#B32727",
   categories: [
-    { id: "meat-masala", name: "MEAT MASALA", image: "/images/home/NewRBM.png" },
-    { id: "chicken-masala", name: "CHICKEN MASALA", image: "/images/home/NewRBM.png" },
-    { id: "mutton-biryani-mix", name: "MUTTON BIRYANI MIX", image: "/images/home/NewRBM.png" },
-    { id: "chicken-gravy", name: "CHICKEN GRAVY", image: "/images/home/NewRBM.png" },
+    {
+      id: "meat-masala",
+      name: "MEAT MASALA",
+      image: "/images/home/NewRBM.png",
+    },
+    {
+      id: "chicken-masala",
+      name: "CHICKEN MASALA",
+      image: "/images/home/NewRBM.png",
+    },
+    {
+      id: "mutton-biryani-mix",
+      name: "MUTTON BIRYANI MIX",
+      image: "/images/home/NewRBM.png",
+    },
+    {
+      id: "chicken-gravy",
+      name: "CHICKEN GRAVY",
+      image: "/images/home/NewRBM.png",
+    },
   ],
 };
 // -----------------------------------------------------------------------
@@ -813,20 +847,20 @@ const Sticker = () => {
     activePopup === "RAMBANDHU"
       ? RAMBANDHU_POPUP
       : activePopup === "TEMPTIN"
-      ? TEMPTIN_POPUP
-      : activePopup === "RBM"
-      ? RBM_POPUP
-      : null;
+        ? TEMPTIN_POPUP
+        : activePopup === "RBM"
+          ? RBM_POPUP
+          : null;
 
   return (
     <div className="w-full h-auto md:h-[200svh] relative flex StickeyHeroContMAin1">
       <div className="w-full h-auto md:h-svh flex flex-col md:flex-row md:sticky md:top-0 md:left-0">
         <BrandSection
-          V={'B2'}
+          V={"B2"}
           className="static md:sticky md:top-0 md:left-0 DIVC-1"
           title="RAM BANDHU"
-          subtitle="Ground & blended spices"
-          description={`Ram Bandhu Ground & blended spices will become Ram Bandhu Aapka Taste Partner, Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
+          subtitle="Ram Bandhu Aapka Taste Partner."
+          description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
 
 Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
           highlight={``}
@@ -837,7 +871,7 @@ Built on quality, trust, and continuous innovation, the brand creates products t
         />
 
         <BrandSection
-          V={'B1'}
+          V={"B1"}
           bgColor="bg-white"
           textColor="text-[#D42E12]"
           titleColor="text-[#C3071C]"
@@ -846,8 +880,8 @@ Built on quality, trust, and continuous innovation, the brand creates products t
           buttonTextColor="text-[white]"
           className="static md:absolute md:top-[110%] md:left-0 BrandSection2"
           title="Temptin'"
-          subtitle="Ground & blended spices"
-          description={` Temptin' Ground & blended spices will become Temptin' Taste Mein Twist, and The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
+          subtitle="Temptin' Taste Mein Twist and ...."
+          description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
 
 Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
           highlight={``}
@@ -858,7 +892,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
         />
 
         <BrandSection
-          V={'B2'}
+          V={"B2"}
           bgColor="bg-[#D52E12]"
           textColor="text-[white]"
           titleColor="text-[#FFC55C]"
@@ -867,8 +901,8 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           buttonTextColor="text-[#B32727]"
           className="static md:absolute md:top-[110%] md:left-0 BrandSection3 md:z-[99]"
           title="RBM"
-          subtitle="Premium blends & beverage mixes"
-          description={`RBM Premium blends & beverage mixes will become RBM Sarvottam Masale, RBM Masale Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
+          subtitle="RBM Sarvottam Masale, RBM Masale"
+          description={`Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
 
  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
           highlight={``}
