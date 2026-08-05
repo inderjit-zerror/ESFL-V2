@@ -223,36 +223,36 @@ export default function CompoContact() {
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
           
           {/* Reach us at */}
-          <div className="reveal-block rounded-3xl bg-[#FFC55C] p-6 sm:p-10 text-[#D42E12] flex flex-col justify-center">
+          <div className="reveal-block rounded-3xl bg-[#D8300F] p-6 sm:p-10 text-[white] flex flex-col justify-center">
             <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
               Reach Us At
             </h2>
             <div className="mt-8 space-y-6 text-sm sm:text-base">
               <div>
-                <p className="text-[#D42E12] font-semibold text-xs Paragraph_Medium uppercase tracking-[0.2em]">
+                <p className="text-[white] font-semibold text-xs Paragraph_Medium uppercase tracking-[0.2em]">
                   Customer Care Number
                 </p>
                 <a
                   href="tel:8805580055"
-                  className="mt-1.5 inline-block text-black font-semibold Paragraph_Medium hover:underline text-lg sm:text-xl"
+                  className="mt-1.5 inline-block text-[white] font-semibold Paragraph_Medium hover:underline text-lg sm:text-xl"
                 >
                   88055 80055
                 </a>
               </div>
               <div className="font-semibold Paragraph_Medium">
-                <p className="text-[#D42E12] text-xs uppercase tracking-[0.2em]">
+                <p className="text-[white] text-xs uppercase tracking-[0.2em]">
                   Customer Care Email
                 </p>
                 <a
                   href="mailto:customercare@esfl.co.in"
-                  className="mt-1.5 inline-block text-black hover:underline text-lg sm:text-xl"
+                  className="mt-1.5 inline-block text-white hover:underline text-lg sm:text-xl"
                 >
                   customercare@esfl.co.in
                 </a>
               </div>
             </div>
 
-            <p className="mt-10 text-xs text-[#D42E12] font-semibold Paragraph_Medium">
+            <p className="mt-10 text-xs text-[white]/50 font-semibold Paragraph_Medium">
               Our team responds within one business day.
             </p>
           </div>

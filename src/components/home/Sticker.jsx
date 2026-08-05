@@ -826,11 +826,10 @@ const Sticker = () => {
           className="static md:sticky md:top-0 md:left-0 DIVC-1"
           title="RAM BANDHU"
           subtitle="Ground & blended spices"
-          description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
+          description={`Ram Bandhu Ground & blended spices will become Ram Bandhu Aapka Taste Partner, Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
 
 Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
-          highlight={`Experience gastronomic ecstasy with
-Ram Bandhu – Aapka Taste Partner!`}
+          highlight={``}
           buttonText="View Range"
           heroImage="/images/home/RamBandhu.jpg"
           logo="/images/home/RamBandhuLogo.png"
@@ -839,7 +838,7 @@ Ram Bandhu – Aapka Taste Partner!`}
 
         <BrandSection
           V={'B1'}
-          bgColor="bg-[#FFC55C]"
+          bgColor="bg-white"
           textColor="text-[#D42E12]"
           titleColor="text-[#C3071C]"
           highlightColor="text-[#FFBE55]"
@@ -848,7 +847,7 @@ Ram Bandhu – Aapka Taste Partner!`}
           className="static md:absolute md:top-[110%] md:left-0 BrandSection2"
           title="Temptin'"
           subtitle="Ground & blended spices"
-          description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
+          description={` Temptin' Ground & blended spices will become Temptin' Taste Mein Twist, and The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
 
 Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
           highlight={``}
@@ -860,7 +859,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
 
         <BrandSection
           V={'B2'}
-          bgColor="bg-[#641409]"
+          bgColor="bg-[#D52E12]"
           textColor="text-[white]"
           titleColor="text-[#FFC55C]"
           highlightColor="text-[white]"
@@ -869,7 +868,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           className="static md:absolute md:top-[110%] md:left-0 BrandSection3 md:z-[99]"
           title="RBM"
           subtitle="Premium blends & beverage mixes"
-          description={`RBM stands for ‘Ram Bandhu Masale’. Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
+          description={`RBM Premium blends & beverage mixes will become RBM Sarvottam Masale, RBM Masale Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
 
  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
           highlight={``}

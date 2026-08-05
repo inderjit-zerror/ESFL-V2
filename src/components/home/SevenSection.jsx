@@ -266,7 +266,7 @@ const SevenSection = () => {
 
   return (
     <div className="w-full h-fit flex flex-col overflow-hidden  ">
-      <div className="w-full h-fit flex flex-col bg-[#F5C451] text-white py-[4vw] max-md:pt-[50px] justify-center items-center pb-10">
+      <div className="w-full h-fit flex flex-col bg-[#f2f2f2] text-white py-[4vw] max-md:pt-[50px] justify-center items-center pb-10">
         {/* SubText */}
         {/* <div className="w-full h-fit Paragraph_Medium MNM_FONT  text-[#D8300F] flex justify-center items-center  ">
           

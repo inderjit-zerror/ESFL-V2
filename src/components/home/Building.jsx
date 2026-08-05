@@ -102,9 +102,16 @@ export default function Building() {
   return (
     <section
       ref={sectionRef}
-      onMouseMove={handleMouseMove}
-      className="relative flex min-h-[60svh] w-full mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
+      // onMouseMove={handleMouseMove}
+      className="relative flex min-h-[60svh] bg w-full mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
     >
+
+       <img
+  src="/images/home/PP.png"
+  alt="img"
+  className="absolute -bottom-20 right-0 rotate-180  w-full "
+/>
+
       {/* Mouse trail images */}
       {trail.map((item) => (
         <div
@@ -132,6 +139,8 @@ export default function Building() {
           />
         </div>
       ))}
+
+     
 
       {/* Content */}
       <div
@@ -164,6 +173,8 @@ export default function Building() {
           <BTN txt={`Know More`} variant="B1" />
           <BTN txt={`Become Channel Partner`} variant="B2" />
         </div>
+
+
       </div>
     </section>
   );

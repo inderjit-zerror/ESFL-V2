@@ -45,22 +45,22 @@ const INFO_ROWS = [
 
 function RowBlock({ label, rows, lines, isLast }) {
   return (
-    <div className={isLast ? "" : "border-b border-[#2B1B12]/15 pb-6"}>
+    <div className={isLast ? "" : "border-b border-[white]/15 pb-6"}>
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-4 sm:gap-8">
-        <h3 className="text-base font-extrabold uppercase tracking-tight text-[#C8102E] sm:text-lg">
+        <h3 className="text-base font-extrabold uppercase tracking-tight text-[white] sm:text-lg">
           {label}
         </h3>
 
-        <div className="relative text-right text-[13px] leading-relaxed text-[#2B1B12]/80 sm:text-sm">
+        <div className="relative text-right text-[13px] leading-relaxed text-[white]/80 sm:text-sm">
           <span
-            className="absolute -right-2.5 -top-1 h-1.5 w-1.5 rounded-full bg-[#C8102E]"
+            className="absolute -right-2.5 -top-1 h-1.5 w-1.5 rounded-full bg-[white]"
             aria-hidden="true"
           />
           {rows
             ? rows.map((r) => (
                 <p key={r.k} className="flex flex-col sm:block sm:whitespace-nowrap">
                   <span className="mr-0 sm:mr-3">{r.k}</span>
-                  <span className="font-medium text-[#2B1B12]">{r.v}</span>
+                  <span className="font-medium text-[white]">{r.v}</span>
                 </p>
               ))
             : lines.map((l) => <p key={l}>{l}</p>)}
@@ -106,7 +106,7 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid overflow-hidden h-auto lg:h-screen bg-[#FFC55C] lg:grid-cols-2"
+      className="grid overflow-hidden h-auto lg:h-screen bg-[#D8300F] lg:grid-cols-2"
     >
       {/* Map — left on desktop, bottom on mobile */}
       <div className="oi-map relative min-h-[280px] sm:min-h-[360px] lg:min-h-[640px] order-last lg:order-first">
