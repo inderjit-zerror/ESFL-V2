@@ -103,7 +103,7 @@ export default function Building() {
     <section
       ref={sectionRef}
       // onMouseMove={handleMouseMove}
-      className="relative flex min-h-[60svh] bg w-full mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
+      className="relative flex min-h-[60svh] bg w-full bg-white mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
     >
 
        <img
@@ -151,7 +151,7 @@ export default function Building() {
       >
         {/* Top Text */}
         <div className="mb-4 flex items-center gap-3 px-4">
-          <span className="Paragraph_Small uppercase HNR_FONT text-[#D9472B]">
+          <span className="Paragraph_Small uppercase HNR_FONT text-[#E70514]">
             Winning the hearts of our consumers since 1994
           </span>
         </div>

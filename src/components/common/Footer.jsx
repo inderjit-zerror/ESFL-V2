@@ -16,7 +16,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#D42E12] text-white">
+    <footer className="bg-[#E70514] text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 py-6 sm:py-8 border-b border-white/15">
@@ -162,7 +162,7 @@ export default function Footer() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#D42E12"
+                stroke="#E70514"
                 strokeWidth="1.8"
                 className="w-4 h-4"
               >

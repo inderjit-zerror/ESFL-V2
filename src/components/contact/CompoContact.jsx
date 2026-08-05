@@ -223,7 +223,7 @@ export default function CompoContact() {
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
           
           {/* Reach us at */}
-          <div className="reveal-block rounded-3xl bg-[#D8300F] p-6 sm:p-10 text-[white] flex flex-col justify-center">
+          <div className="reveal-block rounded-3xl bg-[#E70514] p-6 sm:p-10 text-[white] flex flex-col justify-center">
             <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
               Reach Us At
             </h2>
@@ -262,7 +262,7 @@ export default function CompoContact() {
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:flex"
             aria-hidden="true"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-[#C8102E]/50 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#C8102E]">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-[#E70514]/50 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E70514]">
               Or
             </div>
           </div>
@@ -270,7 +270,7 @@ export default function CompoContact() {
           {/* Mobile OR divider */}
           <div className="flex items-center gap-3 lg:hidden" aria-hidden="true">
             <span className="h-px flex-1 bg-[#E8D9C3]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C8102E]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#E70514]">
               Or
             </span>
             <span className="h-px flex-1 bg-[#E8D9C3]" />
@@ -299,7 +299,7 @@ export default function CompoContact() {
                       required
                       value={form.firstName}
                       onChange={handleChange("firstName")}
-                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
                       placeholder="Asha"
                     />
                   </label>
@@ -311,7 +311,7 @@ export default function CompoContact() {
                       type="text"
                       value={form.lastName}
                       onChange={handleChange("lastName")}
-                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
                       placeholder="Patil"
                     />
                   </label>
@@ -326,7 +326,7 @@ export default function CompoContact() {
                     required
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
                     placeholder="98xxxxxxxx"
                   />
                 </label>
@@ -340,7 +340,7 @@ export default function CompoContact() {
                     required
                     value={form.email}
                     onChange={handleChange("email")}
-                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
                     placeholder="you@email.com"
                   />
                 </label>
@@ -354,7 +354,7 @@ export default function CompoContact() {
                     rows={4}
                     value={form.message}
                     onChange={handleChange("message")}
-                    className="mt-2 w-full resize-none rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#C8102E]"
+                    className="mt-2 w-full resize-none rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
                     placeholder="How can we help?"
                   />
                 </label>

@@ -159,7 +159,7 @@
 //       <div className="px-4 sm:px-10 mx-auto w-full max-w-5xl">
 //         {/* Header */}
 //         <div className="rb-header">
-//           <h2 className="Heading_1 HNM_FONT text-[#c8102e] tracking-tight">
+//           <h2 className="Heading_1 HNM_FONT text-[#E70514] tracking-tight">
 //             RAM BANDHU
 //           </h2>
 //           <p className="mt-1 Paragraph_Medium text-neutral-700">
@@ -179,7 +179,7 @@
 //                 onClick={(e) => handlePillClick(cat, e.currentTarget)}
 //                 className={`rounded-full px-4 py-2 Paragraph_Small tracking-wide transition-colors ${
 //                   isActive
-//                     ? "bg-[#c8102e] text-white"
+//                     ? "bg-[#E70514] text-white"
 //                     : "bg-[#f6cfa1] text-[#7a4a1e] hover:bg-[#f0bd85]"
 //                 }`}
 //               >
@@ -427,7 +427,7 @@ export default function RamBandhuCategory() {
       <div className="px-4 sm:px-10 mx-auto w-full max-w-5xl">
         {/* Header */}
         <div className="rb-header">
-          <h2 className="Heading_1 HNM_FONT text-[#c8102e] tracking-tight">
+          <h2 className="Heading_1 HNM_FONT text-[#E70514] tracking-tight">
             RAM BANDHU
           </h2>
           <p className="mt-1 Paragraph_Medium text-neutral-700">
@@ -442,7 +442,7 @@ export default function RamBandhuCategory() {
             type="button"
             onClick={handlePrev}
             aria-label="Previous category"
-            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#c8102e] text-[#c8102e] flex items-center justify-center hover:bg-[#c8102e] hover:text-white transition-colors"
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E70514] text-[#E70514] flex items-center justify-center hover:bg-[#E70514] hover:text-white transition-colors"
           >
             <ArrowIcon direction="left" />
           </button>
@@ -450,7 +450,7 @@ export default function RamBandhuCategory() {
           {/* Box: title + tiles */}
           <div
             ref={boxRef}
-            className="flex-1 min-w-0 rounded-3xl border-2 border-[#c8102e]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
+            className="flex-1 min-w-0 rounded-3xl border-2 border-[#E70514]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
           >
             <div className="overflow-hidden">
               <h3
@@ -485,7 +485,7 @@ export default function RamBandhuCategory() {
             type="button"
             onClick={handleNext}
             aria-label="Next category"
-            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#c8102e] text-[#c8102e] flex items-center justify-center hover:bg-[#c8102e] hover:text-white transition-colors"
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E70514] text-[#E70514] flex items-center justify-center hover:bg-[#E70514] hover:text-white transition-colors"
           >
             <ArrowIcon direction="right" />
           </button>
@@ -501,8 +501,8 @@ export default function RamBandhuCategory() {
               aria-label={`Go to ${cat}`}
               className={`h-2.5 rounded-full transition-all ${
                 i === activeIndex
-                  ? "w-6 bg-[#c8102e]"
-                  : "w-2.5 bg-[#c8102e]/25 hover:bg-[#c8102e]/50"
+                  ? "w-6 bg-[#E70514]"
+                  : "w-2.5 bg-[#E70514]/25 hover:bg-[#E70514]/50"
               }`}
             />
           ))}

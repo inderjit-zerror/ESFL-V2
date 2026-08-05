@@ -94,7 +94,7 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[85vh] lg:h-[85vh] overflow-hidden bg-[#d8300f] px-0 py-16 sm:pb-20 sm:pt-10 flex  "
+      className="relative min-h-[85vh] lg:h-[85vh] overflow-hidden bg-[#E70514] px-0 py-16 sm:pb-20 sm:pt-10 flex  "
     >
      
 

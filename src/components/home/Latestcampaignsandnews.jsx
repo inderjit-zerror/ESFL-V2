@@ -186,7 +186,7 @@ export default function LatestCampaignsAndNews() {
                 </div>
 
                 {item.badge && (
-                  <p className="mt-4 Paragraph_Small MNM_FONT text-[#c8102e] font-semibold!">
+                  <p className="mt-4 Paragraph_Small MNM_FONT text-[#E70514] font-semibold!">
                     {item.badge}
                   </p>
                 )}
@@ -199,7 +199,7 @@ export default function LatestCampaignsAndNews() {
                   <button
                     type="button"
                     onClick={() => setActiveVideo(item)}
-                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#c8102e] underline cursor-pointer underline-offset-2 hover:text-[#a80d26] text-left"
+                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#E70514] underline cursor-pointer underline-offset-2 hover:text-[#a80d26] text-left"
                   >
                     Know More
                   </button>
@@ -208,7 +208,7 @@ export default function LatestCampaignsAndNews() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#c8102e] underline cursor-pointer underline-offset-2 hover:text-[#a80d26]"
+                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#E70514] underline cursor-pointer underline-offset-2 hover:text-[#a80d26]"
                   >
                     Know More
                   </a>

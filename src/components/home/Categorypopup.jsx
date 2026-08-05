@@ -25,7 +25,7 @@ function ArrowIcon({ direction = "right" }) {
 export default function CategoryPopup({
   logo,
   categories = [],
-  accentColor = "#c8102e",
+  accentColor = "#E70514",
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeCategory = categories[activeIndex];

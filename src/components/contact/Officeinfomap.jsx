@@ -106,7 +106,7 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid overflow-hidden h-auto lg:h-screen bg-[#D8300F] lg:grid-cols-2"
+      className="grid overflow-hidden h-auto lg:h-screen bg-[#E70514] lg:grid-cols-2"
     >
       {/* Map — left on desktop, bottom on mobile */}
       <div className="oi-map relative min-h-[280px] sm:min-h-[360px] lg:min-h-[640px] order-last lg:order-first">
@@ -120,7 +120,7 @@ export default function OfficeInfoMap() {
 
         {/* Custom pin card overlay */}
         <div className="absolute top-1/2 -translate-y-1/2 right-4 max-w-[78%] sm:max-w-[280px] sm:top-auto sm:translate-y-0 h-fit flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] sm:bottom-10 sm:right-10">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#C8102E] text-white">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E70514] text-white">
             <svg
               width="16"
               height="16"
@@ -136,7 +136,7 @@ export default function OfficeInfoMap() {
             </svg>
           </div>
           <div className="min-w-0">
-            <p className="text-[11px] font-extrabold uppercase leading-tight tracking-tight text-[#C8102E] sm:text-xs">
+            <p className="text-[11px] font-extrabold uppercase leading-tight tracking-tight text-[#E70514] sm:text-xs">
               Empire Spices &amp; Foods Ltd.
             </p>
             <p className="mt-0.5 text-[11px] text-[#2B1B12]/70 sm:text-xs">

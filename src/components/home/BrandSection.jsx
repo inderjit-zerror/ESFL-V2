@@ -16,7 +16,7 @@ export default function BrandSection({
   buttonText = "View Range",
   onButtonClick,
 
-  bgColor = "bg-[#D52E12]",
+  bgColor = "bg-[#E70514]",
   textColor = "text-white",
   titleColor = "text-[#FFBE55]",
   highlightColor = "text-[#FFBE55]",

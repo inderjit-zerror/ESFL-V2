@@ -12,7 +12,7 @@
 
 // const RAMBANDHU_POPUP = {
 //   logo: "/images/home/RamBandhuLogo.png",
-//   accentColor: "#c8102e",
+//   accentColor: "#E70514",
 //   categories: [
 //     { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/NewRM.png" },
 //     { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/NewRM.png" },
@@ -28,7 +28,7 @@
 
 // const TEMPTIN_POPUP = {
 //   logo: "/images/home/TemptinLogo.png",
-//   accentColor: "#C3071C",
+//   accentColor: "#E70514",
 //   categories: [
 //     { id: "ketchup", name: "KETCHUP", image: "/images/home/NEWTEM.png" },
 //     { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
@@ -174,10 +174,10 @@
 //         <BrandSection
 //           V={'B1'}
 //           bgColor="bg-[#FFC55C]"
-//           textColor="text-[#D42E12]"
-//           titleColor="text-[#C3071C]"
+//           textColor="text-[#E70514]"
+//           titleColor="text-[#E70514]"
 //           highlightColor="text-[#FFBE55]"
-//           buttonBg="bg-[#C3071C]"
+//           buttonBg="bg-[#E70514]"
 //           buttonTextColor="text-[white]"
 //           className=" absolute top-[110%] left-0 BrandSection2"
 //           title="Temptin'"
@@ -235,7 +235,7 @@
 //               <button
 //                 type="button"
 //                 onClick={closePopup}
-//                 className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+//                 className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#E70514] font-bold flex items-center justify-center hover:bg-white"
 //                 aria-label="Close"
 //               >
 //                 ✕
@@ -347,10 +347,10 @@
 // //         <BrandSection
 // //         V={'B1'}
 // //           bgColor="bg-[#FFC55C]"
-// //           textColor="text-[#D42E12]"
-// //           titleColor="text-[#C3071C]"
+// //           textColor="text-[#E70514]"
+// //           titleColor="text-[#E70514]"
 // //           highlightColor="text-[#FFBE55]"
-// //           buttonBg="bg-[#C3071C]"
+// //           buttonBg="bg-[#E70514]"
 // //           buttonTextColor="text-[white]"
 // //           className=" absolute top-[110%] left-0 BrandSection2"
 // //           title="Temptin'"
@@ -403,7 +403,7 @@
 // //           <button
 // //             type="button"
 // //             onClick={() => setShowCategory(false)}
-// //             className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+// //             className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#E70514] font-bold flex items-center justify-center hover:bg-white"
 // //             aria-label="Close"
 // //           >
 // //             ✕
@@ -431,7 +431,7 @@
 
 // const RAMBANDHU_POPUP = {
 //   logo: "/images/home/RamBandhuLogo.png",
-//   accentColor: "#c8102e",
+//   accentColor: "#E70514",
 //   categories: [
 //     { id: "ground-spices", name: "GROUND SPICES", image: "/images/home/NewRM.png" },
 //     { id: "blended-spices", name: "BLENDED SPICES", image: "/images/home/NewRM.png" },
@@ -447,7 +447,7 @@
 
 // const TEMPTIN_POPUP = {
 //   logo: "/images/home/TemptinLogo.png",
-//   accentColor: "#C3071C",
+//   accentColor: "#E70514",
 //   categories: [
 //     { id: "ketchup", name: "KETCHUP", image: "/images/home/NEWTEM.png" },
 //     { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
@@ -566,10 +566,10 @@
 //         <BrandSection
 //           V={'B1'}
 //           bgColor="bg-[#FFC55C]"
-//           textColor="text-[#D42E12]"
-//           titleColor="text-[#C3071C]"
+//           textColor="text-[#E70514]"
+//           titleColor="text-[#E70514]"
 //           highlightColor="text-[#FFBE55]"
-//           buttonBg="bg-[#C3071C]"
+//           buttonBg="bg-[#E70514]"
 //           buttonTextColor="text-[white]"
 //           className=" absolute top-[110%] left-0 BrandSection2"
 //           title="Temptin'"
@@ -622,7 +622,7 @@
 //           <button
 //             type="button"
 //             onClick={closePopup}
-//             className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+//             className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/80 text-[#E70514] font-bold flex items-center justify-center hover:bg-white"
 //             aria-label="Close"
 //           >
 //             ✕
@@ -657,7 +657,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const RAMBANDHU_POPUP = {
   logo: "/images/home/RamBandhuLogo.png",
-  accentColor: "#c8102e",
+  accentColor: "#E70514",
   categories: [
     {
       id: "ground-spices",
@@ -689,7 +689,7 @@ const RAMBANDHU_POPUP = {
 
 const TEMPTIN_POPUP = {
   logo: "/images/home/TemptinLogo.png",
-  accentColor: "#C3071C",
+  accentColor: "#E70514",
   categories: [
     { id: "ketchup", name: "KETCHUP", image: "/images/home/NEWTEM.png" },
     { id: "sauces", name: "SAUCES", image: "/images/home/NEWTEM.png" },
@@ -873,10 +873,10 @@ Built on quality, trust, and continuous innovation, the brand creates products t
         <BrandSection
           V={"B1"}
           bgColor="bg-white"
-          textColor="text-[#D42E12]"
-          titleColor="text-[#C3071C]"
+          textColor="text-[#E70514]"
+          titleColor="text-[#E70514]"
           highlightColor="text-[#FFBE55]"
-          buttonBg="bg-[#C3071C]"
+          buttonBg="bg-[#E70514]"
           buttonTextColor="text-[white]"
           className="static md:absolute md:top-[110%] md:left-0 BrandSection2"
           title="Temptin'"
@@ -893,7 +893,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
 
         <BrandSection
           V={"B2"}
-          bgColor="bg-[#D52E12]"
+          bgColor="bg-[#E70514]"
           textColor="text-[white]"
           titleColor="text-[#FFC55C]"
           highlightColor="text-[white]"
@@ -934,7 +934,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
               <button
                 type="button"
                 onClick={closePopup}
-                className="absolute top-3 right-3 sm:top-4 sm:right-5 z-10 w-10 h-10 rounded-full bg-white/80 text-[#c8102e] font-bold flex items-center justify-center hover:bg-white"
+                className="absolute top-3 right-3 sm:top-4 sm:right-5 z-10 w-10 h-10 rounded-full bg-white/80 text-[#E70514] font-bold flex items-center justify-center hover:bg-white"
                 aria-label="Close"
               >
                 ✕

@@ -16,11 +16,11 @@ const HomePage = () => {
       <Hero />
       <Building />
       <Sticker />
-      {/* <RamBandhuCategory/> */}
+
       <Factory />
       <PresentAcrossCountry/>
       <LatestCampaignsAndNews/>
-      {/* <HomeCTA /> */}
+
       <SevenSection/>
 
      
