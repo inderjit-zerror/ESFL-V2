@@ -47,20 +47,20 @@ function RowBlock({ label, rows, lines, isLast }) {
   return (
     <div className={isLast ? "" : "border-b border-[white]/15 pb-6"}>
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-4 sm:gap-8">
-        <h3 className="text-base font-extrabold uppercase tracking-tight text-[white] sm:text-lg">
+        <h3 className="text-base font-extrabold uppercase tracking-tight text-[white] max-sm:text-[#E70514]  sm:text-lg">
           {label}
         </h3>
 
-        <div className="relative text-right text-[13px] leading-relaxed text-[white]/80 sm:text-sm">
+        <div className="relative text-right text-[13px] leading-relaxed text-[white]/80 max-sm:text-[#E70514]  sm:text-sm">
           <span
-            className="absolute -right-2.5 -top-1 h-1.5 w-1.5 rounded-full bg-[white]"
+            className="absolute -right-2.5 -top-1 h-1.5 w-1.5 rounded-full bg-[white] max-sm:text-[#E70514] "
             aria-hidden="true"
           />
           {rows
             ? rows.map((r) => (
                 <p key={r.k} className="flex flex-col sm:block sm:whitespace-nowrap">
                   <span className="mr-0 sm:mr-3">{r.k}</span>
-                  <span className="font-medium text-[white]">{r.v}</span>
+                  <span className="font-medium text-[white] max-sm:text-[#E70514] ">{r.v}</span>
                 </p>
               ))
             : lines.map((l) => <p key={l}>{l}</p>)}
@@ -106,7 +106,7 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid overflow-hidden h-auto lg:h-screen bg-[#E70514] lg:grid-cols-2"
+      className="grid overflow-hidden h-auto lg:h-screen bg-[#E70514] max-sm:bg-white lg:grid-cols-2"
     >
       {/* Map — left on desktop, bottom on mobile */}
       <div className="oi-map relative min-h-[280px] sm:min-h-[360px] lg:min-h-[640px] order-last lg:order-first">

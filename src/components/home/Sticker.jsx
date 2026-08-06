@@ -859,7 +859,7 @@ const Sticker = () => {
           V={"B2"}
           className="static md:sticky md:top-0 md:left-0 DIVC-1"
           title="RAM BANDHU"
-          subtitle="Ram Bandhu Aapka Taste Partner."
+          subtitle="Ram Bandhu - Aapka Taste Partner"
           description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
 
 Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
@@ -880,7 +880,7 @@ Built on quality, trust, and continuous innovation, the brand creates products t
           buttonTextColor="text-[white]"
           className="static md:absolute md:top-[110%] md:left-0 BrandSection2"
           title="Temptin'"
-          subtitle="Temptin' Taste Mein Twist and ...."
+          subtitle="Temptin' - Taste Mein Twist..."
           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
 
 Brand Temptin' stands for the same feeling and makes your food tempting and irresistible. The range consists of Ketchup, Sauces, Dips, Chutneys, Chinese Spices etc.`}
@@ -901,7 +901,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           buttonTextColor="text-[#B32727]"
           className="static md:absolute md:top-[110%] md:left-0 BrandSection3 md:z-[99]"
           title="RBM"
-          subtitle="RBM Sarvottam Masale, RBM Masale"
+          subtitle="Sarvottam Masale, RBM Masale"
           description={`Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
 
  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
