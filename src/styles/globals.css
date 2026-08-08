@@ -51,6 +51,7 @@ body {
 
 .Paragraph_Small{
   font-size: 0.8rem;
+  line-height: 0.9rem;
   font-weight: 100;
   font-family: V;
 }

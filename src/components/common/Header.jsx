@@ -22,8 +22,8 @@ const navLinks = [
     ],
   },
   {
-    name: "Media",
-    href: "/media",
+    name: "Our Process",
+    href: "/our-process",
   },
   {
     name: "Career",
