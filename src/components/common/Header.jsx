@@ -16,14 +16,14 @@ const navLinks = [
     href: "/about",
     children: [
       { name: "The Company", href: "/about/our-story" },
-      { name: "Our Processes", href: "/about/leadership" },
-      { name: "Investors", href: "/about/mission" },
+      { name: "Our Processes", href: "/our-process" },
+      { name: "Investors", href: "/investor-login" },
       { name: "CSR / Our Social Initiatives", href: "/about/awards" },
     ],
   },
   {
-    name: "Our Process",
-    href: "/our-process",
+    name: "Media",
+    href: "/media",
   },
   {
     name: "Career",
