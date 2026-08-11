@@ -30,39 +30,41 @@ export default function VisionMissionValues() {
 
   return (
     <section className="bg-[#E70514] h-fit py-20 px-6 font-sans flex items-center justify-center">
-      <div className=" mx-auto w-full">
-        
+      <div className="mx-auto w-full ">
+
         {/* Header Section */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-16">
           <p className="text-[#fac05e] font-semibold tracking-widest text-xs sm:text-sm uppercase mb-3">
             Quality & Process Certifications
           </p>
           <h2 className="text-[#fac05e] Heading_1 text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wide">
             Vision, Mission & Values
           </h2>
+          <div className="w-16 h-[3px] bg-[#fac05e] mx-auto mt-6 rounded-full" />
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {cards.map((card) => (
             <div
               key={card.id}
-              className="group relative overflow-hidden bg-[#fac15e49] hover:bg-[#fac05e] transition-all duration-300 ease-in-out rounded-2xl p-8 pt-32 cursor-pointer flex flex-col min-h-[320px]"
+              className="group relative bg-white/[0.09] border border-[#fac05e]/25 hover:border-[#fac05e] hover:bg-[#fac05e] transition-all duration-300 ease-out rounded-xl p-8 flex flex-col min-h-[300px]"
             >
-              {/* Decorative Icon Circle - Positioned Top Right */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#e17237] rounded-full flex items-center justify-center pt-4 pr-4 transition-colors duration-300">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-lg bg-[#fac05e]/15 group-hover:bg-[#E70514]/15 flex items-center justify-center transition-colors duration-300 mb-8">
                 <card.Icon
-                  className="w-10 h-10 text-[#b52a12] opacity-80"
-                  strokeWidth={1.5}
+                  className="w-7 h-7 text-[#fac05e] group-hover:text-[#E70514] transition-colors duration-300"
+                  strokeWidth={1.75}
                 />
               </div>
 
               {/* Card Content */}
-              <div className="relative z-10 mt-auto">
-                <h3 className="text-[#fac05e] group-hover:text-[#c83219] text-xl font-bold mb-4 transition-colors duration-300">
+              <div className="mt-auto">
+                <h3 className="text-[#fac05e] group-hover:text-[#c83219] text-lg font-bold mb-3 tracking-wide transition-colors duration-300">
                   {card.title}
                 </h3>
-                <p className="text-white/95 Paragraph_Medium group-hover:text-[#c83219] text-[15px] leading-relaxed transition-colors duration-300 font-medium">
+                <div className="w-8 h-[2px] bg-[#fac05e]/60 group-hover:bg-[#c83219]/60 mb-4 transition-colors duration-300" />
+                <p className="text-white/90 group-hover:text-[#c83219] Paragraph_Medium text-[15px] leading-relaxed font-medium transition-colors duration-300">
                   {card.description}
                 </p>
               </div>

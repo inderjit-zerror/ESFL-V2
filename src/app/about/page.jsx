@@ -11,15 +11,13 @@ import PageLoadAnimation from "@/components/common/PageLoadAnimation";
 const AboutPage = () => {
   return (
     <>
-      
-        <AboutHero />
-      
+      <AboutHero />
       <VisionMissionValues />
       <OurJourney />
       <PresentAcrossCountry />
       <WhoWeAre />
       <LeadershipSection />
-       <SevenSection />
+      <SevenSection />
     </>
   );
 };
