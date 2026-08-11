@@ -193,18 +193,19 @@ export default function CompoContact() {
       className="w-full bg-[#FDF6EC] text-[#2B1B12]"
       style={{ fontFamily: "'Work Sans', ui-sans-serif, system-ui" }}
     >
-      <section className="relative  overflow-hidden">
+      <section data-page-load-hero className="relative  overflow-hidden">
         <div className="relative aspect-square w-full sm:h-svh ">
           <img
             src="https://images.unsplash.com/photo-1758520145090-581ad6571c30?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="A Ram Bandhu customer care executive taking a call"
+            data-page-load-media
             className="h-full w-full object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-black/40" />
+          <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 
-          <div className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
-            <h1 className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
+          <div data-page-load-content className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
+            <h1 data-heading-reveal="off" className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
               Contact
             </h1>
             <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4">

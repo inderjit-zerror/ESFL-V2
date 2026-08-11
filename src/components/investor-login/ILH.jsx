@@ -61,18 +61,19 @@ function ScrollDownIndicator({ className = "" }) {
 
 const ILH = () => {
   return (
-    <section className="relative  overflow-hidden">
+    <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative aspect-square w-full sm:h-svh ">
         <img
           src="/images/about/HHA.jpg"
           alt="A Ram Bandhu customer care executive taking a call"
+          data-page-load-media
           className="h-full w-full object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-black/40" />
+        <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 
-        <div className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
-          <h1 className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
+        <div data-page-load-content className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
+          <h1 data-heading-reveal="off" className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
            Investor Relations
           </h1>
           <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4">

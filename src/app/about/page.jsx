@@ -6,11 +6,14 @@ import WhoWeAre from "@/components/about/Whoweare";
 import PresentAcrossCountry from "@/components/home/Presentacrosscountry";
 import SevenSection from "@/components/home/SevenSection";
 import { createPageMetadata } from "@/lib/seo";
+import PageLoadAnimation from "@/components/common/PageLoadAnimation";
 
 const AboutPage = () => {
   return (
     <>
-      <AboutHero />
+      
+        <AboutHero />
+      
       <VisionMissionValues />
       <OurJourney />
       <PresentAcrossCountry />

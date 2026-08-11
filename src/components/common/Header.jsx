@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import BTN from "./BTN";
 import { FaCartShopping } from "react-icons/fa6";
@@ -142,8 +143,9 @@ export default function Header() {
      
 
         {/* Logo */}
-        <a
+        <Link
           href="/"
+          data-header-logo-link
           className="absolute left-1/2 -translate-x-1/2"
         >
           <div>
@@ -152,10 +154,11 @@ export default function Header() {
               alt="Empire Logo"
               width={130}
               height={80}
+              data-header-logo-image
               className="h-auto w-[90px] object-contain sm:w-[110px] lg:w-[130px]"
             />
           </div>
-        </a>
+        </Link>
 
            {/* Mobile menu button */}
         <button

@@ -69,6 +69,19 @@ body {
    font-family: VB;
 }
 
+/* Word masks used by the global Heading_1 GSAP ScrollTrigger reveal. */
+.heading-reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: inherit;
+}
+
+.heading-reveal-word-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
 /* ///////////////////////////////////////////////////////// CLASSES */
 
 body::-webkit-scrollbar {

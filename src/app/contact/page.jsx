@@ -1,10 +1,13 @@
 import { createPageMetadata } from "@/lib/seo";
 import CompoContact from "@/components/contact/CompoContact";
+import PageLoadAnimation from "@/components/common/PageLoadAnimation";
 
 const Contact = () => {
   return (
     <>
-    <CompoContact/>
+    
+      <CompoContact />
+    
     </>
   );
 };
