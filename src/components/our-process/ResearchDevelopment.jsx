@@ -33,7 +33,7 @@ export default function ResearchDevelopment() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left Column: Image */}
-          <div className="relative w-full h-screen lg:aspect-square  rounded-sm overflow-hidden">
+          <div className="relative w-full h-[82vh] lg:aspect-square  rounded-sm overflow-hidden">
             {/* Make sure to place your image in the public folder and adjust the src if using next/image */}
             <Image
               src="/images/our-process/IMGOUS.jpg"
@@ -46,7 +46,7 @@ export default function ResearchDevelopment() {
           </div>
 
           {/* Right Column: Text Content */}
-          <div className="flex flex-col pr-4 lg:pr-16 max-sm:px-0">
+          <div className="flex flex-col pr-4 lg:pr-16 max-sm:px-0  ">
             <h2 className="text-4xl md:text-5xl Heading_1 max-sm:text-[2rem]! max-sm:leading-[2rem]! lg:text-6xl font-black text-[black] uppercase leading-[1.1] mb-6 tracking-tight">
               Research & <br /> Development
             </h2>

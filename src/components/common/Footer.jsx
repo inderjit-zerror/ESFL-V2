@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#E70514] text-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 md:px-10">
+      <div className=" mx-auto px-5 sm:px-6 md:px-10">
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6 py-6 sm:py-8 border-b border-white/15">
           <div className="w-[50vw] sm:w-[180px]">

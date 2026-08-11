@@ -61,7 +61,7 @@ export default function SustainabilitySafety() {
   ];
 
   return (
-    <section className="bg-[#fcfaf7] min-h-screen py-20 px-4 md:px-8 lg:px-16 relative">
+    <section className="bg-[#fcfaf7] min-h-screen py-20 px-4 md:px-8 lg:px-10 relative">
 
       <div className=" mx-auto">
         

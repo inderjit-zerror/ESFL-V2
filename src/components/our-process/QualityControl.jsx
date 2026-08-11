@@ -21,11 +21,11 @@ export default function QualityControl() {
   ];
 
   return (
-    <section className="w-full bg-[#E70514] min-h-screen flex items-stretch p-5 sm:p-10">
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2">
+    <section className="w-full bg-[#E70514] min-h-[screen] flex items-stretch p-5 sm:p-10">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 bg">
         
         {/* Left Column: Text Content */}
-        <div className="flex flex-col justify-center px-8 py-16 md:px-16 lg:px-24 max-sm:px-0">
+        <div className="flex flex-col justify-center px-8 py-16 md:px-16 lg:px-0 max-sm:px-0">
           <div className="max-w-xl">
             <h2 className="text-4xl Heading_1 md:text-5xl lg:text-6xl max-sm:text-[2rem]! max-sm:leading-[2rem]! font-extrabold text-[#F5C451] uppercase leading-tight mb-6 tracking-wide">
               Quality Control
@@ -52,7 +52,7 @@ export default function QualityControl() {
         </div>
 
         {/* Right Column: Image */}
-        <div className="relative w-full h-[50vh] lg:h-auto min-h-[400px] lg:min-h-screen ">
+        <div className="relative w-full h-[50vh] lg:h-auto min-h-[400px] lg:min-h-[82vh] ">
           <Image
             src="/images/our-process/IGE.jpg"
             alt="Quality Control Inspector examining product"
