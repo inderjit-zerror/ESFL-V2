@@ -63,12 +63,8 @@ const ILH = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative aspect-square w-full sm:h-svh ">
-        <img
-          src="/images/about/HHA.jpg"
-          alt="A Ram Bandhu customer care executive taking a call"
-          data-page-load-media
-          className="h-full w-full object-cover object-center"
-        />
+             <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 

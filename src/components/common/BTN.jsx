@@ -10,7 +10,7 @@ const BTN = ({ txt, variant = "B1" }) => {
       }`}
     >
       <span
-        className={`z-10 pr-2  Paragraph_Medium text-[0.95rem]! MNM_FONT ${
+        className={`z-10 pr-2  Paragraph_Medium text-[0.95rem]! MNM_FONT duration-300 ${
           isB2
             ? "text-[#E60714] group-hover:text-[white]"
             : "group-hover:text-[#E60714]"
@@ -19,7 +19,7 @@ const BTN = ({ txt, variant = "B1" }) => {
         {txt}
       </span>
       <div
-        className={`absolute right-1 inline-flex h-8 w-8 items-center justify-end rounded-full transition-[width] group-hover:w-[calc(100%-10px)] ${
+        className={`absolute right-1 inline-flex h-8 w-8 items-center justify-end rounded-full transition-[width] group-hover:w-[calc(100%-10px)] duration-300 ${
           isB2 ? "bg-[#E60714]" : "bg-[white]"
         }`}
       >

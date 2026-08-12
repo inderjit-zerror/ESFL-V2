@@ -72,7 +72,7 @@
 //     rotation: -4,
 //     zIndex: 12,
 //     className: "w-64 h-64 -ml-16 mt-48",
-    
+
 //   },
 // ];
 //   // GSAP Hover Animations
@@ -98,7 +98,7 @@
 
 //   return (
 //     <div className="h-fit bg-[#E70514] overflow-hidden relative flex flex-col font-sans">
-      
+
 //       {/* Top Header Section */}
 //       <div className="w-full max-w-7xl mx-auto px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
 //         <div className="mb-8 md:mb-0 Heading_1">
@@ -109,7 +109,7 @@
 //             CULTURE
 //           </h2>
 //         </div>
-        
+
 //         <div className="max-w-md Paragraph_Medium text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
 //           Lorem ipsum dolor sit amet consectetur. Sed sit quis tempor cursus laoreet
 //           in sed. Leo nibh arcu magna eu at. Convallis vitae penatibus fringilla donec. 
@@ -119,7 +119,7 @@
 //         </div>
 //       </div>
 
-    
+
 
 //       {/* Bottom Image Collage Section */}
 //       <div className="flex-grow flex items-end justify-center pb-0 relative w-full  ">
@@ -146,7 +146,7 @@
 //           ))}
 //         </div>
 //       </div>
-      
+
 //     </div>
 //   );
 // }
@@ -160,75 +160,75 @@ import gsap from "gsap";
 export default function LifeAtESFL() {
   // Array of images matching the collage layout
   // Replace the 'src' with your actual image paths from the public folder
- const images = [
-  {
-    id: 1,
-    src: "https://images.unsplash.com/photo-1758873268663-5a362616b5a7?auto=format&fit=crop&q=80&w=400",
-    alt: "Employees smiling",
-    rotation: -6,
-    zIndex: 10,
-    className: "w-64 h-96 -ml-12 mt-12",
-  },
-  {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1745921204896-c2011440a4e2?auto=format&fit=crop&q=80&w=400",
-    alt: "Machinery",
-    rotation: 8,
-    zIndex: 5,
-    className: "w-56 h-72 -ml-24 mt-40",
-  },
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1641296834707-bbe46429d945?auto=format&fit=crop&q=80&w=400",
-    alt: "Spices",
-    rotation: -2,
-    zIndex: 20,
-    className: "w-72 h-80 -ml-8 mt-24",
-  },
-  {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1759763823587-c8bd07fca246?auto=format&fit=crop&q=80&w=400",
-    alt: "Factory Workers",
-    rotation: 4,
-    zIndex: 15,
-    className: "w-60 h-80 -ml-16 mt-16",
-  },
-  {
-    id: 5,
-    src: "/images/home/P2.png",
-    alt: "Plants",
-    rotation: -4,
-    zIndex: 12,
-    className: "w-64 h-64 -ml-16 mt-48",
+  const images = [
+    {
+      id: 1,
+      src: "https://images.unsplash.com/photo-1758873268663-5a362616b5a7?auto=format&fit=crop&q=80&w=400",
+      alt: "Employees smiling",
+      rotation: -6,
+      zIndex: 10,
+      className: "w-64 h-96 -ml-12 mt-12",
+    },
+    {
+      id: 2,
+      src: "https://images.unsplash.com/photo-1745921204896-c2011440a4e2?auto=format&fit=crop&q=80&w=400",
+      alt: "Machinery",
+      rotation: 8,
+      zIndex: 5,
+      className: "w-56 h-72 -ml-24 mt-40",
+    },
+    {
+      id: 3,
+      src: "https://images.unsplash.com/photo-1641296834707-bbe46429d945?auto=format&fit=crop&q=80&w=400",
+      alt: "Spices",
+      rotation: -2,
+      zIndex: 20,
+      className: "w-72 h-80 -ml-8 mt-24",
+    },
+    {
+      id: 4,
+      src: "https://images.unsplash.com/photo-1759763823587-c8bd07fca246?auto=format&fit=crop&q=80&w=400",
+      alt: "Factory Workers",
+      rotation: 4,
+      zIndex: 15,
+      className: "w-60 h-80 -ml-16 mt-16",
+    },
+    {
+      id: 5,
+      src: "/images/home/P2.png",
+      alt: "Plants",
+      rotation: -4,
+      zIndex: 12,
+      className: "w-64 h-64 -ml-16 mt-48",
 
-  },
+    },
 
     {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1641296834707-bbe46429d945?auto=format&fit=crop&q=80&w=400",
-    alt: "Spices",
-    rotation: -2,
-    zIndex: 20,
-    className: "w-72 h-80 -ml-8 mt-24",
-  },
-  {
-    id: 7,
-    src: "https://images.unsplash.com/photo-1759763823587-c8bd07fca246?auto=format&fit=crop&q=80&w=400",
-    alt: "Factory Workers",
-    rotation: 4,
-    zIndex: 15,
-    className: "w-60 h-80 -ml-16 mt-16",
-  },
-  {
-    id: 8,
-    src: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=400",
-    alt: "Plants",
-    rotation: -4,
-    zIndex: 12,
-    className: "w-64 h-64 -ml-16 mt-48",
-    
-  },
-];
+      id: 6,
+      src: "https://images.unsplash.com/photo-1641296834707-bbe46429d945?auto=format&fit=crop&q=80&w=400",
+      alt: "Spices",
+      rotation: -2,
+      zIndex: 20,
+      className: "w-72 h-80 -ml-8 mt-24",
+    },
+    {
+      id: 7,
+      src: "https://images.unsplash.com/photo-1759763823587-c8bd07fca246?auto=format&fit=crop&q=80&w=400",
+      alt: "Factory Workers",
+      rotation: 4,
+      zIndex: 15,
+      className: "w-60 h-80 -ml-16 mt-16",
+    },
+    {
+      id: 8,
+      src: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&q=80&w=400",
+      alt: "Plants",
+      rotation: -4,
+      zIndex: 12,
+      className: "w-64 h-64 -ml-16 mt-48",
+
+    },
+  ];
   // GSAP Hover Animations
   const handleMouseEnter = (e) => {
     gsap.to(e.currentTarget, {
@@ -254,7 +254,7 @@ export default function LifeAtESFL() {
 
   return (
     <div className="h-fit bg-[#E70514] overflow-hidden relative flex flex-col font-sans">
-      
+
       {/* Top Header Section */}
       <div className="w-full max-w-7xl mx-auto px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
         <div className="mb-8 md:mb-0 Heading_1">
@@ -265,17 +265,17 @@ export default function LifeAtESFL() {
             CULTURE
           </h2>
         </div>
-        
+
         <div className="max-w-md Paragraph_Medium text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
           Lorem ipsum dolor sit amet consectetur. Sed sit quis tempor cursus laoreet
-          in sed. Leo nibh arcu magna eu at. Convallis vitae penatibus fringilla donec. 
-          Eget auctor elementum justo adipiscing. Fermentum quam pharetra orci congue 
-          lacus at sed pellentesque vitae. Maecenas suspendisse elit amet nunc proin. 
+          in sed. Leo nibh arcu magna eu at. Convallis vitae penatibus fringilla donec.
+          Eget auctor elementum justo adipiscing. Fermentum quam pharetra orci congue
+          lacus at sed pellentesque vitae. Maecenas suspendisse elit amet nunc proin.
           Tempor imperdiet amet eu semper iaculis pretium dapibus eu. Eu enim est.
         </div>
       </div>
 
-    
+
 
       {/* Bottom Image Collage Section */}
       <div className="flex-grow flex items-end justify-center pb-0 relative w-full  ">
@@ -302,7 +302,7 @@ export default function LifeAtESFL() {
           ))}
         </div>
       </div>
-      
+
     </div>
   );
 }

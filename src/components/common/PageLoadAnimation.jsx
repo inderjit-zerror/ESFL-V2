@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
-const LOGO_SRC = "/images/nav/logo.png";
+const LOGO_SRC = "/logo.svg";
 
 export default function PageLoadAnimation() {
   const overlayRef = useRef(null);

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 * {
   scroll-behavior: smooth;
   user-select: none;
@@ -9,65 +8,6 @@ body {
   overflow-x: hidden;
   width: 100%;
 
-}
-
-/* ///////////////////////////////////////////////////////// FONTS */
-
-@font-face {
-  font-family: HNM_FONT;
-  src: url('/fonts/HelveticaNeueMedium.otf');
-}
-
-/* .HNM_FONT{
-  font-family: HNM_FONT;
-} */
-
-@font-face {
-  font-family: HNR_FONT;
-  src: url('/fonts/HelveticaNeueRoman.otf');
-}
-
-/* .HNR_FONT{
- font-family: HNR_FONT;
-} */
-
-@font-face {
-  font-family: DD;
-  src: url('/fonts/D1.woff2');
-}
-
-@font-face {
-  font-family: VB;
-  src: url('/fonts/verdana-bold.ttf');
-}
-
-.DD_Font{
-  font-family: DD;
-}
-
-@font-face {
-  font-family: V;
-  src: url('/fonts/verdana.ttf');
-}
-
-.Paragraph_Small{
-  font-size: 0.8rem;
-  line-height: 0.9rem;
-  font-weight: 100;
-  font-family: V;
-}
-.Paragraph_Medium{
-  font-size: 1rem;
-  font-weight: 100;
-  line-height: 1.3rem;
-  font-family: V;
-}
-
-.Heading_1{
-  font-size: 3rem;
-  line-height: 3rem;
-  font-weight: 600;  
-   font-family: VB;
 }
 
 /* Word masks used by the global Heading_1 GSAP ScrollTrigger reveal. */
@@ -82,8 +22,6 @@ body {
   display: inline-block;
   will-change: transform, opacity;
 }
-
-/* ///////////////////////////////////////////////////////// CLASSES */
 
 body::-webkit-scrollbar {
   display: none;

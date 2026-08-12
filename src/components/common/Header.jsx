@@ -140,7 +140,7 @@
 //           )}
 //         </nav>
 
-     
+
 
 //         {/* Logo */}
 //         <Link
@@ -150,7 +150,7 @@
 //         >
 //           <div>
 //             <Image
-//               src="/images/nav/logo.png"
+//               src="/logo.svg"
 //               alt="Empire Logo"
 //               width={130}
 //               height={80}
@@ -297,7 +297,7 @@ const navLinks = [
       { name: "The Company", href: "/about" },
       { name: "Our Processes", href: "/our-process" },
       { name: "Investors", href: "/investor-login" },
-      { name: "CSR / Our Social Initiatives", href: "/about/awards" },
+      { name: "CSR / Our Social Initiatives", href: "/csr" },
     ],
   },
   {
@@ -343,9 +343,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full py-2 pt-3 transition-colors duration-300 ${
-        scrolled || mobileOpen ? "bg-black/95" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 z-50 w-full py-2 pt-3 transition-colors duration-300 ${scrolled || mobileOpen ? "bg-black/95" : "bg-transparent"
+        }`}
     >
       <div className="mx-auto flex h-[70px] w-full items-center justify-between px-4 sm:px-6 lg:px-12">
         {/* Left Menu (desktop) */}
@@ -367,17 +366,15 @@ export default function Header() {
                       {item.name}
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-200 ${
-                          aboutOpen ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </span>
 
                     <div className="h-[1.5px] w-full overflow-hidden">
                       <div
-                        className={`h-full bg-white transition-all duration-300 ${
-                          aboutOpen ? "w-full" : "w-0 group-hover:w-full"
-                        }`}
+                        className={`h-full bg-white transition-all duration-300 ${aboutOpen ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
                       ></div>
                     </div>
                   </a>
@@ -398,17 +395,15 @@ export default function Header() {
                       {item.name}
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-200 ${
-                          aboutOpen ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </span>
 
                     <div className="h-[1.5px] w-full overflow-hidden">
                       <div
-                        className={`h-full bg-white transition-all duration-300 ${
-                          aboutOpen ? "w-full" : "w-0 group-hover:w-full"
-                        }`}
+                        className={`h-full bg-white transition-all duration-300 ${aboutOpen ? "w-full" : "w-0 group-hover:w-full"
+                          }`}
                       ></div>
                     </div>
                   </span>
@@ -416,19 +411,18 @@ export default function Header() {
 
                 {/* Dropdown panel */}
                 <div
-                  className={`absolute left-0 top-full pt-4 transition-all duration-200 ${
-                    aboutOpen
+                  className={`absolute left-0 top-full pt-4 transition-all duration-200 ${aboutOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
-                  }`}
+                    }`}
                 >
-                  <div className="min-w-[220px] rounded-md border border-white/10 bg-black/95 py-2 shadow-lg backdrop-blur-md">
+                  <div className="min-w-[220px] rounded-md border border-white/10 bg-black/95  shadow-lg backdrop-blur-md">
                     {item.children.map((child) =>
                       child.href ? (
                         <a
                           key={child.name}
                           href={child.href}
-                          className="Paragraph_Medium HNR_FONT block px-5 py-2.5 text-white/80 transition-colors duration-150 hover:text-white hover:bg-white/5"
+                          className="Paragraph_Medium HNR_FONT block px-5 py-2.5 text-white/80 transition-colors duration-150 hover:text-white hover:bg-white/10"
                         >
                           {child.name}
                         </a>
@@ -471,7 +465,7 @@ export default function Header() {
           )}
         </nav>
 
-     
+
 
         {/* Logo */}
         <Link
@@ -481,7 +475,7 @@ export default function Header() {
         >
           <div>
             <Image
-              src="/images/nav/logo.png"
+              src="/logo.svg"
               alt="Empire Logo"
               width={130}
               height={80}
@@ -491,7 +485,7 @@ export default function Header() {
           </div>
         </Link>
 
-           {/* Mobile menu button */}
+        {/* Mobile menu button */}
         <button
           type="button"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -517,7 +511,9 @@ export default function Header() {
             </div>
           </a>
 
+              <Link href={"/become-a-partner"} className="w-fit block">
           <BTN txt={`Become Channel Partner`} variant="B1" />
+              </Link>
         </div>
 
         {/* Spacer to balance the hamburger button on mobile so the logo stays centered */}
@@ -526,11 +522,10 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[calc(70px+0.75rem)] z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${
-          mobileOpen
+        className={`fixed inset-x-0 top-[calc(70px+0.75rem)] z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
             ? "pointer-events-auto max-h-[calc(100vh-70px-0.75rem)] opacity-100"
             : "pointer-events-none max-h-0 opacity-0"
-        }`}
+          }`}
       >
         <nav className="flex max-h-[calc(100vh-70px-0.75rem)] flex-col gap-1 overflow-y-auto bg-black/95 px-6 py-6 backdrop-blur-md">
           {navLinks.map((item) =>
@@ -548,18 +543,16 @@ export default function Header() {
                   {item.name}
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-200 ${
-                      mobileAboutOpen ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    mobileAboutOpen
+                  className={`grid transition-all duration-300 ease-in-out ${mobileAboutOpen
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col gap-1 pb-3 pl-4">

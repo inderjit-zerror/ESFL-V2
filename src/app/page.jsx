@@ -18,7 +18,6 @@ const HomePage = () => {
       <Hero />
       <Building />
       <Sticker />
-
       <Factory />
       <PresentAcrossCountry/>
       <LatestCampaignsAndNews/>

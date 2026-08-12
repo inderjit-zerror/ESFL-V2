@@ -738,40 +738,6 @@ const Sticker = () => {
   const panelRef = useRef(null);
   const timelineRef = useRef(null); // keeps track of the currently running popup timeline
 
-  // The pinned "card stack" scroll effect (BrandSection2/3 sliding up over
-  // BrandSection1) only makes sense once there's room for a sticky viewport
-  // -sized stage — on phones that scroll-jack pattern fights the address
-  // bar / momentum scrolling and just feels janky. So it's scoped to
-  // md and up via gsap.matchMedia(); below md the three brand sections
-  // render as normal stacked, scrollable blocks (see className changes
-  // on each BrandSection further down).
-  useEffect(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 768px)", () => {
-      const TL1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".StickeyHeroContMAin1",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      });
-      TL1.to(".BrandSection2", {
-        top: "0%",
-        ease: "none",
-      });
-      TL1.to(".BrandSection3", {
-        top: "0%",
-        ease: "none",
-      });
-
-      // matchMedia handles killing this context (and its ScrollTrigger)
-      // automatically when the viewport drops back below 768px.
-    });
-
-    return () => mm.revert();
-  }, []);
 
   // Animate the popup in/out whenever activePopup changes
   useEffect(() => {
@@ -853,11 +819,11 @@ const Sticker = () => {
           : null;
 
   return (
-    <div className="w-full h-auto md:h-[200svh] relative flex StickeyHeroContMAin1">
-      <div className="w-full h-auto md:h-svh flex flex-col md:flex-row md:sticky md:top-0 md:left-0">
+    <div className="w-full h-auto md:h-[300svh] relative StickeyHeroContMAin1">
+        <div className="w-full md:sticky top-0 z-[10]">
         <BrandSection
           V={"B2"}
-          className="static md:sticky md:top-0 md:left-0 DIVC-1"
+          className="static  DIVC-1"
           title="RAM BANDHU"
           subtitle="Ram Bandhu - Aapka Taste Partner"
           description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
@@ -869,7 +835,9 @@ Built on quality, trust, and continuous innovation, the brand creates products t
           logo="/images/home/RamBandhuLogo.png"
           onButtonClick={() => setActivePopup("RAMBANDHU")}
         />
+        </div>
 
+        <div className="w-full md:sticky top-0 z-[20]">
         <BrandSection
           V={"B1"}
           bgColor="bg-white"
@@ -878,7 +846,7 @@ Built on quality, trust, and continuous innovation, the brand creates products t
           highlightColor="text-[#FFBE55]"
           buttonBg="bg-[#E70514]"
           buttonTextColor="text-[white]"
-          className="static md:absolute md:top-[110%] md:left-0 BrandSection2"
+          className="static  BrandSection2"
           title="Temptin'"
           subtitle="Temptin' - Taste Mein Twist..."
           description={`The youthful brand of Temptin’ symbolises the temptation that is associated with lip smacking culinary delights. The very sight of delicious food is an enticement that fills us with the desire to relish it. 
@@ -890,7 +858,9 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           logo="/images/home/TemptinLogo.png"
           onButtonClick={() => setActivePopup("TEMPTIN")}
         />
+        </div>
 
+        <div className="w-full md:sticky top-0 z-[30]">
         <BrandSection
           V={"B2"}
           bgColor="bg-[#E70514]"
@@ -899,7 +869,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           highlightColor="text-[white]"
           buttonBg="bg-[#F4BF5F]"
           buttonTextColor="text-[#B32727]"
-          className="static md:absolute md:top-[110%] md:left-0 BrandSection3 md:z-[99]"
+          className="static  BrandSection3"
           title="RBM"
           subtitle="Sarvottam Masale, RBM Masale"
           description={`Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
@@ -911,6 +881,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           logo="/images/home/RBMLogo.png"
           onButtonClick={() => setActivePopup("RBM")}
         />
+
       </div>
 
       {/* Popup overlay — shared shell, content swaps per brand */}

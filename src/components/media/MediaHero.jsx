@@ -1,4 +1,5 @@
 import React from "react";
+import BTN from "../common/BTN";
 
 function ScrollDownIndicator({ className = "" }) {
   return (
@@ -59,21 +60,21 @@ function ScrollDownIndicator({ className = "" }) {
   );
 }
 
-const AboutHero = () => {
+const MediaHero = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
-      <div className="relative aspect-square w-full sm:h-svh ">
-      <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+      <div className="relative h-[80vh] w-full  sm:h-svh ">
+              <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 
         <div data-page-load-content className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
           <h1 data-heading-reveal="off" className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
-           About Us
+          Media 
           </h1>
-          <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4">
-           For over three decades Empire Spices & Foods Ltd. has carried authentic
-Indian flavour from Nashik to kitchens across the world.
+          <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4 pb-10">
+           Latest campaigns, news and brand stories.
             {/* <br className="hidden sm:block" />
             Whether it’s a partnership, enquiry, or collaboration, we’d love to
             hear from you. */}
@@ -85,4 +86,4 @@ Indian flavour from Nashik to kitchens across the world.
   );
 };
 
-export default AboutHero;
+export default MediaHero;

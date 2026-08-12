@@ -113,11 +113,11 @@ export default function CurrentOpenings() {
         <div className="mb-10 flex items-end justify-between">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-white/80">JOIN US</p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#F4C96B] sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight text-[#F4C96B] sm:text-4xl">
               Current Openings
             </h2>
           </div>
-          <p className="hidden text-xs font-bold tracking-[0.15em] text-white/90 sm:block">
+          <p className="hidden text-xs font-bold  text-white/90 sm:block">
             {JOBS.length} ROLES OPEN
           </p>
         </div>
@@ -175,14 +175,14 @@ function JobCard({ job }) {
   return (
     <div
       ref={cardRef}
-      className="job-card rounded-2xl border border-black/5 Paragraph_Medium bg-white p-6 shadow-sm"
+      className="job-card rounded-lg border border-black/5 Paragraph_Medium bg-white p-6 shadow-sm"
       style={{ backgroundColor: COLORS.cardBg }}
     >
       {/* Top row: icon, title, subtitle, external-link arrow */}
       <div className="flex items-start justify-between">
         <div className="flex items-start gap-3">
           <div
-            className="job-icon-box flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+            className="job-icon-box flex h-11 w-11 shrink-0 items-center justify-center rounded-md"
             style={{ backgroundColor: COLORS.iconBg }}
           >
             <Briefcase className="job-icon h-5 w-5" style={{ color: COLORS.iconColor }} strokeWidth={1.75} />
@@ -238,7 +238,7 @@ function JobCard({ job }) {
 function Tag({ icon: Icon, label }) {
   return (
     <span
-      className="job-tag flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[10px] font-semibold tracking-wide"
+      className="job-tag flex items-center gap-1.5 rounded-sm border px-3 py-1.5 text-[10px] font-semibold tracking-wide"
       style={{ backgroundColor: COLORS.tagBg, borderColor: COLORS.tagBorder }}
     >
       <Icon className="h-3 w-3" style={{ color: COLORS.iconColor }} strokeWidth={2} />

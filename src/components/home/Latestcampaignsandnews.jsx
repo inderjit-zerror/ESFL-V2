@@ -139,8 +139,8 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="bg-[#fdf6ec] py-8 px-4 sm:px-6">
-      <div className=" mx-auto px-2 sm:px-6 md:px-10 pt-10">
+    <section className="bg-[#fdf6ec] py-8 px-4 sm:px-6 lg:px-12">
+      <div className=" mx-auto pt-10">
         {/* Header */}
         <div ref={headerRef} className="text-center  mx-auto mb-10">
           <h1 className=" Heading_1 HNM_FONT text-neutral-900 leading-tight">

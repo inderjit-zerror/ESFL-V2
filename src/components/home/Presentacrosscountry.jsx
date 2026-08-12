@@ -123,7 +123,7 @@ export default function PresentAcrossCountry() {
             />
           </div> */}
 
-          <h2 className="psac-fade pl-6 sm:pl-12 md:pl-16 lg:pl-20 text-[#f5c451] Heading_1 font-extrabold uppercase sm:leading-[4.35rem]! text-[2.25rem]! leading-[2.35rem]! sm:text-[2.75rem]! md:text-[3.5rem]! lg:text-[4rem]! tracking-tight">
+          <h2 className="psac-fade pl-4 sm:pl-6 lg:pl-12 text-[#f5c451] Heading_1 font-extrabold uppercase sm:leading-[4.35rem]! text-[2.25rem]! leading-[2.35rem]! sm:text-[2.75rem]! md:text-[3.5rem]! lg:text-[4rem]! tracking-tight">
             Present
             
             Across the
@@ -135,14 +135,14 @@ export default function PresentAcrossCountry() {
             Incessantly
           </h2>
 
-          <p className="psac-fade pl-6 sm:pl-12 md:pl-16 lg:pl-20 Paragraph_Medium MNR_FONT mt-6  text-xs sm:text-sm font-semibold text-white/90 leading-relaxed max-w-[90%] sm:max-w-none">
+          <p className="psac-fade pl-4 sm:pl-6 lg:pl-12 Paragraph_Medium MNR_FONT mt-6  text-xs sm:text-sm font-semibold text-white/90 leading-relaxed max-w-[90%] sm:max-w-none">
             ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
             Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
           </p>
         </div>
 
         {/* Right: stats grid */}
-        <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-8  sm:gap-y-10 Heading_1 mt-auto px-6 lg:px-0 pb-10 sm:pb-14 lg:pb-[22vh] mx-auto">
+        <div className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-8  sm:gap-y-10 Heading_1 mt-auto px-6 lg:px-0 pb-10 sm:pb-14 lg:pb-[22vh] mx-auto">
           {stats.map((stat, i) => (
             <div key={stat.id} className="psac-fade">
               <p
@@ -151,7 +151,7 @@ export default function PresentAcrossCountry() {
               >
                 0{stat.suffix}
               </p>
-              <p className="mt-2 text-[11px] sm:text-xs font-bold tracking-wide text-white/90">
+              <p className="mt-2 text-xs font-medium uppercase text-white/90">
                 {stat.label}
               </p>
             </div>

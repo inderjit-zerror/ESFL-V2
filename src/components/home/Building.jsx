@@ -12,7 +12,7 @@ const TRAIL_IMAGES = [
   "/images/home/IMG1.png",
   "/images/home/IMG2.png",
   "/images/home/IMG3.png",
-  
+
 ];
 
 let idCounter = 0;
@@ -106,11 +106,11 @@ export default function Building() {
       className="relative flex min-h-[60svh] bg w-full bg-white mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
     >
 
-       <img
-  src="/images/home/PP.png"
-  alt="img"
-  className="absolute -bottom-20 right-0 rotate-180  w-full "
-/>
+      <img
+        src="/images/home/PP.png"
+        alt="img"
+        className="absolute -bottom-20 right-0 rotate-180  w-full "
+      />
 
       {/* Mouse trail images */}
       {trail.map((item) => (
@@ -140,7 +140,7 @@ export default function Building() {
         </div>
       ))}
 
-     
+
 
       {/* Content */}
       <div

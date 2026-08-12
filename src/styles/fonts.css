@@ -1,8 +1,25 @@
+.Paragraph_Small{
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+  font-weight: 100;
+}
+.Paragraph_Medium{
+  font-size: 1rem;
+  font-weight: 100;
+  line-height: 1.3rem;
+}
+
+.Heading_1{
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 600;  
+}
+
 html,
 body {
   font-size: 14px;
   font-weight: 400;
-  font-family: sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-display: swap;
 }
 
