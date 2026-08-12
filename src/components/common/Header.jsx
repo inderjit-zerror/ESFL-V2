@@ -306,7 +306,7 @@ const navLinks = [
   },
   {
     name: "Career",
-    href: "/careers",
+    href: "/carrer",
   },
   {
     name: "Contact Us",
