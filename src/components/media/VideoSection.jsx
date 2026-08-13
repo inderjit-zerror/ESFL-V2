@@ -11,7 +11,7 @@ const VideoSection = () => {
   const sectionRef = useRef(null);
   const videoRef = useRef(null);
   const cursorRef = useRef(null);
-  
+
   const [isMuted, setIsMuted] = useState(true);
   const [isHovering, setIsHovering] = useState(false);
 
@@ -87,9 +87,8 @@ const VideoSection = () => {
       {/* Custom Cursor */}
       <div
         ref={cursorRef}
-        className={`fixed top-0 left-0 pointer-events-none z-[100] flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-md text-white font-bold tracking-widest text-xs uppercase shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/30 transition-opacity duration-300 ${
-          isHovering ? "opacity-100" : "opacity-0"
-        }`}
+        className={`fixed top-0 left-0 pointer-events-none z-[100] flex items-center justify-center w-14 h-14 rounded-full bg-white/20 backdrop-blur-md text-white   tracking-widest text-xs uppercase shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/30 transition-opacity duration-300 ${isHovering ? "opacity-100" : "opacity-0"
+          }`}
       >
         {isMuted ? <RiVolumeMuteFill size={16} /> : <RiVolumeUpFill size={16} />}
       </div>

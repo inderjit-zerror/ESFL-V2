@@ -17,9 +17,9 @@ const InfiniteScroller = () => {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
 
-  const CARD_WIDTH = 220;
-  const CARD_HEIGHT = 300;
-  const GAP = 14;
+  const CARD_WIDTH = 300;
+  const CARD_HEIGHT = 400;
+  const GAP = 40;
   const TOTAL_CARDS = originalImages.length;
 
   // Duplicate images for seamless infinite scrolling
@@ -168,13 +168,13 @@ const InfiniteScroller = () => {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden relative py-14 pb-24  bg-[#E70514]">
+    <section className="w-full overflow-hidden relative py-24  bg-[#E30713]">
       {/* Header */}
       <div className="text-center mb-10 relative z-10">
-        <p className="Paragraph_Medium text-[#fcb62d] tracking-[0.2em] uppercase mb-1 text-[0.9rem]">
+        <h6 className="  text-[#fcb62d] uppercase">
           Culture
-        </p>
-        <h2 className="Heading_1 text-[#fcb62d] font-extrabold uppercase m-0 tracking-[0.05em]">
+        </h6>
+        <h2 data-para-effect className="  text-[#fcb62d] uppercase">
           Life at ESFL
         </h2>
       </div>

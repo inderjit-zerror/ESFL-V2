@@ -94,16 +94,16 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[85vh] lg:h-[85vh] overflow-hidden bg-[#E70514] px-0 py-16 sm:pb-20 sm:pt-10 flex  "
+      className="relative py-44 overflow-hidden bg-[#E30713]  flex  "
     >
-     
+
 
       {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] bottom-[2%] z-99" /> */}
       <img src="/images/home/PP.png" alt="IMG" className=" h-[30vh] sm:w-full object-cover  absolute bottom-0 left-0 rotate-180" />
 
-      <div className="relative px-0 mx-auto  max-sm:h-fit  w-full grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-5 sm:gap-10 items-center">
+      <div className="relative container     max-sm:h-fit  w-full grid grid-cols-1 lg:grid-cols-2">
         {/* Left: headline + products */}
-        <div className="relative max-sm:pb-10 ">
+        <div className="relative max-w-2xl space-y-2 ">
           {/* Product images flanking the headline */}
           {/* <div className="psac-fade absolute -left-4 top-6 w-14 sm:w-16">
             <img
@@ -123,35 +123,35 @@ export default function PresentAcrossCountry() {
             />
           </div> */}
 
-          <h2 className="psac-fade pl-4 sm:pl-6 lg:pl-12 text-[#f5c451] Heading_1 font-extrabold uppercase sm:leading-[4.35rem]! text-[2.25rem]! leading-[2.35rem]! sm:text-[2.75rem]! md:text-[3.5rem]! lg:text-[4rem]! tracking-tight">
+          <h2 data-para-effect className="  text-[#f5c451]    uppercase ">
             Present
-            
+
             Across the
-            
+
             Country to
-            
+
             Serve You
-            
+
             Incessantly
           </h2>
 
-          <p className="psac-fade pl-4 sm:pl-6 lg:pl-12 Paragraph_Medium MNR_FONT mt-6  text-xs sm:text-sm font-semibold text-white/90 leading-relaxed max-w-[90%] sm:max-w-none">
+          <p className=" text-white">
             ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
             Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
           </p>
         </div>
 
         {/* Right: stats grid */}
-        <div className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-8  sm:gap-y-10 Heading_1 mt-auto px-6 lg:px-0 pb-10 sm:pb-14 lg:pb-[22vh] mx-auto">
+        <div className="grid pl-24 grid-cols-2 gap-y-10 ">
           {stats.map((stat, i) => (
-            <div key={stat.id} className="psac-fade">
-              <p
+            <div key={stat.id} className="psac-fade ">
+              <h2
                 ref={(el) => (numberRefs.current[i] = el)}
-                className="text-[#f5c451] font-extrabold text-[2.5rem]! sm:text-[3rem]! md:text-[3.5rem]! lg:text-[4rem]! leading-none"
+                className="text-[#f5c451] "
               >
                 0{stat.suffix}
-              </p>
-              <p className="mt-2 text-xs font-medium uppercase text-white/90">
+              </h2>
+              <p className="mt-2  text-sm   uppercase text-white">
                 {stat.label}
               </p>
             </div>

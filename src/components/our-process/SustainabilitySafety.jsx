@@ -35,57 +35,57 @@ export default function SustainabilitySafety() {
       description: "Closed-loop recycling and optimised usage on every line.",
       Icon: DropIcon,
       titleColor: "text-[#4a4a4a]",
-      IMG:`/images/our-process/T1.jpg`,
+      IMG: `/images/our-process/T1.jpg`,
     },
     {
       title: "CLEAN ENERGY",
       description: "Solar-led restructuring powers our manufacturing hubs.",
       Icon: SunIcon,
       titleColor: "text-[#4a4a4a]",
-      IMG:`/images/our-process/T2.jpg`,
+      IMG: `/images/our-process/T2.jpg`,
     },
     {
       title: "SAFE MANUFACTURING",
       description: "Rigorous protocols and enforcement protecting our workforce.",
       Icon: FactoryIcon,
       titleColor: "text-[#d73921]", // Red text to match the design
-      IMG:`/images/our-process/T3.jpg`,
+      IMG: `/images/our-process/T3.jpg`,
     },
     {
       title: "WASTE MANAGEMENT",
       description: "Zero waste to landfill strategy with full segregation.",
       Icon: RecycleIcon,
       titleColor: "text-[#4a4a4a]",
-      IMG:`/images/our-process/T4.jpg`,
+      IMG: `/images/our-process/T4.jpg`,
     }
   ];
 
   return (
-    <section className="bg-[#fcfaf7] min-h-screen py-20 px-4 md:px-8 lg:px-10 relative">
+    <section className="bg-[#fcfaf7] min-h-screen py-24 container relative">
 
-      <div className=" mx-auto">
-        
+      <div className="  ">
+
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <p className="text-[#E70514] text-lg font-medium mb-3">
-            03 <span className="font-semibold ml-1">Responsibility</span>
-          </p>
-          <h2 className="text-4xl md:text-5xl Heading_1 max-sm:text-[2rem]! max-sm:leading-[2rem]! font-black  text-black uppercase tracking-wide mb-4">
+        <div className="text-center mb-16 ">
+          <h6 className="text-[#E30713] mb-2 uppercase">
+           Responsibility
+          </h6>
+          <h2 data-para-effect className="uppercase mb-2">
             Sustainability & Safety
           </h2>
-          <p className=" text-black Patagraph_Medium text-sm md:text-base max-w-3xl mx-auto">
-            Resource conservation, worker safety and responsible sourcing are built into how we manufacture — 
+          <p className=" text-black mx-auto max-w-3xl  ">
+            Resource conservation, worker safety and responsible sourcing are built into how we manufacture —
             not added on afterwards.
           </p>
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-8">
           {cards.map((card, index) => (
             <div key={index} className="flex flex-col">
-              
+
               {/* Image Container with Icon */}
-              <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-6">
+              <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden mb-6">
                 <Image
                   src={card.IMG}
                   alt={card.title}
@@ -93,27 +93,22 @@ export default function SustainabilitySafety() {
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                
-                {/* Red Icon Box */}
-                <div className="absolute bottom-0 left-0 bg-[#E70514] w-14 h-14 md:w-16 md:h-16 rounded-tr-xl flex items-center justify-center shadow-lg">
-                  <card.Icon className="w-7 h-7 md:w-8 md:h-8 text-[#f6bc25]" />
-                </div>
               </div>
 
               {/* Card Text Content */}
               <div>
-                <h3 className={`text-base md:text-lg font-bold  text-black tracking-tighter uppercase mb-2 ${card.titleColor}`}>
+                <h5 className={`  text-black  uppercase mb-2 ${card.titleColor}`}>
                   {card.title}
-                </h3>
-                <p className=" text-black/70 text-sm Paragraph_Medium font-medium">
+                </h5>
+                <p className=" text-black/70     ">
                   {card.description}
                 </p>
               </div>
-              
+
             </div>
           ))}
         </div>
-        
+
       </div>
     </section>
   );

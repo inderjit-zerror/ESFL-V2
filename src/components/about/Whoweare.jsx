@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 export default function WhoWeAre() {
   return (
-    <section className="w-full bg-white max-sm:pt-10">
-      <div className="mx-auto grid  grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:py-10">
+    <section className="w-full bg-white container py-24 ">
+      <div className="  grid  grid-cols-1 md:grid-cols-2 gap-x-20">
         {/* Left: Image with badge */}
-        <div className="relative">
-          <div className="relative aspect-square w-full overflow-hidden rounded-sm">
-            <img
+        <div className="relative h-full">
+          <div className="relative w-full h-full overflow-hidden rounded-sm">
+            <Image fill
               src="/images/about/IMG30.jpg"
               alt="Assorted Indian spices in bowls — turmeric, chili powder, coriander, salt and fresh coriander leaves"
               className="h-full w-full object-cover"
@@ -13,11 +15,11 @@ export default function WhoWeAre() {
           </div>
 
           {/* Badge */}
-          <div className="absolute left-0 top-0 flex w-40 flex-col items-start bg-[#E70514] px-5 py-4 text-white">
-            <span className="text-3xl font-extrabold leading-none tracking-tight">
+          <div className="absolute left-0 top-0 flex  flex-col items-start bg-[#E30713] p-3 text-white">
+            <h5 className="text-3xl   leading-none ">
               30+
-            </span>
-            <span className="mt-1 text-[11px] font-medium uppercase tracking-wider text-white/90">
+            </h5>
+            <span className="mt-1 text-xs uppercase text-white">
               Years of Legacy
             </span>
           </div>
@@ -25,13 +27,13 @@ export default function WhoWeAre() {
 
         {/* Right: Content */}
         <div>
-          <p className="text-sm font-semibold text-neutral-900">Who We Are</p>
+          <h6 className="text-red uppercase mb-2">Who We Are</h6>
 
-          <h2 className="mt-3 text-3xl font-extrabold uppercase leading-tight tracking-tight text-[#E70514] sm:text-4xl">
-            From a Local Enterprise to a Global Force
+          <h2 data-para-effect className=" uppercase">
+            From a Local <br />Enterprise to a <br /> Global Force
           </h2>
 
-          <p className="mt-6 text-sm leading-relaxed text-[#E70514] Paragraph_Medium">
+          <p className="mt-6  ">
             Founded on the principles of purity and authenticity, Empire
             Spices &amp; Foods Ltd. has grown from a single shop into one of
             India&apos;s most respected names in spice making and food
@@ -39,7 +41,7 @@ export default function WhoWeAre() {
             quality.
           </p>
 
-          <p className="mt-4 text-sm leading-relaxed text-[#E70514] Paragraph_Medium">
+          <p className="mt-4  ">
             Our commitment extends beyond just products. We foster a
             community of farmers, partners and consumers who believe in
             sustainable, flavourful living — and with state-of-the-art
@@ -48,7 +50,7 @@ export default function WhoWeAre() {
           </p>
 
           {/* Stat pills */}
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="mt-32 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {[
               "Farmer-First Sourcing Network",
               "32 Manufacturing Units",
@@ -57,7 +59,7 @@ export default function WhoWeAre() {
             ].map((stat) => (
               <div
                 key={stat}
-                className="flex items-center justify-center rounded-sm Paragraph_Small font-bold! bg-[#F5C451] px-4 py-3 text-center text-[11px]  uppercase tracking-wide text-[#7A3A12]"
+                className="flex items-center justify-center rounded-sm  bg-[#F5C451] px-4 py-3 text-center uppercase  text-sm "
               >
                 {stat}
               </div>

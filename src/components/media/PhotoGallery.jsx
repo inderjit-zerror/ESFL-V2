@@ -49,7 +49,7 @@ const PhotoGallery = () => {
   const shuffleGrid = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    
+
     setTimeout(() => {
       const shuffled = [...images];
       for (let i = shuffled.length - 1; i > 0; i--) {
@@ -64,22 +64,22 @@ const PhotoGallery = () => {
 
   return (
     <section className="w-full pt-20 px-4 md:px-8 lg:px-12 bg-[#fdf6ec]">
-      <div className="max-w-[1600px] mx-auto">
+      <div className="max-w-[1600px]  ">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14">
           <div>
-            <h3 className="text-[#E70514] font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-3">
+            <h6 className="uppercase text-red">
               Insight
-            </h3>
-            <h2 className="Heading_1">
+            </h6>
+            <h2 data-para-effect className="uppercase ">
               PHOTO GALLERY
             </h2>
           </div>
-          <button 
+          <button
             onClick={shuffleGrid}
-            className="mt-6 md:mt-0 flex items-center gap-2 text-sm font-bold text-[#f05a28] hover:text-[#d04a1f] transition-colors uppercase tracking-widest group"
+            className="mt-6 md:mt-0 flex items-center gap-2 text-sm   text-[#f05a28] hover:text-[#d04a1f] transition-colors uppercase tracking-widest group"
           >
-            Next 
+            Next
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </button>
         </div>
@@ -89,38 +89,37 @@ const PhotoGallery = () => {
           {images.map((img, index) => {
             const currentClass = layouts[layoutIndex][index];
             return (
-            <div 
-              key={index} 
-              className={`relative overflow-hidden rounded-sm group cursor-pointer ${currentClass} ${currentClass.includes('row-span') ? '' : 'h-full'}`}
-              style={{
-                clipPath: isAnimating ? 'inset(0 0 100% 0)' : 'inset(0 0 0 0)',
-                transition: 'clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
-                transitionDelay: `${index * 100}ms`
-              }}
-            >
-              {/* Image with Grayscale to Color hover effect */}
-              <div className="absolute inset-0 w-full h-full">
-                <Image
-                  src={img.src}
-                  alt={img.title}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
+              <div
+                key={index}
+                className={`relative overflow-hidden rounded-sm group cursor-pointer ${currentClass} ${currentClass.includes('row-span') ? '' : 'h-full'}`}
+                style={{
+                  clipPath: isAnimating ? 'inset(0 0 100% 0)' : 'inset(0 0 0 0)',
+                  transition: 'clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1)',
+                  transitionDelay: `${index * 100}ms`
+                }}
+              >
+                {/* Image with Grayscale to Color hover effect */}
+                <div className="absolute inset-0 w-full h-full">
+                  <Image
+                    src={img.src}
+                    alt={img.title}
+                    fill
+                    className="cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
 
-              {/* Gradient Overlay for Text Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+                {/* Gradient Overlay for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
-              {/* Text Overlay */}
-              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white z-10">
-                <div className="text-2xl md:text-3xl font-light mb-1 leading-none">{img.id}</div>
-                <div className="text-[10px] md:text-xs font-semibold tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
-                  {img.title}
+                {/* Text Overlay */}
+                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white z-10">
+                  <div className="text-2xl md:text-3xl   mb-1 leading-none">{img.id}</div>
+                  <div className="text-[10px] md:text-xs   tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
+                    {img.title}
+                  </div>
                 </div>
               </div>
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#f05a28] transition-all duration-300 group-hover:w-full z-20"></div>
-            </div>
             );
           })}
         </div>

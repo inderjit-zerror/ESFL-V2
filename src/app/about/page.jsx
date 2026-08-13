@@ -7,11 +7,16 @@ import PresentAcrossCountry from "@/components/home/Presentacrosscountry";
 import SevenSection from "@/components/home/SevenSection";
 import { createPageMetadata } from "@/lib/seo";
 import PageLoadAnimation from "@/components/common/PageLoadAnimation";
+import PageHero from "@/components/common/PageHero";
 
 const AboutPage = () => {
   return (
     <>
-      <AboutHero />
+      <PageHero
+        title="About Us"
+        description="For over three decades Empire Spices & Foods Ltd. has carried authentic Indian flavour from Nashik to kitchens across the world."
+        imageSrc="/images/about/about_hero_spices.png"
+      />
       <VisionMissionValues />
       <OurJourney />
       <PresentAcrossCountry />

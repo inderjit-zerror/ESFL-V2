@@ -2,24 +2,25 @@ import SevenSection from '@/components/home/SevenSection'
 import Certifications from '@/components/our-process/Certifications'
 import ManufacturingJourney from '@/components/our-process/ManufacturingJourney'
 import OuHero from '@/components/our-process/OuHero'
-import QualityControl from '@/components/our-process/QualityControl'
-import ResearchDevelopment from '@/components/our-process/ResearchDevelopment'
+import ResearchAndQuality from '@/components/our-process/ResearchAndQuality'
 import SustainabilitySafety from '@/components/our-process/SustainabilitySafety'
 import React from 'react'
 import PageLoadAnimation from '@/components/common/PageLoadAnimation'
+import PageHero from '@/components/common/PageHero'
 
 const page = () => {
   return (
     <>
-      
-        <OuHero />
-      
+      <PageHero
+        title=" Our Process"
+        description="A look inside our factories hygiene, precision and consistency from raw material intake to the sealed pack."
+        videoSrc="/videos/process.mp4"
+      />
+
       <ManufacturingJourney />
       <Certifications />
-      <ResearchDevelopment />
-      <QualityControl />
+      <ResearchAndQuality />
       <SustainabilitySafety />
-
       <SevenSection />
     </>
   )

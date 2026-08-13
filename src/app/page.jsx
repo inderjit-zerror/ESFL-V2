@@ -19,12 +19,9 @@ const HomePage = () => {
       <Building />
       <Sticker />
       <Factory />
-      <PresentAcrossCountry/>
-      <LatestCampaignsAndNews/>
-
-      <SevenSection/>
-
-     
+      <PresentAcrossCountry />
+      <LatestCampaignsAndNews />
+      <SevenSection />
     </>
   );
 };

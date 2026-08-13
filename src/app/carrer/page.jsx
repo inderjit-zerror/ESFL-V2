@@ -1,4 +1,4 @@
-import CH from "@/components/carrer/CH";
+import PageHero from "@/components/common/PageHero";
 import CurrentOpenings from "@/components/carrer/Currentopenings";
 import InfiniteScroller from "@/components/carrer/InfiniteScroller";
 import LifeAtESFL from "@/components/carrer/Lifeatesfl";
@@ -10,7 +10,12 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <CH />
+      <PageHero
+        title="Build Your Career With ESFL"
+        description="Join a team that's shaping the future of food manufacturing — where craft, technology and three decades of flavour heritage meet."
+        videoSrc="/videos/spices_video.mp4"
+        buttonText="Explore Opportunities"
+      />
       <WhyPartnerWithUs />
       <InfiniteScroller/>
       <RegisterInterest />

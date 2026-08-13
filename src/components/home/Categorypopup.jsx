@@ -35,7 +35,7 @@ export default function CategoryPopup({
   const titleRef = useRef(null);
   const isAnimating = useRef(false);
   const dirRef = useRef(1); // 1 = next, -1 = prev
-  
+
   // Ref for swipe gestures
   const touchStartX = useRef(null);
 
@@ -141,7 +141,7 @@ export default function CategoryPopup({
     <section
       ref={sectionRef}
       // "relative" is crucial here to contain absolute buttons
-      className="relative flex items-center justify-center w-full max-w-[95vw] sm:max-w-max mx-auto rounded-2xl"
+      className="relative flex items-center justify-center w-full max-w-[95vw] sm:max-w-max   rounded-2xl"
     >
       {/* Prev */}
       <button
@@ -168,7 +168,7 @@ export default function CategoryPopup({
       </button>
 
       {/* Image Container */}
-      <div 
+      <div
         className="relative w-full sm:w-auto bg-white overflow-hidden rounded-2xl shadow-md"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}

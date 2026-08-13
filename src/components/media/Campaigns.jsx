@@ -1,48 +1,49 @@
 "use client";
 
 import React, { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 const content = [
   {
     id: 1,
-    category: "AWARDS",
-    title: "ESFL wins 'Emerging Food Brand of the Year' at the National Food Summit.",
-    image: "/images/home/P3.png", // using placeholder from LatestCampaignsAndNews
+    category: "PRESS",
+    title: "Empire Spices expands distribution to North America, bringing authentic Indian flavours to global markets.",
+    image: "/images/journey/journey_2014.png",
     link: "#",
   },
   {
     id: 2,
-    category: "CAMPAIGNS",
-    title: "Sustainable packaging initiative launched across the Ram Bandhu brand.",
-    image: "/images/home/P4.png",
+    category: "AWARDS",
+    title: "Ram Bandhu named 'Most Trusted Spice Brand' at the India Food Excellence Awards.",
+    image: "/images/journey/journey_2018.png",
     link: "#",
   },
   {
     id: 3,
-    category: "CSR",
-    title: "CSR outreach empowers over 5,000 farmers across rural Maharashtra.",
-    image: "/images/home/P5.png",
+    category: "CAMPAIGNS",
+    title: "Ram Bandhu launches '#DilSeDesi' festive campaign celebrating India's rich culinary heritage.",
+    image: "/images/journey/journey_1990.png",
     link: "#",
   },
   {
     id: 4,
-    category: "AWARDS",
-    title: "ESFL wins 'Emerging Food Brand of the Year' at the National Food Summit.",
-    image: "/images/home/P3.png",
+    category: "CSR",
+    title: "ESFL inaugurates 5 new primary schools in Nashik rural belt under the Vidya Vikas initiative.",
+    image: "/images/csr/csr_project_education_1786541334666.png",
     link: "#",
   },
   {
     id: 5,
-    category: "CAMPAIGNS",
-    title: "Sustainable packaging initiative launched across the Ram Bandhu brand.",
-    image: "/images/home/P4.png",
+    category: "PRESS",
+    title: "CEO shares insights on the future of sustainable spice farming in an exclusive interview.",
+    image: "/images/journey/journey_2024.png",
     link: "#",
   },
   {
     id: 6,
     category: "CSR",
-    title: "CSR outreach empowers over 5,000 farmers across rural Maharashtra.",
-    image: "/images/home/P5.png",
+    title: "Direct farmer outreach program empowers over 5,000 spice farmers across rural Maharashtra.",
+    image: "/images/journey/journey_2023.png",
     link: "#",
   },
 ];
@@ -58,17 +59,17 @@ const Campaigns = () => {
       : content.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="bg-[#fdf6ec] py-16 px-4 sm:px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#fcfaf7] container pt-32 py-24 relative">
+      <div className="w-full">
         {/* Header */}
-        <div className="text-center mx-auto mb-10">
-          <p className="text-[#E70514] font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-3">
+        <div className="text-center mb-16">
+          <h6 className="text-[#E30713] uppercase mb-2">
             ON AIR NOW
-          </p>
-          <h1 className="Heading_1 HNM_FONT text-neutral-900 leading-tight mb-4">
+          </h6>
+          <h2 data-para-effect className="uppercase mb-4">
             LATEST CAMPAIGNS <br className="hidden sm:block" /> &amp; NEWS
-          </h1>
-          <p className="Paragraph_Medium text-neutral-600 mb-8">
+          </h2>
+          <p className="opacity-70 mx-auto max-w-2xl mb-8">
             Latest campaigns, media coverage and company updates.
           </p>
 
@@ -78,9 +79,9 @@ const Campaigns = () => {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-1.5 rounded-full text-xs sm:text-sm font-bold tracking-wider transition-colors ${
+                className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${
                   activeCategory === cat
-                    ? "bg-[#E70514] text-white"
+                    ? "bg-[#E30713] text-white"
                     : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
                 }`}
               >
@@ -91,10 +92,10 @@ const Campaigns = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredContent.map((item) => (
             <div key={item.id} className="flex flex-col group cursor-pointer">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden relative mb-4">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden relative mb-5">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -102,15 +103,15 @@ const Campaigns = () => {
                 />
               </div>
 
-              <p className="Paragraph_Medium MNM_FONT text-neutral-800 line-clamp-2 min-h-[3rem]">
+              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors line-clamp-2 min-h-[3rem]">
                 {item.title}
-              </p>
+              </h5>
 
               <a
                 href={item.link}
-                className="mt-3 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#E70514] underline underline-offset-2 hover:text-[#a80d26]"
+                className="mt-auto text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 transition-opacity"
               >
-                Read More
+                READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </a>
             </div>
           ))}

@@ -1,6 +1,32 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Certifications() {
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(".cert-card", {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }, { scope: sectionRef });
+
   // Data for the top row of certification cards
   const certs = [
     {
@@ -60,18 +86,18 @@ export default function Certifications() {
   ];
 
   return (
-    <section className="bg-[#E70514] min-h-screen py-16 px-6 md:px-12 lg:px-10 font-sans text-white">
-      <div className=" mx-auto">
-        
+    <section ref={sectionRef} className="bg-[#E30713] container py-24 text-white">
+      <div className="  ">
+
         {/* Header Section */}
-        <div className="max-w-2xl mb-12">
-          <p className="text-[#F5C451] text-sm  font-bold tracking-[0.15em] uppercase mb-2">
+        <div className="max-w-xl mb-12">
+          <h6 className="text-[#F5C451] uppercase mb-2">
             Accredited & Audited
-          </p>
-          <h2 className="text-[#F5C451] Heading_1 max-sm:text-[2rem]! max-sm:leading-[2rem]! text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase leading-[1.1] mb-6">
+          </h6>
+          <h2 data-para-effect className="text-[#F5C451] uppercase mb-2">
             Quality & Process <br /> Certifications
           </h2>
-          <p className="text-[#fde8e5] Paragraph_Medium text-lg md:text-xl leading-relaxed opacity-90">
+          <p className="">
             Independent bodies verify our plants, processes and paperwork year after year — so every pack carries the same guarantee, wherever it travels.
           </p>
         </div>
@@ -81,18 +107,18 @@ export default function Certifications() {
           {certs.map((cert) => (
             <div
               key={cert.id}
-              className="group flex flex-col bg-[#f51d2c] p-6 rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
+              className="cert-card group flex flex-col bg-[#f51d2c] p-5  rounded-xl cursor-pointer transition-colors duration-300 h-52 hover:bg-[#F5C451]"
             >
               {/* Icon Placeholder (Replace with actual Next/Image or SVG) */}
-              <div className={`w-14 h-14 bg-[#F5C451] rounded-md flex items-center justify-center text-[10px] font-bold text-white mb-8 shadow-sm`}>
+              <div className={`w-12 h-12 bg-[#F5C451] group-hover:bg-[#E30713] rounded-md flex items-center justify-center p-2    text-white  transition-all duration-300 `}>
                 <img src={cert.iconText} alt="IMG" className='w-full  object-cover object-center' />
               </div>
-              
+
               <div className="mt-auto">
-                <h3 className="text-lg font-bold mb-1 transition-colors duration-300 group-hover:text-[#E70514]">
+                <h5 data-para-effect className="mb-1 transition-colors duration-300 group-hover:text-[#E30713]">
                   {cert.title}
-                </h3>
-                <p className="text-sm text-[#fde8e5] opacity-90 transition-colors duration-300 group-hover:text-[#E70514]">
+                </h5>
+                <p className="text-sm opacity-80 transition-colors duration-300 group-hover:text-[#E30713]">
                   {cert.subtitle}
                 </p>
               </div>
@@ -105,12 +131,12 @@ export default function Certifications() {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="group bg-[#f51d2c] p-8 rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
+              className="cert-card group bg-[#f51d2c] p-5 h-52 flex flex-col justify-between rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
             >
-              <h3 className="text-3xl md:text-4xl text-[#F5C451] font-semibold mb-3 transition-colors duration-300 group-hover:text-[#E70514]">
+              <h3 data-para-effect className="text-3xl md:text-4xl    mb-3 transition-colors duration-300 group-hover:text-[#E30713]">
                 {stat.value}
               </h3>
-              <p className="text-xs md:text-sm text-[#fde8e5] font-semibold tracking-wider uppercase opacity-90 transition-colors duration-300 group-hover:text-[#E70514]">
+              <p className="text-sm  uppercase opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
                 {stat.label}
               </p>
             </div>

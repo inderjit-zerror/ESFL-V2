@@ -27,7 +27,7 @@ function ScrollDownIndicator({ className = "" }) {
       <div
         className={`scroll-indicator-wrap flex flex-col items-center gap-2 text-white/90 ${className}`}
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.25em]">
+        <span className="text-xs   uppercase tracking-[0.25em]">
           Scroll Down
         </span>
 
@@ -64,17 +64,17 @@ const PartnerHero = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative h-[80vh] w-full  sm:h-svh ">
-             <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+        <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
 
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 
         <div data-page-load-content className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
-          <h1 data-heading-reveal="off" className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
-          Become a Channel Partner
+          <h1 data-heading-reveal="off" className="  text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem]   mb-4">
+            Become a Channel Partner
           </h1>
-          <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4 pb-10">
-           Join India's leading spice and food network. Partner with ESFL to bring quality, heritage and taste to millions of kitchens across the globe.
+          <p className="max-w-[600px]     text-sm sm:text-base md:text-lg px-4 pb-10">
+            Join India's leading spice and food network. Partner with ESFL to bring quality, heritage and taste to millions of kitchens across the globe.
             {/* <br className="hidden sm:block" />
             Whether it’s a partnership, enquiry, or collaboration, we’d love to
             hear from you. */}

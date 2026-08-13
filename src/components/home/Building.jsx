@@ -102,8 +102,8 @@ export default function Building() {
   return (
     <section
       ref={sectionRef}
-      // onMouseMove={handleMouseMove}
-      className="relative flex min-h-[60svh] bg w-full bg-white mx-auto items-center justify-center px-5 sm:px-6 py-16 sm:py-0 overflow-hidden"
+      onMouseMove={handleMouseMove}
+      className="relative flex py-24 bg w-full bg-white   items-center justify-center  overflow-hidden"
     >
 
       <img
@@ -147,29 +147,29 @@ export default function Building() {
         // Stops the mousemove event from bubbling up to the section
         // handler, so no trail images spawn while hovering this area.
         onMouseMove={(e) => e.stopPropagation()}
-        className="relative z-10 flex w-full max-w-[850px] h-fit flex-col items-center text-center"
+        className="relative z-10 flex w-full h-fit flex-col pointer-events-none items-center text-center"
       >
         {/* Top Text */}
         <div className="mb-4 flex items-center gap-3 px-4">
-          <span className="Paragraph_Small uppercase HNR_FONT text-[#E70514]">
+          <h6 className=" uppercase  mb-2  text-red">
             Winning the hearts of our consumers since 1994
-          </span>
+          </h6>
         </div>
 
         {/* Heading */}
-        <h1 className="Heading_1 HNM_FONT uppercase px-2 max-sm:text-[2rem]! max-sm:leading-[2.1rem]!">
-          Building India's <br className="hidden sm:inline" /> Trusted Food Brands.
+        <h1 data-para-effect className="  uppercase ">
+          Building India's <br className="hidden sm:inline" /> Trusted Food <br className="hidden sm:inline" /> Brands.
         </h1>
 
         {/* Description */}
-        <p className="mt-4 max-w-[90%] sm:max-w-[600px] md:max-w-[740px] Paragraph_Medium HNR_FONT text-[#5B514C]">
+        <p className="max-w-3xl mt-5">
           Pioneering purity and uncompromising quality in every household.
           Our legacy is built on authentic flavour and world-class
           manufacturing standards.
         </p>
 
         {/* Buttons */}
-        <div className="mt-10 flex gap-5 w-fit  sm:max-w-none sm:w-auto max-sm:flex-col">
+        <div className="mt-10 flex gap-5 w-fit pointer-events-auto sm:max-w-none sm:w-auto max-sm:flex-col">
           <BTN txt={`Know More`} variant="B1" />
           <BTN txt={`Become Channel Partner`} variant="B2" />
         </div>

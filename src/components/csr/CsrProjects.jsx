@@ -29,27 +29,27 @@ const projects = [
 
 const CsrProjects = () => {
   return (
-    <section className="w-full bg-[#FDF6EC] py-20 px-6 sm:px-10 lg:px-20">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="bg-[#fcfaf7] container py-24 relative">
+      <div className="w-full">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16">
           <div>
-            <p className="text-[#E70514] font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-3">
+            <h6 className="text-[#E30713] uppercase mb-2">
               IMPACT IN ACTION
-            </p>
-            <h2 className="Heading_1 text-3xl sm:text-4xl lg:text-[42px] font-extrabold uppercase text-[#2b2b2b] tracking-tight">
+            </h6>
+            <h2 data-para-effect className="uppercase">
               ONGOING CSR PROJECTS
             </h2>
           </div>
-          <Link href="#" className="mt-6 sm:mt-0 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#E70514] uppercase hover:opacity-80 flex items-center gap-2">
+          <Link href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center gap-2">
             VIEW ALL PROJECTS <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-t-xl overflow-hidden shadow-sm flex flex-col h-full group">
+            <div key={index} className=" group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full group">
               <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                 <Image
                   src={project.image}
@@ -58,18 +58,17 @@ const CsrProjects = () => {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <p className="text-[10px] font-bold tracking-[0.2em] text-[#a9a9a9] uppercase mb-3">
+              <div className="p-5 flex flex-col flex-grow">
+                <p className="text-xs font-semibold tracking-wider text-red uppercase mb-3">
                   {project.category}
                 </p>
-                <h3 className="text-xl font-extrabold text-[#2b2b2b] uppercase tracking-tight mb-4">
+                <h5 data-para-effect className="uppercase mb-4">
                   {project.title}
-                </h3>
-                <p className="text-sm text-[#6b6b6b] leading-relaxed mb-8 flex-grow">
+                </h5>
+                <p className="opacity-70  mb-8 flex-grow">
                   {project.description}
                 </p>
-                <hr className="border-gray-100 mb-6" />
-                <Link href={project.link} className="text-[10px] font-bold tracking-[0.2em] text-[#E70514] uppercase flex items-center gap-2 hover:opacity-80">
+                <Link href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5  transition-all duration-300">
                   READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                 </Link>
               </div>

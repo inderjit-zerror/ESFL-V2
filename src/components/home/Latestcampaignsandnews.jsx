@@ -2,8 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import Carousel from "./Carousel";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import BTN from "../common/BTN";
+import { RiArrowLeftLine, RiArrowRightLine } from "@remixicon/react";
+import Image from "next/image";
 
 // Combined campaigns + news content.
 // type: "video"   -> tile opens a popup player (set `videoUrl`)
@@ -128,6 +131,9 @@ function VideoModal({ item, onClose }) {
 export default function LatestCampaignsAndNews() {
   const headerRef = useRef(null);
   const [activeVideo, setActiveVideo] = useState(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
     if (!headerRef.current) return;
@@ -139,83 +145,103 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="bg-[#fdf6ec] py-8 px-4 sm:px-6 lg:px-12">
-      <div className=" mx-auto pt-10">
+    <section className="container py-24">
+      <div className="">
         {/* Header */}
-        <div ref={headerRef} className="text-center  mx-auto mb-10">
-          <h1 className=" Heading_1 HNM_FONT text-neutral-900 leading-tight">
+        <div ref={headerRef} className="text-center">
+          <h2 data-para-effect className="">
             LATEST CAMPAIGNS
-
             &amp; NEWS
-          </h1>
-          <p className="my-4  Paragraph_Medium text-neutral-600">
+          </h2>
+          <p className="my-4">
             Latest campaigns, media coverage and company updates.
           </p>
 
-          <BTN txt={"VIEW ALL"} variant={"B1"} />
+          <BTN txt={"view all"} variant={"B1"} />
         </div>
 
+        <div className="flex w-full mb-5 md:justify-end gap-x-2">
+          <button onClick={() => swiperInstance?.slidePrev()} disabled={isBeginning} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"><RiArrowLeftLine /></button>
+          <button onClick={() => swiperInstance?.slideNext()} disabled={isEnd} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"> <RiArrowRightLine /> </button>
+        </div>
         {/* Combined Campaigns & News */}
-        <div className="mb-10">
-          <Carousel
-            items={content}
-            slidesPerView={{ base: 1, sm: 1.3, md: 2.3, lg: 3 }}
-            gap={20}
-            renderItem={(item) => (
-              <div className="flex flex-col group">
-                <div
-                  className={`aspect-[4/3] rounded-xl overflow-hidden relative ${
-                    item.type === "video" ? "cursor-pointer" : ""
-                  }`}
-                  onClick={() => {
-                    if (item.type === "video") setActiveVideo(item);
-                  }}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {item.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
-                      <span className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                        <PlayIcon />
-                      </span>
-                    </div>
+        <div className="">
+          <Swiper
+            spaceBetween={20}
+            speed={800}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              640: { slidesPerView: 1.3 },
+              768: { slidesPerView: 2.3 },
+              1024: { slidesPerView: 3 },
+            }}
+            onSwiper={(swiper) => {
+              setSwiperInstance(swiper);
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+          >
+            {content.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="flex flex-col group h-full">
+                  <div
+                    className={`aspect-[4/3] rounded-lg overflow-hidden relative ${item.type === "video" ? "cursor-pointer" : ""
+                      }`}
+                    onClick={() => {
+                      if (item.type === "video") setActiveVideo(item);
+                    }}
+                  >
+                    <Image
+                      fill
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {item.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
+                        <span className="w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                          <PlayIcon />
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {item.badge && (
+                    <h6 className="mt-4     text-[#E30713] ">
+                      {item.badge}
+                    </h6>
+                  )}
+
+                  <p className="mt-2">
+                    {item.title}
+                  </p>
+
+                  {item.type === "video" ? (
+                    <button
+                      type="button"
+                      onClick={() => setActiveVideo(item)}
+                      className="mt-2 text-sm      ! text-[#E30713] underline cursor-pointer underline-offset-2 hover:text-[#a80d26] text-left"
+                    >
+                      Know More
+                    </button>
+                  ) : (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 text-sm      ! text-[#E30713] underline cursor-pointer underline-offset-2 hover:text-[#a80d26]"
+                    >
+                      Know More
+                    </a>
                   )}
                 </div>
-
-                {item.badge && (
-                  <p className="mt-4 Paragraph_Small MNM_FONT text-[#E70514] font-semibold!">
-                    {item.badge}
-                  </p>
-                )}
-
-                <p className="mt-2 Paragraph_Medium MNM_FONT text-neutral-800 ">
-                  {item.title}
-                </p>
-
-                {item.type === "video" ? (
-                  <button
-                    type="button"
-                    onClick={() => setActiveVideo(item)}
-                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#E70514] underline cursor-pointer underline-offset-2 hover:text-[#a80d26] text-left"
-                  >
-                    Know More
-                  </button>
-                ) : (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 text-sm Paragraph_Small MNM_FONT font-semibold! text-[#E70514] underline cursor-pointer underline-offset-2 hover:text-[#a80d26]"
-                  >
-                    Know More
-                  </a>
-                )}
-              </div>
-            )}
-          />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
 

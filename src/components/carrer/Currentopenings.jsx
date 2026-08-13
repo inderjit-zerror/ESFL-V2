@@ -67,8 +67,8 @@ const COLORS = {
   cardBg: "#FFFFFF",
   cardBgHover: "#F4C96B", // yellow
   iconBg: "#FBE3DC",
-  iconBgHover: "#E70514",
-  iconColor: "#E70514",
+  iconBgHover: "#E30713",
+  iconColor: "#E30713",
   iconColorHover: "#FFFFFF",
   text: "#1F1F1F",
   textHover: "#B5341F", // red
@@ -107,17 +107,17 @@ export default function CurrentOpenings() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#E70514] px-6 py-20 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-6xl">
+    <section ref={sectionRef} className="bg-[#E30713] py-24">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-10 flex items-end justify-between">
+        <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-bold tracking-[0.2em] text-white/80">JOIN US</p>
-            <h2 className="mt-2 text-3xl font-extrabold uppercase tracking-tight text-[#F4C96B] sm:text-4xl">
+            <h6 className="text-[#fcb62d] uppercase mb-2">JOIN US</h6>
+            <h2 data-para-effect className="text-[#fcb62d] uppercase m-0">
               Current Openings
             </h2>
           </div>
-          <p className="hidden text-xs font-bold  text-white/90 sm:block">
+          <p className="text-sm uppercase text-[#fcb62d] opacity-80 pb-2">
             {JOBS.length} ROLES OPEN
           </p>
         </div>
@@ -175,61 +175,60 @@ function JobCard({ job }) {
   return (
     <div
       ref={cardRef}
-      className="job-card rounded-lg border border-black/5 Paragraph_Medium bg-white p-6 shadow-sm"
+      className="job-card rounded-md border border-black/5 bg-white p-6 sm:p-8 shadow-sm cursor-pointer"
       style={{ backgroundColor: COLORS.cardBg }}
     >
       {/* Top row: icon, title, subtitle, external-link arrow */}
-      <div className="flex items-start justify-between">
-        <div className="flex items-start gap-3">
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex items-start gap-4">
           <div
-            className="job-icon-box flex h-11 w-11 shrink-0 items-center justify-center rounded-md"
+            className="job-icon-box flex h-14 w-14 shrink-0 items-center justify-center rounded-md"
             style={{ backgroundColor: COLORS.iconBg }}
           >
-            <Briefcase className="job-icon h-5 w-5" style={{ color: COLORS.iconColor }} strokeWidth={1.75} />
+            <Briefcase className="job-icon h-6 w-6" style={{ color: COLORS.iconColor }} strokeWidth={1.75} />
           </div>
           <div>
-            <h3
-              className="job-title text-sm font-extrabold uppercase tracking-wide"
+            <h5
+              className="job-title uppercase"
               style={{ color: COLORS.text }}
             >
               {job.title}
-            </h3>
-            <p className="job-sub mt-0.5 text-xs" style={{ color: COLORS.subText }}>
+            </h5>
+            <p className="job-sub mt-1 text-sm opacity-70" style={{ color: COLORS.subText }}>
               by Empire Spices in{" "}
-              <span className="font-semibold" style={{ color: COLORS.textHover }}>
+              <span className="font-medium" style={{ color: COLORS.textHover }}>
                 {job.department}
               </span>
             </p>
           </div>
         </div>
-        <ArrowUpRight className="job-arrow h-4 w-4" style={{ color: COLORS.subText }} />
+        <ArrowUpRight className="job-arrow h-5 w-5 shrink-0" style={{ color: COLORS.subText }} />
       </div>
 
       {/* Tags */}
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2 sm:gap-3">
         <Tag icon={Clock} label={job.type} />
         <Tag icon={MapPin} label={job.location} />
         <Tag icon={TrendingUp} label={job.experience} />
       </div>
 
       {/* Divider */}
-      <div className="job-divider my-5 h-px" style={{ backgroundColor: COLORS.divider }} />
+      <div className="job-divider my-6 h-[1px] w-full" style={{ backgroundColor: COLORS.divider }} />
 
       {/* Footer */}
       <div className="flex items-center justify-between">
-        <p className="job-days text-xs font-bold tracking-wide" style={{ color: COLORS.text }}>
+        <p className="job-days text-sm uppercase font-medium" style={{ color: COLORS.text }}>
           {job.daysLeft} DAYS{" "}
-          <span className="font-medium" style={{ color: COLORS.subText }}>
+          <span className="opacity-70 font-normal" style={{ color: COLORS.subText }}>
             LEFT TO APPLY
           </span>
         </p>
-        <a
-          href="#"
-          className="text-xs font-bold tracking-wide underline underline-offset-2"
+        <span
+          className="text-sm font-bold uppercase underline underline-offset-4"
           style={{ color: COLORS.textHover }}
         >
           APPLY
-        </a>
+        </span>
       </div>
     </div>
   );
@@ -238,12 +237,12 @@ function JobCard({ job }) {
 function Tag({ icon: Icon, label }) {
   return (
     <span
-      className="job-tag flex items-center gap-1.5 rounded-sm border px-3 py-1.5 text-[10px] font-semibold tracking-wide"
+      className="job-tag flex items-center gap-1.5 rounded border px-3 py-1.5 text-xs uppercase"
       style={{ backgroundColor: COLORS.tagBg, borderColor: COLORS.tagBorder }}
     >
-      <Icon className="h-3 w-3" style={{ color: COLORS.iconColor }} strokeWidth={2} />
-      <span className="job-tag-text" style={{ color: COLORS.subText }}>
-        {label.toUpperCase()}
+      <Icon className="h-3.5 w-3.5" style={{ color: COLORS.iconColor }} strokeWidth={2} />
+      <span className="job-tag-text font-medium" style={{ color: COLORS.subText }}>
+        {label}
       </span>
     </span>
   );

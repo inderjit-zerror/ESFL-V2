@@ -45,24 +45,20 @@ const INFO_ROWS = [
 
 function RowBlock({ label, rows, lines, isLast }) {
   return (
-    <div className={isLast ? "" : "border-b border-[white]/15 pb-6"}>
+    <div className={isLast ? "" : "border-b border-white/50 pb-6"}>
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-4 sm:gap-8">
-        <h3 className="text-base font-extrabold uppercase tracking-tight text-[white] max-sm:text-[#E70514]  sm:text-lg">
+        <h5 data-para-effect className="text-base uppercase tracking-tight text-white sm:text-lg">
           {label}
-        </h3>
+        </h5>
 
-        <div className="relative text-right text-[13px] leading-relaxed text-[white]/80 max-sm:text-[#E70514]  sm:text-sm">
-          <span
-            className="absolute -right-2.5 -top-1 h-1.5 w-1.5 rounded-full bg-[white] max-sm:text-[#E70514] "
-            aria-hidden="true"
-          />
+        <div className="relative text-right text-xs leading-relaxed text-white/80 sm:text-sm">
           {rows
             ? rows.map((r) => (
-                <p key={r.k} className="flex flex-col sm:block sm:whitespace-nowrap">
-                  <span className="mr-0 sm:mr-3">{r.k}</span>
-                  <span className="font-medium text-[white] max-sm:text-[#E70514] ">{r.v}</span>
-                </p>
-              ))
+              <p key={r.k} className="flex flex-col sm:block sm:whitespace-nowrap">
+                <span className="mr-0 sm:mr-3">{r.k}</span>
+                <span className="text-white font-medium">{r.v}</span>
+              </p>
+            ))
             : lines.map((l) => <p key={l}>{l}</p>)}
         </div>
       </div>
@@ -106,10 +102,10 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid overflow-hidden h-auto lg:h-screen bg-[#E70514] max-sm:bg-white lg:grid-cols-2"
+      className="grid overflow-hidden h-auto bg-[#E30713] lg:grid-cols-2"
     >
       {/* Map — left on desktop, bottom on mobile */}
-      <div className="oi-map relative min-h-[280px] sm:min-h-[360px] lg:min-h-[640px] order-last lg:order-first">
+      <div className="oi-map relative  order-last lg:order-first">
         <iframe
           title="Empire Spices & Foods Ltd. location"
           src="https://www.google.com/maps?cid=13564662084488619543&output=embed"
@@ -120,7 +116,7 @@ export default function OfficeInfoMap() {
 
         {/* Custom pin card overlay */}
         <div className="absolute top-1/2 -translate-y-1/2 right-4 max-w-[78%] sm:max-w-[280px] sm:top-auto sm:translate-y-0 h-fit flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] sm:bottom-10 sm:right-10">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E70514] text-white">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E30713] text-white">
             <svg
               width="16"
               height="16"
@@ -136,7 +132,7 @@ export default function OfficeInfoMap() {
             </svg>
           </div>
           <div className="min-w-0">
-            <p className="text-[11px] font-extrabold uppercase leading-tight tracking-tight text-[#E70514] sm:text-xs">
+            <p className="text-[11px]   uppercase leading-tight tracking-tight text-[#E30713] sm:text-xs">
               Empire Spices &amp; Foods Ltd.
             </p>
             <p className="mt-0.5 text-[11px] text-[#2B1B12]/70 sm:text-xs">

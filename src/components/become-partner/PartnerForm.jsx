@@ -29,28 +29,6 @@ export default function PartnerForm() {
         console.log("Application Form submission:", form);
     };
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-            tl.from(leftRef.current, {
-                opacity: 0,
-                x: -24,
-                duration: 0.6,
-            }).from(
-                fieldRefs.current.filter(Boolean),
-                {
-                    opacity: 0,
-                    y: 20,
-                    duration: 0.5,
-                    stagger: 0.06,
-                },
-                "-=0.4"
-            );
-        }, sectionRef);
-
-        return () => ctx.revert();
-    }, []);
 
     let fieldIndex = 0;
     const registerField = (el) => {
@@ -75,10 +53,10 @@ export default function PartnerForm() {
 
                 {/* Right column — form */}
                 <div className="pl-6 sm:pl-10 lg:pl-12 xl:pl-16 ">
-                    <h2 className="Heading_1  font-extrabold uppercase leading-tight tracking-tightmb-3">
+                    <h2 data-para-effect className="     uppercase mb-2">
                         APPLICATION FORM
                     </h2>
-                    <p className="Paragraph_Medium text-sm leading-relaxed text-[#6b6b6b] mb-10 max-w-xl">
+                    <p className=" mb-5">
                         Please fill in your details and our team will get in touch with you shortly.
                     </p>
 
@@ -101,7 +79,7 @@ export default function PartnerForm() {
                                     required
                                     value={form.businessType}
                                     onChange={handleChange("businessType")}
-                                    className="w-full relative appearance-none border border-[#EADCC8] bg-[#FCF8F2] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 fill=%22%23999%22><path d=%22M5.5 7.5l4.5 4.5 4.5-4.5%22 stroke=%22%23999%22 stroke-width=%221.5%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat px-4 py-3 text-sm text-[#2b2b2b] outline-none focus:border-[#e41e26]"
+                                    className="w-full rounded-md relative appearance-none border border-[#EADCC8] bg-[#FCF8F2] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 fill=%22%23999%22><path d=%22M5.5 7.5l4.5 4.5 4.5-4.5%22 stroke=%22%23999%22 stroke-width=%221.5%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat px-4 py-3 text-sm text-[#2b2b2b] outline-none focus:border-[#e41e26]"
                                 >
                                     <option value="" disabled></option>
                                     <option value="retail">Retail</option>
@@ -134,7 +112,7 @@ export default function PartnerForm() {
                                 placeholder="Tell us more about your interest..."
                                 value={form.message}
                                 onChange={handleChange("message")}
-                                className="w-full h-32 resize-none border border-[#EADCC8] bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#e41e26]"
+                                className="w-full rounded-md h-32 resize-none border border-[#EADCC8] bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#e41e26]"
                             />
                         </div>
 
@@ -148,19 +126,20 @@ export default function PartnerForm() {
     );
 }
 
+
 function Label({ children }) {
-    return (
-        <label className="mb-2 block text-[10px] font-bold tracking-widest text-[#8a8a8a] uppercase">
-            {children}
-        </label>
-    );
+  return (
+    <label className="mb-2 block text-xs opacity-50 uppercase">
+      {children}
+    </label>
+  );
 }
 
 function Input(props) {
-    return (
-        <input
-            {...props}
-            className="w-full border border-[#EADCC8] bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#e41e26]"
-        />
-    );
+  return (
+    <input
+      {...props}
+      className="w-full border rounded-md border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
+    />
+  );
 }

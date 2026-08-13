@@ -7,10 +7,7 @@ import PageLoadAnimation from '@/components/common/PageLoadAnimation'
 
 const page = () => {
   return (
-    <>
-     
-       <ILH />
-     
+    <>     
       <InvestorLogin />
       <InvestorResources/>
       <SevenSection />

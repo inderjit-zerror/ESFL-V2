@@ -8,7 +8,6 @@ import PhotoGallery from '@/components/media/PhotoGallery'
 const page = () => {
   return (
     <>
-      <MediaHero/>
       <Campaigns/>
       <VideoSection/>
       <PhotoGallery/>

@@ -58,7 +58,7 @@ function ScrollDownIndicator({ className = "" }) {
       <div
         className={`scroll-indicator-wrap flex flex-col items-center gap-2 text-white/90 ${className}`}
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.25em]">
+        <span className="text-xs   uppercase tracking-[0.25em]">
           Scroll Down
         </span>
 
@@ -127,7 +127,7 @@ function ChatPill({ className = "" }) {
         />
 
         <span
-          className="whatsapp-pill group relative inline-flex items-center gap-2 rounded-full bg-[#25D366] group-hover:bg-[#19ac4f] px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_8px_20px_-6px_rgba(37,211,102,0.55)] transition-transform hover:scale-[1.05] active:scale-[0.98]"
+          className="whatsapp-pill group relative inline-flex items-center gap-2 rounded-full bg-[#25D366] group-hover:bg-[#19ac4f] px-6 py-3 text-sm   tracking-wide text-white shadow-[0_8px_20px_-6px_rgba(37,211,102,0.55)] transition-transform hover:scale-[1.05] active:scale-[0.98]"
         >
           <svg
             viewBox="0 0 24 24"
@@ -191,79 +191,57 @@ export default function CompoContact() {
     <div
       ref={rootRef}
       className="w-full bg-[#FDF6EC] text-[#2B1B12]"
-      style={{ fontFamily: "'Work Sans', ui-sans-serif, system-ui" }}
     >
-      <section data-page-load-hero className="relative  overflow-hidden">
-        <div className="relative aspect-square w-full sm:h-svh ">
-          <img
-            src="https://images.unsplash.com/photo-1758520145090-581ad6571c30?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="A Ram Bandhu customer care executive taking a call"
-            data-page-load-media
-            className="h-full w-full object-cover object-center"
-          />
-
-          <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
-
-          <div data-page-load-content className="absolute inset-0 px-6 pb-8 sm:px-12 sm:pb-12 flex flex-col justify-center items-center text-white text-center">
-            <h1 data-heading-reveal="off" className="Heading_1 text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem] font-bold mb-4">
-              Contact
-            </h1>
-            <p className="max-w-[600px] mx-auto MNM_FONT text-sm sm:text-base md:text-lg px-4">
-              Let’s Build Something Meaningful Together.<br className="hidden sm:block" />
-              Whether it’s a partnership, enquiry, or collaboration, we’d love to hear from you.
-            </p>
-          </div>
-          <ScrollDownIndicator className="absolute bottom-8 left-1/2 max-sm:hidden -translate-x-1/2 z-10" />
-        </div>
-      </section>
-
       <OfficeInfoMap />
 
-      {/* Replaced 'h-svh' with natural padding to avoid mobile overflow issues */}
-      <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-8 sm:py-24 lg:px-10">
+      <section className="py-24 container mx-auto">
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
-          
+
           {/* Reach us at */}
-          <div className="reveal-block rounded-3xl bg-[#E70514] p-6 sm:p-10 text-[white] flex flex-col justify-center">
-            <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
+          <div className="reveal-block rounded-3xl bg-[#E30713] p-8 sm:p-12 text-white flex flex-col justify-center">
+            <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
-            </h2>
-            <div className="mt-8 space-y-6 text-sm sm:text-base">
+            </h3>
+            <p className="text-white/80 text-sm mb-8">
+              Whether it's a partnership, enquiry, or collaboration, we'd love to hear from you.
+            </p>
+
+            <div className="space-y-6">
               <div>
-                <p className="text-[white] font-semibold text-xs Paragraph_Medium uppercase tracking-[0.2em]">
+                <p className="text-xs uppercase opacity-70 tracking-widest text-white">
                   Customer Care Number
                 </p>
                 <a
                   href="tel:8805580055"
-                  className="mt-1.5 inline-block text-[white] font-semibold Paragraph_Medium hover:underline text-lg sm:text-xl"
+                  className="mt-1.5 inline-block text-white font-medium hover:underline text-xl sm:text-2xl"
                 >
                   88055 80055
                 </a>
               </div>
-              <div className="font-semibold Paragraph_Medium">
-                <p className="text-[white] text-xs uppercase tracking-[0.2em]">
+              <div>
+                <p className="text-xs uppercase opacity-70 tracking-widest text-white">
                   Customer Care Email
                 </p>
                 <a
                   href="mailto:customercare@esfl.co.in"
-                  className="mt-1.5 inline-block text-white hover:underline text-lg sm:text-xl"
+                  className="mt-1.5 inline-block text-white font-medium hover:underline text-xl sm:text-2xl"
                 >
                   customercare@esfl.co.in
                 </a>
               </div>
             </div>
 
-            <p className="mt-10 text-xs text-[white]/50 font-semibold Paragraph_Medium">
+            <p className="mt-10 text-xs text-white/60 uppercase tracking-wider">
               Our team responds within one business day.
             </p>
           </div>
 
-          {/* OR divider — signature stitched element, desktop only */}
+          {/* OR divider — desktop */}
           <div
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:flex"
             aria-hidden="true"
           >
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-dashed border-[#E70514]/50 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E70514]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E30713]">
               Or
             </div>
           </div>
@@ -271,28 +249,30 @@ export default function CompoContact() {
           {/* Mobile OR divider */}
           <div className="flex items-center gap-3 lg:hidden" aria-hidden="true">
             <span className="h-px flex-1 bg-[#E8D9C3]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#E70514]">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#E30713]">
               Or
             </span>
             <span className="h-px flex-1 bg-[#E8D9C3]" />
           </div>
 
           {/* Submit query form */}
-          <div className="reveal-block rounded-3xl border border-[#E8D9C3] bg-white p-6 sm:p-10">
-            <h2 className="text-2xl font-bold sm:text-3xl Heading_1">
+          <div className="reveal-block rounded-3xl border border-black/5 bg-white p-8 sm:p-12">
+            <h3 data-para-effect className="uppercase text-[#2B1B12] mb-2">
               Submit Your Query
-            </h2>
+            </h3>
+            <p className="text-sm opacity-70 text-[#6B6B6B] mb-8">
+              Fill in your details below and our team will respond shortly.
+            </p>
 
             {status === "sent" ? (
-              <div className="mt-8 rounded-2xl bg-[#FFC55C]/25 p-6 text-sm text-[#2B1B12]">
-                Thanks — your message has been sent. We'll get back to you
-                shortly.
+              <div className="mt-6 rounded-md bg-[#E30713]/10 p-6 text-sm text-[#E30713] font-medium">
+                Thanks — your message has been sent successfully. We'll get back to you shortly.
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="block">
-                    <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
+                    <span className="mb-2 block text-xs opacity-50 uppercase">
                       First Name
                     </span>
                     <input
@@ -300,26 +280,26 @@ export default function CompoContact() {
                       required
                       value={form.firstName}
                       onChange={handleChange("firstName")}
-                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
+                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="Asha"
                     />
                   </label>
                   <label className="block">
-                    <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
+                    <span className="mb-2 block text-xs opacity-50 uppercase">
                       Last Name
                     </span>
                     <input
                       type="text"
                       value={form.lastName}
                       onChange={handleChange("lastName")}
-                      className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
+                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="Patil"
                     />
                   </label>
                 </div>
 
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
+                  <span className="mb-2 block text-xs opacity-50 uppercase">
                     Phone
                   </span>
                   <input
@@ -327,13 +307,13 @@ export default function CompoContact() {
                     required
                     value={form.phone}
                     onChange={handleChange("phone")}
-                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
+                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                     placeholder="98xxxxxxxx"
                   />
                 </label>
 
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
+                  <span className="mb-2 block text-xs opacity-50 uppercase">
                     Email
                   </span>
                   <input
@@ -341,13 +321,13 @@ export default function CompoContact() {
                     required
                     value={form.email}
                     onChange={handleChange("email")}
-                    className="mt-2 w-full rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
+                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                     placeholder="you@email.com"
                   />
                 </label>
 
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#2B1B12]/60">
+                  <span className="mb-2 block text-xs opacity-50 uppercase">
                     Message
                   </span>
                   <textarea
@@ -355,11 +335,11 @@ export default function CompoContact() {
                     rows={4}
                     value={form.message}
                     onChange={handleChange("message")}
-                    className="mt-2 w-full resize-none rounded-xl border border-[#E8D9C3] bg-[#FDF6EC] px-4 py-3 text-sm outline-none transition-colors focus:border-[#E70514]"
+                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] resize-none"
                     placeholder="How can we help?"
                   />
                 </label>
-                
+
                 <div className="pt-2">
                   <BTN txt={status === "sending" ? "Sending..." : "Submit"} />
                 </div>
@@ -369,15 +349,6 @@ export default function CompoContact() {
         </div>
       </section>
 
-      {/* ---------------------------------------------------------------- */}
-      {/* Chat With Us — same trigger shown inline + fixed to the corner   */}
-      {/* ---------------------------------------------------------------- */}
-      <section className="flex justify-center pb-16 sm:pb-24">
-        <ChatPill />
-      </section>
-
-      {/* Persistent floating chat trigger (site-wide, same component) */}
-      {/* <ChatPill className="fixed bottom-6 right-6 z-50 hidden sm:inline-flex" /> */}
     </div>
   );
 }

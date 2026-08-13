@@ -97,20 +97,20 @@
 //   };
 
 //   return (
-//     <div className="h-fit bg-[#E70514] overflow-hidden relative flex flex-col font-sans">
+//     <div className="h-fit bg-[#E30713] overflow-hidden relative flex flex-col  ">
 
 //       {/* Top Header Section */}
-//       <div className="w-full max-w-7xl mx-auto px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
-//         <div className="mb-8 md:mb-0 Heading_1">
-//           <h1 className="text-4xl md:text-5xl font-bold text-[#fcb62d] mb-1">
+//       <div className="w-full max-w-7xl   px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
+//         <div className="mb-8 md:mb-0  ">
+//           <h1 className="text-4xl md:text-5xl   text-[#fcb62d] mb-1">
 //             Life at ESFL
 //           </h1>
-//           <h2 className="text-xl md:text-2xl font-bold text-white tracking-wide">
+//           <h2 className="text-xl md:text-2xl   text-white tracking-wide">
 //             CULTURE
 //           </h2>
 //         </div>
 
-//         <div className="max-w-md Paragraph_Medium text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
+//         <div className="max-w-md   text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
 //           Lorem ipsum dolor sit amet consectetur. Sed sit quis tempor cursus laoreet
 //           in sed. Leo nibh arcu magna eu at. Convallis vitae penatibus fringilla donec. 
 //           Eget auctor elementum justo adipiscing. Fermentum quam pharetra orci congue 
@@ -253,20 +253,20 @@ export default function LifeAtESFL() {
   };
 
   return (
-    <div className="h-fit bg-[#E70514] overflow-hidden relative flex flex-col font-sans">
+    <div className="h-fit bg-[#E30713] overflow-hidden relative flex flex-col  ">
 
       {/* Top Header Section */}
-      <div className="w-full max-w-7xl mx-auto px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
-        <div className="mb-8 md:mb-0 Heading_1">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#fcb62d] mb-1">
+      <div className="w-full max-w-7xl   px-8 md:px-16 pt-16 flex flex-col md:flex-row justify-between items-start z-30 relative">
+        <div className="mb-8 md:mb-0  ">
+          <h1 className="text-4xl md:text-5xl   text-[#fcb62d] mb-1">
             Life at ESFL
           </h1>
-          <h2 className="text-xl md:text-2xl font-bold text-white tracking-wide">
+          <h2 className="text-xl md:text-2xl   text-white tracking-wide">
             CULTURE
           </h2>
         </div>
 
-        <div className="max-w-md Paragraph_Medium text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
+        <div className="max-w-md   text-sm text-[#e6bca3] leading-relaxed text-justify md:text-left">
           Lorem ipsum dolor sit amet consectetur. Sed sit quis tempor cursus laoreet
           in sed. Leo nibh arcu magna eu at. Convallis vitae penatibus fringilla donec.
           Eget auctor elementum justo adipiscing. Fermentum quam pharetra orci congue

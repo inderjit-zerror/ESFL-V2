@@ -1,94 +1,95 @@
-import React from 'react';
+"use client";
 
-// --- SVG Icons ---
-const BeakerIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 22.5h4.5m-4.5 0a2.25 2.25 0 01-2.25-2.25v-9l-3-3a2.25 2.25 0 01-.66-1.59V5.25A2.25 2.25 0 016.34 3h11.32a2.25 2.25 0 012.25 2.25v1.41a2.25 2.25 0 01-.66 1.59l-3 3v9a2.25 2.25 0 01-2.25 2.25m-4.5 0h4.5" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 10.5h9" />
-  </svg>
-);
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
-const ShieldIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 22.5c4.97-1.46 8.25-5.9 8.25-10.75V6l-8.25-3-8.25 3v5.75c0 4.85 3.28 9.29 8.25 10.75z" />
-  </svg>
-);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-const LeafIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M11 11c-1.5-1.5-4-1.5-4-1.5s0 2.5 1.5 4c1.5 1.5 4 1.5 4 1.5s0-2.5-1.5-4z" />
-  </svg>
-);
-
-// --- Component ---
 export default function ManufacturingJourney() {
+  const sectionRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(".pillar-card", {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+  }, { scope: sectionRef });
+
   const pillars = [
     {
-      id: 1,
-      title: "RESEARCH & DEVELOPMENT",
+      id: "01",
+      title: <>RESEARCH & <br /> DEVELOPMENT</>,
       description: "Food technologists engineer blends that hit every aroma, colour and taste note our chefs plan for your kitchen.",
-      footer: "120+ BLENDS DEVELOPED",
-      Icon: BeakerIcon,
+      footer: "BLENDS DEVELOPED",
+      tag: "120+"
     },
     {
-      id: 2,
-      title: "QUALITY CONTROL",
+      id: "02",
+      title: <>QUALITY <br /> CONTROL</>,
       description: "Every batch is tested at intake, in-process and pre-dispatch against international purity benchmarks.",
-      footer: "3-STAGE BATCH TESTING",
-      Icon: ShieldIcon,
+      footer: "STAGE BATCH TESTING",
+      tag: "3"
     },
     {
-      id: 3,
-      title: "SUSTAINABILITY & SAFETY",
+      id: "03",
+      title: <>SUSTAINABILITY & <br /> SAFETY</>,
       description: "Water recycling, renewable energy and zero-waste-to-landfill practices run across all manufacturing units.",
-      footer: "ZERO WASTE TO LANDFILL",
-      Icon: LeafIcon,
+      footer: " WASTE TO LANDFILL",
+      tag: "0"
     }
   ];
 
   return (
-    <section className="h-fit bg-[#fcfbf9] py-20 px-4 md:px-8 lg:px-10 relative">
-   
-
-      <div className=" mx-auto">
+    <section ref={sectionRef} className="bg-[#fcfbf9] container py-24 relative">
+      <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16 ">
-          <p className="text-[#E70514] text-xs font-bold tracking-[0.2em] uppercase mb-3">
+        <div className="text-center mb-16">
+          <h6 className="text-red mb-2 uppercase">
             The Pillars
-          </p>
-          <h2 className="Heading_1 md:text-4xl font-extrabold max-sm:text-[2rem]! max-sm:leading-[2rem]! text-[black] uppercase tracking-tighter!">
-            Our Manufacturing Journey
+          </h6>
+          <h2 data-para-effect className="uppercase">
+            Our Manufacturing <br /> Journey
           </h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {pillars.map((pillar) => (
             <div
               key={pillar.id}
-              className="group relative bg-white border border-gray-100 rounded-xl pt-14 pb-8 px-8 shadow-sm transition-all duration-300 hover:bg-[#E70514] hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between min-h-[320px] overflow-hidden"
+              className="pillar-card group relative bg-[#E30713] rounded-2xl p-5 border text-[#fac05e] border-black/5 h-80 flex flex-col justify-between"
             >
-              {/* Top Right Icon Container */}
-              <div className="absolute top-0 right-0 w-20 h-20 border-l border-b border-[#E70514]/40 rounded-bl-[2rem] flex items-center justify-center transition-colors duration-300 group-hover:border-[#f6bc25]">
-                <pillar.Icon className="w-10 h-10 text-[#E70514] transition-colors duration-300 group-hover:text-[#f6bc25]" />
-              </div>
-
               {/* Card Content */}
-              <div>
-                <h3 className=" font-bold! text-[#E70514]   Paragraph_Medium uppercase tracking-tight! mb-4 transition-colors duration-300 group-hover:text-white">
-                  {pillar.id}. {pillar.title}
-                </h3>
-                <p className="text-sm text-gray-600 Paragraph_Small leading-relaxed transition-colors duration-300 group-hover:text-white/95">
+              <div className="relative z-10">
+                <div className=" mb-3">
+                  <span className="text-xs font-semibold  px-2 py-1 bg-[#fcfbf9] text-[#E30713] rounded-full border border-[#E30713]">
+                    STEP {pillar.id}
+                  </span>
+                </div>
+                <h4 data-para-effect className="mb-5">
+                  {pillar.title}
+                </h4>
+                <p className="">
                   {pillar.description}
                 </p>
               </div>
 
               {/* Card Footer */}
-              <div className="mt-8 Paragraph_Medium">
-                <hr className="border-gray-200 mb-4 transition-colors duration-300 group-hover:border-white/30" />
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest transition-colors duration-300 group-hover:text-white/80">
+              <div className="flex items-center justify-between border-t pt-2 mt-5">
+                <h4 data-para-effect>{pillar.tag}</h4>
+                <p className="text-sm">
                   {pillar.footer}
                 </p>
               </div>

@@ -17,11 +17,11 @@ const Philosophy = () => {
 
         {/* Right: Content */}
         <div className="flex flex-col justify-center max-w-2xl">
-          <h2 className="Heading_1 text-4xl sm:text-5xl lg:text-6xl font-black uppercase leading-tight mb-8">
-            OUR CSR<br/>PHILOSOPHY
+          <h2 className="   uppercase  mb-8">
+            OUR CSR<br />PHILOSOPHY
           </h2>
-          
-          <div className="space-y-6 text-[#555] font-medium leading-relaxed text-sm sm:text-base">
+
+          <div className="space-y-6 opacity-70">
             <p>
               Empire Spices &amp; Foods Ltd. believes that true corporate
               success is measured not just by financial metrics, but by the

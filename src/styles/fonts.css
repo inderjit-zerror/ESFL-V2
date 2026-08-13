@@ -1,26 +1,35 @@
-.Paragraph_Small{
-  font-size: 0.8rem;
-  line-height: 0.9rem;
-  font-weight: 100;
-}
-.Paragraph_Medium{
-  font-size: 1rem;
-  font-weight: 100;
-  line-height: 1.3rem;
-}
-
-.Heading_1{
-  font-size: 3rem;
-  line-height: 3rem;
-  font-weight: 600;  
-}
-
 html,
 body {
   font-size: 14px;
-  font-weight: 400;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-display: swap;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  --tw-leading: 1;
+  line-height: 1;
+}
+h1 {
+  font-size: 2.75rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 2.25rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 0.875rem;
 }
 
 @media (min-width: 750px) {
@@ -28,16 +37,25 @@ body {
   body {
     font-size: 0.94vw;
   }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+  }
+  h3 {
+    font-size: 2.25rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 1440px) {
   html,
   body {
-    font-size:1vw;
-  }
-}
-@media (min-width: 2500px) {
-  html,
-  body {
-    font-size:18px;
+    font-size: 16px;
   }
 }

@@ -156,13 +156,13 @@
 //         />
 //       </div>
 
-//       <div className="px-4 sm:px-10 mx-auto w-full max-w-5xl">
+//       <div className="px-4 sm:px-10   w-full max-w-5xl">
 //         {/* Header */}
 //         <div className="rb-header">
-//           <h2 className="Heading_1 HNM_FONT text-[#E70514] tracking-tight">
+//           <h2 className="    text-[#E30713] tracking-tight">
 //             RAM BANDHU
 //           </h2>
-//           <p className="mt-1 Paragraph_Medium text-neutral-700">
+//           <p className="mt-1   text-neutral-700">
 //             Ground &amp; blended spices
 //           </p>
 //         </div>
@@ -177,9 +177,9 @@
 //                 ref={(el) => (pillRefs.current[i] = el)}
 //                 type="button"
 //                 onClick={(e) => handlePillClick(cat, e.currentTarget)}
-//                 className={`rounded-full px-4 py-2 Paragraph_Small tracking-wide transition-colors ${
+//                 className={`rounded-full px-4 py-2   tracking-wide transition-colors ${
 //                   isActive
-//                     ? "bg-[#E70514] text-white"
+//                     ? "bg-[#E30713] text-white"
 //                     : "bg-[#f6cfa1] text-[#7a4a1e] hover:bg-[#f0bd85]"
 //                 }`}
 //               >
@@ -190,7 +190,7 @@
 //         </div>
 
 //         {/* Product cards */}
-//         <div className="relative w-full mx-auto pt-10 pb-16">
+//         <div className="relative w-full   pt-10 pb-16">
 //           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 place-items-center">
 //             {products.map((p, i) => (
 //               <div
@@ -424,13 +424,13 @@ export default function RamBandhuCategory() {
         />
       </div>
 
-      <div className="px-4 sm:px-10 mx-auto w-full max-w-5xl">
+      <div className="px-4 sm:px-10   w-full max-w-5xl">
         {/* Header */}
         <div className="rb-header">
-          <h2 className="Heading_1 HNM_FONT text-[#E70514] tracking-tight">
+          <h2 className="    text-[#E30713] tracking-tight">
             RAM BANDHU
           </h2>
-          <p className="mt-1 Paragraph_Medium text-neutral-700">
+          <p className="mt-1   text-neutral-700">
             Ground &amp; blended spices
           </p>
         </div>
@@ -442,7 +442,7 @@ export default function RamBandhuCategory() {
             type="button"
             onClick={handlePrev}
             aria-label="Previous category"
-            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E70514] text-[#E70514] flex items-center justify-center hover:bg-[#E70514] hover:text-white transition-colors"
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E30713] text-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-colors"
           >
             <ArrowIcon direction="left" />
           </button>
@@ -450,12 +450,12 @@ export default function RamBandhuCategory() {
           {/* Box: title + tiles */}
           <div
             ref={boxRef}
-            className="flex-1 min-w-0 rounded-3xl border-2 border-[#E70514]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
+            className="flex-1 min-w-0 rounded-3xl border-2 border-[#E30713]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
           >
             <div className="overflow-hidden">
               <h3
                 ref={titleRef}
-                className="Paragraph_Large sm:Heading_3 font-bold tracking-wide text-[#7a4a1e] text-center mb-8"
+                className="Paragraph_Large sm:Heading_3   tracking-wide text-[#7a4a1e] text-center mb-8"
               >
                 {activeCategory}
               </h3>
@@ -485,7 +485,7 @@ export default function RamBandhuCategory() {
             type="button"
             onClick={handleNext}
             aria-label="Next category"
-            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E70514] text-[#E70514] flex items-center justify-center hover:bg-[#E70514] hover:text-white transition-colors"
+            className="shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-[#E30713] text-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-colors"
           >
             <ArrowIcon direction="right" />
           </button>
@@ -499,11 +499,10 @@ export default function RamBandhuCategory() {
               type="button"
               onClick={() => goTo(i, i > activeIndex ? 1 : -1)}
               aria-label={`Go to ${cat}`}
-              className={`h-2.5 rounded-full transition-all ${
-                i === activeIndex
-                  ? "w-6 bg-[#E70514]"
-                  : "w-2.5 bg-[#E70514]/25 hover:bg-[#E70514]/50"
-              }`}
+              className={`h-2.5 rounded-full transition-all ${i === activeIndex
+                ? "w-6 bg-[#E30713]"
+                : "w-2.5 bg-[#E30713]/25 hover:bg-[#E30713]/50"
+                }`}
             />
           ))}
         </div>

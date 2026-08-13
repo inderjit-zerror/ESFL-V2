@@ -24,78 +24,75 @@ const ArrowRightIcon = ({ className }) => (
 // --- Component ---
 export default function InvestorLogin() {
   return (
-    <section className="bg-[#fcfaf7] h-fit py-16 px-4 md:px-8 lg:px-10 relative flex items-center justify-center">
-      
-   
-      <div className=" w-full mx-auto">
-        
+    <section className="bg-[#fcfaf7] container py-32 pb-0 relative">
+      <div className="w-full">
         {/* Header Section */}
-        <div className="mb-8">
-          <p className="text-[#E70514] text-sm md:text-base font-semibold mb-1">
+        <div className=" mb-8">
+          <h6 className="text-[#E30713] uppercase mb-2">
             Secure Portal
-          </p>
-          <h2 className="text-3xl md:text-4xl Heading_1 font-black text-[black] uppercase tracking-tighter">
+          </h6>
+          <h2 data-para-effect className="uppercase mb-2">
             Investor Login
           </h2>
         </div>
 
         {/* Login Card Container */}
-        <div className="flex flex-col lg:flex-row bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-3 bg-white rounded-lg overflow-hidden border border-gray-100 w-full">
+
           {/* Left Column: Form */}
-          <div className="w-full lg:w-1/2 p-8 lg:p-14 flex flex-col justify-center">
+          <div className="lg:col-span-1 p-8 lg:p-16 flex flex-col justify-center">
             <form className="space-y-6">
-              
+
               {/* Username Input */}
               <div className="space-y-2">
-                <label 
-                  htmlFor="folio" 
-                  className="block text-[11px] font-bold text-gray-500 tracking-[0.2em] uppercase"
+                <label
+                  htmlFor="folio"
+                  className="block text-sm opacity-70 uppercase"
                 >
                   Folio / Demat / PAN No.
                 </label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   id="folio"
                   placeholder="Enter identification number"
-                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E70514] focus:ring-1 focus:ring-[#E70514] transition-colors rounded-sm"
+                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E30713] focus:ring-1 focus:ring-[#E30713] transition-colors rounded-lg"
                 />
               </div>
 
               {/* Password Input */}
               <div className="space-y-2">
-                <label 
-                  htmlFor="password" 
-                  className="block text-[11px] font-bold text-gray-500 tracking-[0.2em] uppercase"
+                <label
+                  htmlFor="password"
+                  className="block text-sm opacity-70 uppercase"
                 >
                   Password
                 </label>
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   id="password"
                   placeholder="********"
-                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E70514] focus:ring-1 focus:ring-[#E70514] transition-colors rounded-sm"
+                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E30713] focus:ring-1 focus:ring-[#E30713] transition-colors rounded-lg"
                 />
               </div>
 
               {/* Extras (Remember me & Forgot password) */}
               <div className="flex items-center justify-between text-xs pt-2">
-                <label className="flex items-center text-gray-500 cursor-pointer">
-                  <input 
-                    type="checkbox" 
-                    className="mr-2 w-3.5 h-3.5 border-gray-300 rounded-sm text-[#E70514] focus:ring-[#E70514]" 
+                <label className="flex items-center text-gray-500 cursor-pointer font-medium">
+                  <input
+                    type="checkbox"
+                    className="mr-2 w-4 h-4 cursor-pointer border-gray-300 rounded text-[#E30713] focus:ring-[#E30713]"
                   />
                   Remember me
                 </label>
-                <a href="#" className="text-[#E70514] hover:underline">
+                <a href="#" className="text-[#E30713] text-xs uppercase hover:underline">
                   Forgot password?
                 </a>
               </div>
 
               {/* Submit Button */}
-              <button 
+              <button
                 type="submit"
-                className="w-full bg-[#E70514] hover:bg-[#d30311] text-white text-[11px] font-bold tracking-[0.2em] uppercase py-4 rounded-sm flex items-center justify-center gap-2 transition-colors mt-4"
+                className="w-full bg-[#E30713] hover:bg-[#d30311] text-white text-xs font-semibold tracking-wider uppercase py-4 rounded-lg flex items-center justify-center gap-2 transition-colors mt-4"
               >
                 Login
                 <ArrowRightIcon className="w-4 h-4" />
@@ -104,39 +101,39 @@ export default function InvestorLogin() {
           </div>
 
           {/* Right Column: Image with Overlay */}
-          <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-[500px]">
+          <div className="lg:col-span-2 relative min-h-[400px] lg:min-h-[600px]">
             <Image
-              src="/images/IGE.jpg"
+              src="/images/our-process/IGE.jpg"
               alt="Quality assurance worker on production line"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            
+
             {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>
-            
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+
             {/* Overlay Text Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
-              <LockIcon className="w-5 h-5 text-[#f6bc25] mb-3" />
-              
+              <LockIcon className="w-6 h-6 text-[#f6bc25] mb-3" />
+
               <h3 className="text-white text-lg font-bold tracking-wide uppercase mb-2">
                 Secure Shareholder Access
               </h3>
-              
+
               <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
                 Encrypted access to investor information, holdings and shareholder services — available to registered members only.
               </p>
-              
+
               <div className="flex items-center gap-2 text-[#f6bc25]">
-                <ShieldCheckIcon className="w-4 h-4" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
+                <ShieldCheckIcon className="w-5 h-5" />
+                <span className="text-xs font-semibold tracking-wider uppercase">
                   256-Bit Secured
                 </span>
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>
