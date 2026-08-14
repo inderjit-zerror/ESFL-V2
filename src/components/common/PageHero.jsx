@@ -30,14 +30,14 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="w-full aspect-[4/3] md:aspect-video overflow-hidden relative flex items-end max-h-svh justify-center">
+        <div ref={containerRef} className="w-full h-[80vh] overflow-hidden relative flex items-end justify-center">
             {mediaVideo ? (
                 <video src={mediaVideo} loop muted playsInline autoPlay className='hero-media absolute inset-0 w-full h-full object-cover brightness-75'></video>
             ) : imageSrc ? (
                 <img src={imageSrc} alt={typeof title === "string" ? title : "Hero Image"} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
             ) : null}
 
-            <div className="text-center absolute pb-16 md:pb-24 px-4 text-white z-10 flex flex-col items-center">
+            <div className="text-center absolute pb-16  px-4 text-white z-10 flex flex-col items-center">
                 {title && (
                     <h1 className="mb-3 md:mb-4 uppercase">
                         {title}

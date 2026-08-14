@@ -8,7 +8,7 @@ const Contact = () => {
       <PageHero
         title="Contact Us"
         description="Let's build something meaningful together. Whether it's a partnership, enquiry, or collaboration, we'd love to hear from you."
-        imageSrc="/images/contact/contact_hero.png"
+        video="/videos/contact.mp4"
       />
       <CompoContact />
     </>

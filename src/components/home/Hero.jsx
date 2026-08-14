@@ -24,8 +24,8 @@ const Hero = () => {
   }, { scope: containerRef })
 
   return (
-    <div ref={containerRef} data-page-load-hero className='w-full aspect-square sm:h-svh overflow-hidden flex bg-black relative'>
-      <video ref={videoRef} data-page-load-media muted loop autoPlay playsInline src={`/videos/HH1.mp4`} className='absolute top-[-20%] left-0 w-full h-[120%] object-cover object-center'></video>
+    <div ref={containerRef} data-page-load-hero className='w-full h-screen overflow-hidden'>
+      <video ref={videoRef} data-page-load-media muted loop autoPlay playsInline src={`/videos/HH1.mp4`} className='cover'></video>
     </div>
   )
 }

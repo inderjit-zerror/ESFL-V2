@@ -167,7 +167,7 @@ export default function WhyPartnerWithUs() {
 
 
   return (
-    <section ref={sectionRef} className="bg-[#fcfaf7] container py-24 relative overflow-hidden">
+    <section ref={sectionRef} className="container py-24 relative overflow-hidden">
         {/* Heading */}
         <div className="text-center mb-16 relative z-10">
           <h6 className="text-[#E30713] uppercase mb-2">

@@ -39,6 +39,11 @@ const imgArr = [
 ];
 
 const CustomImg = () => {
+
+  let a = 2
+
+  let c = a
+  
   return (
     <>
       <div className="w-fit h-fit flex justify-center ml-5 items-center gap-5 select-none cursor-pointer">
@@ -46,7 +51,7 @@ const CustomImg = () => {
           return (
             <div
               key={index}
-              className="w-[20vw] aspect-3/4 overflow-hidden rounded-xl relative group"
+              className="w-[25vw] aspect-3/4 overflow-hidden rounded-xl relative group"
             >
               <Image fill
                 src={item}
@@ -78,9 +83,9 @@ const SevenSection = () => {
 
   return (
     <div className="w-full h-fit flex flex-col overflow-hidden  ">
-      <div className="w-full h-fit flex flex-col bg-[#FDF6EC] text-white py-24 justify-center items-center ">
+      <div className="w-full h-fit flex flex-col py-24 justify-center items-center ">
 
-          <div className="w-fit h-fit flex uppercase text-red justify-center items-center">
+          <div className="w-fit h-fit flex uppercase justify-center items-center">
             <h2 data-para-effect>Stay in Touch</h2>
           </div>
 

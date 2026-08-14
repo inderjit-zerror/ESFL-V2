@@ -39,10 +39,10 @@ export default function PartnerForm() {
     };
 
     return (
-        <section ref={sectionRef} className="bg-white  overflow-hidden py-10 px-4 sm:px-6 lg:px-12">
+        <section ref={sectionRef} className="  overflow-hidden container py-24 border-b border-black/50">
             <div className="grid grid-cols-1  lg:grid-cols-2">
                 {/* Left column */}
-                <div ref={leftRef} className=" h-[50vh] md:h-full overflow-hidden">
+                <div ref={leftRef} className=" h-[50vh] relative md:h-full overflow-hidden">
                     <Image
                         fill
                         src="/images/partner/contact_img.png"

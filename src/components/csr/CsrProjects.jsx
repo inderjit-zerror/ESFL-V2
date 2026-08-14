@@ -29,7 +29,7 @@ const projects = [
 
 const CsrProjects = () => {
   return (
-    <section className="bg-[#fcfaf7] container py-24 relative">
+    <section className=" container py-24 relative">
       <div className="w-full">
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16">
@@ -38,12 +38,12 @@ const CsrProjects = () => {
               IMPACT IN ACTION
             </h6>
             <h2 data-para-effect className="uppercase">
-              ONGOING CSR PROJECTS
+              ONGOING CSR <br /> PROJECTS
             </h2>
           </div>
-          <Link href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center gap-2">
+          <a href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center gap-2">
             VIEW ALL PROJECTS <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
 
         {/* Projects Grid */}
@@ -68,9 +68,9 @@ const CsrProjects = () => {
                 <p className="opacity-70  mb-8 flex-grow">
                   {project.description}
                 </p>
-                <Link href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5  transition-all duration-300">
+                <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5  transition-all duration-300">
                   READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-                </Link>
+                </a>
               </div>
             </div>
           ))}

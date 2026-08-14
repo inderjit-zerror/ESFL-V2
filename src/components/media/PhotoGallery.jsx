@@ -63,8 +63,8 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section className="w-full pt-20 px-4 md:px-8 lg:px-12 bg-[#fdf6ec]">
-      <div className="max-w-[1600px]  ">
+    <section className="w-full container pt-24">
+      <div className="">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14">
           <div>

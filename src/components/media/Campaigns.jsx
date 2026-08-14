@@ -59,7 +59,7 @@ const Campaigns = () => {
       : content.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="bg-[#fcfaf7] container pt-32 py-24 relative">
+    <section className=" container pt-32 py-24 relative">
       <div className="w-full">
         {/* Header */}
         <div className="text-center mb-16">

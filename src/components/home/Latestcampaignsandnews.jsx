@@ -145,7 +145,7 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="container py-24">
+    <section className="container py-24 border-b border-black/50">
       <div className="">
         {/* Header */}
         <div ref={headerRef} className="text-center">
@@ -156,8 +156,6 @@ export default function LatestCampaignsAndNews() {
           <p className="my-4">
             Latest campaigns, media coverage and company updates.
           </p>
-
-          <BTN txt={"view all"} variant={"B1"} />
         </div>
 
         <div className="flex w-full mb-5 md:justify-end gap-x-2">
@@ -242,6 +240,10 @@ export default function LatestCampaignsAndNews() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+
+        <div className="w-full center mt-5">
+          <BTN txt={"view all"} variant={"B1"} />
         </div>
       </div>
 

@@ -67,44 +67,44 @@ export default function Footer() {
           </div>
 
           <div className="grid grid-cols-2 gap-x-6 text-sm md:contents">
-            <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
+            <div className="md:col-span-2 md:pl-8">
               <p className="   tracking-widest text-white/90 mb-4">
                 SITEMAP
               </p>
               <ul className="space-y-2">
                 {sitemapLinks.map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <a
                       href={link.href}
                       className="  hover:underline"
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="md:col-span-2 md:pl-8 md:border-l md:border-white/15">
+            <div className="md:col-span-2 md:pl-8">
               <p className="   tracking-widest text-white/90 mb-4">
                 SUPPORT
               </p>
               <ul className="space-y-2">
                 {supportLinks.map((link) => (
                   <li key={link.label}>
-                    <Link
+                    <a
                       href={link.href}
                       className="  hover:underline"
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="mt-2 text-sm md:mt-0 md:col-span-4 md:border-l md:border-white/15">
+          <div className="mt-2 text-sm md:mt-0 md:col-span-4">
             <p className="   tracking-widest text-white/90 mb-4">
               CUSTOMER CARE
             </p>

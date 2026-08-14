@@ -64,7 +64,7 @@ const JOBS = [
 // Colors used for the GSAP hover tween (kept as JS constants so they can
 // be tweened directly — Tailwind classes alone can't be animated smoothly).
 const COLORS = {
-  cardBg: "#FFFFFF",
+  cardBg: "#FDF6EC",
   cardBgHover: "#F4C96B", // yellow
   iconBg: "#FBE3DC",
   iconBgHover: "#E30713",
@@ -107,7 +107,7 @@ export default function CurrentOpenings() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#E30713] py-24">
+    <section ref={sectionRef} className="bg-[#E30713] border-t border-[#fcb62d] py-24">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">

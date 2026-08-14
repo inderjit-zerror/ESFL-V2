@@ -124,10 +124,8 @@ export default function OurJourney() {
       const st = ScrollTrigger.create({
         trigger: section,
         start: "top top",
-        end: () => "+=" + window.innerHeight * 3,
-        pin: true,
+        end: "bottom bottom",
         scrub: 1,
-        anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           const distance = getScrollDistance();
@@ -177,9 +175,10 @@ export default function OurJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-white"
+      className="relative w-full h-[400vh]"
     >
-      <div className="flex h-full flex-col justify-between gap-10 pt-24 pb-[5vh]">
+      <div className="sticky top-0 w-full h-screen overflow-hidden">
+        <div className="flex h-full flex-col justify-between gap-5 pt-24 pb-[3vh]">
         {/* Heading */}
         <div className=" mx-auto max-w-2xl text-center px-6 space-y-2">
           <h2 data-para-effect className="">
@@ -205,11 +204,12 @@ export default function OurJourney() {
 
         {/* Bottom timeline — constrained to 70vw, centered */}
         <div className=" mx-auto  w-[90vw] px-6">
-          <div className="relative flex h-[3px] w-full gap-1">
+          {/* Segments Grid */}
+          <div className="relative grid grid-cols-7 gap-1 w-full h-[3px]">
             {Array.from({ length: SEGMENT_COUNT }).map((_, i) => (
               <div
                 key={i}
-                className="relative h-full flex-1 overflow-hidden rounded-full bg-neutral-200"
+                className="relative h-full w-full overflow-hidden rounded-full bg-neutral-200"
               >
                 <div
                   ref={(el) => (segmentRefs.current[i] = el)}
@@ -219,25 +219,41 @@ export default function OurJourney() {
             ))}
           </div>
 
-          {/* Years reveal one by one, below the line, staying centered as a row */}
-          <div className="mt-3 flex w-full justify-between">
-            {MILESTONES.map((m, i) => (
-              <div
-                key={m.year}
-                ref={(el) => (yearItemRefs.current[i] = el)}
-                className="flex translate-y-2 items-center gap-1.5 opacity-0 transition-all duration-500 ease-out"
-              >
-                <span
-                  ref={(el) => (dotRefs.current[i] = el)}
-                  className="h-1.5 w-1.5 bg-neutral-300 transition-colors duration-200"
-                />
-                <span className="text-[14px]   text-neutral-500">
-                  {m.year}
-                </span>
-              </div>
-            ))}
+          {/* Years Grid */}
+          <div className="relative grid grid-cols-7 gap-1 w-full mt-1">
+            {MILESTONES.map((m, i) => {
+              const isLast = i === SEGMENT_COUNT;
+              // Last item shares the last column with the second-to-last item, but aligns to the right
+              const col = isLast ? SEGMENT_COUNT : i + 1;
+
+              return (
+                <div
+                  key={m.year}
+                  ref={(el) => (yearItemRefs.current[i] = el)}
+                  className={`flex translate-y-2 items-center opacity-0 transition-all duration-500 ease-out ${isLast ? "relative" : "gap-1.5"}`}
+                  style={{
+                    gridColumn: col,
+                    gridRow: 1,
+                    justifySelf: isLast ? "end" : "start",
+                    // Shift the intermediate items left by 5px to center the 6px dot directly under the 4px gap
+                    marginLeft: !isLast && i > 0 ? "-0.25rem" : "0",
+                  }}
+                >
+                  <span
+                    ref={(el) => (dotRefs.current[i] = el)}
+                    className="h-1.5 w-1.5 shrink-0 bg-neutral-300 transition-colors duration-200"
+                  />
+                  <span 
+                    className={`text-[14px] text-neutral-500 ${isLast ? "absolute left-full ml-1.5" : ""}`}
+                  >
+                    {m.year}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
@@ -248,12 +264,7 @@ function Card({ milestone }) {
 
   return (
     <div
-      className="
-        group relative flex h-fit  p-5  w-[30vw] rounded-lg   shrink-0 flex-col
-        overflow-hiddens bg-[#FDF6EC]  ml-2
-        transition-colors duration-300 ease-out
-        hover:bg-[#F5C451]
-      "
+      className=" group border border-black/10 relative flex  p-5  w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
     >
       {/* Image */}
       <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-sm">
@@ -269,23 +280,23 @@ function Card({ milestone }) {
 
       {/* Content */}
       <div className="relative space-y-5 pt-4">
-          <div className="flex justify-between">
-            <h5
-              className="mb-2  uppercase tracking-wide text-red-600 transition-colors duration-300 group-hover:text-[#E30712]"
-            >
-              {milestone.label}
-            </h5>
-            <p
-              className="mb-1  text-xs  tracking-wide text-neutral-400 transition-colors duration-300 group-hover:text-[#E30712]"
-            >
-              {milestone.year}
-            </p>
-          </div>
-          <p
-            className=" text-sm transition-colors duration-300 group-hover:text-[#E30712]"
+        <div className="flex justify-between">
+          <h5
+            className="mb-2  uppercase tracking-wide text-red-600 transition-colors duration-300 group-hover:text-[#E30712]"
           >
-            {milestone.copy}
+            {milestone.label}
+          </h5>
+          <p
+            className="mb-1  text-xs  tracking-wide text-neutral-400 transition-colors duration-300 group-hover:text-[#E30712]"
+          >
+            {milestone.year}
           </p>
+        </div>
+        <p
+          className=" text-sm transition-colors duration-300 group-hover:text-[#E30712]"
+        >
+          {milestone.copy}
+        </p>
       </div>
     </div>
   );

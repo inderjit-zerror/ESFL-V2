@@ -39,7 +39,7 @@ const teamMembers = [
 
 export default function LeadershipSection() {
   return (
-    <section className="bg-[#fcfaf5]  py-24 container ">
+    <section className=" border-b border-black/50 py-24 container ">
       <div className="  ">
 
         {/* Header Section */}

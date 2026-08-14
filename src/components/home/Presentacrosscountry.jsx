@@ -94,68 +94,50 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-44 overflow-hidden bg-[#E30713]  flex  "
+      className="relative h-140 pt-24 overflow-hidden bg-red    "
     >
+      <div className="w-full h-full relative">
+        {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] top-[2%] z-99" /> */}
+        <img src="/images/home/PP.png" alt="IMG" className=" sm:w-full object-cover  absolute bottom-0! left-0 rotate-180" />
 
+        <div className="relative container  w-full grid grid-cols-1 lg:grid-cols-2 items-start">
+          {/* Left: headline + products */}
+          <div className="relative max-w-2xl space-y-2 ">
 
-      {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] bottom-[2%] z-99" /> */}
-      <img src="/images/home/PP.png" alt="IMG" className=" h-[30vh] sm:w-full object-cover  absolute bottom-0 left-0 rotate-180" />
+            <h2 data-para-effect className="  text-[#f5c451]    uppercase ">
+              Present
 
-      <div className="relative container     max-sm:h-fit  w-full grid grid-cols-1 lg:grid-cols-2">
-        {/* Left: headline + products */}
-        <div className="relative max-w-2xl space-y-2 ">
-          {/* Product images flanking the headline */}
-          {/* <div className="psac-fade absolute -left-4 top-6 w-14 sm:w-16">
-            <img
-              ref={bottleRef}
-              src="/images/home/BT1.png"
-              alt="Product bottle"
-              className="w-full h-auto will-change-transform"
-            />
-          </div> */}
+              Across the
 
-          {/* <div className="psac-fade absolute right-4 sm:right-20  top-40 w-20 sm:w-24">
-            <img
-              ref={packRef}
-              src="/images/home/YellowPack.png"
-              alt="Product packet"
-              className="w-full h-auto will-change-transform"
-            />
-          </div> */}
+              Country to
 
-          <h2 data-para-effect className="  text-[#f5c451]    uppercase ">
-            Present
+              Serve You
 
-            Across the
+              Incessantly
+            </h2>
 
-            Country to
+            <p className=" text-white">
+              ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
+              Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
+            </p>
+          </div>
 
-            Serve You
-
-            Incessantly
-          </h2>
-
-          <p className=" text-white">
-            ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
-            Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
-          </p>
-        </div>
-
-        {/* Right: stats grid */}
-        <div className="grid pl-24 grid-cols-2 gap-y-10 ">
-          {stats.map((stat, i) => (
-            <div key={stat.id} className="psac-fade ">
-              <h2
-                ref={(el) => (numberRefs.current[i] = el)}
-                className="text-[#f5c451] "
-              >
-                0{stat.suffix}
-              </h2>
-              <p className="mt-2  text-sm   uppercase text-white">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          {/* Right: stats grid */}
+          <div className="grid pl-24 space-y-10 grid-cols-2  ">
+            {stats.map((stat, i) => (
+              <div key={stat.id} className=" ">
+                <h2
+                  ref={(el) => (numberRefs.current[i] = el)}
+                  className="text-[#f5c451] "
+                >
+                  0{stat.suffix}
+                </h2>
+                <p className="mt-2  text-sm   uppercase text-white">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

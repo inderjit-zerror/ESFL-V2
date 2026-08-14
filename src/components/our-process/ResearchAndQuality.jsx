@@ -46,7 +46,7 @@ export default function ResearchAndQuality() {
   return (
     <div className='relative'>
       {/* Research & Development Section */}
-      <section className="sticky! top-0 -z-10 bg-[#fcfaf7] container w-full min-h-svh md:h-svh overflow-hidden flex justify-center items-center ">
+      <section className="sticky! top-0 -z-10 container w-full min-h-svh md:h-svh overflow-hidden flex justify-center items-center ">
         <div className="grid h-fit w-full py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2">
           {/* Left Content */}
           <div className="flex items-center md:pr-32 max-sm:px-4">

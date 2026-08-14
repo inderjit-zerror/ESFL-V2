@@ -15,7 +15,8 @@ const AboutPage = () => {
       <PageHero
         title="About Us"
         description="For over three decades Empire Spices & Foods Ltd. has carried authentic Indian flavour from Nashik to kitchens across the world."
-        imageSrc="/images/about/about_hero_spices.png"
+            video="/videos/spices_video.mp4"
+
       />
       <VisionMissionValues />
       <OurJourney />

@@ -1,7 +1,18 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 // --- Component ---
 export default function InvestorResources() {
+  const containerRef = useRef(null);
+  
   const resources = [
     {
       id: "01",
@@ -26,8 +37,23 @@ export default function InvestorResources() {
     }
   ];
 
+  useGSAP(() => {
+    gsap.from('.resource-card', {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 75%',
+        toggleActions: 'play none none reverse',
+      },
+      y: 60,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: 'power3.out',
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="bg-[#fcfbf9] container py-24 relative">
+    <section ref={containerRef} className="container py-24 border-b border-black/50 relative">
       <div className="relative z-10">
         
         {/* Header Section */}
@@ -48,7 +74,7 @@ export default function InvestorResources() {
           {resources.map((card) => (
             <div
               key={card.id}
-              className="pillar-card group relative bg-[#E30713] text-[#fac05e] rounded-2xl p-5 border border-black/5 h-80 flex flex-col justify-between"
+              className="resource-card pillar-card group relative bg-[#E30713] text-[#fac05e] rounded-2xl p-5 border border-black/5 h-80 flex flex-col justify-between"
             >
               {/* Card Content */}
               <div className="relative z-10">

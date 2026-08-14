@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import BTN from "./BTN";
 import { FaCartShopping } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { Link } from "next-view-transitions";
 
 const navLinks = [
   {
@@ -15,7 +15,7 @@ const navLinks = [
   },
   {
     name: "About Us",
-    href: "",
+    href: "/about",
     children: [
       { name: "The Company", href: "/about" },
       { name: "Our Processes", href: "/our-process" },
@@ -74,8 +74,10 @@ export default function Header() {
       <div className="container flex  w-full items-center justify-between ">
         {/* Left Menu (desktop) */}
         <nav className="hidden items-center gap-10 text-white lg:flex">
-          {navLinks.map((item) =>
-            item.children ? (
+          {navLinks.map((item) => {
+            const isActive = pathname === item.href || (item.children && item.children.some((child) => child.href === pathname));
+
+            return item.children ? (
               <div
                 key={item.name}
                 className="relative"
@@ -98,7 +100,7 @@ export default function Header() {
 
                     <div className="h-[1.5px] w-full overflow-hidden">
                       <div
-                        className={`h-full bg-white transition-all duration-300 ${aboutOpen ? "w-full" : "w-0 group-hover:w-full"
+                        className={`h-full bg-white transition-all duration-300 ${isActive || aboutOpen ? "w-full" : "w-0 group-hover:w-full"
                           }`}
                       ></div>
                     </div>
@@ -127,7 +129,7 @@ export default function Header() {
 
                     <div className="h-[1.5px] w-full overflow-hidden">
                       <div
-                        className={`h-full bg-white transition-all duration-300 ${aboutOpen ? "w-full" : "w-0 group-hover:w-full"
+                        className={`h-full bg-white transition-all duration-300 ${isActive || aboutOpen ? "w-full" : "w-0 group-hover:w-full"
                           }`}
                       ></div>
                     </div>
@@ -147,7 +149,7 @@ export default function Header() {
                         <a
                           key={child.name}
                           href={child.href}
-                          className="    block px-5 py-2.5 text-white/80 transition-colors duration-150 hover:text-white hover:bg-white/10"
+                          className={`    block px-5 py-2.5 transition-colors duration-150 hover:text-white hover:bg-white/10 ${pathname === child.href ? 'text-white bg-white/5' : 'text-white/80'}`}
                         >
                           {child.name}
                         </a>
@@ -172,7 +174,7 @@ export default function Header() {
                 {item.name}
 
                 <div className="h-[1.5px] w-full overflow-hidden">
-                  <div className="h-full w-0 bg-white transition-all duration-300 group-hover:w-full"></div>
+                  <div className={`h-full bg-white transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></div>
                 </div>
               </a>
             ) : (
@@ -183,17 +185,17 @@ export default function Header() {
                 {item.name}
 
                 <div className="h-[1.5px] w-full overflow-hidden">
-                  <div className="h-full w-0 bg-white transition-all duration-300 group-hover:w-full"></div>
+                  <div className={`h-full bg-white transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></div>
                 </div>
               </span>
             )
-          )}
+          })}
         </nav>
 
 
 
         {/* Logo */}
-        <Link
+        <a
           href="/"
           data-header-logo-link
           className="absolute left-1/2 -translate-x-1/2"
@@ -208,7 +210,7 @@ export default function Header() {
               className="h-auto  w-32 object-contain"
             />
           </div>
-        </Link>
+        </a>
 
         {/* Mobile menu button */}
         <button
@@ -236,9 +238,7 @@ export default function Header() {
             </div>
           </a>
 
-          <Link href={"/become-a-partner"} className="w-fit block">
-            <BTN txt={`Become Channel Partner`} variant="B1" />
-          </Link>
+            <BTN txt={`Become Channel Partner`} variant="B1" href={"/become-a-partner"} />
         </div>
 
         {/* Spacer to balance the hamburger button on mobile so the logo stays centered */}

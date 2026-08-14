@@ -42,29 +42,6 @@ export default function RegisterInterest() {
     console.log("Register Your Interest submission:", { ...form, file });
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-      tl.from(leftRef.current, {
-        opacity: 0,
-        x: -24,
-        duration: 0.6,
-      }).from(
-        fieldRefs.current.filter(Boolean),
-        {
-          opacity: 0,
-          y: 20,
-          duration: 0.5,
-          stagger: 0.06,
-        },
-        "-=0.4"
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
-
   const onDragEnter = (e) => {
     e.preventDefault();
     setIsDragging(true);
@@ -99,10 +76,10 @@ export default function RegisterInterest() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-white  overflow-hidden container py-24">
+    <section ref={sectionRef} className=" border-b border-black/50  overflow-hidden container py-24">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left column */}
-        <div ref={leftRef} className=" h-[50vh] md:h-full overflow-hidden">
+        <div ref={leftRef} className=" h-[50vh] md:h-full relative overflow-hidden">
           <Image
             fill
             src="/images/career/form_img.png"

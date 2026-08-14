@@ -24,7 +24,7 @@ const ArrowRightIcon = ({ className }) => (
 // --- Component ---
 export default function InvestorLogin() {
   return (
-    <section className="bg-[#fcfaf7] container py-32 pb-0 relative">
+    <section className=" container py-32 pb-0 relative">
       <div className="w-full">
         {/* Header Section */}
         <div className=" mb-8">
@@ -37,10 +37,10 @@ export default function InvestorLogin() {
         </div>
 
         {/* Login Card Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 bg-white rounded-lg overflow-hidden border border-gray-100 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border border-black/30 rounded-lg overflow-hidden w-full">
 
           {/* Left Column: Form */}
-          <div className="lg:col-span-1 p-8 lg:p-16 flex flex-col justify-center">
+          <div className="lg:col-span-1 p-8 lg:p-10 flex flex-col justify-center">
             <form className="space-y-6">
 
               {/* Username Input */}

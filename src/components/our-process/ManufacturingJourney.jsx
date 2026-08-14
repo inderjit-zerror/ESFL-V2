@@ -52,7 +52,7 @@ export default function ManufacturingJourney() {
   ];
 
   return (
-    <section ref={sectionRef} className="bg-[#fcfbf9] container py-24 relative">
+    <section ref={sectionRef} className="container py-24 relative">
       <div className="relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">

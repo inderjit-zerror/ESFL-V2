@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Philosophy = () => {
   return (
-    <section className="w-full bg-[#FAF8F5] py-20 px-6 sm:px-10">
+    <section className="w-full border-b border-black/50 py-20 px-6 sm:px-10">
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left: Image */}
         <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/4] overflow-hidden">
@@ -17,7 +17,7 @@ const Philosophy = () => {
 
         {/* Right: Content */}
         <div className="flex flex-col justify-center max-w-2xl">
-          <h2 className="   uppercase  mb-8">
+          <h2  data-para-effect className="   uppercase  mb-8">
             OUR CSR<br />PHILOSOPHY
           </h2>
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function WhoWeAre() {
   return (
-    <section className="w-full bg-white container py-24 ">
+    <section className="w-full border-b border-black/50 container py-24 ">
       <div className="  grid  grid-cols-1 md:grid-cols-2 gap-x-20">
         {/* Left: Image with badge */}
         <div className="relative h-full">

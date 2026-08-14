@@ -43,26 +43,24 @@ export default function PageLoadAnimation() {
     const ctx = gsap.context(() => {
       const targetRect = targetLogo.getBoundingClientRect();
       const startWidth = Math.min(
-        Math.max(window.innerWidth * 0.34, 150),
-        260
+        Math.max(window.innerWidth * 0.35, 180),
+        280
       );
       const startHeight = startWidth * (targetRect.height / targetRect.width);
 
       gsap.set(targetLogo, { autoAlpha: 0 });
       gsap.set(overlay, { autoAlpha: 1 });
       gsap.set(logo, {
-        autoAlpha: 0,
+        autoAlpha: 1,
         height: startHeight,
         left: window.innerWidth / 2,
-        scale: 0.8,
-        top: window.innerHeight / 2 + 26,
+        top: window.innerHeight / 2,
         width: startWidth,
         xPercent: -50,
         yPercent: -50,
       });
 
       const timeline = gsap.timeline({
-        defaults: { ease: "power3.out" },
         onComplete: () => {
           gsap.set(targetLogo, { clearProps: "opacity,visibility" });
           document.body.style.overflow = originalOverflow;
@@ -74,35 +72,26 @@ export default function PageLoadAnimation() {
         .to(
           logo,
           {
-            autoAlpha: 1,
-            duration: 0.75,
-            scale: 1,
-            top: window.innerHeight / 2,
-          },
-          0.15
-        )
-        .to(
-          logo,
-          {
-            duration: 1.1,
+            duration: 1,
+            ease: "power3.inOut",
             height: targetRect.height,
             left: targetRect.left + targetRect.width / 2,
             top: targetRect.top + targetRect.height / 2,
             width: targetRect.width,
           },
-          1
+          0.5
         )
         .set(targetLogo, { autoAlpha: 1 }, ">")
         .to(
           overlay,
           {
             autoAlpha: 0,
-            duration: 0.95,
+            duration: 0.6,
             ease: "power2.out",
           },
           ">"
         )
-        .to(logo, { autoAlpha: 0, duration: 0.25 }, "<");
+        .to(logo, { autoAlpha: 0, duration: 0.2 }, "<");
     }, overlay);
 
     return () => {

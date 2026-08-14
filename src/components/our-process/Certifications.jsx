@@ -71,17 +71,17 @@ export default function Certifications() {
     {
       id: 'tested',
       value: '100%',
-      label: 'BATCHES LAB-TESTED BEFORE DISPATCH',
+      label: 'Batches lab-tested before dispatch',
     },
     {
       id: 'countries',
       value: '15+',
-      label: 'COUNTRIES SERVED UNDER EXPORT NORMS',
+      label: 'Countries served under export norms',
     },
     {
       id: 'years',
       value: '30 yrs',
-      label: 'OF AUDITED MANUFACTURING PRACTICE',
+      label: 'Of audited manufacturing practice',
     },
   ];
 
@@ -110,15 +110,12 @@ export default function Certifications() {
               className="cert-card group flex flex-col bg-[#f51d2c] p-5  rounded-xl cursor-pointer transition-colors duration-300 h-52 hover:bg-[#F5C451]"
             >
               {/* Icon Placeholder (Replace with actual Next/Image or SVG) */}
-              <div className={`w-12 h-12 bg-[#F5C451] group-hover:bg-[#E30713] rounded-md flex items-center justify-center p-2    text-white  transition-all duration-300 `}>
-                <img src={cert.iconText} alt="IMG" className='w-full  object-cover object-center' />
+              <div className={``}>
+                <img src={cert.iconText} alt="IMG" className=' size-24 object-contain' />
               </div>
 
               <div className="mt-auto">
-                <h5 data-para-effect className="mb-1 transition-colors duration-300 group-hover:text-[#E30713]">
-                  {cert.title}
-                </h5>
-                <p className="text-sm opacity-80 transition-colors duration-300 group-hover:text-[#E30713]">
+                <p className="text-sm   opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
                   {cert.subtitle}
                 </p>
               </div>
@@ -136,7 +133,7 @@ export default function Certifications() {
               <h3 data-para-effect className="text-3xl md:text-4xl    mb-3 transition-colors duration-300 group-hover:text-[#E30713]">
                 {stat.value}
               </h3>
-              <p className="text-sm  uppercase opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
+              <p className="text-sm  opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
                 {stat.label}
               </p>
             </div>

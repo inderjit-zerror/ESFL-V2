@@ -7,10 +7,18 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  --red: #E30713;
+  background-color: #FDF6EC;
+  --red: #e30713;
+  --beige: #FDF6EC;
 }
 .text-red {
   color: var(--red);
+}
+.bg-red{
+  background-color: var(--red);
+}
+.bg-beige {
+  background-color: var(--beige);
 }
 
 /* Word masks used by the global   GSAP ScrollTrigger reveal. */

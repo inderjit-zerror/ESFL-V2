@@ -1,9 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Eye, Leaf, Gem } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function VisionMissionValues() {
+  const containerRef = useRef(null);
+
   const cards = [
     {
       id: 1,
@@ -28,8 +35,23 @@ export default function VisionMissionValues() {
     },
   ];
 
+  useGSAP(() => {
+    gsap.from(".vision-card", {
+      scrollTrigger: {
+        trigger: ".vision-card",
+        start: "top 85%",
+        toggleActions:"play none none reverse",
+      },
+      y: 60,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="bg-[#E30713] h-fit py-24 container   flex items-center justify-center">
+    <section ref={containerRef} className="bg-[#E30713] h-fit py-24 container   flex items-center justify-center">
       <div className="  w-full ">
 
         {/* Header Section */}
@@ -47,7 +69,7 @@ export default function VisionMissionValues() {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="group relative space-y-20 bg-[#fac05e] transition-all duration-300 ease-out rounded-xl p-8 flex flex-col "
+              className="vision-card group relative space-y-20 bg-[#fac05e] rounded-xl p-8 flex flex-col "
             >
               {/* Icon */}
               <div className="flex justify-between">

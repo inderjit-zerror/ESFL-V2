@@ -57,9 +57,6 @@ const VideoSection = () => {
       },
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-    };
   }, []);
 
   const handleMouseMove = (e) => {

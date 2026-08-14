@@ -61,7 +61,7 @@ export default function SustainabilitySafety() {
   ];
 
   return (
-    <section className="bg-[#fcfaf7] min-h-screen py-24 container relative">
+    <section className=" border-b border-black/50 min-h-screen py-24 container relative">
 
       <div className="  ">
 

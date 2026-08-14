@@ -190,7 +190,7 @@ Built on quality, trust, and continuous innovation, the brand creates products t
       <div className="w-full md:sticky top-0 z-[20]">
         <BrandSection
           V={"B1"}
-          bgColor="bg-white"
+          bgColor="bg-beige"
           textColor="text-[#E30713]"
           titleColor="text-[#E30713]"
           highlightColor="text-[#FFBE55]"

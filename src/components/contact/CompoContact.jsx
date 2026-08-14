@@ -349,6 +349,10 @@ export default function CompoContact() {
         </div>
       </section>
 
+        <section className="flex justify-center pb-16 sm:pb-24">
+        <ChatPill />
+      </section>
+
     </div>
   );
 }
