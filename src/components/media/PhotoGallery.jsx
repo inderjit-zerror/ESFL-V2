@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const initialImages = [
   { id: '01', title: 'OFFICE', src: '/gallery/01_office.png' },
@@ -63,10 +65,10 @@ const PhotoGallery = () => {
   };
 
   return (
-    <section className="w-full container pt-24">
+    <section className="w-full container   pt-12 md:pt-24 ">
       <div className="">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-14">
+        <div className="flex  justify-between  items-end mb-8 md:mb-14">
           <div>
             <h6 className="uppercase text-red">
               Insight
@@ -84,8 +86,8 @@ const PhotoGallery = () => {
           </button>
         </div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[250px] md:auto-rows-[220px] lg:auto-rows-[280px]">
+        {/* Masonry Grid - Desktop */}
+        <div className="hidden md:grid grid-cols-3 gap-6 auto-rows-[220px] lg:auto-rows-[280px]">
           {images.map((img, index) => {
             const currentClass = layouts[layoutIndex][index];
             return (
@@ -98,30 +100,68 @@ const PhotoGallery = () => {
                   transitionDelay: `${index * 100}ms`
                 }}
               >
-                {/* Image with Grayscale to Color hover effect */}
+                {/* Image */}
                 <div className="absolute inset-0 w-full h-full">
                   <Image
                     src={img.src}
                     alt={img.title}
                     fill
                     className="cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="33vw"
                   />
                 </div>
 
-                {/* Gradient Overlay for Text Readability */}
+                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
                 {/* Text Overlay */}
-                <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white z-10">
-                  <div className="text-2xl md:text-3xl   mb-1 leading-none">{img.id}</div>
-                  <div className="text-[10px] md:text-xs   tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
+                <div className="absolute bottom-6 left-6 text-white z-10">
+                  <div className="text-3xl mb-1 leading-none">{img.id}</div>
+                  <div className="text-xs tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
                     {img.title}
                   </div>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        {/* Swiper - Mobile */}
+        <div className="block md:hidden w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.1}
+            className="w-full h-fit!"
+          >
+            {images.map((img, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="relative overflow-hidden rounded-sm group cursor-pointer aspect-square w-full">
+                    {/* Image */}
+                    <div className="absolute inset-0 w-full h-full">
+                      <Image
+                        src={img.src}
+                        alt={img.title}
+                        fill
+                        className="cover"
+                      />
+                    </div>
+
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+
+                    {/* Text Overlay */}
+                    <div className="absolute bottom-4 left-4 text-white z-10">
+                      <div className="text-2xl mb-1 leading-none">{img.id}</div>
+                      <div className="text-[10px] tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
+                        {img.title}
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
     </section>

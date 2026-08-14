@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 // --- Component ---
 export default function InvestorResources() {
   const containerRef = useRef(null);
-  
+
   const resources = [
     {
       id: "01",
@@ -53,11 +53,11 @@ export default function InvestorResources() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="container py-24 border-b border-black/50 relative">
+    <section ref={containerRef} className="container   py-12 md:py-24  border-b border-black/50 relative">
       <div className="relative z-10">
-        
+
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="md:text-center mb-8 md:mb-16">
           <h6 className="text-red mb-2 uppercase">
             Disclosures
           </h6>

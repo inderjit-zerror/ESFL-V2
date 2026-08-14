@@ -194,11 +194,11 @@ export default function CompoContact() {
     >
       <OfficeInfoMap />
 
-      <section className="py-24 container mx-auto">
+      <section className="  py-12 md:py-24  container mx-auto">
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
 
           {/* Reach us at */}
-          <div className="reveal-block rounded-3xl bg-[#E30713] p-8 sm:p-12 text-white flex flex-col justify-center">
+          <div className="reveal-block rounded-lg bg-[#E30713] p-5 sm:p-8 text-white flex flex-col justify-center">
             <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
             </h3>
@@ -256,7 +256,7 @@ export default function CompoContact() {
           </div>
 
           {/* Submit query form */}
-          <div className="reveal-block rounded-3xl border border-black/5 bg-white p-8 sm:p-12">
+          <div className="reveal-block rounded-lg border border-black/5 bg-white p-5 sm:p-8">
             <h3 data-para-effect className="uppercase text-[#2B1B12] mb-2">
               Submit Your Query
             </h3>
@@ -349,7 +349,7 @@ export default function CompoContact() {
         </div>
       </section>
 
-        <section className="flex justify-center pb-16 sm:pb-24">
+      <section className="flex justify-center pb-16 sm:  pb-12 md:pb-24 ">
         <ChatPill />
       </section>
 

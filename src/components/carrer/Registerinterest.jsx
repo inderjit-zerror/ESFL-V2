@@ -76,10 +76,10 @@ export default function RegisterInterest() {
   };
 
   return (
-    <section ref={sectionRef} className=" border-b border-black/50  overflow-hidden container py-24">
+    <section ref={sectionRef} className=" border-b border-black/50  overflow-hidden container   py-12 md:py-24 ">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Left column */}
-        <div ref={leftRef} className=" h-[50vh] md:h-full relative overflow-hidden">
+        <div ref={leftRef} className=" aspect-square rounded-md md:h-full relative overflow-hidden">
           <Image
             fill
             src="/images/career/form_img.png"
@@ -89,7 +89,7 @@ export default function RegisterInterest() {
         </div>
 
         {/* Right column — form */}
-        <div className="pl-6 sm:pl-10 lg:pl-12 xl:pl-16 flex flex-col justify-center">
+        <div className=" max-sm:mt-5 sm:pl-10 lg:pl-12 xl:pl-16 flex flex-col justify-center">
           <h2 data-para-effect className="uppercase mb-2">
             Register Your Interest
           </h2>
@@ -187,10 +187,10 @@ export default function RegisterInterest() {
             </div>
 
             <div className="">
-             
 
-<BTN txt={"Register"} />
-              
+
+              <BTN txt={"Register"} />
+
             </div>
           </form>
         </div>

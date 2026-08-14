@@ -177,7 +177,6 @@ const Sticker = () => {
           title="RAM BANDHU"
           subtitle="Ram Bandhu - Aapka Taste Partner"
           description={`Ram Bandhu has been a trusted name in Indian kitchens forover 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.
-
 Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers. with the aim of bringing convenience to the art of cooking. `}
           highlight={``}
           buttonText="View Range"

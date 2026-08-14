@@ -175,85 +175,85 @@ export default function OurJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[400vh]"
+      className="relative w-full h-[400svh]"
     >
-      <div className="sticky top-0 w-full h-screen overflow-hidden">
-        <div className="flex h-full flex-col justify-between gap-5 pt-24 pb-[3vh]">
-        {/* Heading */}
-        <div className=" mx-auto max-w-2xl text-center px-6 space-y-2">
-          <h2 data-para-effect className="">
-            OUR JOURNEY
-          </h2>
-          <p className="">
-            From one storefront in Nashik to a global <br /> spice house  the road
-            that shaped ESFL.
-          </p>
-        </div>
-
-        {/* Horizontal card track */}
-        <div className="relative w-full overflow-hidden">
-          <div
-            ref={trackRef}
-            className="flex w-max px-6 will-change-transform sm:px-10"
-          >
-            {MILESTONES.map((m) => (
-              <Card key={m.year} milestone={m} />
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom timeline — constrained to 70vw, centered */}
-        <div className=" mx-auto  w-[90vw] px-6">
-          {/* Segments Grid */}
-          <div className="relative grid grid-cols-7 gap-1 w-full h-[3px]">
-            {Array.from({ length: SEGMENT_COUNT }).map((_, i) => (
-              <div
-                key={i}
-                className="relative h-full w-full overflow-hidden rounded-full bg-neutral-200"
-              >
-                <div
-                  ref={(el) => (segmentRefs.current[i] = el)}
-                  className="absolute left-0 top-0 h-full w-full origin-left scale-x-0 rounded-full bg-red-600"
-                />
-              </div>
-            ))}
+      <div className="sticky top-0 w-full h-svh overflow-hidden">
+        <div className="flex h-full flex-col justify-between gap-5   pt-24  pb-[3vh]">
+          {/* Heading */}
+          <div className=" md:mx-auto md:max-w-2xl md:text-center px-4 space-y-2">
+            <h2 data-para-effect className="">
+              OUR JOURNEY
+            </h2>
+            <p className="">
+              From one storefront in Nashik to a global <br /> spice house  the road
+              that shaped ESFL.
+            </p>
           </div>
 
-          {/* Years Grid */}
-          <div className="relative grid grid-cols-7 gap-1 w-full mt-1">
-            {MILESTONES.map((m, i) => {
-              const isLast = i === SEGMENT_COUNT;
-              // Last item shares the last column with the second-to-last item, but aligns to the right
-              const col = isLast ? SEGMENT_COUNT : i + 1;
+          {/* Horizontal card track */}
+          <div className="relative w-full overflow-hidden">
+            <div
+              ref={trackRef}
+              className="flex w-max px-6 will-change-transform sm:px-10"
+            >
+              {MILESTONES.map((m) => (
+                <Card key={m.year} milestone={m} />
+              ))}
+            </div>
+          </div>
 
-              return (
+          {/* Bottom timeline — constrained to 70vw, centered */}
+          <div className=" mx-auto w-full md:w-[90vw] px-6">
+            {/* Segments Grid */}
+            <div className="relative grid grid-cols-7 gap-1 w-full h-[3px]">
+              {Array.from({ length: SEGMENT_COUNT }).map((_, i) => (
                 <div
-                  key={m.year}
-                  ref={(el) => (yearItemRefs.current[i] = el)}
-                  className={`flex translate-y-2 items-center opacity-0 transition-all duration-500 ease-out ${isLast ? "relative" : "gap-1.5"}`}
-                  style={{
-                    gridColumn: col,
-                    gridRow: 1,
-                    justifySelf: isLast ? "end" : "start",
-                    // Shift the intermediate items left by 5px to center the 6px dot directly under the 4px gap
-                    marginLeft: !isLast && i > 0 ? "-0.25rem" : "0",
-                  }}
+                  key={i}
+                  className="relative h-full w-full overflow-hidden rounded-full bg-neutral-200"
                 >
-                  <span
-                    ref={(el) => (dotRefs.current[i] = el)}
-                    className="h-1.5 w-1.5 shrink-0 bg-neutral-300 transition-colors duration-200"
+                  <div
+                    ref={(el) => (segmentRefs.current[i] = el)}
+                    className="absolute left-0 top-0 h-full w-full origin-left scale-x-0 rounded-full bg-red-600"
                   />
-                  <span 
-                    className={`text-[14px] text-neutral-500 ${isLast ? "absolute left-full ml-1.5" : ""}`}
-                  >
-                    {m.year}
-                  </span>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+
+            {/* Years Grid */}
+            <div className="relative grid grid-cols-7 gap-1 w-full mt-1">
+              {MILESTONES.map((m, i) => {
+                const isLast = i === SEGMENT_COUNT;
+                // Last item shares the last column with the second-to-last item, but aligns to the right
+                const col = isLast ? SEGMENT_COUNT : i + 1;
+
+                return (
+                  <div
+                    key={m.year}
+                    ref={(el) => (yearItemRefs.current[i] = el)}
+                    className={`flex translate-y-2 items-center opacity-0 transition-all duration-500 ease-out ${isLast ? "relative" : "gap-1.5"}`}
+                    style={{
+                      gridColumn: col,
+                      gridRow: 1,
+                      justifySelf: isLast ? "end" : "start",
+                      // Shift the intermediate items left by 5px to center the 6px dot directly under the 4px gap
+                      marginLeft: !isLast && i > 0 ? "-0.25rem" : "0",
+                    }}
+                  >
+                    <span
+                      ref={(el) => (dotRefs.current[i] = el)}
+                      className="h-1.5 w-1.5 shrink-0 bg-neutral-300 transition-colors duration-200"
+                    />
+                    <span
+                      className={` text-[9px] md:text-sm text-neutral-500 ${isLast ? "absolute left-full ml-1.5" : ""}`}
+                    >
+                      {m.year}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );
@@ -264,10 +264,10 @@ function Card({ milestone }) {
 
   return (
     <div
-      className=" group border border-black/10 relative flex  p-5  w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
+      className=" group border border-black/10 relative flex  p-5 w-[80vw]  md:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
     >
       {/* Image */}
-      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-sm">
+      <div className="relative aspect-square md:aspect-video w-full shrink-0 overflow-hidden rounded-sm">
         <img
           src={milestone.image}
           alt={milestone.label}

@@ -145,10 +145,10 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="container py-24 border-b border-black/50">
+    <section className="container   py-12 md:py-24  border-b border-black/50">
       <div className="">
         {/* Header */}
-        <div ref={headerRef} className="text-center">
+        <div ref={headerRef} className="md:text-center">
           <h2 data-para-effect className="">
             LATEST CAMPAIGNS
             &amp; NEWS
@@ -158,20 +158,18 @@ export default function LatestCampaignsAndNews() {
           </p>
         </div>
 
-        <div className="flex w-full mb-5 md:justify-end gap-x-2">
-          <button onClick={() => swiperInstance?.slidePrev()} disabled={isBeginning} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"><RiArrowLeftLine /></button>
-          <button onClick={() => swiperInstance?.slideNext()} disabled={isEnd} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"> <RiArrowRightLine /> </button>
+        <div className="flex max-sm:hidden w-full mb-5 md:justify-end gap-x-2">
+          <button onClick={() => swiperInstance?.slidePrev()} disabled={isBeginning} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"><RiArrowLeftLine size={16} /></button>
+          <button onClick={() => swiperInstance?.slideNext()} disabled={isEnd} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"> <RiArrowRightLine size={16} /> </button>
         </div>
         {/* Combined Campaigns & News */}
-        <div className="">
+        <div className="max-sm:mt-10">
           <Swiper
-            spaceBetween={20}
+            spaceBetween={10}
             speed={800}
             breakpoints={{
-              0: { slidesPerView: 1 },
-              640: { slidesPerView: 1.3 },
-              768: { slidesPerView: 2.3 },
-              1024: { slidesPerView: 3 },
+              0: { slidesPerView: 1.1},
+              768: { slidesPerView: 3, spaceBetween:20 },
             }}
             onSwiper={(swiper) => {
               setSwiperInstance(swiper);
@@ -209,12 +207,12 @@ export default function LatestCampaignsAndNews() {
                   </div>
 
                   {item.badge && (
-                    <h6 className="mt-4     text-[#E30713] ">
+                    <h6 className="mt-2     text-[#E30713] ">
                       {item.badge}
                     </h6>
                   )}
 
-                  <p className="mt-2">
+                  <p className="  md:mt-2">
                     {item.title}
                   </p>
 
@@ -242,7 +240,7 @@ export default function LatestCampaignsAndNews() {
           </Swiper>
         </div>
 
-        <div className="w-full center mt-5">
+        <div className="w-full center mt-3 md:mt-5">
           <BTN txt={"view all"} variant={"B1"} />
         </div>
       </div>

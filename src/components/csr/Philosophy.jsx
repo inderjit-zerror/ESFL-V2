@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const Philosophy = () => {
   return (
-    <section className="w-full border-b border-black/50 py-20 px-6 sm:px-10">
-      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="w-full border-b border-black/50 py-12 md:py-24 container">
+      <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20">
         {/* Left: Image */}
-        <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[4/4] overflow-hidden">
+        <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-video overflow-hidden">
           <Image
             src="/images/csr/philosophy.png"
             alt="CSR Philosophy - Farmers"
@@ -16,7 +16,7 @@ const Philosophy = () => {
         </div>
 
         {/* Right: Content */}
-        <div className="flex flex-col justify-center max-w-2xl">
+        <div className=" ">
           <h2  data-para-effect className="   uppercase  mb-8">
             OUR CSR<br />PHILOSOPHY
           </h2>

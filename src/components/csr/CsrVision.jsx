@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 }
 
 const cards = [
@@ -54,20 +54,20 @@ const CsrVision = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="bg-[#D42E12] container py-24 relative overflow-hidden">
-            <img src="/images/csr/crd_bg_2.svg" className='absolute w-[25%] z-0 top-0 left-0' alt="" />
-            <img src="/images/csr/crd_bg.svg" className='absolute w-[25%] z-0 bottom-0 right-0' alt="" />
+        <section ref={containerRef} className="bg-[#D42E12] container   py-12 md:py-24  relative overflow-hidden">
+            <img src="/images/csr/crd_bg_2.svg" className='absolute max-sm:hidden md:w-[25%] z-0 top-0 left-0' alt="" />
+            <img src="/images/csr/crd_bg.svg" className='absolute  md:w-[25%] z-0 bottom-0 right-0' alt="" />
             <div className="w-full relative z-10 flex flex-col items-center">
-                
+
                 {/* Header */}
-                <div className="text-center max-w-3xl mb-16">
+                <div className="md:text-center md:max-w-3xl mb-16">
                     <h6 className="text-white/90 uppercase mb-2">
                         JOIN US
                     </h6>
                     <h2 data-para-effect className="text-[#FFC55C] uppercase mb-4">
                         VISION, MISSION & <br /> VALUES
                     </h2>
-                    <p className="text-white/90 opacity-90 mx-auto px-4">
+                    <p className="text-white/90 opacity-90 ">
                         From the first trial blend to the sealed pack, three disciplines shape everything that leaves our facility — research that chases flavour, control that refuses compromise, and practice that respects the land we source from.
                     </p>
                 </div>
@@ -77,7 +77,7 @@ const CsrVision = () => {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
+                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl md:${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-[#D42E12] group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">
@@ -88,7 +88,7 @@ const CsrVision = () => {
                                 </span>
                             </div>
 
-                            <h4 data-para-effect className="text-[#D42E12] uppercase mb-4 transition-colors">
+                            <h4 data-para-effect className="text-[#D42E12] uppercase mb-2 md:mb-4 transition-colors">
                                 {card.title}
                             </h4>
 

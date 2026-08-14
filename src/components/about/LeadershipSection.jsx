@@ -1,5 +1,8 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 
 const teamMembers = [
@@ -39,11 +42,11 @@ const teamMembers = [
 
 export default function LeadershipSection() {
   return (
-    <section className=" border-b border-black/50 py-24 container ">
+    <section className=" border-b border-black/50   py-12 md:py-24  container ">
       <div className="  ">
 
         {/* Header Section */}
-        <div className="text-center mb-12 flex flex-col items-center">
+        <div className="md:text-center mb-12 ">
           <h6 className="text-red uppercase mb-2">
             Leadership
           </h6>
@@ -52,8 +55,8 @@ export default function LeadershipSection() {
           </h2>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Team Grid - Desktop */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {teamMembers.map((member) => (
             <div key={member.id} className="flex flex-col text-left group cursor-pointer">
 
@@ -80,6 +83,40 @@ export default function LeadershipSection() {
 
             </div>
           ))}
+        </div>
+
+        {/* Team Grid - Mobile Swiper */}
+        <div className="block sm:hidden w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.1}
+            className="w-full"
+          >
+            {teamMembers.map((member) => (
+              <SwiperSlide key={member.id}>
+                <div className="flex flex-col text-left group cursor-pointer w-full">
+                  {/* Image Container */}
+                  <div style={{ backgroundColor: member.bgColor || 'transparent' }} className={`relative w-full aspect-4/5 rounded-md overflow-hidden`}>
+                    <Image fill
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="h-full object-cover transition-transform duration-300"
+                    />
+                  </div>
+
+                  {/* Text Container */}
+                  <div className="pt-2">
+                    <h5 className="uppercase">
+                      {member.name}
+                    </h5>
+                    <p className="text-sm mt-1 md:mt-2">
+                      {member.description}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>

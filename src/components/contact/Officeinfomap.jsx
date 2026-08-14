@@ -105,7 +105,7 @@ export default function OfficeInfoMap() {
       className="grid overflow-hidden h-auto bg-[#E30713] lg:grid-cols-2"
     >
       {/* Map — left on desktop, bottom on mobile */}
-      <div className="oi-map relative  order-last lg:order-first">
+      <div className=" max-sm:aspect-square oi-map relative  order-last lg:order-first">
         <iframe
           title="Empire Spices & Foods Ltd. location"
           src="https://www.google.com/maps?cid=13564662084488619543&output=embed"

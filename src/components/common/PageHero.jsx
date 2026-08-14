@@ -15,18 +15,21 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
     const mediaVideo = videoSrc || video;
 
     useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "bottom top",
-                scrub: true,
-            }
-        });
-        tl.to(".hero-media",
-            { y: 150, filter: "brightness(0.1)", ease: "none" }
-        );
+        let mm = gsap.matchMedia();
 
+        mm.add("(min-width: 768px)", () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                }
+            });
+            tl.to(".hero-media",
+                { y: 150, filter: "brightness(0.1)", ease: "none" }
+            );
+        });
     }, { scope: containerRef });
 
     return (
@@ -37,7 +40,7 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
                 <img src={imageSrc} alt={typeof title === "string" ? title : "Hero Image"} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
             ) : null}
 
-            <div className="text-center absolute pb-16  px-4 text-white z-10 flex flex-col items-center">
+            <div className="text-center absolute pb-5 md:pb-16  px-4 text-white z-10 flex flex-col items-center">
                 {title && (
                     <h1 className="mb-3 md:mb-4 uppercase">
                         {title}

@@ -30,14 +30,14 @@ export default function BrandSection({
 }) {
   return (
     <section
-      className={`${bgColor} ${className} container w-full min-h-svh md:h-svh overflow-hidden flex justify-center items-center py-10 md:py-0`}
+      className={`${bgColor} ${className} container w-full max-sm:py-6 md:h-svh overflow-hidden flex justify-center items-center`}
     >
       <div
         className={`  grid h-fit w-full  py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 ${reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
       >
         {/* Left Content */}
-        <div className="flex items-center pr-32">
+        <div className="flex items-center md:pr-32">
           <div className="">
 
             <h2

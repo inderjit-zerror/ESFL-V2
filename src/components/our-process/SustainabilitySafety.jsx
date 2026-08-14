@@ -1,5 +1,8 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 // --- SVG Icons ---
 const DropIcon = ({ className }) => (
@@ -61,14 +64,14 @@ export default function SustainabilitySafety() {
   ];
 
   return (
-    <section className=" border-b border-black/50 min-h-screen py-24 container relative">
+    <section className=" border-b border-black/50 py-12 md:py-24  container relative">
 
       <div className="  ">
 
         {/* Header Section */}
-        <div className="text-center mb-16 ">
+        <div className="md:text-center mb-8 md:mb-16 ">
           <h6 className="text-[#E30713] mb-2 uppercase">
-           Responsibility
+            Responsibility
           </h6>
           <h2 data-para-effect className="uppercase mb-2">
             Sustainability & Safety
@@ -79,34 +82,72 @@ export default function SustainabilitySafety() {
           </p>
         </div>
 
-        {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-8">
+        {/* Grid Section - Desktop */}
+        <div className="hidden md:grid grid-cols-2 gap-x-5 gap-y-8">
           {cards.map((card, index) => (
             <div key={index} className="flex flex-col">
 
               {/* Image Container with Icon */}
-              <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden mb-6">
+              <div className="relative w-full aspect-[16/9] rounded-md overflow-hidden mb-6">
                 <Image
                   src={card.IMG}
                   alt={card.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="50vw"
                 />
               </div>
 
               {/* Card Text Content */}
               <div>
-                <h5 className={`  text-black  uppercase mb-2 ${card.titleColor}`}>
+                <h5 className={`text-black uppercase mb-2 ${card.titleColor}`}>
                   {card.title}
                 </h5>
-                <p className=" text-black/70     ">
+                <p className="text-black/70">
                   {card.description}
                 </p>
               </div>
 
             </div>
           ))}
+        </div>
+
+        {/* Mobile Swiper */}
+        <div className="block md:hidden h-fit! w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.1}
+            className="w-full h-fit!"
+          >
+            {cards.map((card, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex flex-col">
+
+                  {/* Image Container with Icon */}
+                  <div className="relative w-full aspect-square rounded-md overflow-hidden mb-4">
+                    <Image
+                      src={card.IMG}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                    />
+                  </div>
+
+                  {/* Card Text Content */}
+                  <div>
+                    <h5 className={`text-black uppercase mb-2 ${card.titleColor}`}>
+                      {card.title}
+                    </h5>
+                    <p className="text-black/70">
+                      {card.description}
+                    </p>
+                  </div>
+
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>

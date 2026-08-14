@@ -68,7 +68,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
+      className={`fixed top-0 left-0 z-50 w-full py-2 md:py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
         }`}
     >
       <div className="container flex  w-full items-center justify-between ">
@@ -207,7 +207,7 @@ export default function Header() {
               width={130}
               height={80}
               data-header-logo-image
-              className="h-auto  w-32 object-contain"
+              className="h-auto  w-20 md:w-32 object-contain"
             />
           </div>
         </a>
@@ -218,7 +218,7 @@ export default function Header() {
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((prev) => !prev)}
-          className=" absolute right-5 z-10 flex h-10 w-10 items-center justify-center text-white lg:hidden"
+          className=" absolute right-4 z-10 flex h-10 w-10 items-center justify-center text-white lg:hidden"
         >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -247,7 +247,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-[calc(70px+0.75rem)] z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
+        className={`fixed inset-x-0 top-12 z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
           ? "pointer-events-auto max-h-[calc(100vh-70px-0.75rem)] opacity-100"
           : "pointer-events-none max-h-0 opacity-0"
           }`}
@@ -333,7 +333,7 @@ export default function Header() {
           </a>
 
           <div className="pt-5">
-            <BTN txt={`Become Channel Partner`} variant="B1" />
+            <BTN txt={`Become Channel Partner`} variant="B1" href={"/become-a-partner"} />
           </div>
         </nav>
       </div>

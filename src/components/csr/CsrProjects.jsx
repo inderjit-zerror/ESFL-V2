@@ -1,6 +1,9 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import Link from 'next/link';
 
 const projects = [
@@ -29,10 +32,10 @@ const projects = [
 
 const CsrProjects = () => {
   return (
-    <section className=" container py-24 relative">
+    <section className=" container   py-12 md:py-24  relative">
       <div className="w-full">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16">
+        <div className="flex  justify-between items-end  mb-8 md:mb-16">
           <div>
             <h6 className="text-[#E30713] uppercase mb-2">
               IMPACT IN ACTION
@@ -41,15 +44,16 @@ const CsrProjects = () => {
               ONGOING CSR <br /> PROJECTS
             </h2>
           </div>
-          <a href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center gap-2">
+          <a href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center  gap-2">
             VIEW ALL PROJECTS <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Projects Grid - Desktop */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project, index) => (
-            <div key={index} className=" group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full group">
+            <div key={index} className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
               <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                 <Image
                   src={project.image}
@@ -65,15 +69,53 @@ const CsrProjects = () => {
                 <h5 data-para-effect className="uppercase mb-4">
                   {project.title}
                 </h5>
-                <p className="opacity-70  mb-8 flex-grow">
+                <p className="opacity-70 mb-8 flex-grow">
                   {project.description}
                 </p>
-                <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5  transition-all duration-300">
+                <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5 transition-all duration-300">
                   READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                 </a>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Projects Swiper - Mobile */}
+        <div className="block md:hidden w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.1}
+            className="w-full h-fit!"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <div className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
+                  <div className="relative w-full aspect-video overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow">
+                    <p className="text-xs font-semibold tracking-wider text-red uppercase mb-2">
+                      {project.category}
+                    </p>
+                    <h5 className="uppercase mb-2 md:mb-4">
+                      {project.title}
+                    </h5>
+                    <p className="opacity-70 mb-8 flex-grow">
+                      {project.description}
+                    </p>
+                    <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2">
+                      READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

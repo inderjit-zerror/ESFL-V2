@@ -23,20 +23,24 @@ const VideoSection = () => {
 
     // Parallax effect using ScrollTrigger
     // We animate from y: -200 to y: 200 to get a total movement of 400px over the scroll span
-    gsap.fromTo(
-      video,
-      { y: -200 },
-      {
-        y: 200,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      }
-    );
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.fromTo(
+        video,
+        { y: -200 },
+        {
+          y: 200,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    });
 
     // Auto-mute when section leaves the screen
     ScrollTrigger.create({
@@ -93,7 +97,7 @@ const VideoSection = () => {
       {/* Video Container */}
       <div
         ref={sectionRef}
-        className="w-full aspect-[4/3] sm:aspect-video relative overflow-hidden cursor-none"
+        className="w-full aspect-3/4 sm:aspect-video relative overflow-hidden cursor-none"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}

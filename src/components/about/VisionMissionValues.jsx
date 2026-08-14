@@ -40,7 +40,7 @@ export default function VisionMissionValues() {
       scrollTrigger: {
         trigger: ".vision-card",
         start: "top 85%",
-        toggleActions:"play none none reverse",
+        toggleActions: "play none none reverse",
       },
       y: 60,
       opacity: 0,
@@ -51,11 +51,11 @@ export default function VisionMissionValues() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="bg-[#E30713] h-fit py-24 container   flex items-center justify-center">
+    <section ref={containerRef} className="bg-[#E30713] h-fit   py-12 md:py-24  container   flex items-center justify-center">
       <div className="  w-full ">
 
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="md:text-center mb-16">
           <h6 className="text-[#fac05e] uppercase mb-2">
             Quality & Process Certifications
           </h6>
@@ -69,7 +69,7 @@ export default function VisionMissionValues() {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="vision-card group relative space-y-20 bg-[#fac05e] rounded-xl p-8 flex flex-col "
+              className="vision-card group relative md:space-y-20 bg-[#fac05e] rounded-xl p-5 md:p-8 flex flex-col "
             >
               {/* Icon */}
               <div className="flex justify-between">
@@ -85,7 +85,7 @@ export default function VisionMissionValues() {
               </div>
 
               <div className="mt-auto">
-                <p className="text-[#c83219] text-xl ">
+                <p className="text-[#c83219] md:text-xl ">
                   {card.description}
                 </p>
               </div>

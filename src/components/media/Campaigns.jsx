@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const content = [
   {
@@ -59,31 +61,30 @@ const Campaigns = () => {
       : content.filter((item) => item.category === activeCategory);
 
   return (
-    <section className=" container pt-32 py-24 relative">
+    <section className=" container pt-24 md:pt-32   py-12 md:py-24  relative">
       <div className="w-full">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="md:text-center mb-8 md:mb-16">
           <h6 className="text-[#E30713] uppercase mb-2">
             ON AIR NOW
           </h6>
           <h2 data-para-effect className="uppercase mb-4">
-            LATEST CAMPAIGNS <br className="hidden sm:block" /> &amp; NEWS
+            LATEST CAMPAIGNS <br className="max-sm:hidden" /> &amp; NEWS
           </h2>
           <p className="opacity-70 mx-auto max-w-2xl mb-8">
             Latest campaigns, media coverage and company updates.
           </p>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap md:items-center md:justify-center gap-1 md:gap-3">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${
-                  activeCategory === cat
+                className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${activeCategory === cat
                     ? "bg-[#E30713] text-white"
                     : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -91,11 +92,11 @@ const Campaigns = () => {
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid - Desktop */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10">
           {filteredContent.map((item) => (
             <div key={item.id} className="flex flex-col group cursor-pointer">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden relative mb-5">
+              <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -115,6 +116,40 @@ const Campaigns = () => {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Swiper - Mobile */}
+        <div className="block md:hidden w-full">
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1.1}
+            className="w-full"
+          >
+            {filteredContent.map((item) => (
+              <SwiperSlide key={item.id}>
+                <div className="flex flex-col group cursor-pointer h-full">
+                  <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500"
+                    />
+                  </div>
+
+                  <h5 className="mb-4">
+                    {item.title}
+                  </h5>
+
+                  <a
+                    href={item.link}
+                    className="mt-auto text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2"
+                  >
+                    READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                  </a>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>

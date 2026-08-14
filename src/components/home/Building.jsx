@@ -13,13 +13,10 @@ export default function Building() {
   const sectionRef = useRef(null);
 
   const spiceImages = [
-    { src: "/images/home/aboutSection/spice1.png", className: "absolute top-10 left-10 w-24 h-24 sm:w-32 sm:h-32 " },
-    { src: "/images/home/aboutSection/spice2.png", className: "absolute bottom-20 left-[20%] w-32 h-32 sm:w-40 sm:h-40 " },
-    { src: "/images/home/aboutSection/spice3.png", className: "absolute top-20 right-[25%] w-28 h-28 sm:w-36 sm:h-36 " },
-    { src: "/images/home/aboutSection/spice4.png", className: "absolute bottom-10 right-10 w-36 h-36 sm:w-48 sm:h-48 " },
-    { src: "/images/home/aboutSection/spice5.png", className: "absolute top-[40%] left-4 w-20 h-20 sm:w-28 sm:h-28 " },
-    { src: "/images/home/aboutSection/spice6.png", className: "absolute top-[35%] right-10 w-24 h-24 sm:w-32 sm:h-32 " },
-    { src: "/images/home/aboutSection/spice7.png", className: "absolute -bottom-10 left-1/2 w-40 h-40 sm:w-56 sm:h-56  -translate-x-1/2" },
+    { src: "/images/home/aboutSection/spice1.png", className: "absolute -top-10 md:top-[30%] -left-24 w-44 h-44 sm:w-72 sm:h-72 " },
+    { src: "/images/home/aboutSection/spice3.png", className: "absolute top-28 md:top-20 right-[-15%] md:right-[5%] w-44 h-44 sm:w-70 sm:h-70 " },
+    { src: "/images/home/aboutSection/spice4.png", className: "absolute -bottom-20 -right-14 w-50 h-50 sm:w-60 sm:h-60 " },
+    { src: "/images/home/aboutSection/spice7.png", className: "absolute -bottom-10 left-0 md:left-[40%] w-40 h-40 sm:w-56 sm:h-56 " },
   ];
 
   const { contextSafe } = useGSAP(() => {
@@ -62,7 +59,7 @@ export default function Building() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative flex py-44 bg w-full items-center justify-center overflow-hidden"
+      className="relative container flex py-32 md:py-44 bg w-full items-center justify-center overflow-hidden"
     >
       {/* Wrapped in a stable div to prevent React removeChild errors during next-view-transitions */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -77,8 +74,8 @@ export default function Building() {
         ))}
       </div>
 
-      <div className="relative z-10 flex w-full h-fit flex-col pointer-events-none items-center text-center">
-        <div className="mb-4 flex items-center gap-3 px-4">
+      <div className="relative z-10 flex w-full h-fit flex-col pointer-events-none md:items-center md:text-center">
+        <div className="mb-4 flex md:items-center gap-3">
           <h6 className=" uppercase mb-2 text-red">
             Winning the hearts of our consumers since 1994
           </h6>
@@ -94,7 +91,7 @@ export default function Building() {
           manufacturing standards.
         </p>
 
-        <div className="mt-10 flex gap-5 w-fit pointer-events-auto sm:max-w-none sm:w-auto max-sm:flex-col">
+        <div className="mt-10 flex gap-3 md:gap-5 w-fit pointer-events-auto flex-wrap">
           <BTN txt={`Know More`} variant="B1" href="/about" />
           <BTN txt={`Become Channel Partner`} variant="B2" href="/become-a-partner" />
         </div>

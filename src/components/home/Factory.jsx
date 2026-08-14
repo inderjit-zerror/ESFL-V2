@@ -12,22 +12,26 @@ const Factory = () => {
   const videoRef = useRef(null);
 
   useGSAP(() => {
-    gsap.fromTo(videoRef.current, {
-      y: -150
-    }, {
-      y: 150,
-      ease: "none",
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
-      },
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.fromTo(videoRef.current, {
+        y: -150
+      }, {
+        y: 150,
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     });
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className='w-full aspect-video overflow-hidden  relative'>
+    <div ref={containerRef} className='w-full aspect-3/4  md:aspect-video overflow-hidden  relative'>
       <video
         ref={videoRef}
         muted

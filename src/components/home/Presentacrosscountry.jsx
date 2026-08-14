@@ -94,7 +94,7 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-140 pt-24 overflow-hidden bg-red    "
+      className="relative h-140   pt-12 md:pt-24  overflow-hidden bg-red    "
     >
       <div className="w-full h-full relative">
         {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] top-[2%] z-99" /> */}
@@ -123,7 +123,7 @@ export default function PresentAcrossCountry() {
           </div>
 
           {/* Right: stats grid */}
-          <div className="grid pl-24 space-y-10 grid-cols-2  ">
+          <div className="grid md:pl-24  space-y-10 grid-cols-2  ">
             {stats.map((stat, i) => (
               <div key={stat.id} className=" ">
                 <h2

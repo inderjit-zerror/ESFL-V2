@@ -107,17 +107,17 @@ export default function CurrentOpenings() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#E30713] border-t border-[#fcb62d] py-24">
-      <div className="container mx-auto max-w-6xl">
+    <section ref={sectionRef} className="bg-[#E30713] border-t border-[#fcb62d]   py-12 md:py-24 ">
+      <div className="container md:mx-auto md:max-w-6xl">
         {/* Header */}
-        <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className=" mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             <h6 className="text-[#fcb62d] uppercase mb-2">JOIN US</h6>
             <h2 data-para-effect className="text-[#fcb62d] uppercase m-0">
               Current Openings
             </h2>
           </div>
-          <p className="text-sm uppercase text-[#fcb62d] opacity-80 pb-2">
+          <p className="text-sm uppercase text-[#fcb62d] pb-2">
             {JOBS.length} ROLES OPEN
           </p>
         </div>

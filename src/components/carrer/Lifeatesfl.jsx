@@ -29,7 +29,7 @@
 //     alt: "Spices",
 //     rotation: -2,
 //     zIndex: 20,
-//     className: "w-72 h-80 -ml-8 mt-24",
+//     className: "w-72 h-80 -ml-8   mt-12 md:mt-24 ",
 //   },
 //   {
 //     id: 4,
@@ -55,7 +55,7 @@
 //     alt: "Spices",
 //     rotation: -2,
 //     zIndex: 20,
-//     className: "w-72 h-80 -ml-8 mt-24",
+//     className: "w-72 h-80 -ml-8   mt-12 md:mt-24 ",
 //   },
 //   {
 //     id: 7,
@@ -183,7 +183,7 @@ export default function LifeAtESFL() {
       alt: "Spices",
       rotation: -2,
       zIndex: 20,
-      className: "w-72 h-80 -ml-8 mt-24",
+      className: "w-72 h-80 -ml-8   mt-12 md:mt-24 ",
     },
     {
       id: 4,
@@ -209,7 +209,7 @@ export default function LifeAtESFL() {
       alt: "Spices",
       rotation: -2,
       zIndex: 20,
-      className: "w-72 h-80 -ml-8 mt-24",
+      className: "w-72 h-80 -ml-8   mt-12 md:mt-24 ",
     },
     {
       id: 7,

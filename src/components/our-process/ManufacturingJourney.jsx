@@ -52,10 +52,10 @@ export default function ManufacturingJourney() {
   ];
 
   return (
-    <section ref={sectionRef} className="container py-24 relative">
+    <section ref={sectionRef} className="container   py-12 md:py-24  relative">
       <div className="relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="md:text-center mb-8 md:mb-16">
           <h6 className="text-red mb-2 uppercase">
             The Pillars
           </h6>

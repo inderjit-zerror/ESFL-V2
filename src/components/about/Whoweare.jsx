@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function WhoWeAre() {
   return (
-    <section className="w-full border-b border-black/50 container py-24 ">
+    <section className="w-full border-b border-black/50 container   py-12 md:py-24  ">
       <div className="  grid  grid-cols-1 md:grid-cols-2 gap-x-20">
         {/* Left: Image with badge */}
         <div className="relative h-full">
-          <div className="relative w-full h-full overflow-hidden rounded-sm">
+          <div className="relative max-sm:aspect-square w-full h-full overflow-hidden rounded-sm">
             <Image fill
               src="/images/about/IMG30.jpg"
               alt="Assorted Indian spices in bowls — turmeric, chili powder, coriander, salt and fresh coriander leaves"
@@ -27,7 +27,7 @@ export default function WhoWeAre() {
 
         {/* Right: Content */}
         <div>
-          <h6 className="text-red uppercase mb-2">Who We Are</h6>
+          <h6 className="text-red max-sm:mt-5 uppercase mb-2">Who We Are</h6>
 
           <h2 data-para-effect className=" uppercase">
             From a Local <br />Enterprise to a <br /> Global Force
@@ -50,7 +50,7 @@ export default function WhoWeAre() {
           </p>
 
           {/* Stat pills */}
-          <div className="mt-32 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className=" mt-10 md:mt-32 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {[
               "Farmer-First Sourcing Network",
               "32 Manufacturing Units",

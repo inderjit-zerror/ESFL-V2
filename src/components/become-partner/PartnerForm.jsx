@@ -39,10 +39,10 @@ export default function PartnerForm() {
     };
 
     return (
-        <section ref={sectionRef} className="  overflow-hidden container py-24 border-b border-black/50">
+        <section ref={sectionRef} className="  overflow-hidden container   py-12 md:py-24  border-b border-black/50">
             <div className="grid grid-cols-1  lg:grid-cols-2">
                 {/* Left column */}
-                <div ref={leftRef} className=" h-[50vh] relative md:h-full overflow-hidden">
+                <div ref={leftRef} className=" max-sm:aspect-square rounded-md relative md:h-full overflow-hidden">
                     <Image
                         fill
                         src="/images/partner/contact_img.png"
@@ -52,7 +52,7 @@ export default function PartnerForm() {
                 </div>
 
                 {/* Right column — form */}
-                <div className="pl-6 sm:pl-10 lg:pl-12 xl:pl-16 ">
+                <div className="max-sm:pt-5 sm:pl-10 lg:pl-12 xl:pl-16 ">
                     <h2 data-para-effect className="     uppercase mb-2">
                         APPLICATION FORM
                     </h2>
@@ -128,18 +128,18 @@ export default function PartnerForm() {
 
 
 function Label({ children }) {
-  return (
-    <label className="mb-2 block text-xs opacity-50 uppercase">
-      {children}
-    </label>
-  );
+    return (
+        <label className="mb-2 block text-xs opacity-50 uppercase">
+            {children}
+        </label>
+    );
 }
 
 function Input(props) {
-  return (
-    <input
-      {...props}
-      className="w-full border rounded-md border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
-    />
-  );
+    return (
+        <input
+            {...props}
+            className="w-full border rounded-md border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
+        />
+    );
 }

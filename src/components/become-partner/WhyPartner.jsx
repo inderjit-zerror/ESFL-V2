@@ -58,7 +58,7 @@ const WhyPartner = () => {
   }, []);
 
   return (
-    <section className="relative w-full py-24  bg-[#FDF6EC] container">
+    <section className="relative w-full   py-12 md:py-24   bg-[#FDF6EC] container">
       {/* Header */}
       <div className="">
         <h6 className="text-red mb-2 uppercase">
@@ -80,7 +80,7 @@ const WhyPartner = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <p  
+              <p
                 className={`text-[4rem] leading-none font-semibold uppercase transition-all duration-300 cursor-pointer ${isHovered ? "text-[#C4321B]" : "text-[#E6DFD3]"
                   }`}
               >

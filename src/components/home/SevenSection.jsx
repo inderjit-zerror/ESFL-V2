@@ -40,18 +40,14 @@ const imgArr = [
 
 const CustomImg = () => {
 
-  let a = 2
-
-  let c = a
-  
   return (
     <>
-      <div className="w-fit h-fit flex justify-center ml-5 items-center gap-5 select-none cursor-pointer">
+      <div className="w-fit h-fit flex justify-center ml-3 md:ml-5 items-center gap-3 md:gap-5 select-none cursor-pointer">
         {imgArr.map((item, index) => {
           return (
             <div
               key={index}
-              className="w-[25vw] aspect-3/4 overflow-hidden rounded-xl relative group"
+              className=" w-[65vw] md:w-[25vw] aspect-3/4 overflow-hidden rounded-xl relative group"
             >
               <Image fill
                 src={item}
@@ -61,12 +57,12 @@ const CustomImg = () => {
 
               {/* BlackScreen */}
               <div className="w-full h-full absolute top-0 transition-all duration-500 opacity-0 left-0 bg-[#00000071] z-[20] group-hover:opacity-100 flex justify-center items-center">
-                  <BTN txt={"View Post"} variant={"B1"} />
+                <BTN txt={"View Post"} variant={"B1"} />
               </div>
 
               {/* Btn */}
               <a target="blank" href="https://www.instagram.com/RambandhuOfficial">
-                <div className="w-fit h-fit absolute top-4 left-4 Font3 text-white p-3 rounded-full  bg-[#E30713] flex justify-center items-center gap-[10px] z-40 transition-all duration-500">
+                <div className="w-fit h-fit absolute top-2 md:top-4 left-2 md:left-4 Font3 text-white p-3 rounded-full  bg-[#E30713] flex justify-center items-center gap-[10px] z-40 transition-all duration-500">
                   <FaInstagram />
                 </div>
               </a>
@@ -82,14 +78,14 @@ const CustomImg = () => {
 const SevenSection = () => {
 
   return (
-    <div className="w-full h-fit flex flex-col overflow-hidden  ">
-      <div className="w-full h-fit flex flex-col py-24 justify-center items-center ">
+    <div className=" container w-full h-fit flex flex-col overflow-hidden  ">
+      <div className="w-full h-fit    py-12 md:py-24 ">
 
-          <div className="w-fit h-fit flex uppercase justify-center items-center">
-            <h2 data-para-effect>Stay in Touch</h2>
-          </div>
+        <div className=" uppercase md:text-center">
+          <h2 data-para-effect>Stay in Touch</h2>
+        </div>
 
-        <div className="w-full h-fit flex flex-wrap justify-center     items-center  mt-5 gap-x-5 px-4">
+        <div className="w-full h-fit flex flex-wrap md:justify-center     md:items-center  mt-5 gap-2 md:gap-x-5">
           <a target="blank" href="https://www.instagram.com/RambandhuOfficial">
 
             <BTN txt={"Instagram"} variant={"B1"} />
@@ -105,7 +101,7 @@ const SevenSection = () => {
           </a>
         </div>
 
-        <div className="w-full h-fit flex overflow-hidden pt-16">
+        <div className="w-full h-fit flex overflow-hidden pt-8 md:pt-16">
           <Marquee pauseOnHover>
             <CustomImg />
           </Marquee>

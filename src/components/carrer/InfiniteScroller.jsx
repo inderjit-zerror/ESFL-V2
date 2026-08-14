@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const originalImages = [
@@ -17,9 +17,25 @@ const InfiniteScroller = () => {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
 
-  const CARD_WIDTH = 300;
-  const CARD_HEIGHT = 400;
-  const GAP = 40;
+  const [dimensions, setDimensions] = useState({ width: 300, height: 400, gap: 40 });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setDimensions({ width: 200, height: 260, gap: 20 });
+      } else {
+        setDimensions({ width: 300, height: 400, gap: 40 });
+      }
+    };
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const CARD_WIDTH = dimensions.width;
+  const CARD_HEIGHT = dimensions.height;
+  const GAP = dimensions.gap;
   const TOTAL_CARDS = originalImages.length;
 
   // Duplicate images for seamless infinite scrolling
@@ -165,12 +181,12 @@ const InfiniteScroller = () => {
       container.removeEventListener("touchmove", onPointerMove);
       container.removeEventListener("touchend", onPointerUp);
     };
-  }, []);
+  }, [CARD_WIDTH, CARD_HEIGHT, GAP]);
 
   return (
-    <section className="w-full overflow-hidden relative py-24  bg-[#E30713]">
+    <section className="w-full  overflow-hidden relative   py-12 md:py-24   bg-[#E30713]">
       {/* Header */}
-      <div className="text-center mb-10 relative z-10">
+      <div className=" px-4 md:text-center mb-10 relative z-10">
         <h6 className="  text-[#fcb62d] uppercase">
           Culture
         </h6>

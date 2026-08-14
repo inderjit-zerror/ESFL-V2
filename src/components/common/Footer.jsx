@@ -20,7 +20,7 @@ export default function Footer() {
     <footer className="bg-[#E30713] text-white">
       <div className="   container">
         {/* Top row: brand + socials, separated from the link grid */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6   pt-24">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6     pt-12 md:pt-24 ">
           <div className="w-[50vw] sm:w-[180px]">
             <img
               src="/logo.svg"
@@ -147,7 +147,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3  md:hidden ">
+        <div className="flex items-center gap-3 pb-4  md:hidden ">
           <a
             href="https://linkedin.com"
             aria-label="LinkedIn"

@@ -11,7 +11,7 @@ const page = () => {
   return (
     <>
       <PageHero
-        title="Build Your Career With ESFL"
+        title={<>Build Your Career <br className="max-sm:hidden"/> With ESFL</>}
         description="Join a team that's shaping the future of food manufacturing — where craft, technology and three decades of flavour heritage meet."
         video="/videos/career.mp4"
         buttonText="Explore Opportunities"

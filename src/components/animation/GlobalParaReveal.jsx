@@ -22,6 +22,15 @@ const GlobalParaReveal = () => {
       const elements = gsap.utils.toArray("[data-para-effect]")
 
       elements.forEach((el) => {
+        
+        // Remove <br> tags on mobile so SplitText doesn't force a line break
+        if (window.innerWidth < 768) {
+          const brs = el.querySelectorAll("br");
+          brs.forEach((br) => {
+            const space = document.createTextNode(" ");
+            br.parentNode.replaceChild(space, br);
+          });
+        }
 
         if (el.dataset.splitInitialized) return
 
