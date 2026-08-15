@@ -190,7 +190,7 @@ export default function CompoContact() {
   return (
     <div
       ref={rootRef}
-      className="w-full bg-[#f7e8d4] text-[#2B1B12]"
+      className="w-full bg-[#FDF6EC] text-[#2B1B12]"
     >
       <OfficeInfoMap />
 
@@ -244,7 +244,7 @@ export default function CompoContact() {
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:flex"
             aria-hidden="true"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#f7e8d4] text-xs font-bold uppercase tracking-widest text-[#E30713]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E30713]">
               Or
             </div>
           </div>

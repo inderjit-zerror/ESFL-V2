@@ -64,7 +64,7 @@ const JOBS = [
 // Colors used for the GSAP hover tween (kept as JS constants so they can
 // be tweened directly — Tailwind classes alone can't be animated smoothly).
 const COLORS = {
-  cardBg: "#f7e8d4",
+  cardBg: "#FDF6EC",
   cardBgHover: "#F4C96B", // yellow
   iconBg: "#FBE3DC",
   iconBgHover: "#E30713",

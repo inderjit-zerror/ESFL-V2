@@ -80,7 +80,7 @@ const CsrVision = () => {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className={`csr-card opacity-0 group relative bg-[#f7e8d4] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
+                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-[#D42E12] group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">
