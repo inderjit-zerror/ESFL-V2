@@ -87,6 +87,8 @@ export default function Certifications() {
 
   return (
     <section ref={sectionRef} className="bg-[#E30713] container   py-12 md:py-24  text-white">
+            <div className="pattern_bg"></div>
+
       <div className="  ">
 
         {/* Header Section */}

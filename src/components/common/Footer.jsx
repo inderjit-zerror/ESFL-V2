@@ -17,8 +17,11 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#E30713] text-white">
-      <div className="   container">
+    <footer className="bg-[#E30713] text-white relative">
+      <div className="pattern_bg"></div>
+      <Image fill className="absolute w-full h-full inset-0 cover" src="/images/home/aboutSection/bg.png" alt="" />
+      <div className="   container z-10">
+
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6     pt-12 md:pt-24 ">
           <div className="w-[50vw] sm:w-[180px]">

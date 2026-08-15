@@ -4,6 +4,7 @@ import { Beaker, ShieldCheck, Leaf } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -16,7 +17,7 @@ const cards = [
         desc: "Prioritising fair trade practices and transparency across our entire supply chain to protect farmers' rights.",
         footer: "120+ BLENDS DEVELOPED",
         icon: <Beaker className="w-5 h-5" />,
-        rotation: "-rotate-2"
+        rotation: "md:-rotate-2"
     },
     {
         num: "02",
@@ -24,7 +25,7 @@ const cards = [
         desc: "Investing in infrastructure, education and vocational training within rural clusters to drive self-sufficiency.",
         footer: "3-STAGE BATCH TESTING",
         icon: <ShieldCheck className="w-5 h-5" />,
-        rotation: "rotate-0"
+        rotation: "md:rotate-0"
     },
     {
         num: "03",
@@ -32,7 +33,7 @@ const cards = [
         desc: "Advanced water conservation and harvesting techniques that minimise our industrial water footprint.",
         footer: "ZERO WASTE TO LANDFILL",
         icon: <Leaf className="w-5 h-5" />,
-        rotation: "rotate-2"
+        rotation: "md:rotate-2"
     }
 ];
 
@@ -55,8 +56,8 @@ const CsrVision = () => {
 
     return (
         <section ref={containerRef} className="bg-[#D42E12] container   py-12 md:py-24  relative overflow-hidden">
-            <img src="/images/csr/crd_bg_2.svg" className='absolute max-sm:hidden md:w-[25%] z-0 top-0 left-0' alt="" />
-            <img src="/images/csr/crd_bg.svg" className='absolute  md:w-[25%] z-0 bottom-0 right-0' alt="" />
+            <Image height={500} width={500} src="/images/csr/crd_bg_2.svg" className='absolute max-sm:hidden md:w-[25%] z-0 top-0 left-0' alt="" />
+            <Image height={500} width={500} src="/images/csr/crd_bg.svg" className='absolute  md:w-[25%] z-0 bottom-0 right-0' alt="" />
             <div className="w-full relative z-10 flex flex-col items-center">
 
                 {/* Header */}
@@ -77,8 +78,10 @@ const CsrVision = () => {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl md:${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
+                            className={`csr-card opacity-0 group relative bg-[#f7e8d4] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
+            <div className="pattern_bg"></div>
+
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-[#D42E12] group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">
                                     {card.icon}

@@ -30,10 +30,11 @@ export default function BrandSection({
 }) {
   return (
     <section
-      className={`${bgColor} ${className} container w-full max-sm:py-6 md:h-screen overflow-hidden flex justify-center items-center`}
-    >
+      className={`${bgColor} ${className} container w-full max-sm:py-6 md:h-[calc(100vh-5rem)]! overflow-hidden flex justify-center items-center`}
+    > 
+    <div className="pattern_bg"></div>
       <div
-        className={`  grid h-fit w-full  py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 ${reverse ? "md:[&>*:first-child]:order-2" : ""
+        className={`  grid h-full md:py-10 w-full  gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 ${reverse ? "md:[&>*:first-child]:order-2" : ""
           }`}
       >
         {/* Left Content */}
@@ -78,13 +79,13 @@ export default function BrandSection({
         </div>
 
         {/* Right Image */}
-        <div className="relative h-[45vh] sm:h-[55vh] md:h-[75vh] group overflow-hidden mt-0 md:mt-[10vh]  ">
+        <div className="relative w-full aspect-square md:h-full group overflow-hidden bg-cyan-600 ">
 
           <Image
             src={heroImage}
             alt={title}
             fill
-            className="object-cover transition-all duration-300 ease-in group-hover:scale-[1.05]"
+            className="cover transition-all duration-300 group-hover:scale-[1.05]"
           />
 
           {logo && (

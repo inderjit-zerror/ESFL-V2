@@ -52,6 +52,7 @@ export default function VisionMissionValues() {
 
   return (
     <section ref={containerRef} className="bg-[#E30713] h-fit   py-12 md:py-24  container   flex items-center justify-center">
+      <div className="pattern_bg"></div>
       <div className="  w-full ">
 
         {/* Header Section */}

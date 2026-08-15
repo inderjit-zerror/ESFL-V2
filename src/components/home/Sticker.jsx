@@ -169,8 +169,8 @@ const Sticker = () => {
           : null;
 
   return (
-    <div className="w-full h-auto md:h-[300svh] relative StickeyHeroContMAin1">
-      <div className="w-full md:sticky top-0 z-[10]">
+    <div className="w-full h-auto md:h-[calc(300vh-15rem)]  relative StickeyHeroContMAin1">
+      <div className="w-full md:sticky top-20 z-[10]">
         <BrandSection
           V={"B2"}
           className="static  DIVC-1"
@@ -186,7 +186,7 @@ Built on quality, trust, and continuous innovation, the brand creates products t
         />
       </div>
 
-      <div className="w-full md:sticky top-0 z-[20]">
+      <div className="w-full md:sticky top-20 z-[20]">
         <BrandSection
           V={"B1"}
           bgColor="bg-beige"
@@ -209,7 +209,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
         />
       </div>
 
-      <div className="w-full md:sticky top-0 z-[30]">
+      <div className="w-full md:sticky top-20 z-[30]">
         <BrandSection
           V={"B2"}
           bgColor="bg-[#E30713]"

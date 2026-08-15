@@ -46,7 +46,9 @@ export default function ResearchAndQuality() {
   return (
     <div className='relative'>
       {/* Research & Development Section */}
-      <section className="md:sticky! top-0 -z-10 container w-full  md:h-svh overflow-hidden  ">
+      <section className="md:sticky! bg-beige top-0 -z-10 container w-full  md:h-svh overflow-hidden  ">
+            <div className="pattern_bg"></div>
+
         <div className="grid h-fit w-full py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2">
           {/* Left Content */}
           <div className="flex items-center md:pr-32 ">
@@ -85,6 +87,8 @@ export default function ResearchAndQuality() {
 
       {/* Quality Control Section */}
       <section className="relative z-10 bg-[#E30713] container w-full  md:h-svh overflow-hidden  text-white">
+            <div className="pattern_bg"></div>
+
         <div className="grid h-fit w-full py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 md:[&>*:first-child]:order-2">
           {/* Right Content (Order 2) */}
           <div className="flex items-center md:pl-32">

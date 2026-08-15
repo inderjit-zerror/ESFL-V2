@@ -109,6 +109,8 @@ export default function PageLoadAnimation() {
       aria-hidden="true"
       className="fixed inset-0 z-[9999] bg-beige"
     >
+                  <div className="pattern_bg"></div>
+
       <div ref={logoRef} className="fixed">
         <Image
           src={LOGO_SRC}

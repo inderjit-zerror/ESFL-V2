@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -96,11 +97,12 @@ export default function PresentAcrossCountry() {
       ref={sectionRef}
       className="relative h-140   pt-12 md:pt-24  overflow-hidden bg-red    "
     >
+      <div className="pattern_bg"></div>
       <div className="w-full h-full relative">
         {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] top-[2%] z-99" /> */}
-        <img src="/images/home/PP.png" alt="IMG" className=" sm:w-full object-cover  absolute bottom-0! left-0 rotate-180" />
+        <Image height={1080} width={1920} src="/images/home/PP.png" alt="IMG" className=" sm:w-full object-cover  absolute bottom-0! left-0 rotate-180" />
 
-        <div className="relative container  w-full grid grid-cols-1 lg:grid-cols-2 items-start">
+        <div className="relative container  w-full max-sm:space-y-10  md:grid md:grid-cols-2 items-start">
           {/* Left: headline + products */}
           <div className="relative max-w-2xl space-y-2 ">
 

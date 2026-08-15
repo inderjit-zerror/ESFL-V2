@@ -58,7 +58,7 @@ const WhyPartner = () => {
   }, []);
 
   return (
-    <section className="relative w-full   py-12 md:py-24   bg-[#FDF6EC] container">
+    <section className="relative w-full   py-12 md:py-24   bg-[#f7e8d4] container">
       {/* Header */}
       <div className="">
         <h6 className="text-red mb-2 uppercase">

@@ -190,15 +190,19 @@ export default function CompoContact() {
   return (
     <div
       ref={rootRef}
-      className="w-full bg-[#FDF6EC] text-[#2B1B12]"
+      className="w-full bg-[#f7e8d4] text-[#2B1B12]"
     >
       <OfficeInfoMap />
 
       <section className="  py-12 md:py-24  container mx-auto">
+                    <div className="pattern_bg"></div>
+
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
 
           {/* Reach us at */}
-          <div className="reveal-block rounded-lg bg-[#E30713] p-5 sm:p-8 text-white flex flex-col justify-center">
+          <div className="reveal-block relative rounded-lg bg-[#E30713] p-5 sm:p-8 text-white flex flex-col justify-center">
+                        <div className="pattern_bg"></div>
+
             <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
             </h3>
@@ -241,7 +245,7 @@ export default function CompoContact() {
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:flex"
             aria-hidden="true"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E30713]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#f7e8d4] text-xs font-bold uppercase tracking-widest text-[#E30713]">
               Or
             </div>
           </div>
@@ -256,7 +260,9 @@ export default function CompoContact() {
           </div>
 
           {/* Submit query form */}
-          <div className="reveal-block rounded-lg border border-black/5 bg-white p-5 sm:p-8">
+          <div className="reveal-block relative rounded-lg border border-black/5 bg-white p-5 sm:p-8">
+                      <div className="pattern_bg"></div>
+
             <h3 data-para-effect className="uppercase text-[#2B1B12] mb-2">
               Submit Your Query
             </h3>
@@ -269,7 +275,7 @@ export default function CompoContact() {
                 Thanks — your message has been sent successfully. We'll get back to you shortly.
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="block">
                     <span className="mb-2 block text-xs opacity-50 uppercase">

@@ -2,15 +2,16 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 const originalImages = [
-  "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1641296834707-bbe46429d945?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1758873268663-5a362616b5a7?auto=format&fit=crop&q=80&w=400",
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=400",
+  "/images/culture/culture_collaboration.png",
+  "/images/culture/culture_breakout.png",
+  "/images/culture/culture_discussion.png",
+  "/images/culture/culture_walking.png",
+  "/images/culture/culture_working.png",
+  "/images/culture/culture_brainstorm.png",
+  "/images/culture/culture_coffee.png",
 ];
 
 const InfiniteScroller = () => {
@@ -27,7 +28,7 @@ const InfiniteScroller = () => {
         setDimensions({ width: 300, height: 400, gap: 40 });
       }
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -185,6 +186,8 @@ const InfiniteScroller = () => {
 
   return (
     <section className="w-full  overflow-hidden relative   py-12 md:py-24   bg-[#E30713]">
+                  <div className="pattern_bg"></div>
+
       {/* Header */}
       <div className=" px-4 md:text-center mb-10 relative z-10">
         <h6 className="  text-[#fcb62d] uppercase">
@@ -223,7 +226,8 @@ const InfiniteScroller = () => {
                 transformStyle: "preserve-3d",
               }}
             >
-              <img
+              <Image
+                fill
                 src={src}
                 alt={`Life at ESFL ${(index % TOTAL_CARDS) + 1}`}
                 draggable={false}

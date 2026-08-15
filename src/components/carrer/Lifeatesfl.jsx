@@ -156,6 +156,7 @@
 
 import React from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 export default function LifeAtESFL() {
   // Array of images matching the collage layout
@@ -293,7 +294,7 @@ export default function LifeAtESFL() {
             >
               {/* Using standard img tag for ease of copy/pasting external URLs, 
                   swap to Next/Image for production if self-hosting assets */}
-              <img
+              <Image fill
                 src={img.src}
                 alt={img.alt}
                 className="w-full h-full object-cover border-[8px] border-[#FCB62D]"

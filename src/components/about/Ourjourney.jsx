@@ -14,6 +14,7 @@ import {
   Leaf,
   Sparkles,
 } from "lucide-react";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -264,11 +265,12 @@ function Card({ milestone }) {
 
   return (
     <div
-      className=" group border border-black/10 relative flex  p-5 w-[80vw]  md:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
+      className=" group border border-black/10 relative flex  p-5 w-[80vw]  md:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#f7e8d4]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
     >
       {/* Image */}
       <div className="relative aspect-square md:aspect-video w-full shrink-0 overflow-hidden rounded-sm">
-        <img
+        <Image
+          fill
           src={milestone.image}
           alt={milestone.label}
           className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 `}

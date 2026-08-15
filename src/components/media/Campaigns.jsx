@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import Image from "next/image";
 
 const content = [
   {
@@ -97,7 +98,7 @@ const Campaigns = () => {
           {filteredContent.map((item) => (
             <div key={item.id} className="flex flex-col group cursor-pointer">
               <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
-                <img
+                <Image fill
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -129,7 +130,7 @@ const Campaigns = () => {
               <SwiperSlide key={item.id}>
                 <div className="flex flex-col group cursor-pointer h-full">
                   <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
-                    <img
+                    <Image fill
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500"

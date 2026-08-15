@@ -78,14 +78,14 @@ const CustomImg = () => {
 const SevenSection = () => {
 
   return (
-    <div className=" container w-full h-fit flex flex-col overflow-hidden  ">
+    <div className=" w-full h-fit flex flex-col overflow-hidden  ">
       <div className="w-full h-fit    py-12 md:py-24 ">
 
-        <div className=" uppercase md:text-center">
+        <div className=" uppercase md:text-center max-sm:px-4">
           <h2 data-para-effect>Stay in Touch</h2>
         </div>
 
-        <div className="w-full h-fit flex flex-wrap md:justify-center     md:items-center  mt-5 gap-2 md:gap-x-5">
+        <div className="max-sm:px-4 w-full h-fit flex flex-wrap md:justify-center     md:items-center  mt-5 gap-2 md:gap-x-5">
           <a target="blank" href="https://www.instagram.com/RambandhuOfficial">
 
             <BTN txt={"Instagram"} variant={"B1"} />

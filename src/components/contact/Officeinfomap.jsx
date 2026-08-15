@@ -102,10 +102,12 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid overflow-hidden h-auto bg-[#E30713] lg:grid-cols-2"
+      className="grid relative  overflow-hidden h-auto bg-[#E30713] lg:grid-cols-2"
     >
+                  <div className="pattern_bg"></div>
+
       {/* Map — left on desktop, bottom on mobile */}
-      <div className=" max-sm:aspect-square oi-map relative  order-last lg:order-first">
+      <div className=" z-10 max-sm:aspect-square oi-map relative  order-last lg:order-first">
         <iframe
           title="Empire Spices & Foods Ltd. location"
           src="https://www.google.com/maps?cid=13564662084488619543&output=embed"
@@ -143,7 +145,7 @@ export default function OfficeInfoMap() {
       </div>
 
       {/* Info panel — right on desktop, top on mobile */}
-      <div className="flex flex-col justify-center gap-5 sm:gap-6 px-6 py-10 sm:px-8 sm:py-12 md:px-14 md:py-16">
+      <div className=" z-10 relative flex flex-col justify-center gap-5 sm:gap-6 px-6 py-10 sm:px-8 sm:py-12 md:px-14 md:py-16">
         {INFO_ROWS.map((section, i) => (
           <div className="oi-row" key={section.id}>
             <RowBlock

@@ -146,7 +146,7 @@
 //   return (
 //     <section
 //       ref={sectionRef}
-//       className="bg-[#fdf6ec] w-full px-6 py-14 relative"
+//       className="bg-[#f7e8d4] w-full px-6 py-14 relative"
 //     >
 //       <div className="absolute bottom-6 w-[8%] right-8 z-10">
 //         <img
@@ -414,7 +414,7 @@ export default function RamBandhuCategory() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#fdf6ec] w-full px-6 py-14 relative"
+      className="bg-[#f7e8d4] w-full px-6 py-14 relative"
     >
       <div className="rb-logo absolute bottom-6 w-[8%] right-8 z-10">
         <img

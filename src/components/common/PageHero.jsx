@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import BTN from './BTN';
+import Image from 'next/image';
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
@@ -33,11 +34,12 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="w-full h-[80vh] overflow-hidden relative flex items-end justify-center">
+        <div ref={containerRef} className="w-full bg-beige h-[80vh] overflow-hidden relative flex items-end justify-center">
+            <div className="pattern_bg"></div>
             {mediaVideo ? (
                 <video src={mediaVideo} loop muted playsInline autoPlay className='hero-media absolute inset-0 w-full h-full object-cover brightness-75'></video>
             ) : imageSrc ? (
-                <img src={imageSrc} alt={typeof title === "string" ? title : "Hero Image"} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
+                <Image fill src={imageSrc} alt={typeof title === "string" ? title : "Hero Image"} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
             ) : null}
 
             <div className="text-center absolute pb-5 md:pb-16  px-4 text-white z-10 flex flex-col items-center">
