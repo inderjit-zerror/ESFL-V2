@@ -7,10 +7,10 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  background-image:
+  /* background-image:
     linear-gradient(rgba(247, 232, 212, 0.95), rgba(247, 232, 212, 0.95)),
     url("../../public/images/masala_bg_compress.png");
-  background-repeat: repeat;
+  background-repeat: repeat; */
   background-color: #f7e8d4;
   --red: #e30713;
   --beige: #f7e8d4;

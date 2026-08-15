@@ -76,6 +76,8 @@ export default function InvestorResources() {
               key={card.id}
               className="resource-card pillar-card group relative bg-[#E30713] text-[#fac05e] rounded-2xl p-5 border border-black/5 h-80 flex flex-col justify-between"
             >
+                    <div className="pattern_bg"></div>
+
               {/* Card Content */}
               <div className="relative z-10">
                 <div className="mb-3">

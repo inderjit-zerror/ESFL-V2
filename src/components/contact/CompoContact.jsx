@@ -195,7 +195,6 @@ export default function CompoContact() {
       <OfficeInfoMap />
 
       <section className="  py-12 md:py-24  container mx-auto">
-                    <div className="pattern_bg"></div>
 
         <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
 
@@ -261,7 +260,6 @@ export default function CompoContact() {
 
           {/* Submit query form */}
           <div className="reveal-block relative rounded-lg border border-black/5 bg-white p-5 sm:p-8">
-                      <div className="pattern_bg"></div>
 
             <h3 data-para-effect className="uppercase text-[#2B1B12] mb-2">
               Submit Your Query

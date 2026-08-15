@@ -47,7 +47,7 @@ export default function ResearchAndQuality() {
     <div className='relative'>
       {/* Research & Development Section */}
       <section className="md:sticky! bg-beige top-0 -z-10 container w-full  md:h-svh overflow-hidden  ">
-            <div className="pattern_bg"></div>
+            {/* <div className="pattern_bg"></div> */}
 
         <div className="grid h-fit w-full py-5 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2">
           {/* Left Content */}

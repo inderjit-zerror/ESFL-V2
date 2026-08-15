@@ -71,6 +71,8 @@ export default function ManufacturingJourney() {
               key={pillar.id}
               className="pillar-card group relative bg-[#E30713] rounded-2xl p-5 border text-[#fac05e] border-black/5 h-80 flex flex-col justify-between"
             >
+                    <div className="pattern_bg"></div>
+
               {/* Card Content */}
               <div className="relative z-10">
                 <div className=" mb-3">

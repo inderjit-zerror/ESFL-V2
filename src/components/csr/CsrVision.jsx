@@ -56,6 +56,8 @@ const CsrVision = () => {
 
     return (
         <section ref={containerRef} className="bg-[#D42E12] container   py-12 md:py-24  relative overflow-hidden">
+                    <div className="pattern_bg"></div>
+
             <Image height={500} width={500} src="/images/csr/crd_bg_2.svg" className='absolute max-sm:hidden md:w-[25%] z-0 top-0 left-0' alt="" />
             <Image height={500} width={500} src="/images/csr/crd_bg.svg" className='absolute  md:w-[25%] z-0 bottom-0 right-0' alt="" />
             <div className="w-full relative z-10 flex flex-col items-center">
@@ -80,8 +82,6 @@ const CsrVision = () => {
                             key={index}
                             className={`csr-card opacity-0 group relative bg-[#f7e8d4] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
-            <div className="pattern_bg"></div>
-
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-[#D42E12] group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">
                                     {card.icon}
