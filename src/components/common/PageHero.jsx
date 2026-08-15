@@ -34,7 +34,7 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
     }, { scope: containerRef });
 
     return (
-        <div ref={containerRef} className="w-full bg-beige h-[80vh] overflow-hidden relative flex items-end justify-center">
+        <div ref={containerRef} className="w-full bg-beige h-[60vh] md:h-[80vh] overflow-hidden relative flex items-end justify-center">
             {mediaVideo ? (
                 <video src={mediaVideo} loop muted playsInline autoPlay className='hero-media absolute inset-0 w-full h-full object-cover brightness-75'></video>
             ) : imageSrc ? (

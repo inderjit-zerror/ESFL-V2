@@ -97,7 +97,7 @@ const VideoSection = () => {
       {/* Video Container */}
       <div
         ref={sectionRef}
-        className="w-full aspect-3/4 sm:aspect-video relative overflow-hidden cursor-none"
+        className="w-full aspect-video relative overflow-hidden cursor-none"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}

@@ -36,17 +36,21 @@ export default function VisionMissionValues() {
   ];
 
   useGSAP(() => {
-    gsap.from(".vision-card", {
-      scrollTrigger: {
-        trigger: ".vision-card",
-        start: "top 85%",
-        toggleActions: "play none none reverse",
-      },
-      y: 60,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8,
-      ease: "power2.out",
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.from(".vision-card", {
+        scrollTrigger: {
+          trigger: ".vision-card",
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+        },
+        y: 60,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 0.8,
+        ease: "power2.out",
+      });
     });
   }, { scope: containerRef });
 

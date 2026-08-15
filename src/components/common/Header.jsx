@@ -207,7 +207,7 @@ export default function Header() {
               width={130}
               height={80}
               data-header-logo-image
-              className="h-auto  w-20 md:w-32 object-contain"
+              className="h-auto  w-26 md:w-32 object-contain"
             />
           </div>
         </a>
@@ -247,7 +247,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-12 z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
+        className={`fixed inset-x-0 top-13 z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
           ? "pointer-events-auto max-h-[calc(100vh-70px-0.75rem)] opacity-100"
           : "pointer-events-none max-h-0 opacity-0"
           }`}

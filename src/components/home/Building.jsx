@@ -13,10 +13,10 @@ export default function Building() {
   const sectionRef = useRef(null);
 
   const spiceImages = [
-    { src: "/images/home/aboutSection/spice1.png", className: "absolute -top-10 md:top-[30%] -left-24 w-44 h-44 sm:w-72 sm:h-72 " },
-    { src: "/images/home/aboutSection/spice3.png", className: "absolute top-28 md:top-20 right-[-15%] md:right-[5%] w-44 h-44 sm:w-70 sm:h-70 " },
+    { src: "/images/home/aboutSection/spice1.png", className: "absolute max-sm:hidden -top-10 md:top-[30%] -left-24 w-44 h-44 sm:w-72 sm:h-72 " },
+    { src: "/images/home/aboutSection/spice7.png", className: "absolute  max-sm:hidden top-28 md:top-20 right-[-15%] md:right-[5%] w-44 h-44 sm:w-62 sm:h-62 " },
     { src: "/images/home/aboutSection/spice4.png", className: "absolute -bottom-20 -right-14 w-50 h-50 sm:w-60 sm:h-60 " },
-    { src: "/images/home/aboutSection/spice7.png", className: "absolute -bottom-10 left-0 md:left-[40%] w-40 h-40 sm:w-56 sm:h-56 " },
+    { src: "/images/home/aboutSection/spice3.png", className: "absolute  -bottom-10 left-0 md:left-[40%] w-40 h-40 sm:w-56 sm:h-56 " },
   ];
 
   const { contextSafe } = useGSAP(() => {
@@ -59,7 +59,7 @@ export default function Building() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative container flex py-32 md:py-44 bg w-full items-center justify-center overflow-hidden"
+      className="relative container flex py-32 max-sm:pt-12 md:py-44 md:pt-24 bg w-full items-center justify-center overflow-hidden"
     >
       {/* Wrapped in a stable div to prevent React removeChild errors during next-view-transitions */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -75,7 +75,7 @@ export default function Building() {
       </div>
 
       <div className="relative z-10 flex w-full h-fit flex-col pointer-events-none md:items-center md:text-center">
-        <div className="mb-4 flex md:items-center gap-3">
+        <div className="flex md:items-center">
           <h6 className=" uppercase mb-2 text-red">
             Winning the hearts of our consumers since 1994
           </h6>
