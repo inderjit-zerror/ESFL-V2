@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
+import { Label, Input, Select, Textarea } from "../common/FormFields";
 import gsap from "gsap";
 import { ArrowRight } from "lucide-react";
 import BTN from "../common/BTN";
@@ -63,56 +64,57 @@ export default function PartnerForm() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
-                                <Label>Full Name</Label>
-                                <Input required placeholder="e.g. Rahul Sharma" value={form.fullName} onChange={handleChange("fullName")} />
+                                <Label htmlFor="fullName">Full Name</Label>
+                                <Input id="fullName" required placeholder="e.g. Rahul Sharma" value={form.fullName} onChange={handleChange("fullName")} />
                             </div>
                             <div ref={registerField}>
-                                <Label>Business Name</Label>
-                                <Input required placeholder="e.g. Sharma Enterprises" value={form.businessName} onChange={handleChange("businessName")} />
+                                <Label htmlFor="businessName">Business Name</Label>
+                                <Input id="businessName" required placeholder="e.g. Sharma Enterprises" value={form.businessName} onChange={handleChange("businessName")} />
                             </div>
                         </div>
 
                         <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
-                                <Label>Current Business Type</Label>
-                                <select
+                                <Label htmlFor="businessType">Current Business Type</Label>
+                                <Select
+                                    id="businessType"
                                     required
+                                    aria-label="Current Business Type"
+                                    label="Business Type"
                                     value={form.businessType}
                                     onChange={handleChange("businessType")}
-                                    className="w-full rounded-md relative appearance-none border border-[#EADCC8] bg-[#FCF8F2] bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22 fill=%22%23999%22><path d=%22M5.5 7.5l4.5 4.5 4.5-4.5%22 stroke=%22%23999%22 stroke-width=%221.5%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>')] bg-[length:16px] bg-[right_1rem_center] bg-no-repeat px-4 py-3 text-sm text-[#2b2b2b] outline-none focus:border-[#e41e26]"
                                 >
-                                    <option value="" disabled></option>
                                     <option value="retail">Retail</option>
                                     <option value="wholesale">Wholesale</option>
                                     <option value="distributor">Distributor</option>
                                     <option value="other">Other</option>
-                                </select>
+                                </Select>
                             </div>
                             <div ref={registerField}>
-                                <Label>City / State</Label>
-                                <Input placeholder="e.g. Mumbai, Maharashtra" value={form.location} onChange={handleChange("location")} />
+                                <Label htmlFor="location">City / State</Label>
+                                <Input id="location" placeholder="e.g. Mumbai, Maharashtra" value={form.location} onChange={handleChange("location")} />
                             </div>
                         </div>
 
                         <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
-                                <Label>Phone Number</Label>
-                                <Input type="tel" placeholder="+91 00000 00000" value={form.phone} onChange={handleChange("phone")} />
+                                <Label htmlFor="phone">Phone Number</Label>
+                                <Input id="phone" type="tel" placeholder="+91 00000 00000" value={form.phone} onChange={handleChange("phone")} />
                             </div>
                             <div ref={registerField}>
-                                <Label>Email Address</Label>
-                                <Input required type="email" placeholder="rahul@example.com" value={form.email} onChange={handleChange("email")} />
+                                <Label htmlFor="email">Email Address</Label>
+                                <Input id="email" required type="email" placeholder="rahul@example.com" value={form.email} onChange={handleChange("email")} />
                             </div>
                         </div>
 
                         <div ref={registerField}>
-                            <Label>Message / Remarks</Label>
-                            <textarea
+                            <Label htmlFor="message">Message / Remarks</Label>
+                            <Textarea
+                                id="message"
                                 required
                                 placeholder="Tell us more about your interest..."
                                 value={form.message}
                                 onChange={handleChange("message")}
-                                className="w-full rounded-md h-32 resize-none border border-[#EADCC8] bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#e41e26]"
                             />
                         </div>
 
@@ -126,20 +128,4 @@ export default function PartnerForm() {
     );
 }
 
-
-function Label({ children }) {
-    return (
-        <label className="mb-2 block text-xs opacity-50 uppercase">
-            {children}
-        </label>
-    );
-}
-
-function Input(props) {
-    return (
-        <input
-            {...props}
-            className="w-full border rounded-md border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
-        />
-    );
-}
+

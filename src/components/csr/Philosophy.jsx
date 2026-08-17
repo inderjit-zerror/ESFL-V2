@@ -6,7 +6,7 @@ const Philosophy = () => {
     <section className="w-full border-b border-black/50 py-12 md:py-24 container">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
         {/* Left: Image */}
-        <div className="relative w-full aspect-square  md:aspect-video overflow-hidden">
+        <div className="relative w-full aspect-square rounded-md md:aspect-video overflow-hidden">
           <Image
             src="/images/csr/philosophy.png"
             alt="CSR Philosophy - Farmers"

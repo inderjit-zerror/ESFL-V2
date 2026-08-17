@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Label, Input, Textarea } from "../common/FormFields";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import OfficeInfoMap from "./Officeinfomap";
@@ -275,77 +276,65 @@ export default function CompoContact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
                 <div className="grid gap-3 grid-cols-2">
-                  <label className="block">
-                    <span className="mb-2 block text-xs opacity-50 uppercase">
-                      First Name
-                    </span>
-                    <input
+                  <div className="block">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input
+                      id="firstName"
                       type="text"
                       required
                       value={form.firstName}
                       onChange={handleChange("firstName")}
-                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="Asha"
                     />
-                  </label>
-                  <label className="block">
-                    <span className="mb-2 block text-xs opacity-50 uppercase">
-                      Last Name
-                    </span>
-                    <input
+                  </div>
+                  <div className="block">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input
+                      id="lastName"
                       type="text"
                       value={form.lastName}
                       onChange={handleChange("lastName")}
-                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="Patil"
                     />
-                  </label>
+                  </div>
                 </div>
 
                 <div className="grid gap-3 grid-cols-2">
-
-                  <label className="block">
-                    <span className="mb-2 block text-xs opacity-50 uppercase">
-                      Phone
-                    </span>
-                    <input
+                  <div className="block">
+                    <Label htmlFor="phone">Phone</Label>
+                    <Input
+                      id="phone"
                       type="tel"
                       required
                       value={form.phone}
                       onChange={handleChange("phone")}
-                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="98xxxxxxxx"
                     />
-                  </label>
-
-                  <label className="block">
-                    <span className="mb-2 block text-xs opacity-50 uppercase">
-                      Email
-                    </span>
-                    <input
+                  </div>
+                  <div className="block">
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                      id="email"
                       type="email"
                       required
                       value={form.email}
                       onChange={handleChange("email")}
-                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
                       placeholder="you@email.com"
                     />
-                  </label>
+                  </div>
                 </div>
 
-                <label className="block">
-                  <span className="mb-2 block text-xs opacity-50 uppercase">
-                    Message
-                  </span>
-                  <textarea
+                <div className="block">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
                     required
                     rows={4}
                     value={form.message}
                     onChange={handleChange("message")}
-                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] resize-none"
                     placeholder="How can we help?"
                   />
-                </label>
+                </div>
 
                 <div className="pt-2">
                   <BTN txt={status === "sending" ? "Sending..." : "Submit"} />

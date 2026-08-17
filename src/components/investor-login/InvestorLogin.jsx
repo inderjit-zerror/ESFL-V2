@@ -1,4 +1,6 @@
-import React from 'react';
+"use client"
+import React, { useState } from "react";
+import { Label, Input } from "../common/FormFields";
 import Image from 'next/image';
 
 // --- SVG Icons ---
@@ -45,33 +47,25 @@ export default function InvestorLogin() {
 
               {/* Username Input */}
               <div className="space-y-2">
-                <label
-                  htmlFor="folio"
-                  className="block text-sm opacity-70 uppercase"
-                >
+                <Label htmlFor="folio">
                   Folio / Demat / PAN No.
-                </label>
-                <input
+                </Label>
+                <Input
                   type="text"
                   id="folio"
                   placeholder="Enter identification number"
-                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E30713] focus:ring-1 focus:ring-[#E30713] transition-colors rounded-lg"
                 />
               </div>
 
               {/* Password Input */}
               <div className="space-y-2">
-                <label
-                  htmlFor="password"
-                  className="block text-sm opacity-70 uppercase"
-                >
+                <Label htmlFor="password">
                   Password
-                </label>
-                <input
+                </Label>
+                <Input
                   type="password"
                   id="password"
                   placeholder="********"
-                  className="w-full bg-[#fcfaf7] border border-gray-200 text-gray-700 px-4 py-3 text-sm focus:outline-none focus:border-[#E30713] focus:ring-1 focus:ring-[#E30713] transition-colors rounded-lg"
                 />
               </div>
 
