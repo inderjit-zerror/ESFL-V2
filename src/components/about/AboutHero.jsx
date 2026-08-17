@@ -1,4 +1,5 @@
 import React from "react";
+import AutoPlayVideo from "../common/AutoPlayVideo";
 
 function ScrollDownIndicator({ className = "" }) {
   return (
@@ -63,7 +64,7 @@ const AboutHero = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative aspect-square w-full sm:h-svh ">
-        <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+        <AutoPlayVideo src="/videos/spices_video.mp4" className="w-full h-full object-cover brightness-90" />
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
 
@@ -71,7 +72,7 @@ const AboutHero = () => {
           <h1 data-heading-reveal="off" className="  text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem]   mb-4">
             About Us
           </h1>
-          <p className="max-w-[600px]     text-sm sm:text-base md:text-lg px-4">
+          <p className="max-w-150     text-sm sm:text-base md:text-lg px-4">
             For over three decades Empire Spices & Foods Ltd. has carried authentic
             Indian flavour from Nashik to kitchens across the world.
             {/* <br className="hidden sm:block" />

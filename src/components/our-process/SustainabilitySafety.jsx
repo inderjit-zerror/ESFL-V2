@@ -116,7 +116,7 @@ export default function SustainabilitySafety() {
         <div className="block md:hidden h-fit! w-full">
           <Swiper
             spaceBetween={10}
-            slidesPerView={1.1}
+            slidesPerView={1.25}
             className="w-full h-fit!"
           >
             {cards.map((card, index) => (

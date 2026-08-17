@@ -41,16 +41,36 @@ const CsrVision = () => {
     const containerRef = useRef(null);
 
     useGSAP(() => {
-        gsap.to('.csr-card', {
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: 'top 50%',
-                toggleActions: 'play none none reverse',
-            },
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out',
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+            gsap.to('.csr-card', {
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: 'top 50%',
+                    toggleActions: 'play none none reverse',
+                },
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out',
+            });
+        });
+
+        mm.add("(max-width: 767px)", () => {
+            const cards = gsap.utils.toArray('.csr-card');
+            cards.forEach((card) => {
+                gsap.to(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top bottom',
+                        toggleActions: 'play none none reverse',
+                    },
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                });
+            });
         });
     }, { scope: containerRef });
 
@@ -80,7 +100,7 @@ const CsrVision = () => {
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-[380px]  rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
+                            className={`csr-card opacity-0 group relative bg-[#FDF6EC] transition-colors transition-transform duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-95 rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-[#D42E12] group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">

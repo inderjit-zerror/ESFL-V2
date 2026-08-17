@@ -52,6 +52,23 @@ export default function VisionMissionValues() {
         ease: "power2.out",
       });
     });
+
+    mm.add("(max-width: 767px)", () => {
+      const cards = gsap.utils.toArray(".vision-card");
+      cards.forEach((card) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            toggleActions: "play none none reverse",
+          },
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        });
+      });
+    });
   }, { scope: containerRef });
 
   return (

@@ -13,17 +13,38 @@ export default function ManufacturingJourney() {
   const sectionRef = useRef(null);
 
   useGSAP(() => {
-    gsap.from(".pillar-card", {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.3,
-      ease: "power2.out"
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.from(".pillar-card", {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      const cards = gsap.utils.toArray(".pillar-card");
+      cards.forEach((card) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            toggleActions: "play none none reverse",
+          },
+          y: 50,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out"
+        });
+      });
     });
   }, { scope: sectionRef });
 

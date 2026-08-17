@@ -77,7 +77,7 @@ export default function RegisterInterest() {
 
   return (
     <section ref={sectionRef} className=" border-b border-black/50  overflow-hidden container   py-12 md:py-24 ">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Left column */}
         <div ref={leftRef} className=" aspect-square rounded-md md:h-full relative overflow-hidden">
           <Image
@@ -89,7 +89,7 @@ export default function RegisterInterest() {
         </div>
 
         {/* Right column — form */}
-        <div className=" max-sm:mt-5 sm:pl-10 lg:pl-12 xl:pl-16 flex flex-col justify-center">
+        <div className=" max-sm:mt-5 sm:pl-10 md:pl-12 xl:pl-16 flex flex-col justify-center">
           <h2 data-para-effect className="uppercase mb-2">
             Register Your Interest
           </h2>
@@ -98,7 +98,7 @@ export default function RegisterInterest() {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid  gap-3 grid-cols-2">
               <div ref={registerField}>
                 <Label>Full Name</Label>
                 <Input required placeholder="Enter your full name" value={form.fullName} onChange={handleChange("fullName")} />
@@ -109,7 +109,7 @@ export default function RegisterInterest() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid  gap-3 grid-cols-2">
               <div ref={registerField}>
                 <Label>Phone Number</Label>
                 <Input type="tel" placeholder="+91 _" value={form.phone} onChange={handleChange("phone")} />
@@ -132,7 +132,7 @@ export default function RegisterInterest() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid  gap-3 grid-cols-2">
               <div ref={registerField}>
                 <Label>Years of Experience</Label>
                 <Input placeholder="e.g. 5" value={form.experience} onChange={handleChange("experience")} />

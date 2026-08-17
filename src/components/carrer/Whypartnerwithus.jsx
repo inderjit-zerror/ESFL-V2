@@ -218,7 +218,7 @@ function Row({ item, refCallback }) {
       ref={refCallback}
       className={`flex md:items-center gap-6 sm:gap-10 ${isRight ? "sm:flex-row-reverse sm:text-right" : "sm:flex-row"}`}
     >
-      <div className="circle-marker group flex h-20 w-20 md:h-32 md:w-32 shrink-0 items-center justify-center rounded-full bg-[#E30713] shadow-sm sm:h-40 sm:w-40 relative z-10 overflow-hidden cursor-pointer">
+      <div className="circle-marker group flex h-12 w-12 md:h-32 md:w-32 shrink-0 items-center justify-center rounded-full bg-[#E30713] shadow-sm  relative z-10 overflow-hidden cursor-pointer">
         <Icon className="relative z-10 max-sm:scale-50 h-14 w-14 text-white sm:h-16 sm:w-16 transition-opacity duration-500 group-hover:opacity-0" strokeWidth={1.75} />
         {item.image && (
           <Image
@@ -232,9 +232,11 @@ function Row({ item, refCallback }) {
 
       <div className={isRight ? "sm:items-end" : ""}>
         <div className={`flex items-baseline gap-2 ${isRight ? "sm:flex-row-reverse" : ""}`}>
-          <h4 data-para-effect className="uppercase ">
-          <span className=" text-[#E30713]  mr-2">{item.number}</span> 
+          <h4 data-para-effect className="uppercase flex ">
+          <span className=" text-[#E30713]">{item.number}</span> 
+          <span className="ml-2">
             {item.title}
+          </span>
           </h4>
         </div>
         <p className="mt-2 md:max-w-md opacity-70 text-sm">{item.body}</p>

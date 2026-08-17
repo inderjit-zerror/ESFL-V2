@@ -1,4 +1,5 @@
 import React from "react";
+import AutoPlayVideo from "../common/AutoPlayVideo";
 import BTN from "../common/BTN";
 
 function ScrollDownIndicator({ className = "" }) {
@@ -64,7 +65,7 @@ const PartnerHero = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative h-[80vh] w-full  sm:h-svh ">
-        <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+        <AutoPlayVideo src="/videos/spices_video.mp4" className="w-full h-full object-cover brightness-90" />
 
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />
@@ -73,7 +74,7 @@ const PartnerHero = () => {
           <h1 data-heading-reveal="off" className="  text-5xl sm:text-7xl lg:text-[5rem] lg:leading-[5rem]   mb-4">
             Become a Channel Partner
           </h1>
-          <p className="max-w-[600px]     text-sm sm:text-base md:text-lg px-4 pb-10">
+          <p className="max-w-150     text-sm sm:text-base md:text-lg px-4 pb-10">
             Join India's leading spice and food network. Partner with ESFL to bring quality, heritage and taste to millions of kitchens across the globe.
             {/* <br className="hidden sm:block" />
             Whether it’s a partnership, enquiry, or collaboration, we’d love to

@@ -153,14 +153,14 @@ export default function LatestCampaignsAndNews() {
             LATEST CAMPAIGNS
             &amp; NEWS
           </h2>
-          <p className="my-4">
+          <p className="my-2">
             Latest campaigns, media coverage and company updates.
           </p>
         </div>
 
         <div className="flex max-sm:hidden w-full mb-5 md:justify-end gap-x-2">
-          <button onClick={() => swiperInstance?.slidePrev()} disabled={isBeginning} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"><RiArrowLeftLine size={16} /></button>
-          <button onClick={() => swiperInstance?.slideNext()} disabled={isEnd} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"> <RiArrowRightLine size={16} /> </button>
+          <button onClick={() => swiperInstance?.slidePrev()} disabled={isBeginning} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"><RiArrowLeftLine className="size-4" /></button>
+          <button onClick={() => swiperInstance?.slideNext()} disabled={isEnd} className="w-10 h-10 rounded-full  bg-[#F5C451] flex items-center justify-center  hover:bg-[#D52E12] text-[#D52E12] hover:text-white hover:border-[#D52E12] transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none"> <RiArrowRightLine className="size-4" /> </button>
         </div>
         {/* Combined Campaigns & News */}
         <div className="max-sm:mt-10">

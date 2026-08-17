@@ -17,14 +17,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#E30713] text-white relative">
+    <footer className="bg-[#E30713] text-white relative z-100">
       <div className="pattern_bg"></div>
       <Image fill className="absolute w-full h-full inset-0 cover" src="/images/home/aboutSection/bg.png" alt="" />
       <div className="   container z-10">
 
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6     pt-12 md:pt-24 ">
-          <div className="w-[50vw] sm:w-[180px]">
+          <div className="w-[50vw] md:w-60 xl:w-44">
             <img
               src="/logo.svg"
               alt="Empire Spices & Foods Ltd."
@@ -39,21 +39,21 @@ export default function Footer() {
               aria-label="LinkedIn"
               className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
             >
-              <RiLinkedinLine size={20} />
+              <RiLinkedinLine className="size-5" />
             </a>
             <a
               href="https://instagram.com"
               aria-label="Instagram"
               className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
             >
-              <RiInstagramLine size={20} />
+              <RiInstagramLine className="size-5" />
             </a>
             <a
               href="mailto:care@esfl.co.in"
               aria-label="Email"
               className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
             >
-              <RiMailLine size={20} />
+              <RiMailLine className="size-5" />
             </a>
           </div>
 
@@ -177,11 +177,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/50 text-sm py-4 flex justify-between max-sm:flex-col gap-2 items-center px-2">
           <p className="  text-white text-center">
-            © 2026 Empire Spices &amp; Foods Ltd. All rights reserved. ·
+            © 2026 Empire Spices &amp; Foods Ltd. <br className="md:hidden" /> All rights reserved. ·
             esfl.co.in
           </p>
           <p className="  text-white text-center">
-            Developed by Iwayworks
+            Developed by <Link href={"/https://www.iwayworks.com/"} target="_blank" className="hover:underline"> Iwayworks </Link>
           </p>
 
         </div>

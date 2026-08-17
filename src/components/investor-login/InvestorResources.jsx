@@ -38,17 +38,38 @@ export default function InvestorResources() {
   ];
 
   useGSAP(() => {
-    gsap.from('.resource-card', {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 75%',
-        toggleActions: 'play none none reverse',
-      },
-      y: 60,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power3.out',
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 768px)", () => {
+      gsap.from('.resource-card', {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 75%',
+          toggleActions: 'play none none reverse',
+        },
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+      });
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      const cards = gsap.utils.toArray('.resource-card');
+      cards.forEach((card) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom',
+            toggleActions: 'play none none reverse',
+          },
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+        });
+      });
     });
   }, { scope: containerRef });
 

@@ -196,11 +196,11 @@ export default function CompoContact() {
 
       <section className="  py-12 md:py-24  container mx-auto">
 
-        <div className="relative grid gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="relative grid gap-10 md:grid-cols-2 md:gap-12">
 
           {/* Reach us at */}
-          <div className="reveal-block relative rounded-lg bg-[#E30713] p-5 sm:p-8 text-white flex flex-col justify-center">
-                        <div className="pattern_bg"></div>
+          <div className="reveal-block relative rounded-lg bg-[#E30713] p-5  sm:p-8 text-white flex flex-col justify-center">
+            <div className="pattern_bg"></div>
 
             <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
@@ -241,7 +241,7 @@ export default function CompoContact() {
 
           {/* OR divider — desktop */}
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:flex"
+            className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 md:flex"
             aria-hidden="true"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E30713]">
@@ -250,7 +250,7 @@ export default function CompoContact() {
           </div>
 
           {/* Mobile OR divider */}
-          <div className="flex items-center gap-3 lg:hidden" aria-hidden="true">
+          <div className="flex items-center gap-3 md:hidden" aria-hidden="true">
             <span className="h-px flex-1 bg-[#E8D9C3]" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#E30713]">
               Or
@@ -274,7 +274,7 @@ export default function CompoContact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
-                <div className="grid gap-5 sm:grid-cols-2">
+                <div className="grid gap-3 grid-cols-2">
                   <label className="block">
                     <span className="mb-2 block text-xs opacity-50 uppercase">
                       First Name
@@ -302,33 +302,36 @@ export default function CompoContact() {
                   </label>
                 </div>
 
-                <label className="block">
-                  <span className="mb-2 block text-xs opacity-50 uppercase">
-                    Phone
-                  </span>
-                  <input
-                    type="tel"
-                    required
-                    value={form.phone}
-                    onChange={handleChange("phone")}
-                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
-                    placeholder="98xxxxxxxx"
-                  />
-                </label>
+                <div className="grid gap-3 grid-cols-2">
 
-                <label className="block">
-                  <span className="mb-2 block text-xs opacity-50 uppercase">
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={handleChange("email")}
-                    className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
-                    placeholder="you@email.com"
-                  />
-                </label>
+                  <label className="block">
+                    <span className="mb-2 block text-xs opacity-50 uppercase">
+                      Phone
+                    </span>
+                    <input
+                      type="tel"
+                      required
+                      value={form.phone}
+                      onChange={handleChange("phone")}
+                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
+                      placeholder="98xxxxxxxx"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="mb-2 block text-xs opacity-50 uppercase">
+                      Email
+                    </span>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange("email")}
+                      className="w-full rounded-md border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B]"
+                      placeholder="you@email.com"
+                    />
+                  </label>
+                </div>
 
                 <label className="block">
                   <span className="mb-2 block text-xs opacity-50 uppercase">

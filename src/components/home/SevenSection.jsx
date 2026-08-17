@@ -12,6 +12,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import BTN from "../common/BTN";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { RiInstagramLine, RiLinkedinLine, RiMailLine } from "@remixicon/react";
 
 const SocialLable = ({ lable, text }) => {
   return (
@@ -85,7 +86,7 @@ const SevenSection = () => {
           <h2 data-para-effect>Stay in Touch</h2>
         </div>
 
-        <div className="max-sm:px-4 w-full h-fit flex flex-wrap md:justify-center     md:items-center  mt-5 gap-2 md:gap-x-5">
+        <div className=" hidden md:flex max-sm:px-4 w-full h-fit flex-wrap md:justify-center     md:items-center  mt-5 gap-2 md:gap-x-5">
           <a target="blank" href="https://www.instagram.com/RambandhuOfficial">
 
             <BTN txt={"Instagram"} variant={"B1"} />
@@ -101,8 +102,32 @@ const SevenSection = () => {
           </a>
         </div>
 
+        <div className="flex items-center gap-3 px-4 pt-2  md:hidden ">
+          <a
+            href="https://linkedin.com"
+            aria-label="LinkedIn"
+            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+          >
+            <RiLinkedinLine size={20} />
+          </a>
+          <a
+            href="https://instagram.com"
+            aria-label="Instagram"
+            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+          >
+            <RiInstagramLine size={20} />
+          </a>
+          <a
+            href="mailto:care@esfl.co.in"
+            aria-label="Email"
+            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+          >
+            <RiMailLine size={20} />
+          </a>
+        </div>
+
         <div className="w-full h-fit flex overflow-hidden pt-8 md:pt-16">
-          <Marquee pauseOnHover>
+          <Marquee>
             <CustomImg />
           </Marquee>
         </div>

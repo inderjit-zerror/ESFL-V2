@@ -51,7 +51,7 @@ const CsrProjects = () => {
 
         {/* Projects Grid */}
         {/* Projects Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
               <div className="relative w-full h-56 sm:h-64 overflow-hidden">
@@ -78,44 +78,6 @@ const CsrProjects = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Projects Swiper - Mobile */}
-        <div className="block md:hidden w-full">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1.1}
-            className="w-full h-fit!"
-          >
-            {projects.map((project, index) => (
-              <SwiperSlide key={index}>
-                <div className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
-                  <div className="relative w-full aspect-video overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <p className="text-xs font-semibold tracking-wider text-red uppercase mb-2">
-                      {project.category}
-                    </p>
-                    <h5 className="uppercase mb-2 md:mb-4">
-                      {project.title}
-                    </h5>
-                    <p className="opacity-70 mb-8 flex-grow">
-                      {project.description}
-                    </p>
-                    <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2">
-                      READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
         </div>
       </div>
     </section>

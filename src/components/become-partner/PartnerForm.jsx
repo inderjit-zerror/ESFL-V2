@@ -40,7 +40,7 @@ export default function PartnerForm() {
 
     return (
         <section ref={sectionRef} className="  overflow-hidden container   py-12 md:py-24  border-b border-black/50">
-            <div className="grid grid-cols-1  lg:grid-cols-2">
+            <div className="grid grid-cols-1  md:grid-cols-2">
                 {/* Left column */}
                 <div ref={leftRef} className=" max-sm:aspect-square rounded-md relative md:h-full overflow-hidden">
                     <Image
@@ -52,7 +52,7 @@ export default function PartnerForm() {
                 </div>
 
                 {/* Right column — form */}
-                <div className="max-sm:pt-5 sm:pl-10 lg:pl-12 xl:pl-16 ">
+                <div className="max-sm:pt-5 sm:pl-10 md:pl-12 xl:pl-16 ">
                     <h2 data-para-effect className="     uppercase mb-2">
                         APPLICATION FORM
                     </h2>
@@ -61,7 +61,7 @@ export default function PartnerForm() {
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
                                 <Label>Full Name</Label>
                                 <Input required placeholder="e.g. Rahul Sharma" value={form.fullName} onChange={handleChange("fullName")} />
@@ -72,7 +72,7 @@ export default function PartnerForm() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
                                 <Label>Current Business Type</Label>
                                 <select
@@ -94,7 +94,7 @@ export default function PartnerForm() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <div className="grid gap-3 grid-cols-2">
                             <div ref={registerField}>
                                 <Label>Phone Number</Label>
                                 <Input type="tel" placeholder="+91 00000 00000" value={form.phone} onChange={handleChange("phone")} />

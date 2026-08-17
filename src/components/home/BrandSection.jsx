@@ -30,7 +30,7 @@ export default function BrandSection({
 }) {
   return (
     <section
-      className={`${bgColor} ${className} container w-full max-sm:py-6 md:h-[calc(100vh-5rem)]! overflow-hidden flex justify-center items-center`}
+      className={`${bgColor} ${className} container w-full max-sm:py-6 max-sm:pt-12 md:h-[calc(100vh-5rem)]! overflow-hidden flex justify-center items-center`}
     > 
     <div className="pattern_bg"></div>
       <div

@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
+import AutoPlayVideo from '../common/AutoPlayVideo'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,27 +33,25 @@ const Factory = () => {
 
   return (
     <>
-    <div className='uppercase text-[#f5c451] pt-6 py-12 md:hidden container flex items-center max-w-4xl! bg-red '>
+      <div className='uppercase text-[#f5c451] pt-6 pb-4 md:hidden container flex items-center max-w-4xl! bg-red '>
         <h2 data-para-effect>
           A look inside our factories and offices hygiene, precision and consistency at every stage.
         </h2>
       </div>
-    <div ref={containerRef} className='w-full aspect-video overflow-hidden bg-red  relative'>
-      <video
-        ref={videoRef}
-        muted
-        loop
-        autoPlay
-        playsInline
-        src={`/videos/Factory.mp4`}
-        className='absolute top-[-20%] left-0 w-full h-[140%] object-cover object-center brightness-75'
-      ></video>
-      <div className='uppercase max-sm:hidden absolute! container flex items-center max-w-4xl! text-white '>
-        <h2 data-para-effect>
-          A look inside our factories and offices hygiene, precision and consistency at every stage.
-        </h2>
+      <div ref={containerRef} className='w-full aspect-video overflow-hidden bg-red  relative'>
+        <AutoPlayVideo
+          ref={videoRef}
+          src={`/videos/Factory.mp4`}
+          className='absolute top-[-20%] left-0 w-full h-[140%] object-cover object-center brightness-75'
+        />
+        <div className='uppercase w-full max-sm:hidden absolute! h-full flex items-center  text-white '>
+          <div className="container h-fit!">
+          <h2 data-para-effect className='max-w-4xl!'>
+            A look inside our factories and offices hygiene, precision and consistency at every stage.
+          </h2>
+          </div>
+        </div>
       </div>
-    </div>
     </>
   )
 }

@@ -46,16 +46,16 @@ const INFO_ROWS = [
 function RowBlock({ label, rows, lines, isLast }) {
   return (
     <div className={isLast ? "" : "border-b border-white/50 pb-6"}>
-      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-4 sm:gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-start gap-0 sm:gap-8">
         <h5 data-para-effect className="text-base uppercase tracking-tight text-white sm:text-lg">
           {label}
         </h5>
 
-        <div className="relative text-right text-xs leading-relaxed text-white/80 sm:text-sm">
+        <div className="relative text-right text-xs text-white sm:text-sm">
           {rows
             ? rows.map((r) => (
-              <p key={r.k} className="flex flex-col sm:block sm:whitespace-nowrap">
-                <span className="mr-0 sm:mr-3">{r.k}</span>
+              <p key={r.k} className=" block whitespace-nowrap">
+                <span className="mr-3">{r.k}</span>
                 <span className="text-white font-medium">{r.v}</span>
               </p>
             ))
@@ -102,12 +102,12 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid relative  overflow-hidden h-auto bg-[#E30713] lg:grid-cols-2"
+      className="grid relative  overflow-hidden h-auto bg-[#E30713] md:grid-cols-2"
     >
-                  <div className="pattern_bg"></div>
+      <div className="pattern_bg"></div>
 
       {/* Map — left on desktop, bottom on mobile */}
-      <div className=" z-10 max-sm:aspect-square oi-map relative  order-last lg:order-first">
+      <div className=" z-10 max-sm:aspect-square oi-map relative  order-last md:order-first">
         <iframe
           title="Empire Spices & Foods Ltd. location"
           src="https://www.google.com/maps?cid=13564662084488619543&output=embed"

@@ -83,8 +83,8 @@ const Campaigns = () => {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${activeCategory === cat
-                    ? "bg-[#E30713] text-white"
-                    : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
+                  ? "bg-[#E30713] text-white"
+                  : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
                   }`}
               >
                 {cat}
@@ -94,7 +94,7 @@ const Campaigns = () => {
         </div>
 
         {/* Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 gap-y-10">
           {filteredContent.map((item) => (
             <div key={item.id} className="flex flex-col group cursor-pointer">
               <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
@@ -105,7 +105,7 @@ const Campaigns = () => {
                 />
               </div>
 
-              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors line-clamp-2 min-h-[3rem]">
+              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors line-clamp-2 md:min-h-[3rem]">
                 {item.title}
               </h5>
 
@@ -119,39 +119,6 @@ const Campaigns = () => {
           ))}
         </div>
 
-        {/* Swiper - Mobile */}
-        <div className="block md:hidden w-full">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1.1}
-            className="w-full"
-          >
-            {filteredContent.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="flex flex-col group cursor-pointer h-full">
-                  <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
-                    <Image fill
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500"
-                    />
-                  </div>
-
-                  <h5 className="mb-4">
-                    {item.title}
-                  </h5>
-
-                  <a
-                    href={item.link}
-                    className="mt-auto text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2"
-                  >
-                    READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-                  </a>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
       </div>
     </section>
   );

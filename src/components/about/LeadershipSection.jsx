@@ -56,7 +56,7 @@ export default function LeadershipSection() {
         </div>
 
         {/* Team Grid - Desktop */}
-        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 gap-y-6 md:gap-y-8 md:gap-5">
           {teamMembers.map((member) => (
             <div key={member.id} className="flex flex-col text-left group cursor-pointer">
 
@@ -83,40 +83,6 @@ export default function LeadershipSection() {
 
             </div>
           ))}
-        </div>
-
-        {/* Team Grid - Mobile Swiper */}
-        <div className="block sm:hidden w-full">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1.1}
-            className="w-full"
-          >
-            {teamMembers.map((member) => (
-              <SwiperSlide key={member.id}>
-                <div className="flex flex-col text-left group cursor-pointer w-full">
-                  {/* Image Container */}
-                  <div style={{ backgroundColor: member.bgColor || 'transparent' }} className={`relative w-full aspect-4/5 rounded-md overflow-hidden`}>
-                    <Image fill
-                      src={member.imageUrl}
-                      alt={member.name}
-                      className="h-full object-cover transition-transform duration-300"
-                    />
-                  </div>
-
-                  {/* Text Container */}
-                  <div className="pt-2">
-                    <h5 className="uppercase">
-                      {member.name}
-                    </h5>
-                    <p className="text-sm mt-1 md:mt-2">
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
         </div>
 
       </div>

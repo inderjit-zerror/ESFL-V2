@@ -138,7 +138,7 @@ export default function Header() {
 
                 {/* Dropdown panel */}
                 <div
-                  className={`absolute left-0 top-full pt-4 transition-all duration-200 ${aboutOpen
+                  className={`absolute left-0 top-full pt-6.5 transition-all duration-200 ${aboutOpen
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
                     }`}
@@ -247,9 +247,9 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-x-0 top-13 z-40 origin-top transition-all duration-300 ease-in-out lg:hidden ${mobileOpen
-          ? "pointer-events-auto max-h-[calc(100vh-70px-0.75rem)] opacity-100"
-          : "pointer-events-none max-h-0 opacity-0"
+        className={`fixed inset-x-0 top-13 z-40 origin-top transition-all h-screen backdrop-blur-xs duration-300  lg:hidden ${mobileOpen
+          ? "pointer-events-auto  opacity-100"
+          : "pointer-events-none  opacity-0"
           }`}
       >
         <nav className="flex max-h-[calc(100vh-70px-0.75rem)] flex-col gap-1 overflow-y-auto bg-black/95 px-6 py-6 backdrop-blur-md">

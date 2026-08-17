@@ -4,25 +4,29 @@ import React from "react";
 const BTN = ({ txt, variant = "B1", href }) => {
   const isB2 = variant === "B2";
 
-  const className = `group relative capitalize inline-flex h-10 items-center justify-center rounded-full  pl-4 pr-10  ${isB2 ? "bg-[#FFC55C] text-[#FDF6EC]!" : "bg-[#E30713] text-[#E30713]!"
+  const className = `group relative capitalize inline-flex gap-x-2 h-10 items-center justify-center rounded-full  pl-4 pr-1  transition-all duration-300  ${isB2 ? "bg-[#FFC55C] text-[#FDF6EC]!" : "bg-[#E30713] text-[#E30713]!"
     }`;
 
   const content = (
     <>
       <span
-        className={`z-10 pr-2 pb-05  duration-300 ${isB2
-          ? "text-[#E30713] group-hover:text-[#FDF6EC]"
-          : "group-hover:text-[#E30713] text-[#FDF6EC]"
+        className={`z-10 h-6.5  overflow-hidden transition-all duration-300 ${isB2
+          ? "text-[#E30713] "
+          : " text-[#FDF6EC]"
           }`}
       >
-        {txt}
+        <div className=" group-hover:-translate-y-1/2 transition-all duration-300">
+          <p>{txt}</p>
+          <p >{txt}</p>
+        </div>
       </span>
       <div
-        className={`absolute right-1 inline-flex h-8 w-8 items-center justify-end rounded-full transition-[width] group-hover:w-[calc(100%-10px)] duration-300 ${isB2 ? "bg-[#E30713]" : "bg-[#FDF6EC]"
+        className={` h-8 w-8 flex items-center justify-center rounded-full overflow-hidden duration-300 ${isB2 ? "bg-[#E30713]" : "bg-[#FDF6EC]"
           }`}
       >
-        <div className="mr-2 flex items-center justify-center ">
-          <RiArrowRightLine size={16} />
+        <div className="  flex items-center justify-center  gap-x-4 group-hover:translate-x-4 -translate-x-4  transition-all duration-300 ">
+          <RiArrowRightLine  className="size-4" />
+          <RiArrowRightLine className="size-4"  />
         </div>
       </div>
     </>

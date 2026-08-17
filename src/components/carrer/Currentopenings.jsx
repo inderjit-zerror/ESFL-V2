@@ -71,7 +71,7 @@ const COLORS = {
   iconColor: "#E30713",
   iconColorHover: "#FFFFFF",
   text: "#1F1F1F",
-  textHover: "#B5341F", // red
+  textHover: "#E30713", // red
   subText: "#6B6B6B",
   subTextHover: "#8A2E17",
   tagBg: "#FFFFFF",
@@ -108,7 +108,7 @@ export default function CurrentOpenings() {
 
   return (
     <section ref={sectionRef} className="bg-[#E30713] border-t border-[#fcb62d] relative   py-12 md:py-24 ">
-                  <div className="pattern_bg"></div>
+      <div className="pattern_bg"></div>
       <div className="container md:mx-auto md:max-w-6xl">
         {/* Header */}
         <div className=" mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -179,7 +179,7 @@ function JobCard({ job }) {
       className="job-card rounded-md border border-black/5 bg-white p-6 sm:p-8 shadow-sm cursor-pointer"
       style={{ backgroundColor: COLORS.cardBg }}
     >
-      
+
       {/* Top row: icon, title, subtitle, external-link arrow */}
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-4">
@@ -215,18 +215,18 @@ function JobCard({ job }) {
       </div>
 
       {/* Divider */}
-      <div className="job-divider my-6 h-[1px] w-full" style={{ backgroundColor: COLORS.divider }} />
+      <div className="job-divider my-4 h-[1px] w-full" style={{ backgroundColor: COLORS.divider }} />
 
       {/* Footer */}
       <div className="flex items-center justify-between">
-        <p className="job-days text-sm uppercase font-medium" style={{ color: COLORS.text }}>
+        <p className="job-days text-xs uppercase font-medium" style={{ color: COLORS.text }}>
           {job.daysLeft} DAYS{" "}
           <span className="opacity-70 font-normal" style={{ color: COLORS.subText }}>
             LEFT TO APPLY
           </span>
         </p>
         <span
-          className="text-sm font-bold uppercase underline underline-offset-4"
+          className="text-xs uppercase hover:underline underline-offset-2"
           style={{ color: COLORS.textHover }}
         >
           APPLY

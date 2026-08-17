@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RiVolumeMuteFill, RiVolumeUpFill } from "@remixicon/react";
+import AutoPlayVideo from "../common/AutoPlayVideo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,15 +105,11 @@ const VideoSection = () => {
         onClick={toggleMute}
       >
         {/* Video element with extra height to prevent background bleeding during parallax */}
-        <video
+        <AutoPlayVideo
           ref={videoRef}
           src="/videos/HB.mp4"
-          loop
-          muted
-          playsInline
-          autoPlay
-          className="absolute top-[-200px] left-0 w-full h-[calc(100%+400px)] object-cover"
-        ></video>
+          className="absolute inset-0 cover"
+        />
       </div>
     </div>
   );

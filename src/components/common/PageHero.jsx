@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import AutoPlayVideo from './AutoPlayVideo';
 import BTN from './BTN';
 import Image from 'next/image';
 
@@ -36,7 +37,7 @@ const PageHero = ({ title, description, videoSrc, video, imageSrc, buttonText, b
     return (
         <div ref={containerRef} className="w-full bg-beige h-[60vh] md:h-[80vh] overflow-hidden relative flex items-end justify-center">
             {mediaVideo ? (
-                <video src={mediaVideo} loop muted playsInline autoPlay className='hero-media absolute inset-0 w-full h-full object-cover brightness-75'></video>
+                <AutoPlayVideo src={mediaVideo} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
             ) : imageSrc ? (
                 <Image fill src={imageSrc} alt={typeof title === "string" ? title : "Hero Image"} className='hero-media absolute inset-0 w-full h-full object-cover brightness-75' />
             ) : null}

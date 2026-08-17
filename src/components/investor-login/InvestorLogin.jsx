@@ -37,10 +37,10 @@ export default function InvestorLogin() {
         </div>
 
         {/* Login Card Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 border border-black/30 rounded-lg overflow-hidden w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-black/30 rounded-lg overflow-hidden w-full">
 
           {/* Left Column: Form */}
-          <div className="lg:col-span-1 p-5 lg:p-10 flex flex-col justify-center">
+          <div className="md:col-span-1 p-5 md:p-10 flex flex-col justify-center">
             <form className="space-y-6">
 
               {/* Username Input */}
@@ -101,7 +101,7 @@ export default function InvestorLogin() {
           </div>
 
           {/* Right Column: Image with Overlay */}
-          <div className="lg:col-span-2 relative min-h-[400px] lg:min-h-[600px]">
+          <div className="md:col-span-2 relative min-h-150">
             <Image
               src="/images/our-process/IGE.jpg"
               alt="Quality assurance worker on production line"
@@ -114,7 +114,7 @@ export default function InvestorLogin() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
 
             {/* Overlay Text Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
               <LockIcon className="w-6 h-6 text-[#f6bc25] mb-3" />
 
               <h3 className="text-white text-lg font-bold tracking-wide uppercase mb-2">

@@ -86,8 +86,8 @@ const PhotoGallery = () => {
           </button>
         </div>
 
-        {/* Masonry Grid - Desktop */}
-        <div className="hidden md:grid grid-cols-3 gap-6 auto-rows-[220px] lg:auto-rows-[280px]">
+        {/* Masonry Grid - Desktop / Simple Grid - Mobile */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 auto-rows-[180px] md:auto-rows-[220px] lg:auto-rows-[280px]">
           {images.map((img, index) => {
             const currentClass = layouts[layoutIndex][index];
             return (
@@ -115,53 +115,14 @@ const PhotoGallery = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
                 {/* Text Overlay */}
-                <div className="absolute bottom-6 left-6 text-white z-10">
-                  <div className="text-3xl mb-1 leading-none">{img.id}</div>
-                  <div className="text-xs tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
+                <div className="absolute p-3 md:p-5 bottom-0 text-white z-10">
+                  <div className="uppercase leading-none text-gray-200 group-hover:text-white transition-colors">
                     {img.title}
                   </div>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Swiper - Mobile */}
-        <div className="block md:hidden w-full">
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={1.1}
-            className="w-full h-fit!"
-          >
-            {images.map((img, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <div className="relative overflow-hidden rounded-sm group cursor-pointer aspect-square w-full">
-                    {/* Image */}
-                    <div className="absolute inset-0 w-full h-full">
-                      <Image
-                        src={img.src}
-                        alt={img.title}
-                        fill
-                        className="cover"
-                      />
-                    </div>
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-
-                    {/* Text Overlay */}
-                    <div className="absolute bottom-4 left-4 text-white z-10">
-                      <div className="text-2xl mb-1 leading-none">{img.id}</div>
-                      <div className="text-[10px] tracking-[0.15em] uppercase text-gray-200 group-hover:text-white transition-colors">
-                        {img.title}
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
         </div>
       </div>
     </section>

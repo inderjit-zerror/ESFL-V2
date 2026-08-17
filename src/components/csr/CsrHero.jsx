@@ -1,4 +1,5 @@
 import React from "react";
+import AutoPlayVideo from "../common/AutoPlayVideo";
 import BTN from "../common/BTN";
 
 function ScrollDownIndicator({ className = "" }) {
@@ -64,7 +65,7 @@ const CsrHero = () => {
   return (
     <section data-page-load-hero className="relative  overflow-hidden">
       <div className="relative h-[80vh] w-full  sm:h-svh ">
-        <video src="/videos/spices_video.mp4" loop autoPlay muted playsInline className="w-full h-full object-cover brightness-90"></video>
+        <AutoPlayVideo src="/videos/spices_video.mp4" className="w-full h-full object-cover brightness-90" />
 
 
         <div data-page-load-overlay className="absolute inset-0 bg-black/40" />

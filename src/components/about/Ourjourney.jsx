@@ -176,9 +176,9 @@ export default function OurJourney() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[400svh]"
+      className="relative w-full h-[400vh]"
     >
-      <div className="sticky top-0 w-full h-svh overflow-hidden">
+      <div className="sticky top-0 w-full h-screen overflow-hidden">
         <div className="flex h-full flex-col justify-between gap-5   pt-24  pb-[3vh]">
           {/* Heading */}
           <div className=" md:mx-auto md:max-w-2xl md:text-center px-4 space-y-2">
@@ -192,7 +192,7 @@ export default function OurJourney() {
           </div>
 
           {/* Horizontal card track */}
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full max-sm:h-full max-sm:flex max-sm:items-center overflow-hidden">
             <div
               ref={trackRef}
               className="flex w-max px-6 will-change-transform sm:px-10"
@@ -204,7 +204,7 @@ export default function OurJourney() {
           </div>
 
           {/* Bottom timeline — constrained to 70vw, centered */}
-          <div className=" mx-auto w-full md:w-[90vw] px-6">
+          <div className=" mx-auto w-full md:w-[90vw] max-sm:hidden px-6">
             {/* Segments Grid */}
             <div className="relative grid grid-cols-7 gap-1 w-full h-[3px]">
               {Array.from({ length: SEGMENT_COUNT }).map((_, i) => (
@@ -265,7 +265,7 @@ function Card({ milestone }) {
 
   return (
     <div
-      className=" group border border-black/10 relative flex  p-5 w-[80vw]  md:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
+      className=" group border border-black/10 relative flex  p-5 w-[90vw] md:w-[50vw]  lg:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
     >
       {/* Image */}
       <div className="relative aspect-square md:aspect-video w-full shrink-0 overflow-hidden rounded-sm">
