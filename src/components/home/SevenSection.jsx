@@ -62,7 +62,7 @@ const CustomImg = () => {
               </div>
 
               {/* Btn */}
-              <a target="blank" href="https://www.instagram.com/RambandhuOfficial">
+              <a aria-label="Visit Ram Bandhu Instagram" target="blank" href="https://www.instagram.com/RambandhuOfficial">
                 <div className="w-fit h-fit absolute top-2 md:top-4 left-2 md:left-4 Font3 text-white p-3 rounded-full  bg-[#E30713] flex justify-center items-center gap-[10px] z-40 transition-all duration-500">
                   <FaInstagram />
                 </div>

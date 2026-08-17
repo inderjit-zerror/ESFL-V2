@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import PageHero from '@/components/common/PageHero'
 import Philosophy from '@/components/csr/Philosophy'
 import CsrProjects from '@/components/csr/CsrProjects'
@@ -24,3 +25,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/csr");
+}

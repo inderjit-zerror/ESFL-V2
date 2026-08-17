@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import SevenSection from '@/components/home/SevenSection'
 import ILH from '@/components/investor-login/ILH'
 import InvestorLogin from '@/components/investor-login/InvestorLogin'
@@ -16,3 +17,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/investor-login");
+}

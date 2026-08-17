@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import PageHero from "@/components/common/PageHero";
 import CurrentOpenings from "@/components/carrer/Currentopenings";
 import InfiniteScroller from "@/components/carrer/InfiniteScroller";
@@ -26,3 +27,7 @@ const page = () => {
 };
 
 export default page;
+
+export async function generateMetadata() {
+  return createPageMetadata("/carrer");
+}

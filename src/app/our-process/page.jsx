@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import SevenSection from '@/components/home/SevenSection'
 import Certifications from '@/components/our-process/Certifications'
 import ManufacturingJourney from '@/components/our-process/ManufacturingJourney'
@@ -27,3 +28,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/our-process");
+}

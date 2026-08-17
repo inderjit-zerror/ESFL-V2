@@ -24,11 +24,13 @@ export default function Footer() {
 
         {/* Top row: brand + socials, separated from the link grid */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6     pt-12 md:pt-24 ">
-          <div className="w-[50vw] md:w-60 xl:w-44">
-            <img
+          <div className="w-[50vw] md:w-60 xl:w-44 relative">
+            <Image
+              width={200}
+              height={200}
               src="/logo.svg"
               alt="Empire Spices & Foods Ltd."
-              className="w-full object-cover object-center"
+              className="w-full h-auto object-contain"
             />
           </div>
 

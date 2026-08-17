@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import MediaHero from '@/components/media/MediaHero'
 import Campaigns from '@/components/media/Campaigns'
 import React from 'react'
@@ -17,3 +18,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/media");
+}

@@ -206,6 +206,7 @@ export default function Header() {
               alt="Empire Logo"
               width={130}
               height={80}
+              fetchPriority="high"
               data-header-logo-image
               className="h-auto  w-26 md:w-32 object-contain"
             />

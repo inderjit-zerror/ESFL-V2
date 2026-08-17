@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import PartnerForm from '@/components/become-partner/PartnerForm'
 import PageHero from '@/components/common/PageHero'
 import WhyPartner from '@/components/become-partner/WhyPartner'
@@ -22,3 +23,7 @@ const page = () => {
 }
 
 export default page
+
+export async function generateMetadata() {
+  return createPageMetadata("/become-a-partner");
+}

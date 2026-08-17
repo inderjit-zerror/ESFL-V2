@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import BTN from "../common/BTN";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,10 +66,12 @@ export default function Building() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {spiceImages.map((img, i) => (
           <div key={i} className={`${img.className} spice-img-container`}>
-            <img
+            <Image
               src={img.src}
               alt="Indian Masala Spice"
-              className="spice-img w-full h-full object-contain"
+              width={200}
+              height={200}
+              className="spice-img object-contain"
             />
           </div>
         ))}
