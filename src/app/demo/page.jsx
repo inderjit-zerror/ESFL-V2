@@ -3,6 +3,13 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Hero from '@/components/home/Hero';
+import AboutHero from '@/components/about/AboutHero';
+import Building from '@/components/home/Building';
+import { Factory, Sticker } from 'lucide-react';
+import PresentAcrossCountry from '@/components/home/Presentacrosscountry';
+import LatestCampaignsAndNews from '@/components/home/Latestcampaignsandnews';
+import SevenSection from '@/components/home/SevenSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,11 +86,10 @@ export default function DemoPage() {
   }, { scope: containerRef });
 
   return (
-    <div className="bg-zinc-50 ">
+    <div className=" ">
       {/* Spacer to show scrolling before the section */}
-      <div className="h-screen flex items-center justify-center">
-        <h2 className="text-3xl font-light text-gray-500">Scroll down</h2>
-      </div>
+      <Hero/>
+      <Building />
 
       <div ref={containerRef} className="relative w-full">
         
@@ -144,6 +150,9 @@ export default function DemoPage() {
 
         </div>
       </div>
+      <PresentAcrossCountry />
+      <LatestCampaignsAndNews />
+      <SevenSection />
     </div>
   );
 }
