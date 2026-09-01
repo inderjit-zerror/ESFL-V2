@@ -77,11 +77,11 @@ export default function ManufacturingJourney() {
       <div className="relative z-10">
         {/* Header Section */}
         <div className="md:text-center mb-8 md:mb-16">
-          <h6 className="text-red mb-2 uppercase">
+          {/* <h6 className="text-red mb-2 uppercase">
             The Pillars
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="uppercase">
-            Our Manufacturing <br /> Journey
+            The Pillars
           </h2>
         </div>
 
@@ -92,15 +92,10 @@ export default function ManufacturingJourney() {
               key={pillar.id}
               className="pillar-card group relative bg-[#E30713] rounded-2xl p-5 border text-[#fac05e] border-black/5 h-80 flex flex-col justify-between"
             >
-                    <div className="pattern_bg"></div>
+              <div className="pattern_bg"></div>
 
               {/* Card Content */}
               <div className="relative z-10">
-                <div className=" mb-3">
-                  <span className="text-xs font-semibold  px-2 py-1 bg-[#fcfbf9] text-[#E30713] rounded-full border border-[#E30713]">
-                    STEP {pillar.id}
-                  </span>
-                </div>
                 <h4 data-para-effect className="mb-5">
                   {pillar.title}
                 </h4>

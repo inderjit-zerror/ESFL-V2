@@ -37,9 +37,9 @@ const CsrProjects = () => {
         {/* Header */}
         <div className="flex  justify-between items-end  mb-8 md:mb-16">
           <div>
-            <h6 className="text-[#E30713] uppercase mb-2">
+            {/* <h6 className="text-[#E30713] uppercase mb-2">
               IMPACT IN ACTION
-            </h6>
+            </h6> */}
             <h2 data-para-effect className="uppercase">
               ONGOING CSR <br /> PROJECTS
             </h2>

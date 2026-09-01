@@ -70,9 +70,9 @@ const PhotoGallery = () => {
         {/* Header */}
         <div className="flex  justify-between  items-end mb-8 md:mb-14">
           <div>
-            <h6 className="uppercase text-red">
+            {/* <h6 className="uppercase text-red">
               Insight
-            </h6>
+            </h6> */}
             <h2 data-para-effect className="uppercase ">
               PHOTO GALLERY
             </h2>

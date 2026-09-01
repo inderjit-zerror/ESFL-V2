@@ -70,9 +70,9 @@ export default function SustainabilitySafety() {
 
         {/* Header Section */}
         <div className="md:text-center mb-8 md:mb-16 ">
-          <h6 className="text-[#E30713] mb-2 uppercase">
+          {/* <h6 className="text-[#E30713] mb-2 uppercase">
             Responsibility
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="uppercase mb-2">
             Sustainability & Safety
           </h2>

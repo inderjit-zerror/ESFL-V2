@@ -47,9 +47,9 @@ export default function LeadershipSection() {
 
         {/* Header Section */}
         <div className="md:text-center mb-12 ">
-          <h6 className="text-red uppercase mb-2">
+          {/* <h6 className="text-red uppercase mb-2">
             Leadership
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="uppercase">
             The People Behind <br /> The Flavour
           </h2>

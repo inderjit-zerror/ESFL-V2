@@ -225,20 +225,8 @@ export default function Header() {
         </button>
 
         {/* Right Side (desktop) */}
-        <div className="hidden items-center gap-8 lg:flex">
-          <a
-            href="https://www.rambandhu.com/"
-            target="blank"
-            className="    text-white flex flex-col group"
-          >
-            <div className="flex gap-2 items-center">
-              Shop Now <FaCartShopping />
-            </div>
-            <div className="h-[1.5px] w-full overflow-hidden">
-              <div className="h-full w-0 bg-white transition-all duration-300 group-hover:w-full"></div>
-            </div>
-          </a>
-
+        <div className="hidden items-center gap-5 lg:flex">
+            <BTN txt={`Shop Now`} variant="B2" href={"https://www.rambandhu.com/"} />
             <BTN txt={`Become Channel Partner`} variant="B1" href={"/become-a-partner"} />
         </div>
 

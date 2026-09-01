@@ -27,7 +27,7 @@ export default function WhoWeAre() {
 
         {/* Right: Content */}
         <div>
-          <h6 className="text-red max-sm:mt-5 uppercase mb-2">Who We Are</h6>
+          {/* <h6 className="text-red max-sm:mt-5 uppercase mb-2">Who We Are</h6> */}
 
           <h2 data-para-effect className=" uppercase">
             From a Local <br />Enterprise to a <br /> Global Force
@@ -49,17 +49,18 @@ export default function WhoWeAre() {
             the boundaries of Indian cuisine.
           </p>
 
-          {/* Stat pills */}
-          <div className=" mt-10 md:mt-32 grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className="mt-10 md:mt-32 flex flex-wrap gap-1">
             {[
               "Farmer-First Sourcing Network",
               "32 Manufacturing Units",
               "Exports to 14+ Countries",
               "Three Flagship Brand Families",
+              "Millions of Happy Consumers",
+              "100% Authentic Ingredients",
             ].map((stat) => (
               <div
                 key={stat}
-                className="flex items-center justify-center rounded-sm  bg-[#F5C451] px-4 py-3 text-center uppercase  text-sm "
+                className="inline-flex items-center justify-center rounded-sm bg-[#F5C451] px-4 py-2.5 text-center uppercase text-xs"
               >
                 {stat}
               </div>

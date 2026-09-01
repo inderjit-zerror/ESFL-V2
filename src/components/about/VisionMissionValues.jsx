@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Eye, Leaf, Gem } from "lucide-react";
+import { Eye, Leaf, Gem, Target, Handshake } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -16,22 +16,22 @@ export default function VisionMissionValues() {
       id: 1,
       title: "VISION",
       description:
-        "To be the most preferred and trusted brand in the culinary world — enriching lives through healthy, authentic and high-quality food products globally.",
+        "Empire Spices & Foods Ltd. aims to be ‘The Company’ to provide convenience and taste enhancement for making Food enjoyable and palatable.",
       Icon: Eye,
     },
     {
       id: 2,
       title: "MISSION",
       description:
-        "To consistently innovate and deliver premium spices and food products while ensuring sustainable growth for all our stakeholders and partners.",
-      Icon: Leaf,
+        "To grow together and delight our customers, employees, shareholders, suppliers and well-wishers by developing value-for-money products.",
+      Icon: Target,
     },
     {
       id: 3,
       title: "VALUE STATEMENT",
       description:
-        "Purity first, people always. Integrity in sourcing, precision in manufacturing and respect for the traditions that shape Indian kitchens.",
-      Icon: Gem,
+        "We want our organizational structure and culture to promote employee involvement, open communication, teamwork and professionalism in every aspect of work.",
+      Icon: Handshake,
     },
   ];
 
@@ -78,9 +78,9 @@ export default function VisionMissionValues() {
 
         {/* Header Section */}
         <div className="md:text-center mb-16">
-          <h6 className="text-[#fac05e] uppercase mb-2">
+          {/* <h6 className="text-[#fac05e] uppercase mb-2">
             Quality & Process Certifications
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="text-[#fac05e] uppercase">
             Vision, Mission & Values
           </h2>
@@ -91,23 +91,23 @@ export default function VisionMissionValues() {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="vision-card group relative md:space-y-20 bg-[#fac05e] rounded-xl p-5 md:p-8 flex flex-col "
+              className="vision-card group relative md:space-y-8 bg-[#ffffff] rounded-xl p-5 md:p-8 flex flex-col "
             >
               {/* Icon */}
               <div className="flex justify-between">
-                <h4 data-para-effect className="text-[#c83219] w-[80%]   mb-3  transition-colors duration-300">
+                <h4 data-para-effect className="text-[#E30713] w-[80%]   mb-3  transition-colors duration-300">
                   {card.title}
                 </h4>
-                <div className="w-14 h-14 rounded-lg bg-[#c83219] flex items-center justify-center transition-colors duration-300 mb-8">
+                <div className="w-14 h-14 rounded-lg bg-[#E30713] flex items-center justify-center transition-colors duration-300 mb-8">
                   <card.Icon
-                    className="w-7 h-7 text-[#fac05e] transition-colors duration-300"
+                    className="w-7 h-7 text-[#ffffff] transition-colors duration-300"
                     strokeWidth={2}
                   />
                 </div>
               </div>
 
               <div className="mt-auto">
-                <p className="text-[#c83219] md:text-xl ">
+                <p className="text-[#E30713] md:text-xl ">
                   {card.description}
                 </p>
               </div>

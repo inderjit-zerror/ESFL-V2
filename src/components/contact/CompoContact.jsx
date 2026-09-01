@@ -345,9 +345,9 @@ export default function CompoContact() {
         </div>
       </section>
 
-      <section className="flex justify-center pb-16 sm:  pb-12 md:pb-24 ">
+      {/* <section className="flex justify-center pb-16 sm:  pb-12 md:pb-24 ">
         <ChatPill />
-      </section>
+      </section> */}
 
     </div>
   );

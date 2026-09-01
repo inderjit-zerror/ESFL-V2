@@ -66,9 +66,9 @@ const Campaigns = () => {
       <div className="w-full">
         {/* Header */}
         <div className="md:text-center mb-8 md:mb-16">
-          <h6 className="text-[#E30713] uppercase mb-2">
+          {/* <h6 className="text-[#E30713] uppercase mb-2">
             ON AIR NOW
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="uppercase mb-4">
             LATEST CAMPAIGNS <br className="max-sm:hidden" /> &amp; NEWS
           </h2>

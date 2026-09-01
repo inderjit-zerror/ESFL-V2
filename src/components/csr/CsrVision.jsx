@@ -84,9 +84,9 @@ const CsrVision = () => {
 
                 {/* Header */}
                 <div className="md:text-center md:max-w-3xl mb-16">
-                    <h6 className="text-white/90 uppercase mb-2">
+                    {/* <h6 className="text-white/90 uppercase mb-2">
                         JOIN US
-                    </h6>
+                    </h6> */}
                     <h2 data-para-effect className="text-[#FFC55C] uppercase mb-4">
                         VISION, MISSION & <br /> VALUES
                     </h2>

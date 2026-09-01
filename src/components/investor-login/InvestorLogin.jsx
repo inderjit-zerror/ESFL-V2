@@ -30,9 +30,9 @@ export default function InvestorLogin() {
       <div className="w-full">
         {/* Header Section */}
         <div className=" mb-8">
-          <h6 className="text-[#E30713] uppercase mb-2">
+          {/* <h6 className="text-[#E30713] uppercase mb-2">
             Secure Portal
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="uppercase mb-2">
             Investor Login
           </h2>

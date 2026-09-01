@@ -113,7 +113,7 @@ export default function CurrentOpenings() {
         {/* Header */}
         <div className=" mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <h6 className="text-[#fcb62d] uppercase mb-2">JOIN US</h6>
+            {/* <h6 className="text-[#fcb62d] uppercase mb-2">JOIN US</h6> */}
             <h2 data-para-effect className="text-[#fcb62d] uppercase m-0">
               Current Openings
             </h2>

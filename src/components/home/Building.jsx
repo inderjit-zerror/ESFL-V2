@@ -78,11 +78,11 @@ export default function Building() {
       </div>
 
       <div className="relative z-10 flex w-full h-fit flex-col pointer-events-none md:items-center md:text-center">
-        <div className="flex md:items-center">
+        {/* <div className="flex md:items-center">
           <h6 className=" uppercase mb-2 text-red">
             Winning the hearts of our consumers since 1994
           </h6>
-        </div>
+        </div> */}
 
         <h1 data-para-effect className=" uppercase ">
           Building India's <br className="hidden sm:inline" /> Trusted Food <br className="hidden sm:inline" /> Brands.
@@ -96,7 +96,6 @@ export default function Building() {
 
         <div className="mt-10 flex gap-3 md:gap-5 w-fit pointer-events-auto flex-wrap">
           <BTN txt={`Know More`} variant="B1" href="/about" />
-          <BTN txt={`Become Channel Partner`} variant="B2" href="/become-a-partner" />
         </div>
       </div>
     </section>

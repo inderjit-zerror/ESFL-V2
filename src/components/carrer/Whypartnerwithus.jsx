@@ -170,9 +170,9 @@ export default function WhyPartnerWithUs() {
     <section ref={sectionRef} className="container   py-12 md:py-24  relative overflow-hidden">
       {/* Heading */}
       <div className="md:text-center mb-8 md:mb-16 relative z-10">
-        <h6 className="text-[#E30713] uppercase mb-2">
+        {/* <h6 className="text-[#E30713] uppercase mb-2">
           MORE THAN A JOB
-        </h6>
+        </h6> */}
         <h2 data-para-effect className="uppercase">
           Why Partner With Us?
         </h2>

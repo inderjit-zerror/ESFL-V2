@@ -95,7 +95,7 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-140   pt-12 md:pt-24  overflow-hidden bg-red    "
+      className="relative h-140 border-t border-[#f5c451]  pt-12 md:pt-24  overflow-hidden bg-red    "
     >
       <div className="pattern_bg"></div>
       <div className="w-full h-full relative">

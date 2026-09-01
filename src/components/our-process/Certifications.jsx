@@ -87,15 +87,15 @@ export default function Certifications() {
 
   return (
     <section ref={sectionRef} className="bg-[#E30713] container   py-12 md:py-24  text-white">
-            <div className="pattern_bg"></div>
+      <div className="pattern_bg"></div>
 
       <div className="  ">
 
         {/* Header Section */}
         <div className="max-w-xl mb-12">
-          <h6 className="text-[#F5C451] uppercase mb-2">
+          {/* <h6 className="text-[#F5C451] uppercase mb-2">
             Accredited & Audited
-          </h6>
+          </h6> */}
           <h2 data-para-effect className="text-[#F5C451] uppercase mb-2">
             Quality & Process <br /> Certifications
           </h2>
@@ -109,7 +109,7 @@ export default function Certifications() {
           {certs.map((cert) => (
             <div
               key={cert.id}
-              className="cert-card group flex flex-col bg-[#f51d2c] p-5  rounded-xl cursor-pointer transition-colors duration-300 h-52 hover:bg-[#F5C451]"
+              className="cert-card group flex flex-col bg-[#ffffff] p-5  rounded-xl cursor-pointer transition-colors duration-300 h-52 hover:bg-[#F5C451]"
             >
               {/* Icon Placeholder (Replace with actual Next/Image or SVG) */}
               <div className={``}>
@@ -117,7 +117,7 @@ export default function Certifications() {
               </div>
 
               <div className="mt-auto">
-                <p className="text-sm   opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
+                <p className="text-sm   opacity-90 transition-colors duration-300 text-[#E30713]">
                   {cert.subtitle}
                 </p>
               </div>
@@ -130,12 +130,12 @@ export default function Certifications() {
           {stats.map((stat) => (
             <div
               key={stat.id}
-              className="cert-card group bg-[#f51d2c] p-5 h-52 flex flex-col justify-between rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
+              className="cert-card group bg-[#ffffff] p-5 h-52 flex flex-col justify-between rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
             >
-              <h3 data-para-effect className="text-3xl md:text-4xl    mb-3 transition-colors duration-300 group-hover:text-[#E30713]">
+              <h3 data-para-effect className="text-3xl md:text-4xl    mb-3 transition-colors duration-300 text-[#E30713]">
                 {stat.value}
               </h3>
-              <p className="text-sm  opacity-90 transition-colors duration-300 group-hover:text-[#E30713]">
+              <p className="text-sm  opacity-90 transition-colors duration-300 text-[#E30713]">
                 {stat.label}
               </p>
             </div>
