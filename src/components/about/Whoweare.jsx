@@ -29,7 +29,7 @@ export default function WhoWeAre() {
         <div>
           {/* <h6 className="text-red max-sm:mt-5 uppercase mb-2">Who We Are</h6> */}
 
-          <h2 data-para-effect className=" uppercase">
+          <h2 data-para-effect className=" uppercase max-sm:mt-5">
             From a Local <br />Enterprise to a <br /> Global Force
           </h2>
 

@@ -1,152 +1,142 @@
 "use client";
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { MoveLeft, MoveRight } from 'lucide-react';
 import 'swiper/css';
+import 'swiper/css/navigation';
 
-// --- SVG Icons ---
-const DropIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-2.484 3.734-7.5 9.07-7.5 12.75a7.5 7.5 0 0015 0c0-3.68-5.016-9.016-7.5-12.75z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M10.875 18a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
-  </svg>
-);
-
-const SunIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-2.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-  </svg>
-);
-
-const FactoryIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-  </svg>
-);
-
-const RecycleIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
-  </svg>
-);
-
-// --- Component ---
 export default function SustainabilitySafety() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const swiperRef = useRef(null);
   const cards = [
     {
-      title: "WATER CONSERVATION",
-      description: "Closed-loop recycling and optimised usage on every line.",
-      Icon: DropIcon,
-      titleColor: "text-[#4a4a4a]",
+      title: "Water Conservation",
+      description: "Closed-loop recycling and optimised usage on every line. This minimizes environmental impact and ensures sustainable water usage throughout our production processes.",
       IMG: `/images/our-process/T1.jpg`,
     },
     {
-      title: "CLEAN ENERGY",
-      description: "Solar-led restructuring powers our manufacturing hubs.",
-      Icon: SunIcon,
-      titleColor: "text-[#4a4a4a]",
+      title: "Clean Energy",
+      description: "Solar-led restructuring powers our manufacturing hubs. By transitioning to renewable energy, we drastically reduce our carbon footprint and promote a cleaner future.",
       IMG: `/images/our-process/T2.jpg`,
     },
     {
-      title: "SAFE MANUFACTURING",
-      description: "Rigorous protocols and enforcement protecting our workforce.",
-      Icon: FactoryIcon,
-      titleColor: "text-[#d73921]", // Red text to match the design
+      title: "Safe Manufacturing",
+      description: "Rigorous protocols and enforcement protecting our workforce. We maintain a zero-tolerance policy for safety violations, ensuring every employee returns home safely.",
       IMG: `/images/our-process/T3.jpg`,
     },
     {
-      title: "WASTE MANAGEMENT",
-      description: "Zero waste to landfill strategy with full segregation.",
-      Icon: RecycleIcon,
-      titleColor: "text-[#4a4a4a]",
+      title: "Waste Management",
+      description: "Zero waste to landfill strategy with full segregation. We continuously innovate our material life cycles to repurpose waste streams into usable by-products.",
       IMG: `/images/our-process/T4.jpg`,
+    },
+    {
+      title: "Carbon Neutrality",
+      description: "Comprehensive emission reduction initiatives across facilities. We are committed to achieving net-zero operations by modernizing machinery and optimizing our logistics.",
+      IMG: `/images/our-process/T5.jpg`,
+    },
+    {
+      title: "Eco Packaging",
+      description: "Biodegradable materials and optimized design for minimal waste. We prioritize sustainable sourcing to ensure packaging leaves the smallest possible ecological footprint.",
+      IMG: `/images/our-process/T6.jpg`,
     }
   ];
 
   return (
-    <section className=" border-b border-black/50 py-12 md:py-24  container relative">
-
-      <div className="  ">
+    <section className=" border-b border-black/50 py-12 md:py-24 container relative overflow-hidden">
+      <div className="">
 
         {/* Header Section */}
-        <div className="md:text-center mb-8 md:mb-16 ">
-          {/* <h6 className="text-[#E30713] mb-2 uppercase">
-            Responsibility
-          </h6> */}
-          <h2 data-para-effect className="uppercase mb-2">
-            Sustainability & Safety
-          </h2>
-          <p className=" text-black mx-auto max-w-3xl  ">
-            Resource conservation, worker safety and responsible sourcing are built into how we manufacture —
-            not added on afterwards.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
+          <div className="text-left w-full md:w-2/3">
+            <h2 data-para-effect className="uppercase mb-2 text-[#000]">
+              Sustainability & Safety
+            </h2>
+            <p className="text-black max-w-3xl">
+              Resource conservation, worker safety and responsible sourcing are built into how we manufacture —
+              not added on afterwards.
+            </p>
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className="w-10 h-10 rounded-full border border-black/50 hover:border-[#e30713] flex items-center justify-center hover:bg-[#e30713] hover:text-white transition-colors"
+              aria-label="Previous Slide"
+            >
+              <MoveLeft className='size-4' />
+            </button>
+            <button
+              onClick={() => swiperRef.current?.slideNext()}
+              className="w-10 h-10 rounded-full border border-black/50 hover:border-[#e30713] flex items-center justify-center hover:bg-[#e30713] hover:text-white transition-colors"
+              aria-label="Next Slide"
+            >
+              <MoveRight className='size-4' />
+            </button>
+          </div>
         </div>
 
-        {/* Grid Section - Desktop */}
-        <div className="hidden md:grid grid-cols-2 gap-x-5 gap-y-8">
-          {cards.map((card, index) => (
-            <div key={index} className="flex flex-col">
-
-              {/* Image Container with Icon */}
-              <div className="relative w-full aspect-[16/9] rounded-md overflow-hidden mb-6">
-                <Image
-                  src={card.IMG}
-                  alt={card.title}
-                  fill
-                  className="object-cover"
-                  sizes="50vw"
-                />
-              </div>
-
-              {/* Card Text Content */}
-              <div>
-                <h5 className={`text-black uppercase mb-2 ${card.titleColor}`}>
-                  {card.title}
-                </h5>
-                <p className="text-black/70">
-                  {card.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile Swiper */}
-        <div className="block md:hidden h-fit! w-full">
+        {/* Swiper Slider */}
+        <div className="w-full relative">
           <Swiper
-            spaceBetween={10}
-            slidesPerView={1.25}
-            className="w-full h-fit!"
+            modules={[Navigation]}
+            slidesPerView={1.2}
+            breakpoints={{
+              768: { slidesPerView: 2.2 },
+              1024: { slidesPerView: 4 }
+            }}
+            spaceBetween={16}
+            onBeforeInit={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            className="w-full"
           >
-            {cards.map((card, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col">
+            {cards.map((card, index) => {
+              const isExpanded = expandedIndex === index;
 
-                  {/* Image Container with Icon */}
-                  <div className="relative w-full aspect-square rounded-md overflow-hidden mb-4">
+              return (
+                <SwiperSlide
+                  key={index}
+                >
+                  <div
+                    onClick={() => {
+                      const nextState = isExpanded ? null : index;
+                      setExpandedIndex(nextState);
+
+                    }}
+                    className="relative w-full aspect-square overflow-hidden cursor-pointer rounded-xl group"
+                  >
+                    {/* Background Image */}
                     <Image
                       src={card.IMG}
                       alt={card.title}
                       fill
-                      className="object-cover"
-                      sizes="100vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                  </div>
 
-                  {/* Card Text Content */}
-                  <div>
-                    <h5 className={`text-black uppercase mb-2 ${card.titleColor}`}>
-                      {card.title}
-                    </h5>
-                    <p className="text-black/70">
-                      {card.description}
-                    </p>
-                  </div>
+                    {/* Dark gradient for title readability */}
+                    <div className={`absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-transparent pointer-events-none transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}></div>
 
-                </div>
-              </SwiperSlide>
-            ))}
+                    {/* Always visible Top-Left Title */}
+                    <div className={`absolute top-4 left-4 right-4 md:top-6 md:left-6 transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
+                      <h5 className="text-white  uppercase ">
+                        {card.title}
+                      </h5>
+                    </div>
+
+                    {/* Sliding White Overlay */}
+                    <div className={`absolute inset-0 bg-[#e30713] p-6 md:p-8 flex flex-col justify-center transition-transform duration-500 ease-in-out ${isExpanded ? 'translate-x-0' : 'translate-x-full'
+                      }`}>
+                      <p className="text-white text-sm md:text-base ">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
         </div>
 

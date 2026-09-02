@@ -20,7 +20,6 @@ const AboutPage = () => {
       />
       <VisionMissionValues />
       <OurJourney />
-      {/* <PresentAcrossCountry /> */}
       <WhoWeAre />
       <LeadershipSection />
       <SevenSection />

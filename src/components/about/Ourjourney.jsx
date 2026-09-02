@@ -1,20 +1,82 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  Rocket,
-  Factory,
-  MapPin,
-  Truck,
-  ShoppingBag,
-  Ship,
-  Leaf,
-  Sparkles,
-} from "lucide-react";
-import Image from "next/image";
+// Custom SVG Icons perfectly tailored to the milestones
+const FactoryIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+    <path d="M17 18h1" />
+    <path d="M12 18h1" />
+    <path d="M7 18h1" />
+  </svg>
+);
+
+const TruckIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11" />
+    <path d="M14 9h4l4 4v5c0 .6-.4 1-1 1h-2" />
+    <circle cx="7" cy="18" r="2" />
+    <circle cx="17" cy="18" r="2" />
+  </svg>
+);
+
+const BottleIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M8 10v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V10" />
+    <path d="M8 10c0-2.5 1-3.5 2-5V3h4v2c1 1.5 2 2.5 2 5" />
+    <path d="M9 3h6" />
+    <path d="M10 2h4v1h-4z" />
+    <path d="M9 13h6" />
+    <path d="M9 17h6" />
+  </svg>
+);
+
+const GlobeIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
+const AmbassadorIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 2l2.4 5 5.6.8-4 3.9 1 5.3-5-2.6-5 2.6 1-5.3-4-3.9 5.6-.8L12 2z" />
+    <path d="M12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+    <path d="M17.5 19.5c-.8-2-3-3.5-5.5-3.5s-4.7 1.5-5.5 3.5" />
+  </svg>
+);
+
+const GroupIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <circle cx="9" cy="7" r="4" />
+    <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+    <circle cx="16" cy="11" r="3" />
+    <path d="M21 21v-2a3 3 0 0 0-3-3h-1" />
+  </svg>
+);
+
+const RefreshIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+    <path d="M3 3v5h5" />
+    <rect x="10" y="10" width="4" height="4" rx="1" />
+  </svg>
+);
+
+const GrowthIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+    <polyline points="17 6 23 6 23 12" />
+    <line x1="12" y1="21" x2="12" y2="21.01" />
+    <line x1="16" y1="21" x2="16" y2="21.01" />
+    <line x1="20" y1="21" x2="20" y2="21.01" />
+    <line x1="8" y1="21" x2="8" y2="21.01" />
+    <line x1="4" y1="21" x2="4" y2="21.01" />
+  </svg>
+);
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -22,96 +84,58 @@ if (typeof window !== "undefined") {
 
 const MILESTONES = [
   {
-    year: "1990",
-    label: "A Humble Beginning",
-    icon: Rocket,
-    tone: "dark",
-    image:
-      "/images/journey/journey_1990.png",
-    copy:
-      "A single trader stall in Nashik grows into a promise: honest, unadulterated Indian spice, ground fresh every morning.",
+    year: "1994",
+    icon: FactoryIcon,
+    color: "#1E5631",
+    copy: "ESFL was established in 1994",
   },
   {
-    year: "1998",
-    label: "The First Factory",
-    icon: Factory,
-    tone: "dark",
-    image:
-      "/images/journey/journey_1998.png",
-    copy:
-      "Our first mechanised grinding and blending unit takes the craft to industrial scale without touching the recipes.",
+    year: "2003-04",
+    icon: TruckIcon,
+    color: "#659C24",
+    copy: "We started spreading our distribution network outside Maharashtra",
   },
   {
-    year: "2006",
-    label: "Across Maharashtra",
-    icon: MapPin,
-    tone: "light",
-    image:
-      "/images/journey/journey_2006.png",
-    copy:
-      "Ram Bandhu becomes a household name on every kirana shelf in the western belt of the country.",
-  },
-  {
-    year: "2014",
-    label: "Pan-India Distribution",
-    icon: Truck,
-    tone: "light",
-    image:
-      "/images/journey/journey_2014.png",
-    copy:
-      "A dedicated cold-chain and logistics network carries ESFL flavour from the coasts to the Himalayan foothills.",
+    year: "2012-13",
+    icon: BottleIcon,
+    color: "#E67E22",
+    copy: "Brand Temptin' was launched with the contemporary product ranges of ketchup & sauces",
   },
   {
     year: "2018",
-    label: "Retail Revolution",
-    icon: ShoppingBag,
-    tone: "light",
-    image:
-      "/images/journey/journey_2018.png",
-    copy:
-      "Modern trade partnerships put ESFL on the shelf of every major supermarket chain in the country.",
+    icon: GlobeIcon,
+    color: "#2874A6",
+    copy: "ESFL started exporting its products overseas. And as of date we are exporting to 20 countries",
   },
   {
     year: "2021",
-    label: "Going Global",
-    icon: Ship,
-    tone: "light",
-    image:
-      "/images/journey/journey_2021.png",
-    copy:
-      "First container ships out — ESFL spice blends reach kitchens across the Gulf, the UK, and beyond.",
+    icon: AmbassadorIcon,
+    color: "#C0392B",
+    copy: "Madhuri Dixit Nene was appointed as the brand ambassador of brand Ram Bandhu",
   },
   {
-    year: "2023",
-    label: "Sustainable Sourcing",
-    icon: Leaf,
-    tone: "light",
-    image:
-      "/images/journey/journey_2023.png",
-    copy:
-      "Direct farmer partnerships and traceable sourcing make every batch accountable from soil to sachet.",
+    year: "2022",
+    icon: GroupIcon,
+    color: "#6C3483",
+    copy: "Popular cartoon characters of Chhota Bheem & family became the ambassador of Temptin' brand's Tomato Ketchup & sauces range",
   },
   {
-    year: "2024",
-    label: "The Next Chapter",
-    icon: Sparkles,
-    tone: "light",
-    image:
-      "/images/journey/journey_2024.png",
-    copy:
-      "A new R&D kitchen opens its doors, built to carry a hundred-year-old promise into the next hundred.",
+    year: "2022",
+    icon: RefreshIcon,
+    color: "#A93226",
+    copy: "Ram Bandhu brand logo evolved into a new avatar - the current logo",
+  },
+  {
+    year: "2024-25",
+    icon: GrowthIcon,
+    color: "#D4AC0D",
+    copy: "ESFL crossed the INR 300 crore business revenue mark",
   },
 ];
-
-// number of gaps/segments between the 8 years = 7
-const SEGMENT_COUNT = MILESTONES.length - 1;
 
 export default function OurJourney() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
-  const segmentRefs = useRef([]); // 7 line segments, one per gap between years
-  const dotRefs = useRef([]);
-  const yearItemRefs = useRef([]);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -119,8 +143,13 @@ export default function OurJourney() {
     if (!section || !track) return;
 
     const ctx = gsap.context(() => {
-      const getScrollDistance = () =>
-        Math.max(track.scrollWidth - section.clientWidth, 0);
+      const getScrollDistance = () => {
+        if (!track || !track.parentElement) return 0;
+        return Math.max(
+          track.scrollWidth - track.parentElement.clientWidth + (track.offsetLeft * 2),
+          0
+        );
+      };
 
       const st = ScrollTrigger.create({
         trigger: section,
@@ -129,41 +158,7 @@ export default function OurJourney() {
         scrub: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
-          const distance = getScrollDistance();
-          // Move the card track right -> left
-          gsap.set(track, { x: -distance * self.progress });
-
-          // Each segment i covers scroll-progress range [i/N, (i+1)/N].
-          // Within that range it fills continuously 0 -> 1 with scroll.
-          // Once progress crosses into the next range, this segment stays
-          // fully filled (the "break" happens visually at the gap between
-          // segments) and the next one starts filling from scratch.
-          segmentRefs.current.forEach((seg, i) => {
-            if (!seg) return;
-            const segStart = i / SEGMENT_COUNT;
-            const segEnd = (i + 1) / SEGMENT_COUNT;
-            const raw = (self.progress - segStart) / (segEnd - segStart);
-            const segProgress = Math.min(Math.max(raw, 0), 1);
-            gsap.set(seg, { scaleX: segProgress });
-          });
-
-          // Light up year dots + reveal year labels as each threshold is passed
-          dotRefs.current.forEach((dot, i) => {
-            if (!dot) return;
-            const threshold = i / (MILESTONES.length - 1);
-            const reached = self.progress >= threshold;
-
-            dot.classList.toggle("bg-red-600", reached);
-            dot.classList.toggle("bg-neutral-300", !reached);
-
-            const item = yearItemRefs.current[i];
-            if (item) {
-              item.classList.toggle("opacity-100", reached);
-              item.classList.toggle("translate-y-0", reached);
-              item.classList.toggle("opacity-0", !reached);
-              item.classList.toggle("translate-y-2", !reached);
-            }
-          });
+          gsap.set(track, { x: -getScrollDistance() * self.progress });
         },
       });
 
@@ -178,81 +173,32 @@ export default function OurJourney() {
       ref={sectionRef}
       className="relative w-full h-[400vh]"
     >
-      <div className="sticky top-0 w-full h-screen overflow-hidden">
-        <div className="flex h-full flex-col justify-between gap-5   pt-24  pb-[3vh]">
+      <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#FDF8F0]">
+        <div className=" flex h-full flex-col justify-center gap-8 md:gap-12 pt-[12vh]">
+
           {/* Heading */}
-          <div className=" md:mx-auto md:max-w-2xl md:text-center px-4 space-y-2">
-            <h2 data-para-effect className="">
+          <div className="md:mx-auto md:max-w-2xl md:text-center px-4">
+            <h2 data-para-effect className="mb-4 text-3xl md:text-5xl font-bold uppercase tracking-wider text-black">
               OUR JOURNEY
             </h2>
-            <p className="">
-              From one storefront in Nashik to a global <br /> spice house  the road
-              that shaped ESFL.
+            <p className="text-lg md:text-xl text-black/70">
+              From one storefront in Nashik to a global <br className="hidden md:block" /> spice house — the road that shaped ESFL.
             </p>
           </div>
 
           {/* Horizontal card track */}
-          <div className="relative w-full max-sm:h-full max-sm:flex max-sm:items-center overflow-hidden">
+          <div className="relative w-full overflow-hidden px-4 md:px-10 flex-grow flex items-center">
+
             <div
               ref={trackRef}
-              className="flex w-max px-6 will-change-transform sm:px-10"
+              className="relative flex items-start will-change-transform  gap-5"
             >
-              {MILESTONES.map((m) => (
-                <Card key={m.year} milestone={m} />
-              ))}
-            </div>
-          </div>
 
-          {/* Bottom timeline — constrained to 70vw, centered */}
-          <div className=" mx-auto w-full md:w-[90vw] max-sm:hidden px-6">
-            {/* Segments Grid */}
-            <div className="relative grid grid-cols-7 gap-1 w-full h-[3px]">
-              {Array.from({ length: SEGMENT_COUNT }).map((_, i) => (
-                <div
-                  key={i}
-                  className="relative h-full w-full overflow-hidden rounded-full bg-neutral-200"
-                >
-                  <div
-                    ref={(el) => (segmentRefs.current[i] = el)}
-                    className="absolute left-0 top-0 h-full w-full origin-left scale-x-0 rounded-full bg-red-600"
-                  />
-                </div>
+              {MILESTONES.map((m, i) => (
+                <Card key={i} milestone={m} index={i} />
               ))}
             </div>
 
-            {/* Years Grid */}
-            <div className="relative grid grid-cols-7 gap-1 w-full mt-1">
-              {MILESTONES.map((m, i) => {
-                const isLast = i === SEGMENT_COUNT;
-                // Last item shares the last column with the second-to-last item, but aligns to the right
-                const col = isLast ? SEGMENT_COUNT : i + 1;
-
-                return (
-                  <div
-                    key={m.year}
-                    ref={(el) => (yearItemRefs.current[i] = el)}
-                    className={`flex translate-y-2 items-center opacity-0 transition-all duration-500 ease-out ${isLast ? "relative" : "gap-1.5"}`}
-                    style={{
-                      gridColumn: col,
-                      gridRow: 1,
-                      justifySelf: isLast ? "end" : "start",
-                      // Shift the intermediate items left by 5px to center the 6px dot directly under the 4px gap
-                      marginLeft: !isLast && i > 0 ? "-0.25rem" : "0",
-                    }}
-                  >
-                    <span
-                      ref={(el) => (dotRefs.current[i] = el)}
-                      className="h-1.5 w-1.5 shrink-0 bg-neutral-300 transition-colors duration-200"
-                    />
-                    <span
-                      className={` text-[9px] md:text-sm text-neutral-500 ${isLast ? "absolute left-full ml-1.5" : ""}`}
-                    >
-                      {m.year}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </div>
@@ -260,45 +206,88 @@ export default function OurJourney() {
   );
 }
 
-function Card({ milestone }) {
+function Card({ milestone, index }) {
   const Icon = milestone.icon;
+  const color = milestone.color;
+  const iconRef = useRef(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const el = iconRef.current;
+      if (!el) return;
+      
+      // Get all SVG geometry elements inside the Lucide icon
+      const shapes = el.querySelectorAll("path, circle, rect, line, polyline, polygon");
+      
+      shapes.forEach((shape) => {
+        // Calculate the exact length of the shape's path
+        const length = shape.getTotalLength ? shape.getTotalLength() : 100;
+        
+        // Set up the dashed stroke to be exactly the length of the path, and hide it by offsetting it entirely
+        gsap.set(shape, {
+          strokeDasharray: length,
+          strokeDashoffset: length,
+        });
+        
+        // Animate the offset to 0 to "draw" the icon, then reverse to "undraw"
+        gsap.to(shape, {
+          strokeDashoffset: 0,
+          duration: 2,
+          ease: "power2.inOut",
+          repeat: -1,
+          yoyo: true,
+          repeatDelay: 0.5,
+          delay: index * 0.1, // Slight stagger between cards looks nice
+        });
+      });
+    });
+    return () => ctx.revert();
+  }, [index]);
 
   return (
-    <div
-      className=" group border border-black/10 relative flex  p-5 w-[90vw] md:w-[50vw]  lg:w-[30vw] rounded-lg   shrink-0 flex-col  overflow-hiddens bg-[#FDF6EC]  ml-2   transition-colors duration-300 ease-out    hover:bg-[#F5C451]   "
-    >
-      {/* Image */}
-      <div className="relative aspect-square md:aspect-video w-full shrink-0 overflow-hidden rounded-sm">
-        <Image
-          fill
-          src={milestone.image}
-          alt={milestone.label}
-          className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 `}
-        />
-        <div className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-md bg-red-600 text-white">
-          <Icon size={16} strokeWidth={2.25} />
+    <div className="flex flex-col items-center w-[25rem] shrink-0 relative group">
+
+      {/* Icon Badge */}
+      <div
+        className="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-[3px] md:border-4 flex items-center justify-center bg-[#FDF8F0] z-10 transition-transform duration-300 group-hover:scale-105 shadow-sm"
+        style={{ borderColor: color, color: color }}
+      >
+        <div ref={iconRef}>
+          <Icon className="w-8 h-8 md:w-10 md:h-10" strokeWidth={1.5} />
         </div>
+
+        {/* Downward triangle indicator */}
+        <div
+          className="absolute -bottom-3 md:-bottom-4 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] md:border-t-[14px]"
+          style={{ borderTopColor: color }}
+        ></div>
       </div>
 
-      {/* Content */}
-      <div className="relative space-y-5 pt-4">
-        <div className="flex justify-between">
-          <h5
-            className="mb-2  uppercase tracking-wide text-red-600 transition-colors duration-300 group-hover:text-[#E30712]"
-          >
-            {milestone.label}
-          </h5>
-          <p
-            className="mb-1  text-xs  tracking-wide text-neutral-400 transition-colors duration-300 group-hover:text-[#E30712]"
-          >
-            {milestone.year}
-          </p>
-        </div>
-        <p
-          className=" text-sm transition-colors duration-300 group-hover:text-[#E30712]"
-        >
+      {/* Connecting Vertical Line (Top) */}
+      <div className="h-6 md:h-8 w-[3px]" style={{ backgroundColor: color }}></div>
+
+      {/* Text Card */}
+      <div
+        className="w-full bg-[#fcf9f2] border border-black/10 rounded-2xl flex flex-col items-center p-6 text-center shadow-sm relative h-[220px] md:h-[240px] transition-transform duration-300 group-hover:-translate-y-1"
+        style={{ borderTop: `4px solid ${color}` }}
+      >
+        <h3 className="font-bold text-2xl md:text-3xl mb-3" style={{ color: color }}>
+          {milestone.year}
+        </h3>
+        <p className="text-sm md:text-base text-black/80 leading-relaxed font-medium">
           {milestone.copy}
         </p>
+      </div>
+
+      {/* Connecting Vertical Line (Bottom) */}
+      <div className="h-8 md:h-10 w-[3px]" style={{ backgroundColor: color }}></div>
+
+      {/* Timeline Node Number */}
+      <div
+        className="relative w-10 h-10 md:w-12 md:h-12 rounded-full text-white flex items-center justify-center font-bold text-lg md:text-xl z-10 shadow-md transition-transform duration-300 group-hover:scale-110"
+        style={{ backgroundColor: color }}
+      >
+        {index + 1}
       </div>
     </div>
   );
