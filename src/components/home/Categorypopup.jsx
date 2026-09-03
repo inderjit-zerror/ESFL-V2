@@ -141,7 +141,7 @@ export default function CategoryPopup({
     <section
       ref={sectionRef}
       // "relative" is crucial here to contain absolute buttons
-      className="relative flex items-center justify-center w-full max-w-[95vw] sm:max-w-max   rounded-2xl"
+      className="relative flex items-center justify-center w-full max-w-[95vw] sm:max-w-max   rounded-xl"
     >
       {/* Prev */}
       <button
@@ -169,7 +169,7 @@ export default function CategoryPopup({
 
       {/* Image Container */}
       <div
-        className="relative w-full sm:w-auto bg-white overflow-hidden rounded-2xl shadow-md"
+        className="relative w-full sm:w-auto bg-white overflow-hidden rounded-xl shadow-md"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >

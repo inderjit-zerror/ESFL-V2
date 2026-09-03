@@ -86,11 +86,11 @@ export default function ManufacturingJourney() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {pillars.map((pillar) => (
             <div
               key={pillar.id}
-              className="pillar-card group relative bg-[#E30713] rounded-2xl p-5 border text-[#fac05e] border-black/5 h-80 flex flex-col justify-between"
+              className="pillar-card group relative bg-[#E30713] rounded-xl p-5 border text-white border-black/5 h-80 flex flex-col justify-between"
             >
               <div className="pattern_bg"></div>
 

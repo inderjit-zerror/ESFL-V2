@@ -193,7 +193,7 @@ const InfiniteScroller = () => {
         {/* <h6 className="  text-[#fcb62d] uppercase">
           Culture
         </h6> */}
-        <h2 data-para-effect className="  text-[#fcb62d] uppercase">
+        <h2 data-para-effect className="  text-[#ffffff] uppercase">
           Life at ESFL
         </h2>
       </div>

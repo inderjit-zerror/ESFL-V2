@@ -79,7 +79,7 @@ export default function BrandSection({
         </div>
 
         {/* Right Image */}
-        <div className="relative w-full aspect-square md:h-full group overflow-hidden bg-cyan-600 ">
+        <div className="relative w-full aspect-square md:h-full group overflow-hidden ">
 
           <Image
             src={heroImage}

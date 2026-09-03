@@ -117,7 +117,7 @@ export default function OfficeInfoMap() {
         />
 
         {/* Custom pin card overlay */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-4 max-w-[78%] sm:max-w-[280px] sm:top-auto sm:translate-y-0 h-fit flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] sm:bottom-10 sm:right-10">
+        <div className="absolute top-1/2 -translate-y-1/2 right-4 max-w-[78%] sm:max-w-[280px] sm:top-auto sm:translate-y-0 h-fit flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] sm:bottom-10 sm:right-10">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E30713] text-white">
             <svg
               width="16"
@@ -145,7 +145,7 @@ export default function OfficeInfoMap() {
       </div>
 
       {/* Info panel — right on desktop, top on mobile */}
-      <div className=" z-10 relative flex flex-col justify-center gap-5 sm:gap-6 px-6 py-10 sm:px-8 sm:py-12 md:px-14 md:py-16">
+      <div className=" z-10 relative flex flex-col justify-center gap-4 sm:gap-6 px-6 py-10 sm:px-8 sm:py-12 md:px-14 md:py-16">
         {INFO_ROWS.map((section, i) => (
           <div className="oi-row" key={section.id}>
             <RowBlock

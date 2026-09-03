@@ -43,7 +43,7 @@ export default function LeadershipSection() {
   const swiperRef = useRef(null);
 
   return (
-    <section className="border-b border-black/50 py-12 md:py-24 container">
+    <section className=" pt-12 md:pt-24 container">
       <div className="">
 
         {/* Header Section */}
@@ -80,8 +80,8 @@ export default function LeadershipSection() {
           slidesPerView={1.1}
           breakpoints={{
             768: {
-              slidesPerView: 1.5,
-              spaceBetween:10
+              slidesPerView: 1.7,
+              spaceBetween: 10
             },
           }}
           onBeforeInit={(swiper) => {
@@ -90,31 +90,48 @@ export default function LeadershipSection() {
           className="w-full"
         >
           {teamMembers.map((member) => (
-            <SwiperSlide key={member.id} className='!h-auto'>
-              <div className="flex h-full flex-col md:flex-row border items-start border-black/20 p-5 md:p-8 rounded-md gap-x-5 max-sm:gap-y-5 md:gap-x-10">
-
-                {/* Left side: Image and Info */}
-                <div className="relative w-[10rem] shrink-0 aspect-square rounded-md overflow-hidden">
-                  <Image
-                    fill
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="object-contain"
-                  />
+            <SwiperSlide key={member.id} className='md:h-auto!'>
+              <div className=" group flex h-full flex-col md:flex-row bg-[#ffffff] text-black hover:bg-[#e30713] transition-colors duration-300 hover:text-white p-4 md:p-5 rounded-xl gap-4 md:gap-6 border border-black/5">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="pattern_bg"></div>
                 </div>
 
-                {/* Right side: Description */}
-                <div className="w-full flex h-full flex-col gap-y-5 justify-between">
-                  <p className="">
-                    {member.description}
-                  </p>
-                  <div className="">
-                    <h5 className="uppercase ">
+                {/* Left side: Image */}
+                <div className="flex w-full">
+
+                  <div className="relative w-[30%] md:w-[18rem] shrink-0 aspect-[3/4] rounded-lg overflow-hidden">
+                    <Image
+                      fill
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="object-cover scale-150"
+                    />
+                  </div>
+                  <div className=" pl-5 flex  flex-col justify-end md:hidden">
+                    <h5 className="">
                       {member.name}
                     </h5>
-                    <h6 className="text-sm  opacity-70 mt-1 uppercase">
+                    <p className="text-sm mt-1">
                       {member.role}
-                    </h6>
+                    </p>
+                  </div>
+
+                </div>
+                {/* Right side: Content */}
+                <div className="flex flex-col justify-between ">
+                  <div>
+                    <p className="text-sm md:text-base ">
+                      {member.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 hidden md:block md:mt-8">
+                    <h5 className="">
+                      {member.name}
+                    </h5>
+                    <p className="text-sm mt-1">
+                      {member.role}
+                    </p>
                   </div>
                 </div>
 

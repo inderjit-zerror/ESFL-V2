@@ -3,10 +3,10 @@ import Image from "next/image";
 export default function WhoWeAre() {
   return (
     <section className="w-full border-b border-black/50 container   py-12 md:py-24  ">
-      <div className="  grid  grid-cols-1 md:grid-cols-2 gap-x-20">
+      <div className="  grid  grid-cols-1 md:grid-cols-2 ">
         {/* Left: Image with badge */}
         <div className="relative h-full">
-          <div className="relative max-sm:aspect-square w-full h-full overflow-hidden rounded-sm">
+          <div className="relative max-sm:aspect-square w-full h-full overflow-hidden">
             <Image fill
               src="/images/about/IMG30.jpg"
               alt="Assorted Indian spices in bowls — turmeric, chili powder, coriander, salt and fresh coriander leaves"
@@ -26,7 +26,7 @@ export default function WhoWeAre() {
         </div>
 
         {/* Right: Content */}
-        <div>
+        <div className="md:pl-12">
           {/* <h6 className="text-red max-sm:mt-5 uppercase mb-2">Who We Are</h6> */}
 
           <h2 data-para-effect className=" uppercase max-sm:mt-5">
@@ -60,7 +60,7 @@ export default function WhoWeAre() {
             ].map((stat) => (
               <div
                 key={stat}
-                className="inline-flex items-center justify-center rounded-sm bg-[#F5C451] px-4 py-2.5 text-center uppercase text-xs"
+                className="inline-flex items-center justify-center rounded-full bg-red text-white px-4 py-2.5 text-center uppercase text-xs"
               >
                 {stat}
               </div>

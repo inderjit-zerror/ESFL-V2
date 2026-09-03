@@ -103,21 +103,21 @@ export default function PresentAcrossCountry() {
 
         <div className="relative container w-full flex flex-col items-center justify-center space-y-12 md:space-y-20 z-10">
           {/* Top: headline + description */}
-          <div className="relative max-w-4xl mx-auto space-y-6 text-center psac-fade">
+          <div className="relative md:max-w-4xl mx-auto space-y-6 md:text-center psac-fade">
             <h2 data-para-effect className=" uppercase">
               Present Across the Country to Serve You Incessantly
             </h2>
 
-            <p className="max-w-3xl mt-5">
+            <p className="md:max-w-3xl mt-5">
               ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
               Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
             </p>
           </div>
 
           {/* Bottom: stats grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 w-full">
             {stats.map((stat, i) => (
-              <div key={stat.id} className=" relative rounded-2xl bg-red p-6 h-44 md:h-fit md:aspect-4/3 flex flex-col justify-between">
+              <div key={stat.id} className=" relative rounded-xl bg-red p-6 h-44 md:h-fit md:aspect-square flex flex-col justify-between">
                 <div className="pattern_bg"></div>
 
                 <p className=" uppercase relative z-10 text-white font-medium">
@@ -125,7 +125,7 @@ export default function PresentAcrossCountry() {
                 </p>
                 <p
                   ref={(el) => (numberRefs.current[i] = el)}
-                  className=" text-5xl md:text-7xl! relative z-10 font-semibold text-[#f5c451]"
+                  className=" text-5xl md:text-8xl! relative z-10 font-semibold text-[#f5c451]"
                 >
                   0{stat.suffix}
                 </p>

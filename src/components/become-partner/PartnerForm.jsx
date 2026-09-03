@@ -61,7 +61,7 @@ export default function PartnerForm() {
         <section ref={sectionRef} className="overflow-hidden container py-12 md:py-24 border-b border-black/50">
 
                 <div className="md:max-w-5xl mx-auto">
-                    <h2 data-para-effect className="uppercase mb-2 md:text-center">
+                    <h2 className="uppercase mb-2 md:text-center">
                         APPLICATION FORM
                     </h2>
                     <p className="mb-5 md:text-center">
@@ -70,7 +70,7 @@ export default function PartnerForm() {
 
                     <form onSubmit={handleSubmit} className="grid pt-8 md:pt-16 grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6">
                         <div ref={registerField}>
-                            <Label htmlFor="applyFor">1. What do you want to apply for?</Label>
+                            <Label htmlFor="applyFor">What do you want to apply for?</Label>
                             <Select
                                 id="applyFor"
                                 required
@@ -88,7 +88,7 @@ export default function PartnerForm() {
                         </div>
 
                         <div ref={registerField} className="">
-                            <Label htmlFor="occupation">3. Your Occupation</Label>
+                            <Label htmlFor="occupation">Your Occupation</Label>
                             <Select
                                 id="occupation"
                                 required
@@ -104,11 +104,11 @@ export default function PartnerForm() {
                             </Select>
                         </div>
                         <div ref={registerField}>
-                            <Label htmlFor="fullName">2. Your Name</Label>
+                            <Label htmlFor="fullName">Your Name</Label>
                             <Input id="fullName" required placeholder="e.g. Rahul Sharma" value={form.fullName} onChange={handleChange("fullName")} />
                         </div>
                         <div ref={registerField}>
-                            <Label htmlFor="email">6. Email ID</Label>
+                            <Label htmlFor="email">Email ID</Label>
                             <Input id="email" required type="email" placeholder="rahul@example.com" value={form.email} onChange={handleChange("email")} />
                         </div>
 
@@ -142,7 +142,7 @@ export default function PartnerForm() {
                         {isDistributionBusiness && (
                             <div className="md:col-span-2 space-y-6 p-4 border border-black/10 rounded-md bg-black/5">
                                 <Label className="!text-sm font-semibold !opacity-100 mb-4 block">
-                                    4. Distribution/SS/Stockist Business Details
+                                    Distribution/SS/Stockist Business Details
                                 </Label>
 
                                 <div className="grid gap-3 grid-cols-1 md:grid-cols-2">
@@ -249,18 +249,18 @@ export default function PartnerForm() {
                         )}
 
                         <div ref={registerField}>
-                            <Label htmlFor="phone">5. Your contact no.</Label>
+                            <Label htmlFor="phone">Your contact no.</Label>
                             <Input id="phone" required type="tel" placeholder="+91 00000 00000" value={form.phone} onChange={handleChange("phone")} />
                         </div>
 
 
                         <div ref={registerField} className="">
-                            <Label htmlFor="convenientTime">7. Convenient time to contact you</Label>
+                            <Label htmlFor="convenientTime">Convenient time to contact you</Label>
                             <Input id="convenientTime" placeholder="e.g. 10 AM to 2 PM" value={form.convenientTime} onChange={handleChange("convenientTime")} />
                         </div>
 
                         <div ref={registerField} className="md:col-span-2">
-                            <Label htmlFor="proposalQuery">8. Your proposal/query</Label>
+                            <Label htmlFor="proposalQuery">Your proposal/query</Label>
                             <Textarea
                                 id="proposalQuery"
                                 required

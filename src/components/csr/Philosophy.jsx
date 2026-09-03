@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Philosophy = () => {
   return (
-    <section className="w-full border-b border-black/50 py-12 md:py-24 container">
+    <section className="w-full pt-12 md:pt-24 container">
       <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
         {/* Left: Image */}
         <div className="relative w-full aspect-square rounded-md md:aspect-video overflow-hidden">

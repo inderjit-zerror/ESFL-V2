@@ -7,7 +7,7 @@ export function Label({ children, htmlFor, className = "" }) {
   return (
     <label
       htmlFor={htmlFor}
-      className={`mb-2 block text-xs opacity-50 uppercase ${className}`}
+      className={`mb-2 block text-xs  uppercase ${className}`}
     >
       {children}
     </label>
@@ -18,7 +18,7 @@ export function Input({ className = "", ...props }) {
   return (
     <input
       {...props}
-      className={`w-full border rounded-md border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
+      className={`w-full border rounded-md border-black/5 bg-[#ffffff] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
     />
   );
 }
@@ -27,7 +27,7 @@ export function Textarea({ className = "", ...props }) {
   return (
     <textarea
       {...props}
-      className={`w-full rounded-md h-32 resize-none border border-black/5 bg-[#FCF8F2] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
+      className={`w-full rounded-md h-44 resize-none border border-black/5 bg-[#ffffff] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
     />
   );
 }
@@ -89,7 +89,7 @@ export function Select({ className = "", children, label, ...props }) {
         onClick={() => setIsOpen(!isOpen)}
         className={`w-full rounded-md relative flex items-center justify-between border ${
           isOpen ? "border-[#C4321B]" : "border-black/5"
-        } bg-[#FCF8F2] px-4 py-3 cursor-pointer text-sm outline-none transition-colors duration-300 ${textColor} ${className}`}
+        } bg-[#ffffff] px-4 py-3 cursor-pointer text-sm outline-none transition-colors duration-300 ${textColor} ${className}`}
       >
         <span className="truncate">{displayText}</span>
         <RiArrowDownSLine

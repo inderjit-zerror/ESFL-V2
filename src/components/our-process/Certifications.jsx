@@ -96,7 +96,7 @@ export default function Certifications() {
           {/* <h6 className="text-[#F5C451] uppercase mb-2">
             Accredited & Audited
           </h6> */}
-          <h2 data-para-effect className="text-[#F5C451] uppercase mb-2">
+          <h2 data-para-effect className="text-white uppercase mb-2">
             Quality & Process <br /> Certifications
           </h2>
           <p className="">
@@ -117,7 +117,7 @@ export default function Certifications() {
               </div>
 
               <div className="mt-auto">
-                <p className="text-sm   opacity-90 transition-colors duration-300 text-[#E30713]">
+                <p className="text-sm  leading-tight  opacity-90 transition-colors duration-300 text-[#E30713]">
                   {cert.subtitle}
                 </p>
               </div>
@@ -132,10 +132,10 @@ export default function Certifications() {
               key={stat.id}
               className="cert-card group bg-[#ffffff] p-5 h-52 flex flex-col justify-between rounded-xl cursor-pointer transition-colors duration-300 hover:bg-[#F5C451]"
             >
-              <h3 data-para-effect className="text-3xl md:text-4xl    mb-3 transition-colors duration-300 text-[#E30713]">
+              <h3 data-para-effect className=" md:text-5xl!   mb-3 transition-colors duration-300 text-[#E30713]">
                 {stat.value}
               </h3>
-              <p className="text-sm  opacity-90 transition-colors duration-300 text-[#E30713]">
+              <p className="md:text-sm  leading-tight opacity-90 transition-colors duration-300 text-[#E30713]">
                 {stat.label}
               </p>
             </div>

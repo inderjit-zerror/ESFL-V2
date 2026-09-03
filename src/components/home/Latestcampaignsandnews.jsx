@@ -169,7 +169,7 @@ export default function LatestCampaignsAndNews() {
             speed={800}
             breakpoints={{
               0: { slidesPerView: 1.1},
-              768: { slidesPerView: 3, spaceBetween:20 },
+              768: { slidesPerView: 3, spaceBetween:16 },
             }}
             onSwiper={(swiper) => {
               setSwiperInstance(swiper);
@@ -185,7 +185,7 @@ export default function LatestCampaignsAndNews() {
               <SwiperSlide key={item.id}>
                 <div className="flex flex-col group h-full">
                   <div
-                    className={`aspect-[4/3] rounded-lg overflow-hidden relative ${item.type === "video" ? "cursor-pointer" : ""
+                    className={`aspect-[4/3] rounded-xl overflow-hidden relative ${item.type === "video" ? "cursor-pointer" : ""
                       }`}
                     onClick={() => {
                       if (item.type === "video") setActiveVideo(item);

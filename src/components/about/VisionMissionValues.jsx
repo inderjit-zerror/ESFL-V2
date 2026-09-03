@@ -81,13 +81,13 @@ export default function VisionMissionValues() {
           {/* <h6 className="text-[#fac05e] uppercase mb-2">
             Quality & Process Certifications
           </h6> */}
-          <h2 data-para-effect className="text-[#fac05e] uppercase">
+          <h2 data-para-effect className="text-white uppercase">
             Vision, Mission & Values
           </h2>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {cards.map((card) => (
             <div
               key={card.id}

@@ -79,7 +79,7 @@ const PhotoGallery = () => {
           </div>
           <button
             onClick={shuffleGrid}
-            className="mt-6 md:mt-0 flex items-center gap-2 text-sm   text-[#f05a28] hover:text-[#d04a1f] transition-colors uppercase tracking-widest group"
+            className="mt-6 md:mt-0 flex items-center gap-2 text-sm   text-[#f05a28] hover:text-[#d04a1f] transition-colors uppercase   group"
           >
             Next
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>

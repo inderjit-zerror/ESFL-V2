@@ -86,49 +86,49 @@ const MILESTONES = [
   {
     year: "1994",
     icon: FactoryIcon,
-    color: "#1E5631",
+    color: "#e30713",
     copy: "ESFL was established in 1994",
   },
   {
     year: "2003-04",
     icon: TruckIcon,
-    color: "#659C24",
+    color: "#e30713",
     copy: "We started spreading our distribution network outside Maharashtra",
   },
   {
     year: "2012-13",
     icon: BottleIcon,
-    color: "#E67E22",
+    color: "#e30713",
     copy: "Brand Temptin' was launched with the contemporary product ranges of ketchup & sauces",
   },
   {
     year: "2018",
     icon: GlobeIcon,
-    color: "#2874A6",
+    color: "#e30713",
     copy: "ESFL started exporting its products overseas. And as of date we are exporting to 20 countries",
   },
   {
     year: "2021",
     icon: AmbassadorIcon,
-    color: "#C0392B",
+    color: "#e30713",
     copy: "Madhuri Dixit Nene was appointed as the brand ambassador of brand Ram Bandhu",
   },
   {
     year: "2022",
     icon: GroupIcon,
-    color: "#6C3483",
+    color: "#e30713",
     copy: "Popular cartoon characters of Chhota Bheem & family became the ambassador of Temptin' brand's Tomato Ketchup & sauces range",
   },
   {
     year: "2022",
     icon: RefreshIcon,
-    color: "#A93226",
+    color: "#e30713",
     copy: "Ram Bandhu brand logo evolved into a new avatar - the current logo",
   },
   {
     year: "2024-25",
     icon: GrowthIcon,
-    color: "#D4AC0D",
+    color: "#e30713",
     copy: "ESFL crossed the INR 300 crore business revenue mark",
   },
 ];
@@ -174,14 +174,14 @@ export default function OurJourney() {
       className="relative w-full h-[400vh]"
     >
       <div className="sticky top-0 w-full h-screen overflow-hidden bg-[#FDF8F0]">
-        <div className=" flex h-full flex-col justify-center gap-8 md:gap-12 pt-[12vh]">
+        <div className=" flex h-full flex-col justify-center gap-8 md:gap-12 pt-[15vh]">
 
           {/* Heading */}
           <div className="md:mx-auto md:max-w-2xl md:text-center px-4">
-            <h2 data-para-effect className="mb-4 text-3xl md:text-5xl font-bold uppercase tracking-wider text-black">
+            <h2 data-para-effect className="mb-4 text-black">
               OUR JOURNEY
             </h2>
-            <p className="text-lg md:text-xl text-black/70">
+            <p className="">
               From one storefront in Nashik to a global <br className="hidden md:block" /> spice house — the road that shaped ESFL.
             </p>
           </div>
@@ -191,7 +191,7 @@ export default function OurJourney() {
 
             <div
               ref={trackRef}
-              className="relative flex items-start will-change-transform  gap-5"
+              className="relative flex items-start will-change-transform  gap-4"
             >
 
               {MILESTONES.map((m, i) => (
@@ -211,41 +211,57 @@ function Card({ milestone, index }) {
   const color = milestone.color;
   const iconRef = useRef(null);
 
+  const cardRef = useRef(null);
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       const el = iconRef.current;
-      if (!el) return;
-      
+      const cardEl = cardRef.current;
+      if (!el || !cardEl) return;
+
       // Get all SVG geometry elements inside the Lucide icon
       const shapes = el.querySelectorAll("path, circle, rect, line, polyline, polygon");
-      
+      const tl = gsap.timeline({ paused: true });
+
       shapes.forEach((shape) => {
         // Calculate the exact length of the shape's path
         const length = shape.getTotalLength ? shape.getTotalLength() : 100;
-        
-        // Set up the dashed stroke to be exactly the length of the path, and hide it by offsetting it entirely
+
+        // Make it fully visible by default so it looks good on mobile
         gsap.set(shape, {
           strokeDasharray: length,
-          strokeDashoffset: length,
-        });
-        
-        // Animate the offset to 0 to "draw" the icon, then reverse to "undraw"
-        gsap.to(shape, {
           strokeDashoffset: 0,
-          duration: 2,
-          ease: "power2.inOut",
-          repeat: -1,
-          yoyo: true,
-          repeatDelay: 0.5,
-          delay: index * 0.1, // Slight stagger between cards looks nice
         });
+
+        // Undraw and then redraw on hover
+        tl.to(shape, {
+          strokeDashoffset: length,
+          duration: 0.4,
+          ease: "power2.in",
+        }, 0).to(shape, {
+          strokeDashoffset: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        }, 0.4);
       });
+
+      const onEnter = () => {
+        if (!tl.isActive()) {
+          tl.restart();
+        }
+      };
+
+      cardEl.addEventListener("mouseenter", onEnter);
+
+      return () => {
+        cardEl.removeEventListener("mouseenter", onEnter);
+      };
     });
     return () => ctx.revert();
-  }, [index]);
+  }, []);
 
   return (
-    <div className="flex flex-col items-center w-[25rem] shrink-0 relative group">
+    <div ref={cardRef} className=" flex flex-col items-center w-[25rem] shrink-0 relative group">
 
       {/* Icon Badge */}
       <div
@@ -268,27 +284,20 @@ function Card({ milestone, index }) {
 
       {/* Text Card */}
       <div
-        className="w-full bg-[#fcf9f2] border border-black/10 rounded-2xl flex flex-col items-center p-6 text-center shadow-sm relative h-[220px] md:h-[240px] transition-transform duration-300 group-hover:-translate-y-1"
+        className="w-full group bg-[#fcf9f2]  border border-black/10 rounded-xl flex flex-col items-center justify-between p-6 text-center shadow-sm relative h-[20rem] md:h-[18rem]  group-hover:bg-[#e30713] transition-all duration-300"
         style={{ borderTop: `4px solid ${color}` }}
       >
-        <h3 className="font-bold text-2xl md:text-3xl mb-3" style={{ color: color }}>
+        <div className="absolute inset-0 w-full h-full group-hover:opacity-100 opacity-0 transition-all duration-300 ">
+          <div className="pattern_bg"></div>
+        </div>
+        <h3 className="group-hover:text-white! transition-all duration-300" style={{ color: color }}>
           {milestone.year}
         </h3>
-        <p className="text-sm md:text-base text-black/80 leading-relaxed font-medium">
+        <p className="text-base text-black/80 group-hover:text-white transition-all duration-300  font-medium">
           {milestone.copy}
         </p>
       </div>
 
-      {/* Connecting Vertical Line (Bottom) */}
-      <div className="h-8 md:h-10 w-[3px]" style={{ backgroundColor: color }}></div>
-
-      {/* Timeline Node Number */}
-      <div
-        className="relative w-10 h-10 md:w-12 md:h-12 rounded-full text-white flex items-center justify-center font-bold text-lg md:text-xl z-10 shadow-md transition-transform duration-300 group-hover:scale-110"
-        style={{ backgroundColor: color }}
-      >
-        {index + 1}
-      </div>
     </div>
   );
 }

@@ -41,7 +41,7 @@ export default function Header() {
   const pathname = usePathname()
   const [aboutOpen, setAboutOpen] = useState(false); // desktop hover dropdown
   const [scrolled, setScrolled] = useState(false);
-  const scrolledPages = [ "/investor-login","/media"]
+  const scrolledPages = ["/investor-login", "/media"]
 
   const [mobileOpen, setMobileOpen] = useState(false); // mobile drawer
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false); // mobile accordion
@@ -68,7 +68,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full py-2 md:py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
+      className={`fixed top-0 left-0 z-[10000] w-full py-2 md:py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
         }`}
     >
       <div className="container flex  w-full items-center justify-between ">
@@ -225,9 +225,11 @@ export default function Header() {
         </button>
 
         {/* Right Side (desktop) */}
-        <div className="hidden items-center gap-5 lg:flex">
-            <BTN txt={`Shop Now`} variant="B2" href={"https://www.rambandhu.com/"} />
-            <BTN txt={`Become Channel Partner`} variant="B1" href={"/become-a-partner"} />
+        <div className="hidden items-center gap-4 lg:flex">
+          <a href="https://www.rambandhu.com/" target="_blank">
+            <BTN txt={`Shop Now`} variant="B2" />
+          </a>
+          <BTN txt={`Become Channel Partner`} variant="B1" href={"/become-a-partner"} />
         </div>
 
         {/* Spacer to balance the hamburger button on mobile so the logo stays centered */}

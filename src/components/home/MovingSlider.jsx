@@ -28,8 +28,8 @@ const MovingSlider = () => {
             <div className='w-fit h-fit flex whitespace-nowrap  gap-20  Font3'>
                 {
                     sliderArr.map((item, index) => {
-                        return(
-                            <div key={index} className='w-fit h-fit flex flex-nowrap gap-5 justify-center items-center'>
+                        return (
+                            <div key={index} className='w-fit h-fit flex flex-nowrap gap-4 justify-center items-center'>
                                 <img src={item.texture} alt="texture" className='w-[30px]' />
                                 <p className='text-[1.3vw] leading-[1.2vw] max-md:text-[18px] max-md:leading-[18px]'>{item.text}</p>
                             </div>
@@ -41,14 +41,14 @@ const MovingSlider = () => {
     }
 
 
-    useEffect(()=>{
-        gsap.to('.SideMoveRL',{
-            x:'-50%',
-            duration:20,
-            repeat:-1,
-            ease:'linear'
+    useEffect(() => {
+        gsap.to('.SideMoveRL', {
+            x: '-50%',
+            duration: 20,
+            repeat: -1,
+            ease: 'linear'
         })
-    },[])
+    }, [])
 
 
     return (

@@ -244,7 +244,7 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
       >
         <div
           ref={panelRef}
-          className="relative rounded-2xl w-fit max-w-[95vw] sm:max-w-[90vw] md:max-w-6xl max-h-[90svh"
+          className="relative rounded-xl w-fit max-w-[95vw] sm:max-w-[90vw] md:max-w-6xl max-h-[90svh"
         >
           {/* Close button now renders together with the content, so it
               actually unmounts (instead of just fading) once the popup

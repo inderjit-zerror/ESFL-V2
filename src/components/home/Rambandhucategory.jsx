@@ -198,7 +198,7 @@
 //                 ref={(el) => (cardRefs.current[i] = el)}
 //                 onMouseEnter={(e) => handleCardEnter(e.currentTarget)}
 //                 onMouseLeave={(e) => handleCardLeave(e.currentTarget)}
-//                 className="relative w-40 sm:w-57 aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer"
+//                 className="relative w-40 sm:w-57 aspect-[4/5] rounded-xl overflow-hidden cursor-pointer"
 //               >
 //                 <img
 //                   src={p.image}
@@ -450,7 +450,7 @@ export default function RamBandhuCategory() {
           {/* Box: title + tiles */}
           <div
             ref={boxRef}
-            className="flex-1 min-w-0 rounded-3xl border-2 border-[#E30713]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
+            className="flex-1 min-w-0 rounded-xl border-2 border-[#E30713]/30 bg-white/40 px-4 sm:px-10 py-8 overflow-hidden"
           >
             <div className="overflow-hidden">
               <h3
@@ -468,7 +468,7 @@ export default function RamBandhuCategory() {
                   ref={(el) => (cardRefs.current[i] = el)}
                   onMouseEnter={(e) => handleCardEnter(e.currentTarget)}
                   onMouseLeave={(e) => handleCardLeave(e.currentTarget)}
-                  className="relative w-40 sm:w-full max-w-[220px] aspect-[4/5] rounded-2xl overflow-hidden cursor-pointer "
+                  className="relative w-40 sm:w-full max-w-[220px] aspect-[4/5] rounded-xl overflow-hidden cursor-pointer "
                 >
                   <img
                     src={p.image}

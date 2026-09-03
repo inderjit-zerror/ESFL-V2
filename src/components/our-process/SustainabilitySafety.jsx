@@ -6,6 +6,7 @@ import { Navigation } from 'swiper/modules';
 import { MoveLeft, MoveRight } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { RiAddLine } from '@remixicon/react';
 
 export default function SustainabilitySafety() {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -44,7 +45,7 @@ export default function SustainabilitySafety() {
   ];
 
   return (
-    <section className=" border-b border-black/50 py-12 md:py-24 container relative overflow-hidden">
+    <section className="  pt-12 md:pt-24 container relative overflow-hidden">
       <div className="">
 
         {/* Header Section */}
@@ -117,13 +118,16 @@ export default function SustainabilitySafety() {
                     />
 
                     {/* Dark gradient for title readability */}
-                    <div className={`absolute inset-0 bg-gradient-to-b from-black/70 via-black/10 to-transparent pointer-events-none transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}></div>
 
                     {/* Always visible Top-Left Title */}
-                    <div className={`absolute top-4 left-4 right-4 md:top-6 md:left-6 transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
-                      <h5 className="text-white  uppercase ">
+                    <div className={`absolute flex text-white w-full justify-between items-center left-0 p-4 bottom-0 h-fit transition-opacity duration-300 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}>
+                      <h5 className="text-white w-[80%]  uppercase ">
                         {card.title}
                       </h5>
+                      <div className="p-2 rounded-sm bg-white text-black">
+                      <RiAddLine className=' size-4 group-hover:rotate-180 transition-all duration-300'/>
+                      </div>
                     </div>
 
                     {/* Sliding White Overlay */}

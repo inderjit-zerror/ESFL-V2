@@ -72,17 +72,17 @@ const Campaigns = () => {
           <h2 data-para-effect className="uppercase mb-4">
             LATEST CAMPAIGNS <br className="max-sm:hidden" /> &amp; NEWS
           </h2>
-          <p className="opacity-70 mx-auto max-w-2xl mb-8">
+          <p className=" mx-auto max-w-2xl mb-8">
             Latest campaigns, media coverage and company updates.
           </p>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap md:items-center md:justify-center gap-1 md:gap-3">
+          <div className="flex flex-wrap md:items-center md:justify-center gap-1 md:gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${activeCategory === cat
+                className={`px-6 py-2 rounded-full text-xs    uppercase transition-colors ${activeCategory === cat
                   ? "bg-[#E30713] text-white"
                   : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
                   }`}
@@ -94,24 +94,24 @@ const Campaigns = () => {
         </div>
 
         {/* Grid - Desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-10">
           {filteredContent.map((item) => (
             <div key={item.id} className="flex flex-col group cursor-pointer">
-              <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-5">
+              <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-3">
                 <Image fill
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
-              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors line-clamp-2 md:min-h-[3rem]">
+              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors duration-300 line-clamp-2">
                 {item.title}
               </h5>
 
               <a
                 href={item.link}
-                className="mt-auto text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 transition-opacity"
+                className="mt-auto text-sm    text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 transition-opacity"
               >
                 READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </a>

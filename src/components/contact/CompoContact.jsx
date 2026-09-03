@@ -200,19 +200,19 @@ export default function CompoContact() {
         <div className="relative grid gap-10 md:grid-cols-2 md:gap-12">
 
           {/* Reach us at */}
-          <div className="reveal-block relative rounded-lg bg-[#E30713] p-5  sm:p-8 text-white flex flex-col justify-center">
+          <div className="reveal-block relative rounded-xl bg-[#E30713] p-5  sm:p-8 text-white flex flex-col justify-center">
             <div className="pattern_bg"></div>
 
             <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
             </h3>
-            <p className="text-white/80 text-sm mb-8">
+            <p className=" text-sm mb-12">
               Whether it's a partnership, enquiry, or collaboration, we'd love to hear from you.
             </p>
 
             <div className="space-y-6">
               <div>
-                <p className="text-xs uppercase opacity-70 tracking-widest text-white">
+                <p className="text-xs uppercase   text-white">
                   Customer Care Number
                 </p>
                 <a
@@ -223,7 +223,7 @@ export default function CompoContact() {
                 </a>
               </div>
               <div>
-                <p className="text-xs uppercase opacity-70 tracking-widest text-white">
+                <p className="text-xs uppercase   text-white">
                   Customer Care Email
                 </p>
                 <a
@@ -235,7 +235,7 @@ export default function CompoContact() {
               </div>
             </div>
 
-            <p className="mt-10 text-xs text-white/60 uppercase tracking-wider">
+            <p className="mt-12 text-sm uppercase  ">
               Our team responds within one business day.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function CompoContact() {
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 md:flex"
             aria-hidden="true"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase tracking-widest text-[#E30713]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase   text-[#E30713]">
               Or
             </div>
           </div>
@@ -253,24 +253,24 @@ export default function CompoContact() {
           {/* Mobile OR divider */}
           <div className="flex items-center gap-3 md:hidden" aria-hidden="true">
             <span className="h-px flex-1 bg-[#E8D9C3]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#E30713]">
+            <span className="text-xs font-bold uppercase   text-[#E30713]">
               Or
             </span>
             <span className="h-px flex-1 bg-[#E8D9C3]" />
           </div>
 
           {/* Submit query form */}
-          <div className="reveal-block relative rounded-lg border border-black/5 bg-white p-5 sm:p-8">
+          <div className="reveal-block relative rounded-xl border border-black/5 bg-white p-5 sm:p-8">
 
-            <h3 data-para-effect className="uppercase text-[#2B1B12] mb-2">
+            <h3 data-para-effect className="uppercase text-black mb-2">
               Submit Your Query
             </h3>
-            <p className="text-sm opacity-70 text-[#6B6B6B] mb-8">
+            <p className=" mb-8">
               Fill in your details below and our team will respond shortly.
             </p>
 
             {status === "sent" ? (
-              <div className="mt-6 rounded-md bg-[#E30713]/10 p-6 text-sm text-[#E30713] font-medium">
+              <div className="mt-6 rounded-xl bg-[#E30713]/10 p-6 text-sm text-[#E30713] font-medium">
                 Thanks — your message has been sent successfully. We'll get back to you shortly.
               </div>
             ) : (

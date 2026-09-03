@@ -74,7 +74,7 @@ export default function InvestorResources() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="container   py-12 md:py-24  border-b border-black/50 relative">
+    <section ref={containerRef} className="container   pt-12 md:pt-24 relative">
       <div className="relative z-10">
 
         {/* Header Section */}
@@ -91,21 +91,17 @@ export default function InvestorResources() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {resources.map((card) => (
             <div
               key={card.id}
-              className="resource-card pillar-card group relative bg-[#E30713] text-[#fac05e] rounded-2xl p-5 border border-black/5 h-80 flex flex-col justify-between"
+              className="resource-card pillar-card group relative bg-[#E30713] text-[#ffffff] rounded-xl p-5 border border-black/5 h-80 flex flex-col justify-between"
             >
-                    <div className="pattern_bg"></div>
+              <div className="pattern_bg"></div>
 
               {/* Card Content */}
               <div className="relative z-10">
-                <div className="mb-3">
-                  <span className="text-xs font-semibold px-2 py-1 bg-[#fcfbf9] text-[#E30713] rounded-full border border-[#E30713]">
-                    RESOURCE {card.id}
-                  </span>
-                </div>
+              
                 <h4 data-para-effect className="mb-5">
                   {card.title}
                 </h4>

@@ -39,7 +39,7 @@ const ScrollPackets = () => {
 
         // --- Phase 1: Section 1 (Image 1 comes from top right to center) ---
         tl.fromTo(p1Ref.current,
-            { x: w, rotation: 45 },
+            { x: -w, rotation: 45 },
             { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 0);
         tl.fromTo(p1Ref.current,
             { y: -h },
@@ -47,7 +47,7 @@ const ScrollPackets = () => {
 
         // --- Phase 2: Section 2 (Image 2 comes from top left to center) ---
         tl.fromTo(p2Ref.current,
-            { x: -w, rotation: -45 },
+            { x: w, rotation: -45 },
             { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 1);
         tl.fromTo(p2Ref.current,
             { y: -h },
@@ -55,14 +55,14 @@ const ScrollPackets = () => {
 
         // --- Phase 3: Section 3 (Image 3 comes from top right to center) ---
         tl.fromTo(p3Ref.current,
-            { x: w, rotation: 45 },
+            { x: -w, rotation: 45 },
             { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 2);
         tl.fromTo(p3Ref.current,
             { y: -h },
             { y: 0, ease: "power2.in", duration: 1 }, 2);
 
         tl.fromTo(p4Ref.current,
-            { x: -w, rotation: -45 },
+            { x: w, rotation: -45 },
             { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 3);
         tl.fromTo(p4Ref.current,
             { y: -h },
@@ -73,6 +73,22 @@ const ScrollPackets = () => {
         tl.to(p2Ref.current, { transform:  isMobile ? "translateX(-3rem)":"translateX(-9.5rem)", y: isMobile ? 5 : 0, rotation: isMobile ? -5 : 0, duration: 1, ease: "power2.inOut" }, 4);
         tl.to(p3Ref.current, { transform:  isMobile ? "translateX(3rem)":"translateX(9.5rem)", y: isMobile ? 5 : 0, rotation: isMobile ? 5 : 0, duration: 1, ease: "power2.inOut" }, 4);
         tl.to(p4Ref.current, { transform:  isMobile ? "translateX(8rem)":"translateX(28.5rem)", y: isMobile ? 20 : 0, rotation: isMobile ? 10 : 0, duration: 1, ease: "power2.inOut" }, 4);
+
+        // Text cards fade and slide in
+        gsap.utils.toArray('.packet-text-card').forEach((card, i) => {
+            const xOffset = i % 2 === 0 ? -100 : 100;
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 70%",
+                    toggleActions: "play none none reverse",
+                },
+                x: xOffset,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
 
     }, { scope: containerRef });
 
@@ -92,42 +108,42 @@ const ScrollPackets = () => {
                 </div>
 
                 {/* The scrolling text content */}
-                <div className="relative z-20 overflow-hidden w-full" style={{ marginTop: '-100vh' }}>
+                <div className="relative z-20 overflow-hidden w-full max-sm:space-y-4" style={{ marginTop: '-100vh' }}>
 
-                    <section className="md:h-[50vh]! max-sm:mt-12 flex items-end pb-8 md:pb-0 md:items-center justify-center md:justify-start container">
-                        <div className="md:max-w-lg p-6 md:p-8 bg-red relative text-left md:text-left text-white rounded-2xl  w-full z-20">
+                    <section className=" md:h-[50vh]! max-sm:mt-12 flex items-end  md:items-center justify-center md:justify-start container">
+                        <div className="packet-text-card max-sm:space-y-12 md:max-w-lg p-6 md:p-8 bg-red relative text-left md:text-left text-white rounded-xl  w-full z-20">
                             <div className="pattern_bg"></div>
-                            <h3 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Shahi Paneer</h3>
+                            <h4 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Shahi Paneer</h4>
                             <p className="pt-3 md:pt-5 text-sm md:text-base">
                                 A rich, aromatic blend of spices that brings the authentic, creamy, and royal flavors of Mughal kitchens straight to your paneer dishes.
                             </p>
                         </div>
                     </section>
 
-                    <section className="md:h-[50vh]! flex items-end pb-8 md:pb-0 md:items-center justify-center md:justify-end container">
-                        <div className="md:max-w-lg text-left p-6 md:p-8 bg-red relative text-white rounded-2xl  w-full z-20">
+                    <section className=" md:h-[50vh]! flex items-end  md:items-center justify-center md:justify-end container">
+                        <div className="packet-text-card max-sm:space-y-12 md:max-w-lg text-left p-6 md:p-8 bg-red relative text-white rounded-xl  w-full z-20">
                             <div className="pattern_bg"></div>
-                            <h3 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Sambhar Masala</h3>
+                            <h4 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Sambhar Masala</h4>
                             <p className="pt-3 md:pt-5 text-sm md:text-base">
                                 An authentic and flavorful mix of roasted lentils and aromatic spices, crafted to give you the perfect South Indian Sambhar experience.
                             </p>
                         </div>
                     </section>
 
-                    <section className="md:h-[50vh]! flex items-end pb-8 md:pb-0 md:items-center justify-center md:justify-start container">
-                        <div className="md:max-w-lg p-6 md:p-8 bg-red relative text-left md:text-left text-white rounded-2xl  w-full z-20">
+                    <section className=" md:h-[50vh]! flex items-end  md:items-center justify-center md:justify-start container">
+                        <div className="packet-text-card max-sm:space-y-12 md:max-w-lg p-6 md:p-8 bg-red relative text-left md:text-left text-white rounded-xl  w-full z-20">
                             <div className="pattern_bg"></div>
-                            <h3 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Panipuri Masala</h3>
+                            <h4 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Panipuri Masala</h4>
                             <p className="pt-3 md:pt-5 text-sm md:text-base">
                                 Create the perfect spicy, tangy, and refreshing jaljeera water for your homemade panipuris.
                             </p>
                         </div>
                     </section>
 
-                    <section className="md:h-[50vh]! flex items-end pb-8 md:pb-0 md:items-center justify-center md:justify-end container">
-                        <div className="md:max-w-lg text-left p-6 md:p-8 bg-red relative text-white rounded-2xl  w-full z-20">
+                    <section className=" md:h-[50vh]! flex items-end  md:items-center justify-center md:justify-end container">
+                        <div className="packet-text-card max-sm:space-y-12 md:max-w-lg text-left p-6 md:p-8 bg-red relative text-white rounded-xl  w-full z-20">
                             <div className="pattern_bg"></div>
-                            <h3 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Kitchen King</h3>
+                            <h4 data-para-effect className="text-[#FFBE55] uppercase text-2xl md:text-3xl">Kitchen King</h4>
                             <p className="pt-3 md:pt-5 text-sm md:text-base">
                                 A versatile master blend that enriches any vegetarian dish with a rich, appetizing color and incredible taste.
                             </p>

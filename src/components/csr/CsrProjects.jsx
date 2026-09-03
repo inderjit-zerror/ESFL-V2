@@ -44,14 +44,12 @@ const CsrProjects = () => {
               ONGOING CSR <br /> PROJECTS
             </h2>
           </div>
-          <a href="#" className="mt-6 sm:mt-0 text-xs font-semibold  text-[#E30713] uppercase hover:opacity-80 flex items-center  gap-2">
+          <a href="#" className="mt-6 sm:mt-0 text-sm hover:underline  text-[#E30713] uppercase hover:opacity-80 flex items-center  gap-2">
             VIEW ALL PROJECTS <ArrowRight className="w-4 h-4" />
           </a>
         </div>
 
-        {/* Projects Grid */}
-        {/* Projects Grid - Desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
               <div className="relative w-full h-56 sm:h-64 overflow-hidden">
@@ -63,16 +61,14 @@ const CsrProjects = () => {
                 />
               </div>
               <div className="p-5 flex flex-col flex-grow">
-                <p className="text-xs font-semibold tracking-wider text-red uppercase mb-3">
-                  {project.category}
-                </p>
+              
                 <h5 data-para-effect className="uppercase mb-4">
                   {project.title}
                 </h5>
                 <p className="opacity-70 mb-8 flex-grow">
                   {project.description}
                 </p>
-                <a href={project.link} className="text-xs font-semibold tracking-wider text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-5 transition-all duration-300">
+                <a href={project.link} className="text-sm  text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300">
                   READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                 </a>
               </div>

@@ -43,7 +43,7 @@ const CustomImg = () => {
 
   return (
     <>
-      <div className="w-fit h-fit flex justify-center ml-3 md:ml-5 items-center gap-3 md:gap-5 select-none cursor-pointer">
+      <div className="w-fit h-fit flex justify-center ml-3 md:ml-5 items-center gap-3 md:gap-4 select-none cursor-pointer">
         {imgArr.map((item, index) => {
           return (
             <div

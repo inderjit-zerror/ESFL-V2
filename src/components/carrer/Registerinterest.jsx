@@ -94,7 +94,7 @@ export default function RegisterInterest() {
           <h2 data-para-effect className="uppercase  mb-2">
             Register Your Interest
           </h2>
-          <p className="opacity-70 mb-5">
+          <p className=" mb-5">
             Don't see the right role? Share your details once and we'll notify you the moment a matching opportunity opens.
           </p>
 
@@ -180,7 +180,7 @@ export default function RegisterInterest() {
                     </button>
                   </div>
                 ) : (
-                  <span className="text-[10px]   tracking-widest text-[#9a9a9a] uppercase">
+                  <span className="text-[10px]     text-[#9a9a9a] uppercase">
                     Choose file or drag and drop
                   </span>
                 )}

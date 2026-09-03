@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="   container z-10">
 
         {/* Top row: brand + socials, separated from the link grid */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 sm:gap-6     pt-12 md:pt-24 ">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6     pt-12 md:pt-24 ">
           <div className="w-[50vw] md:w-60 xl:w-44 relative">
             <Image
               width={200}
@@ -73,7 +73,7 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 gap-x-6 text-sm md:contents">
             <div className="md:col-span-2 md:pl-8">
-              <p className="   tracking-widest text-white/90 mb-4">
+              <p className="     text-white/90 mb-4">
                 SITEMAP
               </p>
               <ul className="space-y-2">
@@ -91,7 +91,7 @@ export default function Footer() {
             </div>
 
             <div className="md:col-span-2 md:pl-8">
-              <p className="   tracking-widest text-white/90 mb-4">
+              <p className="     text-white/90 mb-4">
                 SUPPORT
               </p>
               <ul className="space-y-2">
@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-2 text-sm md:mt-0 md:col-span-4">
-            <p className="   tracking-widest text-white/90 mb-4">
+            <p className="     text-white/90 mb-4">
               CUSTOMER CARE
             </p>
 

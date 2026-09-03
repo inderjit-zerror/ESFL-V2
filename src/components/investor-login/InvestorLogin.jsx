@@ -39,7 +39,7 @@ export default function InvestorLogin() {
         </div>
 
         {/* Login Card Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border border-black/30 rounded-lg overflow-hidden w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-black/30 rounded-xl overflow-hidden w-full">
 
           {/* Left Column: Form */}
           <div className="md:col-span-1 p-5 md:p-10 flex flex-col justify-center">
@@ -86,7 +86,7 @@ export default function InvestorLogin() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#E30713] hover:bg-[#d30311] text-white text-xs font-semibold tracking-wider uppercase py-4 rounded-lg flex items-center justify-center gap-2 transition-colors mt-4"
+                className="w-full bg-[#E30713] hover:bg-[#d30311] text-white text-xs font-semibold   uppercase py-4 rounded-lg flex items-center justify-center gap-2 transition-colors mt-4"
               >
                 Login
                 <ArrowRightIcon className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function InvestorLogin() {
 
               <div className="flex items-center gap-2 text-[#f6bc25]">
                 <ShieldCheckIcon className="w-5 h-5" />
-                <span className="text-xs font-semibold tracking-wider uppercase">
+                <span className="text-xs font-semibold   uppercase">
                   256-Bit Secured
                 </span>
               </div>
