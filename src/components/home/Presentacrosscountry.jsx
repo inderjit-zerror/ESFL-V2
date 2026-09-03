@@ -34,7 +34,7 @@ export default function PresentAcrossCountry() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 80%",
-            once: true,
+            toggleActions:"play none none reverse"
           },
           onUpdate: () => {
             el.textContent = `${Math.floor(counter.val)}${stat.suffix}`;
