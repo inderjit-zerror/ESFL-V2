@@ -10,6 +10,7 @@ import SevenSection from "@/components/home/SevenSection";
 import Sticker from "@/components/home/Sticker";
 import PageLoadAnimation from "@/components/common/PageLoadAnimation";
 import { createPageMetadata } from "@/lib/seo";
+import ScrollPackets from "@/components/home/ScrollPackets";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <PageLoadAnimation />
       <Hero />
       <Building />
+      <ScrollPackets/>
       <Sticker />
       <PresentAcrossCountry />
       <Factory />

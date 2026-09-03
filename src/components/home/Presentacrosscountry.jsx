@@ -95,47 +95,39 @@ export default function PresentAcrossCountry() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-140 border-t border-[#f5c451]  pt-12 md:pt-24  overflow-hidden bg-red    "
+      className="relative   pt-12 md:pt-24  overflow-hidden     "
     >
-      <div className="pattern_bg"></div>
-      <div className="w-full h-full relative">
+      <div className="w-full h-full pb-20 md:pb-56 relative">
         {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] top-[2%] z-99" /> */}
         <Image height={1080} width={1920} src="/images/home/PP.png" alt="IMG" className=" sm:w-full object-cover  absolute bottom-0! left-0 rotate-180" />
 
-        <div className="relative container  w-full max-sm:space-y-10  md:grid md:grid-cols-2 items-start">
-          {/* Left: headline + products */}
-          <div className="relative max-w-2xl space-y-2 ">
-
-            <h2 data-para-effect className="  text-[#f5c451]    uppercase ">
-              Present
-
-              Across the
-
-              Country to
-
-              Serve You
-
-              Incessantly
+        <div className="relative container w-full flex flex-col items-center justify-center space-y-12 md:space-y-20 z-10">
+          {/* Top: headline + description */}
+          <div className="relative max-w-4xl mx-auto space-y-6 text-center psac-fade">
+            <h2 data-para-effect className=" uppercase">
+              Present Across the Country to Serve You Incessantly
             </h2>
 
-            <p className=" text-white">
+            <p className="max-w-3xl mt-5">
               ESFL&apos;s Network Spans Manufacturing Units, Agri Sites And
               Depots Across Delhi, Noida, Himachal Pradesh, Assam And Tripura.
             </p>
           </div>
 
-          {/* Right: stats grid */}
-          <div className="grid md:pl-24  space-y-10 grid-cols-2  ">
+          {/* Bottom: stats grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 w-full">
             {stats.map((stat, i) => (
-              <div key={stat.id} className=" ">
-                <h2
+              <div key={stat.id} className=" relative rounded-2xl bg-red p-6 h-44 md:h-fit md:aspect-4/3 flex flex-col justify-between">
+                <div className="pattern_bg"></div>
+
+                <p className=" uppercase relative z-10 text-white font-medium">
+                  {stat.label}
+                </p>
+                <p
                   ref={(el) => (numberRefs.current[i] = el)}
-                  className="text-[#f5c451] "
+                  className=" text-5xl md:text-7xl! relative z-10 font-semibold text-[#f5c451]"
                 >
                   0{stat.suffix}
-                </h2>
-                <p className="mt-2  text-sm   uppercase text-white">
-                  {stat.label}
                 </p>
               </div>
             ))}

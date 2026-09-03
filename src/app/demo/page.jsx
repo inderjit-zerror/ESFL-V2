@@ -106,8 +106,8 @@ export default function DemoPage() {
         {/* The scrolling text content */}
         <div className="relative z-20 w-full" style={{ marginTop: '-100vh' }}>
           
-          <section className="h-screen flex items-center justify-start px-8 md:px-24">
-            <div className="max-w-lg p-8 rounded-2xl">
+          <section className="h-screen flex items-center justify-start container">
+            <div className="max-w-lg p-8 rounded-2xl bg-cyan-200">
               <h2 className="text-5xl md:text-6xl font-bold mb-4 text-[#e30713]">Chaat Masala</h2>
               <p className="text-xl text-black">
                 A tangy, spicy blend that adds a burst of lip-smacking flavor to your favorite street foods, fruits, and salads.

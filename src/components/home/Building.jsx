@@ -60,7 +60,7 @@ export default function Building() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative container flex py-32 max-sm:pt-12 md:py-44 md:pt-24 bg w-full items-center justify-center overflow-hidden"
+      className="relative container flex py-32 max-sm:pt-12 md:py-44 md:pt-24 bg w-screen overflow-hidden items-center justify-center "
     >
       {/* Wrapped in a stable div to prevent React removeChild errors during next-view-transitions */}
       <div className="absolute inset-0 z-0 pointer-events-none">

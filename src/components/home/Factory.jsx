@@ -33,7 +33,7 @@ const Factory = () => {
 
   return (
     <>
-      <div className='uppercase text-[#f5c451] pt-6 pb-4 md:hidden container flex items-center max-w-4xl! bg-red '>
+      <div className='uppercase  pt-12 pb-4 md:hidden container flex items-center  '>
         <h2 data-para-effect>
           A look inside our factories and offices hygiene, precision and consistency at every stage.
         </h2>
