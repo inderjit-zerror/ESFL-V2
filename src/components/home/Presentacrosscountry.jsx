@@ -97,7 +97,7 @@ export default function PresentAcrossCountry() {
       ref={sectionRef}
       className="relative   pt-12 md:pt-24  overflow-hidden     "
     >
-      <div className="w-full h-full pb-20 md:pb-56 relative">
+      <div className="w-full h-full pb-24 md:pb-70 relative">
         {/* <img src="/images/home/FLOWER.png" alt="IMG" className="w-[15%] aspect-square absolute rotate-z-180  right-[2%] top-[2%] z-99" /> */}
         <Image height={1080} width={1920} src="/images/home/PP.png" alt="IMG" className=" sm:w-full object-cover  absolute bottom-0! left-0 rotate-180" />
 
