@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#E30713] text-white relative z-100">
+    <footer className="bg-[#E30713] text-white relative z-10">
       <div className="pattern_bg"></div>
       <Image fill className="absolute w-full h-full inset-0 cover" src="/images/home/aboutSection/bg.png" alt="" />
       <div className="   container z-10">
@@ -177,13 +177,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/50 text-sm py-4 flex justify-between max-sm:flex-col gap-2 items-center px-2">
+        <div className="border-t border-white/50 text-sm py-2 flex justify-between max-sm:flex-col gap-2 items-center px-2">
           <p className="  text-white text-center">
             © 2026 Empire Spices &amp; Foods Ltd. <br className="md:hidden" /> All rights reserved. ·
             esfl.co.in
           </p>
           <p className="  text-white text-center">
-            Developed by <Link href={"/https://www.iwayworks.com/"} target="_blank" className="hover:underline"> Iwayworks </Link>
+            Developed by <Link href={"https://www.iwayworks.com/"} target="_blank" className="hover:underline"> Iwayworks </Link>
           </p>
 
         </div>
