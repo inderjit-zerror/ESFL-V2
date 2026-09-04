@@ -35,7 +35,7 @@ const CsrProjects = () => {
     <section className=" container   py-12 md:py-24  relative">
       <div className="w-full">
         {/* Header */}
-        <div className="flex  justify-between items-end  mb-8 md:mb-16">
+        <div className="flex  justify-between items-end  mb-8">
           <div>
             {/* <h6 className="text-[#E30713] uppercase mb-2">
               IMPACT IN ACTION
@@ -57,15 +57,15 @@ const CsrProjects = () => {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="p-5 flex flex-col flex-grow">
+              <div className="p-5 flex flex-col grow">
               
-                <h5 data-para-effect className="uppercase mb-4">
+                <h5 className="uppercase mb-4 line-clamp-2">
                   {project.title}
                 </h5>
-                <p className="opacity-70 mb-8 flex-grow">
+                <p className="opacity-70 mb-8 grow">
                   {project.description}
                 </p>
                 <a href={project.link} className="text-sm  text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300">

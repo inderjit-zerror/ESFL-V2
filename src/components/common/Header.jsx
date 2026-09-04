@@ -68,7 +68,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-[10000] w-full py-2 md:py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
+      className={`fixed top-0 left-0 z-[1000] w-full py-2 md:py-5 transition-colors duration-300 ${scrolled || mobileOpen || scrolledPages.includes(pathname) ? "bg-black/95" : "bg-transparent"
         }`}
     >
       <div className="container flex  w-full items-center justify-between ">

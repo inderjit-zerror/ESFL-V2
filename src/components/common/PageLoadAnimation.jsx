@@ -107,9 +107,9 @@ export default function PageLoadAnimation() {
     <div
       ref={overlayRef}
       aria-hidden="true"
-      className="fixed inset-0 z-[9999] bg-beige"
+      className="fixed inset-0 z-[999009] bg-beige"
     >
-                  <div className="pattern_bg"></div>
+      <div className="pattern_bg"></div>
 
       <div ref={logoRef} className="fixed">
         <Image

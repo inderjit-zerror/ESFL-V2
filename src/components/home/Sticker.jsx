@@ -1,11 +1,19 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import BrandSection from "./BrandSection";
-import CategoryPopup from "@/components/home/Categorypopup";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { RiArrowLeftLine, RiArrowRightLine, RiCloseLine } from "@remixicon/react";
 gsap.registerPlugin(ScrollTrigger);
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import Image from "next/image";
 
 const RAMBANDHU_POPUP = {
   logo: "/images/home/RamBandhuLogo.png",
@@ -86,10 +94,8 @@ const Sticker = () => {
   const [activePopup, setActivePopup] = useState(null);
   const overlayRef = useRef(null);
   const panelRef = useRef(null);
-  const timelineRef = useRef(null); // keeps track of the currently running popup timeline
+  const timelineRef = useRef(null);
 
-
-  // Animate the popup in/out whenever activePopup changes
   useEffect(() => {
     const isOpen = activePopup !== null;
 
@@ -158,7 +164,6 @@ const Sticker = () => {
 
   const closePopup = () => setActivePopup(null);
 
-  // Pick the right data set for whichever popup is currently open
   const popupData =
     activePopup === "RAMBANDHU"
       ? RAMBANDHU_POPUP
@@ -222,7 +227,6 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
           title="RBM"
           subtitle="Sarvottam Masale, RBM Masale"
           description={`Priced strategically the products under this brand targets the price conscious consumer without compromising on quality or taste.  
-
  Meat Masala, Chicken Masala, Mutton Biryani Mix, Chicken Gravy are some of the products in the RBM line-up.`}
           highlight={``}
           buttonText="View Range"
@@ -236,37 +240,53 @@ Brand Temptin' stands for the same feeling and makes your food tempting and irre
       {/* Popup overlay — shared shell, content swaps per brand */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[999] bg-black/60 items-center justify-center p-3 sm:p-4"
+        className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-xs items-center justify-center p-3 sm:p-4"
         style={{ display: "none" }}
         onClick={(e) => {
           if (e.target === overlayRef.current) closePopup();
         }}
       >
+        <button
+          type="button"
+          onClick={closePopup}
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 z-10 w-10 h-10 cursor-pointer shrink-0 rounded-full bg-white text-[#E30713]   flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-all duration-300 leading-none"
+          aria-label="Close"
+        >
+          <RiCloseLine className="size-5" />
+        </button>
         <div
           ref={panelRef}
-          className="relative rounded-xl w-fit max-w-[95vw] sm:max-w-[90vw] md:max-w-6xl max-h-[90svh"
+          className="relative w-full md:w-fit md:h-[80vh] flex items-center gap-x-5 aspect-video"
         >
-          {/* Close button now renders together with the content, so it
-              actually unmounts (instead of just fading) once the popup
-              is closed — no more lingering X after close. */}
-          {popupData && (
-            <>
-              <button
-                type="button"
-                onClick={closePopup}
-                className="absolute top-3 right-3 sm:top-4 sm:right-5 z-10 w-10 h-10 rounded-full bg-white/80 text-[#E30713]   flex items-center justify-center hover:bg-white"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-
-              <CategoryPopup
-                logo={popupData.logo}
-                categories={popupData.categories}
-                accentColor={popupData.accentColor}
-              />
-            </>
-          )}
+          <div className=" max-sm:absolute max-sm:scale-75 swiper-button-prev-custom z-10 w-10 h-10 cursor-pointer shrink-0 rounded-full bg-white text-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-all duration-300 leading-none">
+            <RiArrowLeftLine />
+          </div>
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+             speed={800}
+            navigation={{
+              prevEl: ".swiper-button-prev-custom",
+              nextEl: ".swiper-button-next-custom",
+            }}
+            grabCursor={true}
+            className="w-full h-full cursor-grab active:cursor-grabbing rounded-xl overflow-hidden"
+          >
+            {popupData?.categories.map((cat, index) => (
+              <SwiperSlide key={cat.id || index} className="relative">
+                <Image
+                  src={cat.image}
+                  alt={cat.name}
+                  fill
+                  className="object-cover"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="max-sm:absolute max-sm:scale-75 max-sm:right-0 swiper-button-next-custom z-10 w-10 h-10 cursor-pointer shrink-0 rounded-full bg-white text-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-all duration-300 leading-none">
+            <RiArrowRightLine />
+          </div>
         </div>
       </div>
     </div>

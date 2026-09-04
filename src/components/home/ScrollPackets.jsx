@@ -21,10 +21,11 @@ const ScrollPackets = () => {
         const isMobile = w < 768;
         const m = isMobile ? 0.25 : 1; // spread multiplier for mobile
 
-        // Initialize images completely off-screen
+        // Initialize images hidden and centered
         gsap.set([p1Ref.current, p2Ref.current, p3Ref.current, p4Ref.current], {
-            x: w * 2,
-            y: -h * 2,
+            x: 0,
+            y: 0,
+            scale: 0,
             rotation: 0
         });
 
@@ -37,36 +38,25 @@ const ScrollPackets = () => {
             }
         });
 
-        // --- Phase 1: Section 1 (Image 1 comes from top right to center) ---
+        // --- Phase 1: Section 1 (Packet 1 originates from left card) ---
         tl.fromTo(p1Ref.current,
-            { x: -w, rotation: 45 },
-            { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 0);
-        tl.fromTo(p1Ref.current,
-            { y: -h },
-            { y: 0, ease: "power2.in", duration: 1 }, 0);
+            { x: isMobile ? 0 : -w/4, y: isMobile ? h/4 : 0, scale: 0, rotation: -90 },
+            { x: 0, y: 0, scale: 1, rotation: 0, ease: "back.out(1.2)", duration: 1 }, 0);
 
-        // --- Phase 2: Section 2 (Image 2 comes from top left to center) ---
+        // --- Phase 2: Section 2 (Packet 2 originates from right card) ---
         tl.fromTo(p2Ref.current,
-            { x: w, rotation: -45 },
-            { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 1);
-        tl.fromTo(p2Ref.current,
-            { y: -h },
-            { y: 0, ease: "power2.in", duration: 1 }, 1);
+            { x: isMobile ? 0 : w/4, y: isMobile ? h/4 : 0, scale: 0, rotation: 90 },
+            { x: 0, y: 0, scale: 1, rotation: 0, ease: "back.out(1.2)", duration: 1 }, 1);
 
-        // --- Phase 3: Section 3 (Image 3 comes from top right to center) ---
+        // --- Phase 3: Section 3 (Packet 3 originates from left card) ---
         tl.fromTo(p3Ref.current,
-            { x: -w, rotation: 45 },
-            { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 2);
-        tl.fromTo(p3Ref.current,
-            { y: -h },
-            { y: 0, ease: "power2.in", duration: 1 }, 2);
+            { x: isMobile ? 0 : -w/4, y: isMobile ? h/4 : 0, scale: 0, rotation: -90 },
+            { x: 0, y: 0, scale: 1, rotation: 0, ease: "back.out(1.2)", duration: 1 }, 2);
 
+        // --- Phase 4: Section 4 (Packet 4 originates from right card) ---
         tl.fromTo(p4Ref.current,
-            { x: w, rotation: -45 },
-            { x: 0, rotation: 0, ease: "power1.out", duration: 1 }, 3);
-        tl.fromTo(p4Ref.current,
-            { y: -h },
-            { y: 0, ease: "power2.in", duration: 1 }, 3);
+            { x: isMobile ? 0 : w/4, y: isMobile ? h/4 : 0, scale: 0, rotation: 90 },
+            { x: 0, y: 0, scale: 1, rotation: 0, ease: "back.out(1.2)", duration: 1 }, 3);
 
         // Images 1, 2, 3, 4 spread out horizontally during Phase 5 (with card spread on mobile)
         tl.to(p1Ref.current, { transform:  isMobile ? "translateX(-8rem)": "translateX(-28.5rem)", y: isMobile ? 20 : 0, rotation: isMobile ? -10 : 0, duration: 1, ease: "power2.inOut" }, 4);

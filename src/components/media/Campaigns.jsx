@@ -65,7 +65,7 @@ const Campaigns = () => {
     <section className=" container pt-24 md:pt-32   py-12 md:py-24  relative">
       <div className="w-full">
         {/* Header */}
-        <div className="md:text-center mb-8 md:mb-16">
+        <div className="md:text-center mb-8">
           {/* <h6 className="text-[#E30713] uppercase mb-2">
             ON AIR NOW
           </h6> */}
@@ -94,27 +94,29 @@ const Campaigns = () => {
         </div>
 
         {/* Grid - Desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
           {filteredContent.map((item) => (
-            <div key={item.id} className="flex flex-col group cursor-pointer">
-              <div className="aspect-[4/3] rounded-md overflow-hidden relative mb-3">
+            <div key={item.id} className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
+              <div className="relative w-full h-56 sm:h-64 overflow-hidden">
                 <Image fill
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 
-              <h5 className="mb-4 group-hover:text-[#E30713] transition-colors duration-300 line-clamp-2">
-                {item.title}
-              </h5>
+              <div className="p-5 flex flex-col grow">
+                <h5 className="uppercase mb-8 line-clamp-2 grow">
+                  {item.title}
+                </h5>
 
-              <a
-                href={item.link}
-                className="mt-auto text-sm    text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 transition-opacity"
-              >
-                READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-              </a>
+                <a
+                  href={item.link}
+                  className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
+                >
+                  READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                </a>
+              </div>
             </div>
           ))}
         </div>

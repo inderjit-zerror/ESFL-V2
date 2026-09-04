@@ -151,18 +151,34 @@ export default function OurJourney() {
         );
       };
 
-      const st = ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          gsap.set(track, { x: -getScrollDistance() * self.progress });
-        },
+      const tl = gsap.to(track, {
+        x: () => -getScrollDistance(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
       });
 
-      return () => st.kill();
+      const cards = gsap.utils.toArray('.card-wrapper');
+      cards.forEach((card) => {
+        ScrollTrigger.create({
+          trigger: card,
+          containerAnimation: tl,
+          start: "left 50%", 
+          end: "right 50%", 
+          toggleClass: "is-active",
+          onToggle: (self) => {
+            if (self.isActive) {
+              card.dispatchEvent(new CustomEvent('card-active'));
+            }
+          }
+        });
+      });
+
     }, section);
 
     return () => ctx.revert();
@@ -187,7 +203,7 @@ export default function OurJourney() {
           </div>
 
           {/* Horizontal card track */}
-          <div className="relative w-full overflow-hidden px-4 md:px-10 flex-grow flex items-center">
+          <div className="relative w-full overflow-hidden px-4 md:px-[35rem] flex-grow flex items-center">
 
             <div
               ref={trackRef}
@@ -251,21 +267,21 @@ function Card({ milestone, index }) {
         }
       };
 
-      cardEl.addEventListener("mouseenter", onEnter);
+      cardEl.addEventListener("card-active", onEnter);
 
       return () => {
-        cardEl.removeEventListener("mouseenter", onEnter);
+        cardEl.removeEventListener("card-active", onEnter);
       };
     });
     return () => ctx.revert();
   }, []);
 
   return (
-    <div ref={cardRef} className=" flex flex-col items-center w-[25rem] shrink-0 relative group">
+    <div ref={cardRef} className="card-wrapper flex flex-col items-center w-[25rem] shrink-0 relative group">
 
       {/* Icon Badge */}
       <div
-        className="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-[3px] md:border-4 flex items-center justify-center bg-[#FDF8F0] z-10 transition-transform duration-300 group-hover:scale-105 shadow-sm"
+        className="relative w-20 h-20 md:w-24 md:h-24 rounded-full border-[3px] md:border-4 flex items-center justify-center bg-[#FDF8F0] z-10 transition-transform duration-300 group-[.is-active]:scale-105 shadow-sm"
         style={{ borderColor: color, color: color }}
       >
         <div ref={iconRef}>
@@ -284,16 +300,16 @@ function Card({ milestone, index }) {
 
       {/* Text Card */}
       <div
-        className="w-full group bg-[#fcf9f2]  border border-black/10 rounded-xl flex flex-col items-center justify-between p-6 text-center shadow-sm relative h-[20rem] md:h-[18rem]  group-hover:bg-[#e30713] transition-all duration-300"
+        className="w-full bg-[#fcf9f2] border border-black/10 rounded-xl flex flex-col items-center justify-between p-6 text-center shadow-sm relative h-[20rem] md:h-[18rem] group-[.is-active]:bg-[#e30713] transition-all duration-300"
         style={{ borderTop: `4px solid ${color}` }}
       >
-        <div className="absolute inset-0 w-full h-full group-hover:opacity-100 opacity-0 transition-all duration-300 ">
+        <div className="absolute inset-0 w-full h-full group-[.is-active]:opacity-100 opacity-0 transition-all duration-300 ">
           <div className="pattern_bg"></div>
         </div>
-        <h3 className="group-hover:text-white! transition-all duration-300" style={{ color: color }}>
+        <h3 className="group-[.is-active]:text-white! transition-all duration-300" style={{ color: color }}>
           {milestone.year}
         </h3>
-        <p className="text-base text-black/80 group-hover:text-white transition-all duration-300  font-medium">
+        <p className="text-base text-black/80 group-[.is-active]:text-white transition-all duration-300  font-medium">
           {milestone.copy}
         </p>
       </div>

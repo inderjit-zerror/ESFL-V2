@@ -21,8 +21,8 @@ const HomePage = () => {
       <ScrollPackets/>
       <Sticker />
       <PresentAcrossCountry />
-      <Factory />
       <LatestCampaignsAndNews />
+      <Factory />
       <SevenSection />
     </>
   );

@@ -7,15 +7,14 @@ import 'swiper/css';
 import BTN from "../common/BTN";
 import { RiArrowLeftLine, RiArrowRightLine } from "@remixicon/react";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
-// Combined campaigns + news content.
-// type: "video"   -> tile opens a popup player (set `videoUrl`)
-// type: "article" -> tile opens the news/PR link in a new tab (set `link`)
 const content = [
   {
     id: "swad-ka-asli-jadoo",
     badge: "FEATURED CAMPAIGN",
     title: "SWAD KA ASLI JADOO — THE TASTE OF TRUE MAGIC",
+    description: "Experience the authentic flavors and rich heritage of our spices that bring true magic to every meal you cook.",
     image: "/images/home/P1.png",
     type: "video",
     videoUrl: "/videos/swad-ka-asli-jadoo.mp4",
@@ -23,7 +22,8 @@ const content = [
   {
     id: "purity-first-reels",
     badge: "DIGITAL MEDIA",
-    title: "#PURITYFIRST REELS SERIES",
+    title: "PURITYFIRST REELS SERIES",
+    description: "Watch our exclusive behind-the-scenes digital series showcasing our uncompromising commitment to 100% natural ingredients.",
     image: "/images/home/P2.png",
     type: "video",
     videoUrl: "/videos/purity-first-reels.mp4",
@@ -32,6 +32,7 @@ const content = [
     id: "harvest-diaries",
     badge: "PRINT",
     title: "HARVEST DIARIES — FROM FARM TO YOUR PLATE",
+    description: "Follow the incredible journey of our locally sourced produce, from the lush green fields straight to your dining table.",
     image: "/images/home/P5.png",
     type: "article",
     link: "#",
@@ -40,6 +41,7 @@ const content = [
     id: "masala-mornings",
     badge: "TVC",
     title: "MASALA MORNINGS — A NEW DAILY RITUAL",
+    description: "Kickstart your day with a perfect blend of spices. Discover the new daily ritual that families across the nation are embracing.",
     image: "/images/home/P4.png",
     type: "video",
     videoUrl: "/videos/masala-mornings.mp4",
@@ -48,6 +50,7 @@ const content = [
     id: "esfl-award",
     badge: "NEWS",
     title: "ESFL wins 'Emerging Food Brand of the Year' at the National Food Summit.",
+    description: "We are incredibly proud and honored to receive national recognition for our consistent quality, innovation, and rapid market growth.",
     image: "/images/home/P3.png",
     type: "article",
     link: "#",
@@ -56,6 +59,7 @@ const content = [
     id: "sustainable-packaging",
     badge: "NEWS",
     title: "Sustainable packaging initiative launched across the Ram Bandhu brand.",
+    description: "In our pledge to protect the environment, we have successfully rolled out eco-friendly, biodegradable packaging for our entire product line.",
     image: "/images/home/P4.png",
     type: "article",
     link: "#",
@@ -64,6 +68,7 @@ const content = [
     id: "csr-farmers",
     badge: "NEWS",
     title: "CSR outreach empowers over 5,000 farmers across rural Maharashtra.",
+    description: "Our dedicated agricultural training programs and fair-trade initiatives have provided sustainable livelihoods and better crop yields.",
     image: "/images/home/P5.png",
     type: "article",
     link: "#",
@@ -72,6 +77,7 @@ const content = [
     id: "new-factory",
     badge: "NEWS",
     title: "New state-of-the-art manufacturing facility opens in Pune.",
+    description: "The multi-million dollar facility is equipped with automated hygiene lines to double our production capacity and meet rising global demand.",
     image: "/images/home/P1.png",
     type: "article",
     link: "#",
@@ -80,6 +86,7 @@ const content = [
     id: "export-growth",
     badge: "NEWS",
     title: "Export volumes cross 15 countries as international demand grows.",
+    description: "Our authentic Indian flavors have successfully expanded their footprint, reaching new homes and supermarkets across the globe.",
     image: "/images/home/P2.png",
     type: "article",
     link: "#",
@@ -145,7 +152,7 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="container   py-12 md:py-24  border-b border-black/50">
+    <section className="container   py-12 md:py-24 ">
       <div className="">
         {/* Header */}
         <div ref={headerRef} className="md:text-center">
@@ -168,8 +175,8 @@ export default function LatestCampaignsAndNews() {
             spaceBetween={10}
             speed={800}
             breakpoints={{
-              0: { slidesPerView: 1.1},
-              768: { slidesPerView: 3, spaceBetween:16 },
+              0: { slidesPerView: 1.1 },
+              768: { slidesPerView: 3, spaceBetween: 16 },
             }}
             onSwiper={(swiper) => {
               setSwiperInstance(swiper);
@@ -182,10 +189,10 @@ export default function LatestCampaignsAndNews() {
             }}
           >
             {content.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="flex flex-col group h-full">
+              <SwiperSlide key={item.id} className="h-auto!">
+                <div className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
                   <div
-                    className={`aspect-[4/3] rounded-xl overflow-hidden relative ${item.type === "video" ? "cursor-pointer" : ""
+                    className={`relative w-full h-56 sm:h-64 overflow-hidden ${item.type === "video" ? "cursor-pointer" : ""
                       }`}
                     onClick={() => {
                       if (item.type === "video") setActiveVideo(item);
@@ -195,7 +202,7 @@ export default function LatestCampaignsAndNews() {
                       fill
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     {item.type === "video" && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
@@ -206,34 +213,33 @@ export default function LatestCampaignsAndNews() {
                     )}
                   </div>
 
-                  {item.badge && (
-                    <h6 className="mt-2     text-[#E30713] ">
-                      {item.badge}
-                    </h6>
-                  )}
+                  <div className="p-5 flex flex-col grow ">
+                    <h5 className="uppercase mb-4 line-clamp-2">
+                      {item.title}
+                    </h5>
+                    <p className="opacity-70  mb-8  grow">
+                      {item.description}
+                    </p>
 
-                  <p className="  md:mt-2">
-                    {item.title}
-                  </p>
-
-                  {item.type === "video" ? (
-                    <button
-                      type="button"
-                      onClick={() => setActiveVideo(item)}
-                      className="mt-2 text-sm      ! text-[#E30713] underline cursor-pointer underline-offset-2 hover:text-[#a80d26] text-left"
-                    >
-                      Know More
-                    </button>
-                  ) : (
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-2 text-sm      ! text-[#E30713] underline cursor-pointer underline-offset-2 hover:text-[#a80d26]"
-                    >
-                      Know More
-                    </a>
-                  )}
+                    {item.type === "video" ? (
+                      <button
+                        type="button"
+                        onClick={() => setActiveVideo(item)}
+                        className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300 text-left"
+                      >
+                        Know More <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                      </button>
+                    ) : (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
+                      >
+                        Know More <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}

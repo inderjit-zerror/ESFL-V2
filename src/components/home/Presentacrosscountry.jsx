@@ -115,19 +115,18 @@ export default function PresentAcrossCountry() {
           </div>
 
           {/* Bottom: stats grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10 w-full">
             {stats.map((stat, i) => (
-              <div key={stat.id} className=" relative rounded-xl bg-red p-6 h-44 md:h-fit md:aspect-square flex flex-col justify-between">
-                <div className="pattern_bg"></div>
-
-                <p className=" uppercase relative z-10 text-white font-medium">
-                  {stat.label}
-                </p>
+              <div key={stat.id} className=" md:text-center">
                 <p
                   ref={(el) => (numberRefs.current[i] = el)}
-                  className=" text-5xl md:text-8xl! relative z-10 font-semibold text-[#f5c451]"
+                  className=" text-5xl md:text-6xl border-b  pb-3 mb-3 relative z-10 font-semibold "
                 >
                   0{stat.suffix}
+                </p>
+
+                <p className=" uppercase relative z-10 opacity-80 font-medium">
+                  {stat.label}
                 </p>
               </div>
             ))}

@@ -20,10 +20,10 @@ export default function ResearchAndQuality() {
   return (
     <div className='relative'>
       {/* Research & Development Section */}
-      <section className="md:sticky! bg-beige top-0 -z-10 container w-full  md:h-svh overflow-hidden  ">
+      <section className="md:sticky! bg-beige md:top-20 -z-10 container w-full  md:h-svh overflow-hidden  ">
             {/* <div className="pattern_bg"></div> */}
 
-        <div className="grid h-fit w-full py-5 max-sm:pt-12 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2">
+        <div className="grid h-fit w-full py-5 md:py-12 max-sm:pt-12 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2">
           {/* Left Content */}
           <div className="flex items-center md:pr-32 ">
             <div className="w-full">
@@ -66,7 +66,7 @@ export default function ResearchAndQuality() {
       <section className="relative z-10 bg-[#E30713] container w-full  md:h-svh overflow-hidden  text-white">
             <div className="pattern_bg"></div>
 
-        <div className="grid h-fit w-full py-5 max-sm:pt-12 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 md:[&>*:first-child]:order-2">
+        <div className="grid h-fit w-full py-5 md:py-12 max-sm:pt-12 gap-8 md:gap-0 grid-cols-1 md:grid-cols-2 md:[&>*:first-child]:order-2">
           {/* Right Content (Order 2) */}
           <div className="flex items-center md:pl-32">
             <div className="w-full">
@@ -93,7 +93,7 @@ export default function ResearchAndQuality() {
           </div>
 
           {/* Left Image (Order 1) */}
-          <div className="relative w-full max-sm:aspect-square md:h-[75vh] group overflow-hidden mt-0 md:mt-[10vh]">
+          <div className="relative w-full max-sm:aspect-square md:h-[75vh] group overflow-hidden ">
             <Image
               src="/images/our-process/IGE.jpg"
               alt="Quality Control Inspector examining product"

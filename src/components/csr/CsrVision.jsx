@@ -104,6 +104,9 @@ const CsrVision = () => {
                         <div
                             className={` group relative bg-[#ffffff] transition-[colors_transform] duration-300 hover:bg-[#FFC55C] p-5 flex flex-col h-full md:min-h-95 rounded-xl ${card.rotation} hover:rotate-0 hover:-translate-y-2 cursor-pointer border border-transparent`}
                         >
+                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="pattern_bg"></div>
+                </div>
                             <div className="flex justify-between items-start mb-8">
                                 <div className="w-10 h-10 border border-[#D42E12]/30 rounded text-red group-hover:border-[#D42E12]/40 flex items-center justify-center transition-colors">
                                     {card.icon}

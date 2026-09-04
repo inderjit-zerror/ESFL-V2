@@ -80,7 +80,7 @@ export default function RegisterInterest() {
     <section ref={sectionRef} className=" border-b border-black/50  overflow-hidden container   py-12 md:py-24 ">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Left column */}
-        <div ref={leftRef} className=" aspect-square md:aspect-auto rounded-md md:h-full relative overflow-hidden">
+        <div ref={leftRef} className=" aspect-square md:aspect-auto  md:h-full relative overflow-hidden">
           <Image
             fill
             src="/images/career/form_img.png"
@@ -159,7 +159,7 @@ export default function RegisterInterest() {
                 onDrop={onDrop}
                 className={`flex h-32 rounded-md cursor-pointer flex-col items-center justify-center border transition-colors ${isDragging
                   ? "border-[#C4321B] bg-[#C4321B]/5"
-                  : "border-black/5 bg-[#FCF8F2]"
+                  : "border-black/5 bg-[#ffffff]"
                   }`}
               >
                 <input type="file" className="hidden" onChange={onFileInputChange} />

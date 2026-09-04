@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Briefcase, Clock, MapPin, TrendingUp, ArrowUpRight } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,32 +68,27 @@ export default function CurrentOpenings() {
   const gridRef = useRef(null);
 
   // Scroll-triggered stagger reveal for the cards.
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray(".job-card");
-      gsap.from(cards, {
-        opacity: 0,
-        y: 50,
-        duration: 0.7,
-        ease: "power2.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: "top 85%",
-          toggleActions:"play none none reverse"
-        },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".job-card");
+    gsap.from(cards, {
+      opacity: 0,
+      duration: 0.7,
+      ease: "power2.out",
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: gridRef.current,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      },
+    });
+  });
 
   return (
     <section ref={sectionRef} className="bg-[#E30713] border-t border-[#ffffff] relative   py-12 md:py-24 ">
       <div className="pattern_bg"></div>
       <div className="container md:mx-auto md:max-w-6xl">
         {/* Header */}
-        <div className=" mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div className=" mb-8  flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
             {/* <h6 className="text-[#fcb62d] uppercase mb-2">JOIN US</h6> */}
             <h2 data-para-effect className="text-[#ffffff] uppercase m-0">
@@ -117,7 +113,7 @@ export default function CurrentOpenings() {
 
 function JobCard({ job }) {
   return (
-    <div className="job-card rounded-xl border border-black/5 p-6 sm:p-8 cursor-pointer bg-[#ffffff] transition-transform hover:-translate-y-1">
+    <div className="job-card rounded-xl  p-6 sm:p-8 cursor-pointer bg-[#ffffff] transition-transform ">
       {/* Top row: icon, title, subtitle, external-link arrow */}
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-4">

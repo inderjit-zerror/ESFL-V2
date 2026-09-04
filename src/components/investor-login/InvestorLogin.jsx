@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Label, Input } from "../common/FormFields";
 import Image from 'next/image';
+import BTN from "../common/BTN";
 
 // --- SVG Icons ---
 const LockIcon = ({ className }) => (
@@ -84,13 +85,9 @@ export default function InvestorLogin() {
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full bg-[#E30713] hover:bg-[#d30311] text-white text-xs font-semibold   uppercase py-4 rounded-lg flex items-center justify-center gap-2 transition-colors mt-4"
-              >
-                Login
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
+                <div className="pt-5 ">
+            <BTN txt={`Login`}  />
+          </div>
             </form>
           </div>
 

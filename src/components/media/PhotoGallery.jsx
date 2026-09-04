@@ -68,7 +68,7 @@ const PhotoGallery = () => {
     <section className="w-full container   pt-12 md:pt-24 ">
       <div className="">
         {/* Header */}
-        <div className="flex  justify-between  items-end mb-8 md:mb-14">
+        <div className="flex  justify-between  items-end mb-8">
           <div>
             {/* <h6 className="uppercase text-red">
               Insight
@@ -93,7 +93,7 @@ const PhotoGallery = () => {
             return (
               <div
                 key={index}
-                className={`relative overflow-hidden rounded-sm group cursor-pointer ${currentClass} ${currentClass.includes('row-span') ? '' : 'h-full'}`}
+                className={`relative overflow-hidden rounded-xl group cursor-pointer ${currentClass} ${currentClass.includes('row-span') ? '' : 'h-full'}`}
                 style={{
                   clipPath: isAnimating ? 'inset(0 0 100% 0)' : 'inset(0 0 0 0)',
                   transition: 'clip-path 0.6s cubic-bezier(0.65, 0, 0.35, 1)',

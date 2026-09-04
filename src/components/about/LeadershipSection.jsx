@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { MoveLeft, MoveRight } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -47,7 +47,7 @@ export default function LeadershipSection() {
       <div className="">
 
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 md:mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="md:text-left">
             <h2 data-para-effect className="uppercase">
               The People Behind <br /> The Flavour
@@ -75,7 +75,10 @@ export default function LeadershipSection() {
 
         {/* Team Slider */}
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          speed={800}
           spaceBetween={5}
           slidesPerView={1.1}
           breakpoints={{
@@ -90,9 +93,9 @@ export default function LeadershipSection() {
           className="w-full"
         >
           {teamMembers.map((member) => (
-            <SwiperSlide key={member.id} className='md:h-auto!'>
-              <div className=" group flex h-full flex-col md:flex-row bg-[#ffffff] text-black hover:bg-[#e30713] transition-colors duration-300 hover:text-white p-4 md:p-5 rounded-xl gap-4 md:gap-6 border border-black/5">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+            <SwiperSlide key={member.id} className='md:h-auto! group'>
+              <div className="flex h-full flex-col md:flex-row bg-[#ffffff] text-black group-[.swiper-slide-active]:bg-[#e30713] transition-colors duration-300 group-[.swiper-slide-active]:text-white p-4 md:p-5 rounded-xl gap-4 md:gap-6 border border-black/5">
+                <div className="absolute inset-0 opacity-0 group-[.swiper-slide-active]:opacity-100 transition-all duration-300">
                   <div className="pattern_bg"></div>
                 </div>
 

@@ -49,7 +49,7 @@ export default function SustainabilitySafety() {
       <div className="">
 
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8  gap-6">
           <div className="text-left w-full md:w-2/3">
             <h2 data-para-effect className="uppercase mb-2 text-[#000]">
               Sustainability & Safety
@@ -84,9 +84,9 @@ export default function SustainabilitySafety() {
           <Swiper
             modules={[Navigation]}
             slidesPerView={1.2}
+            speed={800}
             breakpoints={{
-              768: { slidesPerView: 2.2 },
-              1024: { slidesPerView: 4 }
+              768: { slidesPerView:4 },
             }}
             spaceBetween={16}
             onBeforeInit={(swiper) => {
@@ -104,7 +104,7 @@ export default function SustainabilitySafety() {
                   <div
                     onClick={() => {
                       const nextState = isExpanded ? null : index;
-                      setExpandedIndex(nextState);
+                      setExpandedIndex(nextState);                      
 
                     }}
                     className="relative w-full aspect-square overflow-hidden cursor-pointer rounded-xl group"
@@ -125,15 +125,21 @@ export default function SustainabilitySafety() {
                       <h5 className="text-white w-[80%]  uppercase ">
                         {card.title}
                       </h5>
-                      <div className="p-2 rounded-sm bg-white text-black">
-                      <RiAddLine className=' size-4 group-hover:rotate-180 transition-all duration-300'/>
+                      <div className="p-2 rounded-sm opacity-0 pointer-events-none bg-white text-black">
+                        <RiAddLine className=' size-4 group-hover:rotate-180 transition-all duration-300' />
+                      </div>
+                    </div>
+
+                    <div className="p-4 absolute z-[100] bottom-0 right-0">
+                      <div className="p-2 rounded-sm  bg-white text-black">
+                        <RiAddLine className={`size-4 transition-all duration-300 ${isExpanded ? "-rotate-45" : ""}`} />
                       </div>
                     </div>
 
                     {/* Sliding White Overlay */}
                     <div className={`absolute inset-0 bg-[#e30713] p-6 md:p-8 flex flex-col justify-center transition-transform duration-500 ease-in-out ${isExpanded ? 'translate-x-0' : 'translate-x-full'
                       }`}>
-                      <p className="text-white text-sm md:text-base ">
+                      <p className="text-white text-center text-sm md:text-base ">
                         {card.description}
                       </p>
                     </div>

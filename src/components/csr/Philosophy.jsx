@@ -4,9 +4,9 @@ import Image from 'next/image';
 const Philosophy = () => {
   return (
     <section className="w-full pt-12 md:pt-24 container">
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
+      <div className=" grid grid-cols-1 md:grid-cols-2">
         {/* Left: Image */}
-        <div className="relative w-full aspect-square rounded-md md:aspect-video overflow-hidden">
+        <div className="relative w-full aspect-square md:aspect-video overflow-hidden">
           <Image
             src="/images/csr/philosophy.png"
             alt="CSR Philosophy - Farmers"
@@ -16,12 +16,12 @@ const Philosophy = () => {
         </div>
 
         {/* Right: Content */}
-        <div className=" ">
-          <h2  data-para-effect className="   uppercase  mb-8">
+        <div className=" md:pl-12  ">
+          <h2  data-para-effect className=" uppercase  mb-8">
             OUR CSR<br />PHILOSOPHY
           </h2>
 
-          <div className="space-y-6 opacity-70">
+          <div className="space-y-6">
             <p>
               Empire Spices &amp; Foods Ltd. believes that true corporate
               success is measured not just by financial metrics, but by the
