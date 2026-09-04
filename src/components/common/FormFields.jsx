@@ -128,3 +128,71 @@ export function Select({ className = "", children, label, ...props }) {
     </div>
   );
 }
+
+export function DragDrop({ className = "", onFileChange, file, ...props }) {
+  const [dragActive, setDragActive] = React.useState(false);
+  const inputRef = React.useRef(null);
+
+  const handleDrag = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      if (onFileChange) onFileChange(e.dataTransfer.files[0]);
+    }
+  };
+
+  const handleChange = function(e) {
+    e.preventDefault();
+    if (e.target.files && e.target.files[0]) {
+      if (onFileChange) onFileChange(e.target.files[0]);
+    }
+  };
+
+  const onButtonClick = () => {
+    inputRef.current.click();
+  };
+
+  return (
+    <div 
+      className={`w-full relative flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-md transition-colors duration-300 cursor-pointer ${dragActive ? "border-[#C4321B] bg-[#C4321B]/5" : "border-black/5 bg-[#ffffff] hover:bg-gray-50"} ${className}`}
+      onDragEnter={handleDrag}
+      onDragLeave={handleDrag}
+      onDragOver={handleDrag}
+      onDrop={handleDrop}
+      onClick={onButtonClick}
+    >
+      <input
+        ref={inputRef}
+        type="file"
+        className="hidden"
+        onChange={handleChange}
+        {...props}
+      />
+      {file ? (
+        <div className="flex flex-col items-center justify-center space-y-2 text-sm text-[#2b2b2b]">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#C4321B] mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <p className="font-medium truncate max-w-[200px] sm:max-w-[300px]">{file.name}</p>
+          <p className="text-xs text-[#a9a9a9]">Click or drag to replace</p>
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center space-y-2 text-sm text-[#a9a9a9] pointer-events-none">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 mb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <p><span className="font-medium text-[#C4321B]">Click to upload</span> or drag and drop</p>
+          <p className="text-xs">Attach any relevant files</p>
+        </div>
+      )}
+    </div>
+  );
+}
+

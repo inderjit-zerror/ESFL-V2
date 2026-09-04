@@ -4,7 +4,7 @@ import React from "react";
 const BTN = ({ txt, variant = "B1", href }) => {
   const isB2 = variant === "B2";
 
-  const className = `group relative capitalize inline-flex gap-x-2 h-10 items-center justify-center rounded-full  pl-4 pr-1  transition-all duration-300   ${isB2 ? "bg-[#FDF6EC] text-[#E30713]!" : "bg-[#E30713] text-[#E30713]!"
+  const className = `group relative capitalize inline-flex gap-x-2 h-10 items-center justify-center rounded-full  pl-4 pr-1  transition-all duration-300   ${isB2 ? "bg-[#ffffff] text-[#E30713]!" : "bg-[#E30713] text-[#E30713]!"
     }`;
 
   const content = (
@@ -12,7 +12,7 @@ const BTN = ({ txt, variant = "B1", href }) => {
       <span
         className={`z-10 h-6.5  overflow-hidden transition-all duration-300 ${isB2
           ? "text-[#E30713] "
-          : " text-[#FDF6EC]"
+          : " text-[#ffffff]"
           }`}
       >
         <div className=" group-hover:-translate-y-1/2 transition-all duration-300">
@@ -21,7 +21,7 @@ const BTN = ({ txt, variant = "B1", href }) => {
         </div>
       </span>
       <div
-        className={` h-8 w-8 flex items-center justify-center rounded-full overflow-hidden duration-300 ${isB2 ? "bg-[#E30713] text-[#FDF6EC]":"bg-[#FDF6EC] text-red"}`}
+        className={` h-8 w-8 flex items-center justify-center rounded-full overflow-hidden duration-300 ${isB2 ? "bg-[#E30713] text-[#ffffff]":"bg-[#ffffff] text-red"}`}
       >
         <div className="  flex items-center justify-center  gap-x-4 group-hover:translate-x-4 -translate-x-4  transition-all duration-300 ">
           <RiArrowRightLine  className="size-4" />

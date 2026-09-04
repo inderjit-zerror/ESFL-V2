@@ -107,7 +107,7 @@ export default function PageLoadAnimation() {
     <div
       ref={overlayRef}
       aria-hidden="true"
-      className="fixed inset-0 z-[999009] bg-beige"
+      className="fixed inset-0 z-[999009] bg-beige pointer-events-none"
     >
       <div className="pattern_bg"></div>
 

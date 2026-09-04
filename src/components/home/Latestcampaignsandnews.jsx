@@ -152,7 +152,7 @@ export default function LatestCampaignsAndNews() {
   }, []);
 
   return (
-    <section className="container   py-12 md:py-24 ">
+    <section className="container  border-b border-black/50  py-12 md:py-24 ">
       <div className="">
         {/* Header */}
         <div ref={headerRef} className="md:text-center">

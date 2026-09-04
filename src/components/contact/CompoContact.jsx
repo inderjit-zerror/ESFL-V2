@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { Label, Input, Textarea } from "../common/FormFields";
+import { Label, Input, Textarea, Select, DragDrop } from "../common/FormFields";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import OfficeInfoMap from "./Officeinfomap";
@@ -151,6 +151,8 @@ export default function CompoContact() {
     lastName: "",
     phone: "",
     email: "",
+    businessQuery: "",
+    attachment: null,
     message: "",
   });
   const [status, setStatus] = useState("idle"); // idle | sending | sent
@@ -325,6 +327,33 @@ export default function CompoContact() {
                 </div>
 
                 <div className="block">
+                  <Label htmlFor="businessQuery">Business Query For</Label>
+                  <Select
+                    id="businessQuery"
+                    required
+                    value={form.businessQuery}
+                    onChange={handleChange("businessQuery")}
+                    label="Business Query"
+                  >
+                    <option value="Bulk Orders">Bulk Orders</option>
+                    <option value="Channel Partnership">Channel Partnership</option>
+                    <option value="Marketing agency">Marketing agency</option>
+                    <option value="Supplier">Supplier</option>
+                    <option value="Consulting Firm">Consulting Firm</option>
+                    <option value="Other vendor">Other vendor</option>
+                  </Select>
+                </div>
+
+                <div className="block">
+                  <Label>Attachment</Label>
+                  <DragDrop 
+                    file={form.attachment}
+                    onFileChange={(file) => setForm((f) => ({ ...f, attachment: file }))}
+                    accept=".svg,.png,.jpg,.jpeg,.pdf"
+                  />
+                </div>
+
+                <div className="block">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
@@ -336,6 +365,8 @@ export default function CompoContact() {
                   />
                 </div>
 
+                <div className=" text-sm">
+                  For job related queries/resume submission please visit the <a href="/career" className="hover:underline font-black"> Career</a> page                </div>
                 <div className="pt-2">
                   <BTN txt={status === "sending" ? "Sending..." : "Submit"} />
                 </div>
