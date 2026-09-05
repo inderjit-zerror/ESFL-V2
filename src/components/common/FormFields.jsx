@@ -27,7 +27,7 @@ export function Textarea({ className = "", ...props }) {
   return (
     <textarea
       {...props}
-      className={`w-full rounded-md h-44 resize-none border border-black/5 bg-[#ffffff] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
+      className={`w-full rounded-md  resize-none border border-black/5 bg-[#ffffff] px-4 py-3 text-sm text-[#2b2b2b] placeholder-[#a9a9a9] outline-none focus:border-[#C4321B] transition-colors duration-300 ${className}`}
     />
   );
 }

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import OfficeInfoMap from "./Officeinfomap";
 import BTN from "../common/BTN";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -205,6 +206,7 @@ export default function CompoContact() {
           <div className="reveal-block relative rounded-xl bg-[#E30713] p-5  sm:p-8 text-white flex flex-col justify-center">
             <div className="pattern_bg"></div>
 
+    <div className="">
             <h3 data-para-effect className="uppercase text-white mb-2">
               Reach Us At
             </h3>
@@ -240,6 +242,10 @@ export default function CompoContact() {
             <p className="mt-12 text-sm uppercase  ">
               Our team responds within one business day.
             </p>
+    </div>
+    <div className=" hidden md:block md:mt-12 w-full h-full rounded-lg overflow-hidden relative">
+      <Image fill className="cover" src="/images/contact/contct_form_img.avif" alt="" />
+    </div>
           </div>
 
           {/* OR divider — desktop */}
@@ -277,9 +283,28 @@ export default function CompoContact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+                <div className="block">
+                  <Label htmlFor="businessQuery">Nature Of Query <span className="text-red-500">*</span></Label>
+                  <Select
+                    id="businessQuery"
+                    required
+                    value={form.businessQuery}
+                    onChange={handleChange("businessQuery")}
+                    label="Nature Of Query"
+                  >
+                    <option value="General query">General Query</option>
+                    <option value="Bulk Orders">Bulk Orders</option>
+                    <option value="Channel Partnership">Channel Partnership</option>
+                    <option value="Marketing agency">Marketing Agency</option>
+                    <option value="Supplier">Supplier</option>
+                    <option value="Consulting Firm">Consulting Firm</option>
+                    <option value="Other vendor">Other Vendor</option>
+                  </Select>
+                </div>
+
                 <div className="grid gap-3 grid-cols-2">
                   <div className="block">
-                    <Label htmlFor="firstName">First Name</Label>
+                    <Label htmlFor="firstName">First Name <span className="text-red-500">*</span></Label>
                     <Input
                       id="firstName"
                       type="text"
@@ -290,10 +315,11 @@ export default function CompoContact() {
                     />
                   </div>
                   <div className="block">
-                    <Label htmlFor="lastName">Last Name</Label>
+                    <Label htmlFor="lastName">Last Name <span className="text-red-500">*</span></Label>
                     <Input
                       id="lastName"
                       type="text"
+                      required
                       value={form.lastName}
                       onChange={handleChange("lastName")}
                       placeholder="Patil"
@@ -303,7 +329,7 @@ export default function CompoContact() {
 
                 <div className="grid gap-3 grid-cols-2">
                   <div className="block">
-                    <Label htmlFor="phone">Phone</Label>
+                    <Label htmlFor="phone">Phone <span className="text-red-500">*</span></Label>
                     <Input
                       id="phone"
                       type="tel"
@@ -314,7 +340,7 @@ export default function CompoContact() {
                     />
                   </div>
                   <div className="block">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Email <span className="text-red-500">*</span></Label>
                     <Input
                       id="email"
                       type="email"
@@ -327,41 +353,24 @@ export default function CompoContact() {
                 </div>
 
                 <div className="block">
-                  <Label htmlFor="businessQuery">Business Query For</Label>
-                  <Select
-                    id="businessQuery"
+                  <Label htmlFor="message">Message <span className="text-red-500">*</span></Label>
+                  <Textarea
+                    id="message"
                     required
-                    value={form.businessQuery}
-                    onChange={handleChange("businessQuery")}
-                    label="Business Query"
-                  >
-                    <option value="Bulk Orders">Bulk Orders</option>
-                    <option value="Channel Partnership">Channel Partnership</option>
-                    <option value="Marketing agency">Marketing agency</option>
-                    <option value="Supplier">Supplier</option>
-                    <option value="Consulting Firm">Consulting Firm</option>
-                    <option value="Other vendor">Other vendor</option>
-                  </Select>
+                    rows={5}
+                    value={form.message}
+                    onChange={handleChange("message")}
+                    placeholder="How can we help?"
+                  />
                 </div>
 
                 <div className="block">
                   <Label>Attachment</Label>
                   <DragDrop 
+                    className="!px-3 !py-2.5 !min-h-0 [&>div]:!flex-row [&>div]:!space-y-0 [&>div]:gap-2 [&_svg]:!w-5 [&_svg]:!h-5 [&_svg]:!mb-0 [&_p]:!text-xs [&>div>p:last-child]:!hidden"
                     file={form.attachment}
                     onFileChange={(file) => setForm((f) => ({ ...f, attachment: file }))}
                     accept=".svg,.png,.jpg,.jpeg,.pdf"
-                  />
-                </div>
-
-                <div className="block">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    required
-                    rows={4}
-                    value={form.message}
-                    onChange={handleChange("message")}
-                    placeholder="How can we help?"
                   />
                 </div>
 
