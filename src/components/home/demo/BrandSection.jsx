@@ -41,6 +41,7 @@ const DEFAULT_DESC = [
  * @param {string} [props.className] - Additional classes for container
  */
 const BrandSection = ({
+    id,
     data,
     logo,
     logoAlt = "Brand Logo",
@@ -77,6 +78,8 @@ const BrandSection = ({
                     src: item.replace(/^\/public/, ""),
                     name: `Brand Product ${idx + 1}`,
                     isCenterImg: false,
+                    isCenterLeftImg: false,
+                    isCenterRightImg: false,
                     zIndex: undefined,
                 };
             }
@@ -85,6 +88,8 @@ const BrandSection = ({
                 src,
                 name: item.name || item.title || item.alt || `Brand Product ${idx + 1}`,
                 isCenterImg: Boolean(item.isCenterImg),
+                isCenterLeftImg: Boolean(item.isCenterLeftImg),
+                isCenterRightImg: Boolean(item.isCenterRightImg),
                 zIndex: item.zIndex,
             };
         });
@@ -95,6 +100,9 @@ const BrandSection = ({
         const found = normalizedProducts.findIndex((p) => p.isCenterImg);
         return found !== -1 ? found : Math.floor(normalizedProducts.length / 2);
     }, [normalizedProducts]);
+
+    const centerLeftIndex = useMemo(() => normalizedProducts.findIndex((p) => p.isCenterLeftImg), [normalizedProducts]);
+    const centerRightIndex = useMemo(() => normalizedProducts.findIndex((p) => p.isCenterRightImg), [normalizedProducts]);
 
     // Normalize descriptions to an array of paragraphs
     const descParagraphs = useMemo(() => {
@@ -110,10 +118,12 @@ const BrandSection = ({
         productRefs.current.forEach((el, idx) => {
             if (!el) return;
             const isCenter = idx === activeCenterIndex;
+            const isParallel = idx === centerLeftIndex || idx === centerRightIndex;
             gsap.set(el, {
                 x: 0,
                 opacity: 0,
-                scale: isCenter ? 0.5 : 1,
+                scale: (isCenter || isParallel) ? 0.5 : 1,
+                transformOrigin: "bottom center",
                 force3D: true,
             });
         });
@@ -136,7 +146,9 @@ const BrandSection = ({
             const { isMobile, isTablet } = context.conditions;
 
             // Responsive horizontal spread distance per index from center (in rem)
-            const stepRem = isMobile ? 3.5 : isTablet ? 6.5 : 10;
+            // Tighter spacing so products overlap naturally like on a showcase shelf
+            const baseStep = normalizedProducts.length > 7 ? 10 : normalizedProducts.length > 5 ? 6.5 : 11;
+            const stepRem = isMobile ? (baseStep * 0.45) : isTablet ? (baseStep * 0.72) : baseStep;
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -150,8 +162,8 @@ const BrandSection = ({
             // Phase 1: Logo moves to top and resizes
             if (logoRef.current) {
                 tl.to(logoRef.current, {
-                    top: isMobile ? "3.5rem" : "6rem",
-                    width: isMobile ? "7.5rem" : "10rem",
+                    top: isMobile ? "3.5rem" : "8rem",
+                    width: isMobile ? "7.5rem" : "13rem",
                     duration: 1,
                     ease: "power2.inOut",
                 });
@@ -162,9 +174,17 @@ const BrandSection = ({
                 tl.to(textRef.current, {
                     y: 0,
                     opacity: 1,
-                    duration: 0.8,
-                    ease: "power2.out",
-                });
+                    duration: 1,
+                    ease: "power2.inOut",
+                }, "<");
+                // CTA Button fades in simultaneously with center image
+                if (btnRef.current) {
+                    tl.to(btnRef.current, {
+                        opacity: 1,
+                        duration: 1,
+                        ease: "power2.inOut",
+                    }, "<");
+                }
 
                 // Phase 3: Text slides up and fades out
                 tl.to(textRef.current, {
@@ -175,31 +195,50 @@ const BrandSection = ({
                 });
             }
 
-            // Phase 4: Center image scales in to full size
+            // Phase 4: Center image and parallel images scale in and move
+            tl.addLabel("centerIn");
             const centerEl = productRefs.current[activeCenterIndex];
             if (centerEl) {
                 tl.to(centerEl, {
+                    x: 0,
                     opacity: 1,
                     scale: 1,
                     duration: 1,
                     ease: "power2.inOut",
                     force3D: true,
-                });
+                }, "centerIn");
             }
 
-            // CTA Button fades in simultaneously with center image
-            if (btnRef.current) {
-                tl.to(btnRef.current, {
+            const leftEl = centerLeftIndex !== -1 ? productRefs.current[centerLeftIndex] : null;
+            if (leftEl) {
+                const distance = centerLeftIndex - activeCenterIndex;
+                tl.to(leftEl, {
+                    x: `${distance * stepRem}rem`,
                     opacity: 1,
-                    duration: 0.8,
-                    ease: "power2.out",
-                }, "<");
+                    scale: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    force3D: true,
+                }, "centerIn");
+            }
+
+            const rightEl = centerRightIndex !== -1 ? productRefs.current[centerRightIndex] : null;
+            if (rightEl) {
+                const distance = centerRightIndex - activeCenterIndex;
+                tl.to(rightEl, {
+                    x: `${distance * stepRem}rem`,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    force3D: true,
+                }, "centerIn");
             }
 
             // Phase 5: Side products dynamically expand outward
             const sideItems = [];
             productRefs.current.forEach((el, idx) => {
-                if (el && idx !== activeCenterIndex) {
+                if (el && idx !== activeCenterIndex && idx !== centerLeftIndex && idx !== centerRightIndex) {
                     sideItems.push({
                         el,
                         distance: idx - activeCenterIndex,
@@ -224,7 +263,7 @@ const BrandSection = ({
         return () => {
             mm.revert();
         };
-    }, { scope: container, dependencies: [normalizedProducts, activeCenterIndex, resolvedLogo, resolvedTitle, resolvedDesc] });
+    }, { scope: container, dependencies: [normalizedProducts, activeCenterIndex, centerLeftIndex, centerRightIndex, resolvedLogo, resolvedTitle, resolvedDesc] });
 
     return (
         <div ref={container} className={`w-full h-[200vh] relative ${className}`}>
@@ -237,7 +276,7 @@ const BrandSection = ({
                 {resolvedLogo && (
                     <Image
                         ref={logoRef}
-                        className="w-56 sm:w-64 md:w-72 mx-auto absolute h-auto z-20"
+                        className={` ${(id === 1 || id === 3 || data?.id === 1 || data?.id === 3) ? "drop-shadow-[0_15px_25px_rgba(20,20,20,0.5)]" : ""} w-56 sm:w-64 md:w-80 mx-auto absolute h-auto z-20`}
                         src={resolvedLogo}
                         alt={logoAlt}
                         width={240}
@@ -263,39 +302,40 @@ const BrandSection = ({
                     ))}
                 </div>
 
-                {/* Dynamic Product Images */}
-                {normalizedProducts.map((product, idx) => {
-                    const isCenter = idx === activeCenterIndex;
-                    const distance = idx - activeCenterIndex;
-                    const computedZIndex = product.zIndex !== undefined
-                        ? product.zIndex
-                        : isCenter
-                            ? 20
-                            : Math.max(1, 20 - Math.abs(distance));
+                {/* Dynamic Product Images Stage (Aligned on a shared bottom baseline) */}
+                <div className="w-full h-72 sm:h-80 md:h-96 absolute  flex items-end justify-center pointer-events-none z-10">
+                    {normalizedProducts.map((product, idx) => {
+                        const isCenter = idx === activeCenterIndex;
+                        const distance = idx - activeCenterIndex;
+                        const computedZIndex = product.zIndex !== undefined
+                            ? product.zIndex
+                            : isCenter
+                                ? 20
+                                : Math.max(1, 20 - Math.abs(distance));
 
-                    return (
-                        <Image
-                            key={`${product.src}-${idx}`}
-                            ref={(el) => {
-                                if (el) productRefs.current[idx] = el;
-                            }}
-                            src={product.src}
-                            alt={product.name}
-                            width={400}
-                            height={500}
-                            style={{ zIndex: computedZIndex }}
-                            className={`w-36 sm:w-44  h-auto aspect-[4/5] absolute object-contain select-none pointer-events-none drop-shadow-xl ${
-                                isCenter ? "opacity-0 scale-50" : "opacity-0"
-                            }`}
-                        />
-                    );
-                })}
+                        return (
+                            <Image
+                                key={`${product.src}-${idx}`}
+                                ref={(el) => {
+                                    if (el) productRefs.current[idx] = el;
+                                }}
+                                src={product.src}
+                                alt={product.name}
+                                width={400}
+                                height={500}
+                                style={{ zIndex: computedZIndex }}
+                                className={`h-40 sm:h-64 md:h-72 lg:h-80 w-auto absolute bottom-0 object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)] select-none pointer-events-none ${(isCenter || product.isCenterLeftImg || product.isCenterRightImg) ? "opacity-0 scale-50" : "opacity-0"
+                                    }`}
+                            />
+                        );
+                    })}
+                </div>
 
                 {/* Bottom Center CTA Button */}
                 <div
                     ref={btnRef}
                     onClick={onButtonClick}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 opacity-0 pointer-events-auto"
+                    className="absolute bottom-8 sm:bottom-12 md:bottom-[12vh] left-1/2 -translate-x-1/2 z-30 opacity-0 pointer-events-auto"
                 >
                     <BTN txt={buttonText} variant={btnVariant} href={buttonHref} />
                 </div>

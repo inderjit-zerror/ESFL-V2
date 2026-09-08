@@ -30,9 +30,9 @@ const page = () => {
                 { name: "Nimbu Pani Mix", zIndex: 1, src: "/images/home/demo/rambandhu/Nimbu.png" },
                 { name: "Compounded Hing", zIndex: 2, src: "/images/home/demo/rambandhu/Hing.png" },
                 { name: "Pav Bhaji", zIndex: 3, src: "/images/home/demo/rambandhu/PavBhaji.png" },
-                { name: "Ram Bandhu Chilli Powder", zIndex: 4, src: "/images/home/demo/rambandhu/Chilli.png" },
+                { name: "Ram Bandhu Chilli Powder", zIndex: 4, src: "/images/home/demo/rambandhu/Chilli.png",isCenterLeftImg: true },
                 { name: "Mango Pickle", zIndex: 10, src: "/images/home/demo/rambandhu/Mango.png", isCenterImg: true }, // center (index 4)
-                { name: "Shahi Paneer Spice Mix", zIndex: 4, src: "/images/home/demo/rambandhu/Shahi.png" },
+                { name: "Shahi Paneer Spice Mix", zIndex: 4, src: "/images/home/demo/rambandhu/Shahi.png",isCenterRightImg: true },
                 { name: "Udad Papad", zIndex: 3, src: "/images/home/demo/rambandhu/Udad.png" },
                 { name: "Kabuli Compounded Hing", zIndex: 2, src: "/images/home/demo/rambandhu/Kabuli.png" },
                 { name: "Green Chilli Garlic Chutney", zIndex: 1, src: "/images/home/demo/rambandhu/Green.png" }
@@ -49,9 +49,9 @@ const page = () => {
             images: [
                 { name: "Paneer Chilli Masala", zIndex: 1, src: "/images/home/demo/temptin/Paneer_chilli_masala.png" },
                 { name: "No Onion No Garlic Tomato Sauce", zIndex: 2, src: "/images/home/demo/temptin/sauce.png" },
-                { name: "Pizza Pasta Sauce", zIndex: 3, src: "/images/home/demo/temptin/pizza_pasta.png" },
+                { name: "Pizza Pasta Sauce", zIndex: 3, src: "/images/home/demo/temptin/pizza_pasta.png",isCenterLeftImg:true },
                 { name: "Tomato Ketchup", zIndex: 10, src: "/images/home/demo/temptin/tomato_ketchup.png", isCenterImg: true },
-                { name: "Schezwan Dip", zIndex: 3, src: "/images/home/demo/temptin/Schezwan.png" },
+                { name: "Schezwan Dip", zIndex: 3, src: "/images/home/demo/temptin/Schezwan.png",isCenterRightImg:true },
                 { name: "Green Chilli Sauce", zIndex: 2, src: "/images/home/demo/temptin/green_chili.png" },
                 { name: "Masala Jadoo", zIndex: 1, src: "/images/home/demo/temptin/masala_jadoo.png" }
             ],
@@ -68,16 +68,16 @@ const page = () => {
             btnVariant:"B2",
             images: [
                 { name: "Chicken Gravy Spice Mix", zIndex: 1, src: "/images/home/demo/rbm/chicken_gravy.png" },
-                { name: "Egg curry Masala Box pack", zIndex: 2, src: "/images/home/demo/rbm/egg_cury.png" },
+                { name: "Egg curry Masala Box pack", zIndex: 2, src: "/images/home/demo/rbm/egg_cury.png",isCenterLeftImg:true },
                 { name: "Meat Masala Box pack", zIndex: 10, src: "/images/home/demo/rbm/meat_masala.png", isCenterImg: true },
-                { name: "Chicken Biryani", zIndex: 2, src: "/images/home/demo/rbm/chicken_biryani.png" },
+                { name: "Chicken Biryani", zIndex: 2, src: "/images/home/demo/rbm/chicken_biryani.png",isCenterRightImg:true },
                 { name: "Mutton Gravy Spice Mix", zIndex: 1, src: "/images/home/demo/rbm/mutton_gravy.png" }
             ],
         },
     ]
     return (
         <>
-            {/* <PageLoadAnimation /> */}
+            <PageLoadAnimation />
             <Hero />
             <Building />
             {data.map((brand) => (
