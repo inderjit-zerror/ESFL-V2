@@ -16,7 +16,7 @@ export default function Building() {
   const spiceImages = [
     { src: "/images/home/aboutSection/spice1.png", className: "absolute max-sm:hidden -top-10 md:top-[5%] -left-10 w-44 h-44 sm:w-72 sm:h-72 " },
     { src: "/images/home/aboutSection/spice7.png", className: "absolute  max-sm:hidden top-28 md:top-5 right-[-15%] md:right-[-5%] w-44 h-44 sm:w-62 sm:h-62 " },
-    { src: "/images/home/aboutSection/spice4.png", className: "absolute -bottom-5 right-0 md:bottom-10 md:right-[10%] w-28 h-28 sm:w-44  " },
+    { src: "/images/home/aboutSection/spice4.png", className: "absolute -bottom-5 right-0 md:bottom-20 md:right-[10%] w-28 h-28 sm:w-44  " },
     { src: "/images/home/aboutSection/spice3.png", className: "absolute max-sm:hidden  bottom-10 left-0 md:left-[10%] w-28 h-28 sm:w-56 " },
   ];
 
@@ -60,7 +60,7 @@ export default function Building() {
     <section
       ref={sectionRef}
       onMouseMove={handleMouseMove}
-      className="relative container flex    max-sm:pt-12 md:pt-24 bg w-screen overflow-hidden items-center justify-center "
+      className="relative container flex    max-sm:py-12 md:py-24 bg w-screen overflow-hidden items-center justify-center "
     >
       {/* Wrapped in a stable div to prevent React removeChild errors during next-view-transitions */}
       <div className="absolute inset-0 z-0 pointer-events-none">

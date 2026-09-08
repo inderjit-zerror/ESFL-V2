@@ -225,7 +225,7 @@ export default function LatestCampaignsAndNews() {
                       <button
                         type="button"
                         onClick={() => setActiveVideo(item)}
-                        className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300 text-left"
+                        className="text-sm group-hover:underline text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300 text-left"
                       >
                         Know More <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                       </button>
@@ -234,7 +234,7 @@ export default function LatestCampaignsAndNews() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
+                        className="text-sm group-hover:underline text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
                       >
                         Know More <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
                       </a>
