@@ -47,15 +47,15 @@ export default function LeadershipSection() {
       <div className="">
 
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
-          <div className="md:text-left">
+        <div className="flex flex-col md:flex-row md:items-end justify-center mb-8 gap-6">
+          <div className="md:text-center">
             <h2 data-para-effect className="uppercase">
               The People Behind <br /> The Flavour
             </h2>
           </div>
 
           {/* Navigation Arrows */}
-          <div className="flex items-center gap-2">
+          <div className=" md:absolute right-4 md:right-10 flex items-center gap-2">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
               className="w-10 h-10 rounded-full border border-black/50 hover:border-[#e30713] flex items-center justify-center hover:bg-[#e30713] hover:text-white transition-colors"
