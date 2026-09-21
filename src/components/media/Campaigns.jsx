@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MoveLeft, MoveRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Image from "next/image";
@@ -55,6 +55,9 @@ const categories = ["ALL", "PRESS", "AWARDS", "CAMPAIGNS", "CSR"];
 
 const Campaigns = () => {
   const [activeCategory, setActiveCategory] = useState("ALL");
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   const filteredContent =
     activeCategory === "ALL"
@@ -65,60 +68,83 @@ const Campaigns = () => {
     <section className=" container pt-24 md:pt-32   py-12 md:py-24  relative">
       <div className="w-full">
         {/* Header */}
-        <div className="md:text-center mb-8">
-          {/* <h6 className="text-[#E30713] uppercase mb-2">
-            ON AIR NOW
-          </h6> */}
-          <h2 data-para-effect className="uppercase mb-4">
-            LATEST CAMPAIGNS <br className="max-sm:hidden" /> &amp; NEWS
-          </h2>
-          <p className=" mx-auto max-w-2xl mb-8">
-            Latest campaigns, media coverage and company updates.
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+          <div>
+            <h2 data-para-effect className="uppercase">
+              MEDIA COVERAGE 
+            </h2>
+          </div>
 
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap md:items-center md:justify-center gap-1 md:gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full text-xs    uppercase transition-colors ${activeCategory === cat
-                  ? "bg-[#E30713] text-white"
-                  : "bg-[#f4c96b] text-white hover:bg-[#e0b455]"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* Navigation Arrows */}
+          <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+            <button
+              aria-label="Previous slide"
+              onClick={() => swiperInstance?.slidePrev()}
+              disabled={isBeginning}
+              className="w-10 h-10 rounded-full border border-black/30 hover:border-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+            >
+              <MoveLeft className="w-4 h-4" />
+            </button>
+            <button
+              aria-label="Next slide"
+              onClick={() => swiperInstance?.slideNext()}
+              disabled={isEnd}
+              className="w-10 h-10 rounded-full border border-black/30 hover:border-[#E30713] flex items-center justify-center hover:bg-[#E30713] hover:text-white transition-colors duration-300 disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+            >
+              <MoveRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
-        {/* Grid - Desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-          {filteredContent.map((item) => (
-            <div key={item.id} className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
-              <div className="relative w-full h-56 sm:h-64 overflow-hidden">
-                <Image fill
-                  src={item.image}
-                  alt={item.title}
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
+        {/* Single Scrollable Row of Tiles */}
+        <div className="w-full">
+          <Swiper
+            spaceBetween={16}
+            speed={800}
+            grabCursor={true}
+            breakpoints={{
+              0: { slidesPerView: 1.15, spaceBetween: 12 },
+              640: { slidesPerView: 2.2, spaceBetween: 16 },
+              1024: { slidesPerView: 3, spaceBetween: 16 },
+            }}
+            onSwiper={(swiper) => {
+              setSwiperInstance(swiper);
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            onSlideChange={(swiper) => {
+              setIsBeginning(swiper.isBeginning);
+              setIsEnd(swiper.isEnd);
+            }}
+            className="w-full"
+          >
+            {filteredContent.map((item) => (
+              <SwiperSlide key={item.id} className="h-auto!">
+                <div className="group cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-100 flex flex-col h-full">
+                  <div className="relative w-full h-56 sm:h-64 overflow-hidden">
+                    <Image fill
+                      src={item.image}
+                      alt={item.title}
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
 
-              <div className="p-5 flex flex-col grow">
-                <h5 className="uppercase mb-8 line-clamp-2 grow">
-                  {item.title}
-                </h5>
+                  <div className="p-5 flex flex-col grow">
+                    <h5 className="uppercase mb-8 line-clamp-2 grow">
+                      {item.title}
+                    </h5>
 
-                <a
-                  href={item.link}
-                  className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
-                >
-                  READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
-                </a>
-              </div>
-            </div>
-          ))}
+                    <a
+                      href={item.link}
+                      className="text-sm text-[#E30713] uppercase flex items-center gap-2 hover:opacity-80 group-hover:gap-4 transition-all duration-300"
+                    >
+                      READ MORE <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                    </a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
       </div>

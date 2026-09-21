@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 const ITEMS = [
   {
     number: "01",
-    title: "Career Growth",
+    title: "Collective Growth",
     body: "Vertical and lateral opportunities across plants, brands and markets to advance your professional journey within our network.",
     icon: TrendingUp,
     side: "left",
@@ -36,7 +36,7 @@ const ITEMS = [
   },
   {
     number: "04",
-    title: "Create Culture",
+    title: "Supportive Culture",
     body: "A diverse, inclusive environment built on transparency, safety and mutual respect — from the shop floor upwards.",
     icon: Users,
     side: "right",
@@ -174,7 +174,7 @@ export default function WhyPartnerWithUs() {
           MORE THAN A JOB
         </h6> */}
         <h2 data-para-effect className="uppercase">
-          Why Partner With Us?
+          Why Work With Us?
         </h2>
       </div>
 

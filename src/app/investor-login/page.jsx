@@ -10,7 +10,7 @@ const page = () => {
   return (
     <>     
       <InvestorLogin />
-      <InvestorResources/>
+      {/* <InvestorResources/> */}
       <SevenSection />
     </>
   )

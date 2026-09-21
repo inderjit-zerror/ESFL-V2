@@ -84,7 +84,7 @@ export default function CurrentOpenings() {
   });
 
   return (
-    <section ref={sectionRef} className="bg-[#E30713] border-t border-[#ffffff] relative   py-12 md:py-24 ">
+    <section ref={sectionRef} className="bg-[#E30713]  relative   py-12 md:py-24 ">
       <div className="pattern_bg"></div>
       <div className="container md:mx-auto md:max-w-6xl">
         {/* Header */}

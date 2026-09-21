@@ -5,13 +5,17 @@ import React from 'react'
 import SevenSection from '@/components/home/SevenSection'
 import VideoSection from '@/components/media/VideoSection'
 import PhotoGallery from '@/components/media/PhotoGallery'
+import PageHero from "@/components/common/PageHero";
 
 const page = () => {
   return (
     <>
-      <Campaigns/>
-      <VideoSection/>
-      <PhotoGallery/>
+      <PageHero
+        video="/videos/media.mp4"
+      />
+      <Campaigns />
+      <VideoSection />
+      <PhotoGallery />
       <SevenSection />
     </>
   )

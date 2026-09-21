@@ -1,10 +1,7 @@
 import { createPageMetadata } from "@/lib/seo";
 import PageHero from "@/components/common/PageHero";
-import CurrentOpenings from "@/components/carrer/Currentopenings";
-import InfiniteScroller from "@/components/carrer/InfiniteScroller";
-import LifeAtESFL from "@/components/carrer/Lifeatesfl";
-import RegisterInterest from "@/components/carrer/Registerinterest";
 import WhyPartnerWithUs from "@/components/carrer/Whypartnerwithus";
+import WorkWithUs from "@/components/carrer/WorkWithUs";
 import SevenSection from "@/components/home/SevenSection";
 import React from "react";
 
@@ -17,9 +14,7 @@ const page = () => {
         video="/videos/career.mp4"
       />
       <WhyPartnerWithUs />
-      <InfiniteScroller/>
-      <CurrentOpenings />
-      <RegisterInterest />
+      <WorkWithUs />
       <SevenSection />
     </>
   );

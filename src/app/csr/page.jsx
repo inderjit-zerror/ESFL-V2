@@ -18,7 +18,6 @@ const page = () => {
       <Philosophy/>
       <CsrProjects/>
       <CsrVision/>
-      <LeadershipSection />
       <SevenSection />
     </div>
   )
