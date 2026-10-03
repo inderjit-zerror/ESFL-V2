@@ -77,7 +77,7 @@ export default function WorkWithUs() {
                 </a>
               </p>
               <p className="text-white text-base sm:text-lg ">
-                Join us &amp; unlock your future opportunities{" "}
+                To register in applicant database for future opportunities {" "}
                 <a
                 target="_blank"
                   href="https://esfl.officenet.in/Current_Job_Vacancy/TalentPoolAddCandidate.aspx"
