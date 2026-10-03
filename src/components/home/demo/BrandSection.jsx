@@ -121,6 +121,7 @@ const BrandSection = ({
             const isParallel = idx === centerLeftIndex || idx === centerRightIndex;
             gsap.set(el, {
                 x: 0,
+                y: 0,
                 opacity: 0,
                 scale: (isCenter || isParallel) ? 0.5 : 1,
                 transformOrigin: "bottom center",
@@ -248,9 +249,24 @@ const BrandSection = ({
 
             if (sideItems.length > 0) {
                 tl.addLabel("spreadOut");
-                sideItems.forEach(({ el, distance }) => {
+                const totalSideItems = sideItems.length;
+                sideItems.forEach(({ el, distance }, i) => {
+                    let targetX = `${distance * stepRem}rem`;
+                    let targetY = 0;
+                    let targetScale = 1;
+                    
+                    if (isMobile && (id === 1 || data?.id === 1)) {
+                        const centeredIndex = i - (totalSideItems - 1) / 2;
+                        const sideStepRem = 3.2; 
+                        targetX = `${centeredIndex * sideStepRem}rem`;
+                        targetY = "-10rem";
+                        targetScale = 0.65;
+                    }
+
                     tl.to(el, {
-                        x: `${distance * stepRem}rem`,
+                        x: targetX,
+                        y: targetY,
+                        scale: targetScale,
                         opacity: 1,
                         duration: 1,
                         ease: "power2.inOut",
