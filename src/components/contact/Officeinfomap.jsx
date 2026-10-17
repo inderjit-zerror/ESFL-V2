@@ -102,7 +102,7 @@ export default function OfficeInfoMap() {
   return (
     <section
       ref={rootRef}
-      className="grid relative  overflow-hidden h-auto bg-[#E30713] md:grid-cols-2"
+      className="grid relative  overflow-hidden h-auto bg-(--red) md:grid-cols-2"
     >
       <div className="pattern_bg"></div>
 
@@ -118,7 +118,7 @@ export default function OfficeInfoMap() {
 
         {/* Custom pin card overlay */}
         <div className="absolute top-1/2 -translate-y-1/2 right-4 max-w-[78%] sm:max-w-[280px] sm:top-auto sm:translate-y-0 h-fit flex items-center gap-3 rounded-xl bg-white px-4 py-3 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] sm:bottom-10 sm:right-10">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E30713] text-white">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-(--red) text-white">
             <svg
               width="16"
               height="16"
@@ -134,7 +134,7 @@ export default function OfficeInfoMap() {
             </svg>
           </div>
           <div className="min-w-0">
-            <p className="text-[11px]   uppercase leading-tight tracking-tight text-[#E30713] sm:text-xs">
+            <p className="text-[11px]   uppercase leading-tight tracking-tight text-(--red) sm:text-xs">
               Empire Spices &amp; Foods Ltd.
             </p>
             <p className="mt-0.5 text-[11px] text-[#2B1B12]/70 sm:text-xs">

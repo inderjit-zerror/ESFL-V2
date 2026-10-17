@@ -20,6 +20,8 @@ const DEFAULT_BRAND_PRODUCTS = [
     { name: "Green Chilli Garlic Chutney", zIndex: 1, src: "/images/home/demo/rambandhu/Green.png" }
 ];
 
+const MOBILE_VISIBLE_COUNT = 5;
+
 const DEFAULT_DESC = [
     "Ram Bandhu has been a trusted name in Indian kitchens for over 32 years, offering a wide range of spices, pickles, papads, hing, spice mixes, and snacks.",
     "Built on quality, trust, and continuous innovation, the brand creates products that suit the evolving tastes and lifestyles of Indian consumers, with the aim of bringing convenience to the art of cooking."
@@ -104,6 +106,13 @@ const BrandSection = ({
     const centerLeftIndex = useMemo(() => normalizedProducts.findIndex((p) => p.isCenterLeftImg), [normalizedProducts]);
     const centerRightIndex = useMemo(() => normalizedProducts.findIndex((p) => p.isCenterRightImg), [normalizedProducts]);
 
+    // Mobile shows only a window of 5 products centered on the center image
+    const mobileStartIndex = useMemo(() => {
+        const maxStart = Math.max(0, normalizedProducts.length - MOBILE_VISIBLE_COUNT);
+        return Math.min(Math.max(activeCenterIndex - Math.floor(MOBILE_VISIBLE_COUNT / 2), 0), maxStart);
+    }, [normalizedProducts, activeCenterIndex]);
+    const isMobileVisible = (idx) => idx >= mobileStartIndex && idx < mobileStartIndex + MOBILE_VISIBLE_COUNT;
+
     // Normalize descriptions to an array of paragraphs
     const descParagraphs = useMemo(() => {
         if (Array.isArray(resolvedDesc)) return resolvedDesc;
@@ -139,12 +148,74 @@ const BrandSection = ({
 
         const mm = gsap.matchMedia();
 
+        // Mobile: logo -> text -> all 5 products + button in one step; everything stays on screen
+        mm.add("(max-width: 639px)", () => {
+            const visibleEls = productRefs.current
+                .map((el, idx) => ({ el, distance: idx - activeCenterIndex }))
+                .filter(({ el }, idx) => el && isMobileVisible(idx));
+
+            visibleEls.forEach(({ el }) => gsap.set(el, { x: 0, y: 0, scale: 0.5, opacity: 0 }));
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            // Phase 1: Logo starts large in the middle of the screen and settles into its slot
+            if (logoRef.current) {
+                const logo = logoRef.current;
+                tl.from(logo, {
+                    y: () => logo.parentElement.offsetHeight / 2 - (logo.offsetTop + logo.offsetHeight / 2),
+                    scale: 2.1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                });
+            }
+
+            // Phase 2: Title & description
+            if (textRef.current) {
+                tl.to(textRef.current, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                });
+            }
+
+            // Phase 3: All 5 products spread out together, button fades in with them
+            tl.addLabel("productsIn");
+            visibleEls.forEach(({ el, distance }) => {
+                tl.to(el, {
+                    x: `${distance * 16}vw`,
+                    y: 0,
+                    opacity: 1,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    force3D: true,
+                }, "productsIn");
+            });
+
+            if (btnRef.current) {
+                tl.to(btnRef.current, {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.inOut",
+                }, "productsIn");
+            }
+        });
+
         mm.add({
-            isMobile: "(max-width: 639px)",
             isTablet: "(min-width: 640px) and (max-width: 1023px)",
             isDesktop: "(min-width: 1024px)",
         }, (context) => {
-            const { isMobile, isTablet } = context.conditions;
+            const { isTablet } = context.conditions;
+            const isMobile = false;
 
             // Responsive horizontal spread distance per index from center (in rem)
             // Tighter spacing so products overlap naturally like on a showcase shelf
@@ -249,24 +320,11 @@ const BrandSection = ({
 
             if (sideItems.length > 0) {
                 tl.addLabel("spreadOut");
-                const totalSideItems = sideItems.length;
-                sideItems.forEach(({ el, distance }, i) => {
-                    let targetX = `${distance * stepRem}rem`;
-                    let targetY = 0;
-                    let targetScale = 1;
-                    
-                    if (isMobile && (id === 1 || data?.id === 1)) {
-                        const centeredIndex = i - (totalSideItems - 1) / 2;
-                        const sideStepRem = 3.2; 
-                        targetX = `${centeredIndex * sideStepRem}rem`;
-                        targetY = "-10rem";
-                        targetScale = 0.65;
-                    }
-
+                sideItems.forEach(({ el, distance }) => {
                     tl.to(el, {
-                        x: targetX,
-                        y: targetY,
-                        scale: targetScale,
+                        x: `${distance * stepRem}rem`,
+                        y: 0,
+                        scale: 1,
                         opacity: 1,
                         duration: 1,
                         ease: "power2.inOut",
@@ -279,11 +337,11 @@ const BrandSection = ({
         return () => {
             mm.revert();
         };
-    }, { scope: container, dependencies: [normalizedProducts, activeCenterIndex, centerLeftIndex, centerRightIndex, resolvedLogo, resolvedTitle, resolvedDesc] });
+    }, { scope: container, dependencies: [normalizedProducts, activeCenterIndex, centerLeftIndex, centerRightIndex, mobileStartIndex, resolvedLogo, resolvedTitle, resolvedDesc] });
 
     return (
         <div ref={container} className={`w-full h-[200vh] relative ${className}`}>
-            <div className="sticky top-0 w-full h-screen flex justify-center items-center overflow-hidden">
+            <div className="sticky top-0 w-full h-screen flex justify-center items-center overflow-hidden max-sm:h-svh max-sm:flex-col max-sm:justify-between max-sm:gap-3 max-sm:pt-24 max-sm:pb-10">
 
                 {btnVariant === "B2" && (
                     <div className="pattern_bg"></div>
@@ -292,7 +350,7 @@ const BrandSection = ({
                 {resolvedLogo && (
                     <Image
                         ref={logoRef}
-                        className={` ${(id === 1 || id === 3 || data?.id === 1 || data?.id === 3) ? "drop-shadow-[0_15px_25px_rgba(20,20,20,0.5)]" : ""} w-56 sm:w-64 md:w-80 mx-auto absolute h-auto z-20`}
+                        className={` ${(id === 1 || id === 3 || data?.id === 1 || data?.id === 3) ? "drop-shadow-[0_15px_25px_rgba(20,20,20,0.5)]" : ""} w-27 sm:w-64 md:w-80 mx-auto absolute max-sm:relative max-sm:shrink-0 h-auto z-20`}
                         src={resolvedLogo}
                         alt={logoAlt}
                         width={240}
@@ -304,22 +362,22 @@ const BrandSection = ({
                 {/* Animated Heading & Descriptions */}
                 <div
                     ref={textRef}
-                    className="max-w-4xl px-6 space-y-4 text-center mt-8 opacity-0 pointer-events-none select-none z-20"
+                    className="max-w-4xl px-6 space-y-4 text-center mt-8 opacity-0 pointer-events-none select-none z-20 max-sm:px-4 max-sm:mt-0 max-sm:space-y-2 max-sm:shrink-0"
                 >
                     {resolvedTitle && (
-                        <h3 className="text-2xl md:text-3xl font-semibold">
+                        <h3 className="text-2xl md:text-3xl font-semibold max-sm:text-xl">
                             {resolvedTitle}
                         </h3>
                     )}
                     {descParagraphs.map((paragraph, index) => (
-                        <p key={index} className="text-base md:text-lg leading-relaxed">
+                        <p key={index} className="text-base md:text-lg leading-relaxed max-sm:text-[13px] max-sm:leading-snug">
                             {paragraph}
                         </p>
                     ))}
                 </div>
 
                 {/* Dynamic Product Images Stage (Aligned on a shared bottom baseline) */}
-                <div className="w-full h-72 sm:h-80 md:h-96 absolute  flex items-end justify-center pointer-events-none z-10">
+                <div className="w-full h-72 sm:h-80 md:h-96 absolute  flex items-end justify-center pointer-events-none z-10 max-sm:relative max-sm:h-[26svh] max-sm:shrink">
                     {normalizedProducts.map((product, idx) => {
                         const isCenter = idx === activeCenterIndex;
                         const distance = idx - activeCenterIndex;
@@ -340,7 +398,7 @@ const BrandSection = ({
                                 width={400}
                                 height={500}
                                 style={{ zIndex: computedZIndex }}
-                                className={`h-40 sm:h-64 md:h-72 lg:h-80 w-auto absolute bottom-0 object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)] select-none pointer-events-none ${(isCenter || product.isCenterLeftImg || product.isCenterRightImg) ? "opacity-0 scale-50" : "opacity-0"
+                                className={`h-40 sm:h-64 md:h-72 lg:h-80 w-auto absolute bottom-0 object-contain object-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)] select-none pointer-events-none max-sm:h-[95%] max-sm:max-h-52 ${isMobileVisible(idx) ? "" : "max-sm:hidden"} ${(isCenter || product.isCenterLeftImg || product.isCenterRightImg) ? "opacity-0 scale-50" : "opacity-0"
                                     }`}
                             />
                         );
@@ -351,7 +409,7 @@ const BrandSection = ({
                 <div
                     ref={btnRef}
                     onClick={onButtonClick}
-                    className="absolute bottom-8 sm:bottom-12 md:bottom-[12vh] left-1/2 -translate-x-1/2 z-30 opacity-0 pointer-events-auto"
+                    className="absolute bottom-8 sm:bottom-12 md:bottom-[12vh] left-1/2 -translate-x-1/2 z-30 opacity-0 pointer-events-auto max-sm:relative max-sm:bottom-auto max-sm:left-auto max-sm:translate-x-0 max-sm:shrink-0"
                 >
                     <BTN txt={buttonText} variant={btnVariant} href={buttonHref} />
                 </div>

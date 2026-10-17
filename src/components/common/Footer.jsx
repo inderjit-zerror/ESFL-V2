@@ -17,7 +17,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#E30713] text-white relative z-10">
+    <footer className="bg-(--red) text-white relative z-10">
       <div className="pattern_bg"></div>
       <Image fill className="absolute w-full h-full inset-0 cover" src="/images/home/aboutSection/bg.png" alt="" />
       <div className="   container z-10">
@@ -39,21 +39,21 @@ export default function Footer() {
             <a
               href="https://linkedin.com"
               aria-label="LinkedIn"
-              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
             >
               <RiLinkedinLine className="size-5" />
             </a>
             <a
               href="https://instagram.com"
               aria-label="Instagram"
-              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
             >
               <RiInstagramLine className="size-5" />
             </a>
             <a
               href="mailto:care@esfl.co.in"
               aria-label="Email"
-              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+              className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
             >
               <RiMailLine className="size-5" />
             </a>
@@ -156,21 +156,21 @@ export default function Footer() {
           <a
             href="https://linkedin.com"
             aria-label="LinkedIn"
-            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
           >
             <RiLinkedinLine size={20} />
           </a>
           <a
             href="https://instagram.com"
             aria-label="Instagram"
-            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
           >
             <RiInstagramLine size={20} />
           </a>
           <a
             href="mailto:care@esfl.co.in"
             aria-label="Email"
-            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-[#E30713] transition-colors"
+            className="w-12 h-12 rounded-full border-white border flex items-center justify-center hover:bg-white hover:text-(--red) transition-colors"
           >
             <RiMailLine size={20} />
           </a>

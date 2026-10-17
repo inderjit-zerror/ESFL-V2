@@ -15,6 +15,10 @@ body {
   --red: #e30713;
   --beige: #fdf6ec;
 }
+/* Route-scoped brand red (e.g. /contact-newred renders <div data-red="new" />) */
+body:has([data-red="new"]) {
+  --red: #942222;
+}
 .pattern_bg {
   opacity: 5%;
   position: absolute;

@@ -17,14 +17,14 @@ import { RiInstagramLine, RiLinkedinLine, RiMailLine } from "@remixicon/react";
 const SocialLable = ({ lable, text }) => {
   return (
     <>
-      <div className="w-fit h-fit flex Font2   select-none cursor-pointer  group  text-[18px] max-md:text-[14px] max-md:  bg-[#E30713] px-[20px] py-[15px] max-md:px-[10px] max-md:py-[7px] rounded-lg gap-[4vw] justify-center items-center">
+      <div className="w-fit h-fit flex Font2   select-none cursor-pointer  group  text-[18px] max-md:text-[14px] max-md:  bg-(--red) px-[20px] py-[15px] max-md:px-[10px] max-md:py-[7px] rounded-lg gap-[4vw] justify-center items-center">
         <div className="w-fit     h-fit flex gap-[10px] justify-center items-center group-hover:translate-x-[10px] transition-all duration-500">
           {lable}
           {text}
         </div>
 
         <div className="w-[25px] h-[25px] max-md:hidden flex rounded-lg justify-center items-center p-[4px] bg-white group-hover:translate-x-[-10px] transition-all duration-500">
-          <GoArrowRight className="text-[#E30713]" />
+          <GoArrowRight className="text-(--red)" />
         </div>
       </div>
     </>
@@ -63,7 +63,7 @@ const CustomImg = () => {
 
               {/* Btn */}
               <a aria-label="Visit Ram Bandhu Instagram" target="blank" href="https://www.instagram.com/RambandhuOfficial">
-                <div className="w-fit h-fit absolute top-2 md:top-4 left-2 md:left-4 Font3 text-white p-3 rounded-full  bg-[#E30713] flex justify-center items-center gap-[10px] z-40 transition-all duration-500">
+                <div className="w-fit h-fit absolute top-2 md:top-4 left-2 md:left-4 Font3 text-white p-3 rounded-full  bg-(--red) flex justify-center items-center gap-[10px] z-40 transition-all duration-500">
                   <FaInstagram />
                 </div>
               </a>
@@ -106,21 +106,21 @@ const SevenSection = () => {
           <a
             href="https://linkedin.com"
             aria-label="LinkedIn"
-            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+            className="w-12 h-12 rounded-full border-(--red) border flex items-center justify-center bg-(--red) text-white transition-colors"
           >
             <RiLinkedinLine size={20} />
           </a>
           <a
             href="https://instagram.com"
             aria-label="Instagram"
-            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+            className="w-12 h-12 rounded-full border-(--red) border flex items-center justify-center bg-(--red) text-white transition-colors"
           >
             <RiInstagramLine size={20} />
           </a>
           <a
             href="mailto:care@esfl.co.in"
             aria-label="Email"
-            className="w-12 h-12 rounded-full border-[#e30713] border flex items-center justify-center bg-[#e30713] text-white transition-colors"
+            className="w-12 h-12 rounded-full border-(--red) border flex items-center justify-center bg-(--red) text-white transition-colors"
           >
             <RiMailLine size={20} />
           </a>

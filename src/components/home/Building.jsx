@@ -89,9 +89,20 @@ export default function Building() {
         </h1>
 
         <p className="max-w-3xl mt-5">
-          Pioneering purity and uncompromising quality in every household.
-          Our legacy is built on authentic flavour and world-class
-          manufacturing standards.
+          Our journey began from a small shop in the holy city of Nashik in
+          Maharashtra. The quality and taste of our exotic spice blends soon
+          became a favourite with the masses, leading to a dedicated
+          manufacturing unit to meet the growing demand.
+        </p>
+        <p className="max-w-3xl mt-5">
+          This success gave birth to Ram Bandhu Masale, which quickly reached
+          kitchens across Maharashtra. In 1994, a public limited company was
+          established under the name Empire Spices and Foods Ltd.
+        </p>
+        <p className="max-w-3xl mt-5">
+          Today, our brand portfolio includes Ram Bandhu, RBM, Temptin, Spice
+          One and Zaiqa. Quality and innovation remain the pillars of our
+          success in the pursuit of culinary ecstasy.
         </p>
 
         <div className="mt-10 flex gap-3 md:gap-4 w-fit pointer-events-auto flex-wrap">

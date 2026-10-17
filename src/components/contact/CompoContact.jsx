@@ -203,7 +203,7 @@ export default function CompoContact() {
         <div className="relative grid gap-10 md:grid-cols-2 md:gap-12">
 
           {/* Reach us at */}
-          <div className="reveal-block relative rounded-xl bg-[#E30713] p-5  sm:p-8 text-white flex flex-col justify-center">
+          <div className="reveal-block relative rounded-xl bg-(--red) p-5  sm:p-8 text-white flex flex-col justify-center">
             <div className="pattern_bg"></div>
 
     <div className="">
@@ -253,7 +253,7 @@ export default function CompoContact() {
             className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 md:flex"
             aria-hidden="true"
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-[#E30713]/40 bg-[#FDF6EC] text-xs font-bold uppercase   text-[#E30713]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full border border-dashed border-(--red)/40 bg-[#FDF6EC] text-xs font-bold uppercase   text-(--red)">
               Or
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function CompoContact() {
           {/* Mobile OR divider */}
           <div className="flex items-center gap-3 md:hidden" aria-hidden="true">
             <span className="h-px flex-1 bg-[#E8D9C3]" />
-            <span className="text-xs font-bold uppercase   text-[#E30713]">
+            <span className="text-xs font-bold uppercase   text-(--red)">
               Or
             </span>
             <span className="h-px flex-1 bg-[#E8D9C3]" />
@@ -278,7 +278,7 @@ export default function CompoContact() {
             </p>
 
             {status === "sent" ? (
-              <div className="mt-6 rounded-xl bg-[#E30713]/10 p-6 text-sm text-[#E30713] font-medium">
+              <div className="mt-6 rounded-xl bg-(--red)/10 p-6 text-sm text-(--red) font-medium">
                 Thanks — your message has been sent successfully. We'll get back to you shortly.
               </div>
             ) : (
