@@ -148,65 +148,61 @@ const BrandSection = ({
 
         const mm = gsap.matchMedia();
 
-        // Mobile: logo -> text -> all 5 products + button in one step; everything stays on screen
+        // Mobile: normal scroll (no pin/sticky). Logo, text, products and button each
+        // reveal when they enter the viewport and reverse when scrolled back above.
         mm.add("(max-width: 639px)", () => {
+            const toggle = (trigger) => ({
+                trigger,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+            });
+
+            // 1. Logo
+            if (logoRef.current) {
+                gsap.fromTo(logoRef.current,
+                    { y: 40, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", scrollTrigger: toggle(logoRef.current) }
+                );
+            }
+
+            // 2. Title & description
+            if (textRef.current) {
+                gsap.to(textRef.current, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: toggle(textRef.current),
+                });
+            }
+
+            // 3. All 5 products spread out together from the center
             const visibleEls = productRefs.current
                 .map((el, idx) => ({ el, distance: idx - activeCenterIndex }))
                 .filter(({ el }, idx) => el && isMobileVisible(idx));
 
-            visibleEls.forEach(({ el }) => gsap.set(el, { x: 0, y: 0, scale: 0.5, opacity: 0 }));
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: container.current,
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                }
-            });
-
-            // Phase 1: Logo starts large in the middle of the screen and settles into its slot
-            if (logoRef.current) {
-                const logo = logoRef.current;
-                tl.from(logo, {
-                    y: () => logo.parentElement.offsetHeight / 2 - (logo.offsetTop + logo.offsetHeight / 2),
-                    scale: 2.1,
-                    duration: 1,
-                    ease: "power2.inOut",
+            const stage = visibleEls[0]?.el.parentElement;
+            if (stage) {
+                gsap.set(visibleEls.map(({ el }) => el), { x: 0, y: 0, scale: 0.5, opacity: 0 });
+                const productsTl = gsap.timeline({ scrollTrigger: toggle(stage) });
+                visibleEls.forEach(({ el, distance }) => {
+                    productsTl.to(el, {
+                        x: `${distance * 16}vw`,
+                        opacity: 1,
+                        scale: 1,
+                        duration: 1,
+                        ease: "power2.out",
+                        force3D: true,
+                    }, 0);
                 });
             }
 
-            // Phase 2: Title & description
-            if (textRef.current) {
-                tl.to(textRef.current, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: "power2.inOut",
-                });
-            }
-
-            // Phase 3: All 5 products spread out together, button fades in with them
-            tl.addLabel("productsIn");
-            visibleEls.forEach(({ el, distance }) => {
-                tl.to(el, {
-                    x: `${distance * 16}vw`,
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1,
-                    ease: "power2.inOut",
-                    force3D: true,
-                }, "productsIn");
-            });
-
+            // 4. CTA button
             if (btnRef.current) {
-                tl.to(btnRef.current, {
-                    opacity: 1,
-                    duration: 1,
-                    ease: "power2.inOut",
-                }, "productsIn");
+                gsap.fromTo(btnRef.current,
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", scrollTrigger: toggle(btnRef.current) }
+                );
             }
         });
 
@@ -340,8 +336,8 @@ const BrandSection = ({
     }, { scope: container, dependencies: [normalizedProducts, activeCenterIndex, centerLeftIndex, centerRightIndex, mobileStartIndex, resolvedLogo, resolvedTitle, resolvedDesc] });
 
     return (
-        <div ref={container} className={`w-full h-[200vh] relative ${className}`}>
-            <div className="sticky top-0 w-full h-screen flex justify-center items-center overflow-hidden max-sm:h-svh max-sm:flex-col max-sm:justify-between max-sm:gap-3 max-sm:pt-24 max-sm:pb-10">
+        <div ref={container} className={`w-full h-[200vh] relative max-sm:h-auto ${className}`}>
+            <div className="sticky top-0 w-full h-screen flex justify-center items-center overflow-hidden max-sm:static max-sm:h-auto max-sm:flex-col max-sm:justify-start max-sm:gap-10 max-sm:py-16">
 
                 {btnVariant === "B2" && (
                     <div className="pattern_bg"></div>
@@ -377,7 +373,7 @@ const BrandSection = ({
                 </div>
 
                 {/* Dynamic Product Images Stage (Aligned on a shared bottom baseline) */}
-                <div className="w-full h-72 sm:h-80 md:h-96 absolute  flex items-end justify-center pointer-events-none z-10 max-sm:relative max-sm:h-[26svh] max-sm:shrink">
+                <div className="w-full h-72 sm:h-80 md:h-96 absolute  flex items-end justify-center pointer-events-none z-10 max-sm:relative max-sm:h-56 max-sm:shrink-0">
                     {normalizedProducts.map((product, idx) => {
                         const isCenter = idx === activeCenterIndex;
                         const distance = idx - activeCenterIndex;
