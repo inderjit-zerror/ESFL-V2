@@ -1,11 +1,13 @@
 import { createPageMetadata } from "@/lib/seo";
 import CompoContact from "@/components/contact/CompoContact";
 import PageHero from "@/components/common/PageHero";
+import RedColorPicker from "@/components/common/RedColorPicker";
 
 const Contact = () => {
   return (
     <>
       <div data-red="new" hidden />
+      <RedColorPicker />
       <PageHero
         title="Contact Us"
         description="Let's build something meaningful together. Whether it's a partnership, enquiry, or collaboration, we'd love to hear from you."

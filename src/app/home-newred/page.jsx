@@ -12,6 +12,7 @@ import { createPageMetadata } from "@/lib/seo";
 import ScrollPackets from "@/components/home/ScrollPackets";
 import OldCountryData from "@/components/home/demo/OldCountryData";
 import BrandSection from "@/components/home/demo/BrandSection";
+import RedColorPicker from "@/components/common/RedColorPicker";
 
 const page = () => {
 
@@ -78,6 +79,7 @@ const page = () => {
     return (
         <>
             <div data-red="new" hidden />
+            <RedColorPicker />
             <PageLoadAnimation />
             <Hero />
             <Building />

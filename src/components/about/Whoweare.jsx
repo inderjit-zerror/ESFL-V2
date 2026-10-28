@@ -7,21 +7,7 @@ export default function WhoWeAre() {
         {/* Left: Image with badge */}
         <div className="relative h-full">
           <div className="relative max-sm:aspect-square w-full h-full overflow-hidden">
-            <Image fill
-              src="/images/about/IMG30.jpg"
-              alt="Assorted Indian spices in bowls — turmeric, chili powder, coriander, salt and fresh coriander leaves"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          {/* Badge */}
-          <div className="absolute left-0 top-0 flex  flex-col items-start bg-[#E30713] p-3 text-white">
-            <h5 className="text-3xl   leading-none ">
-              30+
-            </h5>
-            <span className="mt-1 text-xs uppercase text-white">
-              Years of Legacy
-            </span>
+            <video className="cover" src="/videos/local_enterprise_video.mp4" loop autoPlay muted playsInline></video>
           </div>
         </div>
 

@@ -37,6 +37,35 @@ const teamMembers = [
     description: 'Sharad Bedmutha has completed B.Com, L.L.B. & F.C.A. He is a practicing Chartered Accountant since last 25 years with specialization in the field of Taxation & Auditing. He also acts as a consultant for a number of reputed banks & industrial houses. He shares a very close and long term association with the organization and holds a status of authority.',
     imageUrl: '/images/about/leaders/sharad-bedmutha.png',
   },
+  // TODO: replace dummy names, descriptions & images with actual details
+  {
+    id: 5,
+    name: 'Rajesh Kulkarni',
+    role: 'General Manager (Production)',
+    description: 'Rajesh Kulkarni oversees all manufacturing operations at Empire Spices & Foods Ltd. With extensive experience in food processing, he ensures that every batch meets the highest standards of quality, hygiene and consistency, while continuously improving efficiency across the production floor.',
+    imageUrl: '/images/about/leaders/placeholder.svg',
+  },
+  {
+    id: 6,
+    name: 'Suresh Patil',
+    role: 'General Manager (Purchase)',
+    description: 'Suresh Patil leads the procurement function, building strong relationships with farmers and suppliers across the country. His deep understanding of spice sourcing ensures that only the finest raw materials reach our facilities, at the right time and the right value.',
+    imageUrl: '/images/about/leaders/placeholder.svg',
+  },
+  {
+    id: 7,
+    name: 'Priya Deshmukh',
+    role: 'General Manager (HR)',
+    description: 'Priya Deshmukh heads Human Resources, nurturing a culture of growth, integrity and teamwork. She drives talent acquisition, training and employee well-being initiatives that help the organization attract and retain the people who make our flavours possible.',
+    imageUrl: '/images/about/leaders/placeholder.svg',
+  },
+  {
+    id: 8,
+    name: 'Amit Joshi',
+    role: 'General Manager (Sales)',
+    description: 'Amit Joshi leads the sales team across domestic and international markets. With a sharp focus on customer relationships and distribution growth, he has played a key role in expanding the reach of our brands to new regions and new households.',
+    imageUrl: '/images/about/leaders/placeholder.svg',
+  },
 ];
 
 export default function LeadershipSection() {
@@ -107,6 +136,7 @@ export default function LeadershipSection() {
                       fill
                       src={member.imageUrl}
                       alt={member.name}
+                      unoptimized={member.imageUrl.endsWith('.svg')}
                       className="object-cover scale-150"
                     />
                   </div>

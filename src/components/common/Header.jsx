@@ -18,7 +18,7 @@ const navLinks = [
     href: "/about",
     children: [
       { name: "The Company", href: "/about" },
-      { name: "Our Processes", href: "/our-process" },
+      { name: "How We Do It", href: "/how-we-do-it" },
       { name: "Investors", href: "/investor-login" },
       { name: "CSR / Our Social Initiatives", href: "/csr" },
     ],
